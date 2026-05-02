@@ -701,6 +701,190 @@ footer {
   text-transform: uppercase; color: #5A5248; font-weight: 500;
 }
 
+/* ─── ESPECIALIDADES ─── */
+.especialidades { padding: 8rem 4rem; background: var(--cream); }
+.especialidades-inner { max-width: 1200px; margin: 0 auto; }
+
+.especialidades-header {
+  margin-bottom: 5rem;
+}
+.especialidades-header .section-eyebrow {
+  margin-bottom: 1.5rem;
+}
+
+.especialidad-item {
+  margin-bottom: 4.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--stone);
+  transition: transform 0.3s ease;
+}
+.especialidad-item:last-child { border-bottom: none; }
+.especialidad-item:hover { transform: translateX(8px); }
+
+.especialidad-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 1.8rem;
+  line-height: 1.2;
+  position: relative;
+  padding-left: 2rem;
+}
+.especialidad-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: var(--gold);
+}
+
+.especialidad-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.95;
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+  text-align: justify;
+}
+.especialidad-text strong {
+  color: var(--text-body);
+  font-weight: 500;
+}
+
+/* ─── TESTIMONIOS ─── */
+.testimonios { padding: 8rem 4rem; background: var(--bone); }
+.testimonios-inner { max-width: 1200px; margin: 0 auto; }
+
+.testimonios-inner .section-eyebrow { margin-bottom: 1.5rem; }
+.testimonios-inner .section-h2 { margin-bottom: 4rem; }
+
+.testimonios-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.testimonio-card {
+  background: var(--cream); padding: 2.5rem;
+  border: 1px solid var(--parchment);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonio-card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+
+.testimonio-stars {
+  display: flex; gap: 0.3rem; margin-bottom: 1.2rem;
+}
+.star {
+  color: var(--gold); font-size: 1.1rem; line-height: 1;
+}
+
+.testimonio-text {
+  font-size: 0.9rem; color: var(--text-muted);
+  line-height: 1.8; font-weight: 300;
+  margin-bottom: 1.5rem; font-style: italic;
+}
+
+.testimonio-author {
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--charcoal); margin-bottom: 0.3rem;
+}
+
+.testimonio-case {
+  font-size: 0.75rem; color: var(--gold);
+  letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500;
+}
+
+/* ─── FAQ ─── */
+.faq { padding: 8rem 4rem; background: var(--cream); }
+.faq-inner { max-width: 900px; margin: 0 auto; }
+
+.faq-header { margin-bottom: 4rem; }
+.faq-header .section-eyebrow { margin-bottom: 1.5rem; }
+
+.faq-items { display: flex; flex-direction: column; gap: 1px; background: var(--stone); }
+
+.faq-item { background: var(--cream); }
+.faq-question {
+  width: 100%; padding: 2rem 2.5rem;
+  border: none; background: transparent;
+  display: flex; justify-content: space-between;
+  align-items: center; cursor: pointer;
+  transition: background 0.25s ease;
+  text-align: left;
+}
+.faq-item:hover .faq-question { background: var(--bone); }
+
+.faq-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--charcoal); line-height: 1.4;
+  flex: 1;
+}
+
+.faq-toggle {
+  font-size: 1.8rem; color: var(--gold);
+  font-weight: 300; transition: transform 0.3s ease;
+  margin-left: 1.5rem; flex-shrink: 0;
+}
+
+.faq-answer {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding: 0 2.5rem 1.5rem 2.5rem;
+  font-size: 0.9rem; color: var(--text-muted);
+  line-height: 1.8; font-weight: 300;
+}
+
+.faq-item.open .faq-answer { max-height: 500px; }
+.faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+/* ─── HORARIOS ─── */
+.horarios { padding: 8rem 4rem; background: var(--charcoal); }
+.horarios-inner { max-width: 1200px; margin: 0 auto; }
+
+.horarios-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.horario-card {
+  background: #2C2720; padding: 3rem 2.5rem;
+  text-align: center; transition: background 0.25s ease, transform 0.25s ease;
+}
+.horario-card:hover { background: #333027; transform: translateY(-4px); }
+
+.horario-icon {
+  width: 60px; height: 60px;
+  border: 1px solid var(--gold); margin: 0 auto 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 4px;
+}
+.horario-icon svg {
+  width: 24px; height: 24px; stroke: var(--gold); fill: none;
+  stroke-width: 1.5;
+}
+
+.horario-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 600;
+  color: var(--cream); margin-bottom: 1.5rem;
+}
+
+.horario-details {
+  font-size: 0.85rem; color: #7A7068; line-height: 2;
+}
+
+.horario-details strong {
+  display: block; color: var(--gold);
+  font-weight: 500; margin-top: 1rem; margin-bottom: 0.3rem;
+}
+
+.horario-details p { margin: 0; }
+
 /* ─── KEYFRAMES ─── */
 @keyframes fadeUp {
   from { opacity:0; transform:translateY(24px); }
@@ -727,6 +911,13 @@ footer {
   .areas-header { flex-direction:column; gap:1.5rem; }
   .areas-header-right { text-align:left; max-width:100%; }
   .areas-grid { grid-template-columns:1fr; }
+  .especialidades { padding:5rem 2rem; }
+  .especialidad-title { font-size: 1.65rem; }
+  .testimonios { padding:5rem 2rem; }
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .faq { padding:5rem 2rem; }
+  .horarios { padding:5rem 2rem; }
+  .horarios-grid { grid-template-columns: 1fr 1fr; }
   .band { padding:3.5rem 2rem; flex-direction:column; }
   .proceso { padding:5rem 2rem; }
   .proceso-header { grid-template-columns:1fr; }
@@ -750,6 +941,18 @@ footer {
   .hero-name { font-size:clamp(3rem,13vw,4rem); }
   .areas { padding:4rem 1.5rem; }
   .area-card { padding:2.5rem 1.8rem; }
+  .especialidades { padding:4rem 1.5rem; }
+  .especialidad-title { font-size: 1.35rem; padding-left: 1.5rem; }
+  .especialidad-text { font-size: 0.9rem; text-align: left; }
+  .testimonios { padding:4rem 1.5rem; }
+  .testimonios-grid { grid-template-columns: 1fr; }
+  .testimonio-card { padding: 2rem; }
+  .faq { padding:4rem 1.5rem; }
+  .faq-question { padding: 1.5rem 1.5rem; }
+  .faq-answer p { padding: 0 1.5rem 1rem 1.5rem; }
+  .horarios { padding:4rem 1.5rem; }
+  .horarios-grid { grid-template-columns: 1fr; }
+  .horario-card { padding: 2.5rem 1.5rem; }
   .steps-row { grid-template-columns:1fr; }
   .sobre { padding:4rem 1.5rem; }
   .aviso-legal { padding:2rem 1.5rem; }
@@ -770,8 +973,9 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#areas">Práctica</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#especialidades">Especialidades</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
   <a href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo,%20quisiera%20consultar%20sobre..." class="nav-cta-btn">Contactar</a>
@@ -785,8 +989,9 @@ footer {
 <div class="nav-mobile-menu" id="mobile-menu">
   <button class="nav-mobile-close" id="mobile-close">&times;</button>
   <a href="#areas">Práctica</a>
-  <a href="#proceso">Proceso</a>
-  <a href="#sobre">Sobre mí</a>
+  <a href="#especialidades">Especialidades</a>
+  <a href="#testimonios">Testimonios</a>
+  <a href="#faq">FAQ</a>
   <a href="#contacto">Contacto</a>
 </div>
 
@@ -941,6 +1146,112 @@ footer {
   </div>
 </section>
 
+<!-- ══ DETALLE DE ESPECIALIDADES ══ -->
+<section class="especialidades" id="especialidades">
+  <div class="especialidades-inner">
+    <div class="especialidades-header">
+      <div class="section-eyebrow">
+        <div class="section-tag">01B</div>
+        <div class="section-tag-line"></div>
+      </div>
+      <h2 class="section-h2">Profundidad en cada <em>Especialidad</em></h2>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Derecho de Familia</h3>
+      <p class="especialidad-text">
+        El derecho de familia en Córdoba se fundamenta en el Código Civil y Comercial de la Nación (CCCN), que ha modernizado significativamente la legislación familiar. Esta rama del derecho regula las relaciones personales y patrimoniales que surgen del matrimonio, la convivencia marital, la filiación y el parentesco.
+      </p>
+      <p class="especialidad-text">
+        En materia de <strong>divorcios y separaciones</strong>, Córdoba aplica el sistema de divorcio sin culpa, permitiendo la ruptura del vínculo matrimonial por voluntad unilateral o acuerdo mutuo. Mi experiencia incluye la negociación de regímenes patrimoniales (ganancial o separatista), división de bienes y fijación de cuotas alimentarias, siempre buscando soluciones equitativas.
+      </p>
+      <p class="especialidad-text">
+        Respecto a <strong>custodia y filiación</strong>, aplicamos el interés superior del niño como principio rector. Las decisiones sobre guarda, cuidado personal y régimen de visitas se adaptan a cada situación familiar, considerando la edad del menor, sus vínculos afectivos y sus necesidades específicas. En casos complejos de determinación de filiación, utilizamos tanto pruebas documentales como impugnaciones de filiación conforme al ordenamiento cordobés.
+      </p>
+      <p class="especialidad-text">
+        En <strong>sucesiones y herencias</strong>, asesoro en la distribución de bienes según el Código Civil, considerando las cuotas hereditarias, legitimarios y disposiciones testamentarias. Гественно, resuelvo conflictos sucesorios, solicitudes de nulidad de testamentos y administración de sucesiones complejas en coordinación con los juzgados cordobeses.
+      </p>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Derecho Civil</h3>
+      <p class="especialidad-text">
+        El derecho civil es el pilar fundamental del ordenamiento jurídico, regulando las relaciones privadas entre personas. En Córdoba, aplicamos el CCCN que sistematiza las obligaciones, contratos y derechos reales, proporcionando un marco coherente para todas las transacciones civiles.
+      </p>
+      <p class="especialidad-text">
+        En materia de <strong>contratos y obligaciones</strong>, asesoramos en la redacción, interpretación y cumplimiento de acuerdos (compraventas, alquileres, préstamos, servicios profesionales, etc.). Identificamos cláusulas problemáticas, riesgos infraevaluados y oportunidades para proteger tus intereses. Ante incumplimientos, gestionamos cobros extrajudiciales o inicios de demandas con fundamentos técnicos sólidos.
+      </p>
+      <p class="especialidad-text">
+        La <strong>responsabilidad civil</strong> aborda la obligación de reparar daños causados a terceros. Trabajo tanto para quienes han sufrido un perjuicio (por negligencia ajena, incumplimiento contractual o hechos ilícitos) como para los demandados. Calculamos el daño emergente (pérdida efectiva) y el lucro cesante (ganancia frustrada) conforme a la jurisprudencia cordobesa.
+      </p>
+      <p class="especialidad-text">
+        En <strong>derechos reales</strong>, asesoramos sobre propiedad, usufructo, hipotecas y servidumbres. Realizamos búsquedas en el Registro de Propiedad de Córdoba, verificamos titularidades y resolvemos conflictos limítrofes, usucapiones y derechos de paso. En hipotecas, negociamos modificaciones de gravámenes y gestiones de registración.
+      </p>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Derecho Comercial</h3>
+      <p class="especialidad-text">
+        El derecho comercial contemporáneo regula la actividad empresarial, las relaciones entre comerciantes y los actos de comercio. En Córdoba, contamos con un marco normativo que incluye el CCCN, leyes especiales y normativas administrativas provinciales que favorecen la actividad económica responsable.
+      </p>
+      <p class="especialidad-text">
+        En <strong>derecho empresarial</strong>, asesoramos en la elección de la forma societaria más conveniente (sociedad anónima, SRL, asociación civil, etc.), considerando carga fiscal, responsabilidad limitada y facilidades administrativas. Redactamos estatutos, pactos de accionistas y regulaciones internas que previenen conflictos futuros entre socios.
+      </p>
+      <p class="especialidad-text">
+        Para <strong>constituciones y disoluciones</strong>, gestionamos el registro en la Inspección de Personas Jurídicas, tramitación en el Registro de Comercio de Córdoba y cumplimiento de obligaciones tributarias iniciales. En disoluciones, coordinamos la liquidación, distribución de activos y cierre de actividades de manera ordenada y legal.
+      </p>
+      <p class="especialidad-text">
+        En <strong>contratos comerciales</strong>, negociamos compraventas de bienes, prestación de servicios, representaciones comerciales y distribuciones. Cada contrato refleja las reales intenciones de las partes y protege contra contingencias legales. En <strong>propiedad intelectual</strong>, protegemos marcas, patentes y derechos de autor ante el INPI, y perseguimos infracciones en casos de usurpación.
+      </p>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Derecho Laboral</h3>
+      <p class="especialidad-text">
+        El derecho laboral en Argentina es de orden público y protege los derechos de los trabajadores, conforme a la Constitución Nacional, la Ley de Contrato de Trabajo (LCT) y regulaciones provinciales de Córdoba. Este equilibrio entre protección del trabajador y flexibilidad empresarial define nuestra práctica.
+      </p>
+      <p class="especialidad-text">
+        En <strong>reclamos por despido</strong>, evaluamos si la ruptura fue justificada o injustificada. Un despido injustificado genera derecho a indemnización por antiguedad (un mes por año de servicio), integración de renuncias forzadas y, en casos de discriminación, daño moral. Represento trabajadores en demandas ante los Juzgados Laborales de Córdoba, negociando transacciones equitativas.
+      </p>
+      <p class="especialidad-text">
+        Respecto a <strong>accidentes laborales</strong>, tramitamos reclamos ante la aseguradora de riesgos del trabajo (ART) y, si fuera rechazados, demandamos al empleador. El empleador es responsable por el incumplimiento de medidas de seguridad. Cuantificamos incapacidades temporales, incapacidades permanentes (parciales o totales) e indemnizaciones morales.
+      </p>
+      <p class="especialidad-text">
+        En <strong>negociación laboral</strong> y <strong>derechos sindicales</strong>, asesoramos en conflictos colectivos, representación sindical y convenios laborales. Cordoba cuenta con una activa tradición de negociación colectiva que respetamos plenamente, procurando acuerdos que mejoren condiciones sin afectar viabilidad empresarial.
+      </p>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Daños y Perjuicios</h3>
+      <p class="especialidad-text">
+        La rama de daños y perjuicios engloba la responsabilidad civil extracontractual, es decir, la obligación resarcitoria derivada de actos que causan daño a terceros sin mediar contrato. En Córdoba, seguimos la jurisprudencia que aplica los artículos 1716 y siguientes del CCCN.
+      </p>
+      <p class="especialidad-text">
+        Los <strong>accidentes de tránsito</strong> constituyen una de las principales fuentes de daños. Asesoramos tanto a víctimas como a conductores demandados, analizando responsabilidad (quién violó la norma de tránsito), causalidad (si el accidente fue consecuencia directa) y cuantificación de daños. En Córdoba, disponemos de especialistas en valuación y medicina legal para certificar lesiones.
+      </p>
+      <p class="especialidad-text">
+        La <strong>responsabilidad civil</strong> puede originarse en actos ilícitos (ej. golpes), incumplimiento de obligaciones de seguridad (un comercio que no mantiene escaleras seguras) o riesgo creado (acumulación de elementos peligrosos). Para cada caso, solicitamos prueba de culpa o negligencia, y calculamos la indemnización conforme a jurisprudencia actualizada.
+      </p>
+      <p class="especialidad-text">
+        En materia de <strong>indemnizaciones y seguros</strong>, negociamos directamente con aseguradoras para acelerar resarcimientos, evitando litigios innecesarios. Cuando la aseguradora rechaza el siniestro, hacemos valer nuestros derechos ante los Juzgados Civiles de Córdoba. Todo daño indemnizable incluye daño emergente, lucro cesante y—en casos graves—daño moral.
+      </p>
+    </div>
+
+    <div class="especialidad-item">
+      <h3 class="especialidad-title">Asesoramiento Jurídico Integral</h3>
+      <p class="especialidad-text">
+        Más allá de litigio, el asesoramiento jurídico preventivo es nuestro enfoque predilecto. Una <strong>opinión jurídica</strong> clara cuando enfrentas una decisión comercial o personal evita conflictos posteriores. Analizamos contratos, evaluamos riesgos y proporcionamos recomendaciones técnicas en lenguaje comprensible.
+      </p>
+      <p class="especialidad-text">
+        Las <strong>auditorías legales</strong> examinarán la conformidad de tu empresa con leyes laborales, tributarias, societarias y de protección de datos. Identificamos vulnerabilidades antes de que causen problemas. El <strong>análisis de riesgos</strong> anticipado evita demandas costosas y reputacionalmente dañinas.
+      </p>
+      <p class="especialidad-text">
+        El <strong>cumplimiento normativo</strong> (compliance) es imperativo en empresas modernas. Asesoramos en implementación de políticas anticorrupción, protección de datos personales (según LGPD argentina), seguridad ocupacional y reportes obligatorios. En Córdoba operan empresas de diversos sectores con regulaciones específicas; dominamos el entramado normativo provincial y federal.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ══ BANDA CITA ══ -->
 <section class="band">
   <blockquote class="band-quote">
@@ -1050,6 +1361,181 @@ footer {
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
         </div>
         <span class="valor-text">Compromiso genuino con tus intereses y derechos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIOS ══ -->
+<section class="testimonios" id="testimonios">
+  <div class="testimonios-inner">
+    <div class="section-eyebrow">
+      <div class="section-tag">05</div>
+      <div class="section-tag-line"></div>
+    </div>
+    <h2 class="section-h2">Lo que dicen nuestros <em>Clientes</em></h2>
+
+    <div class="testimonios-grid">
+      <div class="testimonio-card">
+        <div class="testimonio-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <p class="testimonio-text">
+          "Excelente asesoramiento en mi caso de divorcio. El Dr. Aristeo fue claro, profesional y consiguió los mejores términos para mí. Lo recomiendo ampliamente."
+        </p>
+        <p class="testimonio-author">María González</p>
+        <p class="testimonio-case">Derecho de Familia</p>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <p class="testimonio-text">
+          "Gracias por resolver mi reclamo laboral exitosamente. La atención fue dedicada y los resultados superaron mis expectativas."
+        </p>
+        <p class="testimonio-author">Juan Rodríguez</p>
+        <p class="testimonio-case">Derecho Laboral</p>
+      </div>
+
+      <div class="testimonio-card">
+        <div class="testimonio-stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+        <p class="testimonio-text">
+          "Perfecto manejo de mi demanda por responsabilidad civil. Profesional, competente y con excelente trato. Totalmente recomendado."
+        </p>
+        <p class="testimonio-author">Carlos López</p>
+        <p class="testimonio-case">Daños y Perjuicios</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-eyebrow">
+        <div class="section-tag">06</div>
+        <div class="section-tag-line"></div>
+      </div>
+      <h2 class="section-h2">Preguntas <em>Frecuentes</em></h2>
+    </div>
+
+    <div class="faq-items">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Cuál es el costo de una consulta inicial?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>La primera consulta es una evaluación inicial donde analizamos tu caso, explicamos el marco legal aplicable y las opciones disponibles. El costo varía según la complejidad. Contáctanos para conocer los detalles específicos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Cuánto tiempo lleva resolver un caso?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>El tiempo depende de múltiples factores: complejidad del caso, cooperación de las partes, carga de juzgados, etc. Algunos asuntos se resuelven en meses, otros pueden llevar años. En la consulta inicial, damos una estimación realista.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Trabajan con honorarios por contingencia?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>En casos donde existe perspectiva de éxito y reclamo de indemnización, evaluamos la posibilidad de trabajar con honorarios contingentes. Esto se negocia caso por caso según las circunstancias.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Cómo mantengo confidencialidad con mis datos?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Todas las comunicaciones entre abogado y cliente están protegidas por el secreto profesional, un derecho fundamental garantizado por ley. Tus datos personales se manejan con máxima confidencialidad y no se comparten sin autorización.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Puedo contactarte después del horario laboral?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Para emergencias legales, contáctame a través de WhatsApp disponible 24/7. Para citas de consulta en horario de oficina, revisa nuestros horarios en la sección de Contacto.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span class="faq-title">¿Realizas asesoramiento online?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Sí, ofrecemos consultas por videollamada para mayor comodidad. También puedes acercarte personalmente a nuestras oficinas en Córdoba. Consulta la disponibilidad según tu preferencia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HORARIOS E INFORMACIÓN ══ -->
+<section class="horarios">
+  <div class="horarios-inner">
+    <div class="horarios-grid">
+      <div class="horario-card">
+        <div class="horario-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.99 5C6.47 5 2 9.48 2 15s4.47 10 9.99 10C17.52 25 22 20.52 22 15S17.52 5 11.99 5zM12 20c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm.5-9H11V7h1.5v4z"/></svg>
+        </div>
+        <h3 class="horario-title">Horarios</h3>
+        <div class="horario-details">
+          <p><strong>Lunes a Viernes</strong><br>9:00 - 18:00 hs</p>
+          <p><strong>Sábados</strong><br>Por cita previa</p>
+          <p><strong>Domingos</strong><br>Cerrado</p>
+        </div>
+      </div>
+
+      <div class="horario-card">
+        <div class="horario-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/></svg>
+        </div>
+        <h3 class="horario-title">Ubicación</h3>
+        <div class="horario-details">
+          <p><strong>Córdoba, Argentina</strong><br>Centro de la ciudad<br>Zona administrativa</p>
+          <p style="font-size: 0.85rem; margin-top: 0.8rem; color: var(--text-muted);">Dirección exacta proporcionada al agendar</p>
+        </div>
+      </div>
+
+      <div class="horario-card">
+        <div class="horario-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <h3 class="horario-title">Contacto Directo</h3>
+        <div class="horario-details">
+          <p><strong>WhatsApp</strong><br>+549 3517 736170</p>
+          <p><strong>Email</strong><br>dr.aristeolautaro@gmail.com</p>
+          <p><strong>Teléfono</strong><br>+549 3517 736170</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1188,6 +1674,14 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => {
   observer.observe(el);
+});
+
+// ─── FAQ FUNCTIONALITY ─── 
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    item.classList.toggle('open');
+  });
 });
 
 // ─── SMOOTH SCROLL ─── 
