@@ -14,25 +14,28 @@
 
   <style>
   /* ═══════════════════════════════════════════════
-     TOKENS & PALETA (Verde Oliva y Dorado Elegante)
+     TOKENS & PALETA 
   ═══════════════════════════════════════════════ */
   :root {
-    --bg:      #1d2419; /* Oliva principal profundo */
-    --bg2:     #242c1f; /* Oliva secundario (Secciones) */
-    --bg3:     #2b3525; /* Oliva para tarjetas/destacados */
-    --line:    rgba(244,241,234,.10); /* Líneas separadoras sutiles */
+    --bg:      #21281d; 
+    --bg2:     #283123; 
+    --bg3:     #323d2b; 
+    --line:    rgba(244,241,234,.12); 
     
     --gold:    #C8A96E; 
-    --gold-hi: #E0C792; 
-    --gold-lo: #9E8551; 
+    --gold-hi: #DBBF87; 
+    --gold-lo: #A08848; 
     --g08:     rgba(200,169,110,.08);
     --g15:     rgba(200,169,110,.15);
     --g28:     rgba(200,169,110,.28);
     
     --ivory:   #F4F1EA; 
-    --i60:     rgba(244,241,234,.75); /* Texto secundario altamente legible */
+    --i60:     rgba(244,241,234,.75); 
     --i35:     rgba(244,241,234,.45);
     --i15:     rgba(244,241,234,.15);
+    
+    --wa:      #25D366;
+    --wa-hov:  #20BA56;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -42,15 +45,15 @@
     background: var(--bg);
     color: var(--ivory);
     font-family: 'DM Sans', sans-serif;
-    font-size: 16.5px; /* Tamaño base óptimo para web moderna */
+    font-size: 16.5px; 
     font-weight: 300;
-    line-height: 1.85; /* Interlineado generoso para descansar la vista */
+    line-height: 1.85; 
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
   ::selection { background: var(--g28); color: var(--ivory); }
-  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--gold-lo); border-radius: 4px;}
 
@@ -58,12 +61,12 @@
   .w { max-width: 1180px; margin: 0 auto; padding: 0 52px; }
   @media (max-width: 820px) { .w { padding: 0 24px; } }
 
-  /* ─ label / eyebrow ─ */
+  /* ─ label ─ */
   .lbl {
     display: inline-flex; align-items: center; gap: 12px;
-    font-size: 10.5px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase; color: var(--gold);
+    font-size: 10px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase; color: var(--gold);
   }
-  .lbl::before { content: ''; width: 24px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .lbl::before { content: ''; width: 22px; height: 1px; background: var(--gold); flex-shrink: 0; }
 
   /* ─ heading ─ */
   .h2 {
@@ -74,8 +77,16 @@
   }
   .h2 em { font-style: italic; color: var(--gold-hi); }
 
-  /* ─ body text (siempre alineado a la izquierda para legibilidad) ─ */
-  .body-t { font-size: 17px; line-height: 1.95; color: var(--i60); text-align: left; }
+  /* ─ body text JUSTIFICADO ─ */
+  .body-t, .step-p, .acard-p, .fil-text-container p { 
+    font-size: 16.5px; 
+    line-height: 1.95; 
+    color: var(--i60); 
+    text-align: justify; 
+    hyphens: auto; 
+    -webkit-hyphens: auto; 
+    -ms-hyphens: auto;
+  }
   .body-t strong { color: var(--ivory); font-weight: 500; }
 
   /* ─ section padding ─ */
@@ -90,7 +101,7 @@
     border-bottom: 1px solid transparent;
   }
   #nav.on {
-    background: rgba(29,36,25,.95);
+    background: rgba(33,40,29,.95);
     backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
     border-color: var(--line);
   }
@@ -140,7 +151,38 @@
   }
 
   /* ═══════════════════════════════════════════════
-     HERO (CON IMAGEN AÉREA CÓRDOBA)
+     WHATSAPP FLOTANTE
+  ═══════════════════════════════════════════════ */
+  .wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--wa);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+  }
+  .wa-float:hover {
+    transform: scale(1.08);
+    background-color: var(--wa-hov);
+    color: #FFF;
+  }
+  @media (max-width: 820px) {
+    .wa-float { bottom: 20px; right: 20px; width: 55px; height: 55px; font-size: 28px; }
+  }
+
+  /* ═══════════════════════════════════════════════
+     HERO
   ═══════════════════════════════════════════════ */
   #hero {
     min-height: 100vh; display: flex; align-items: center;
@@ -175,6 +217,10 @@
   .hero-sub { 
     font-size: 18.5px; line-height: 1.85; color: var(--ivory); 
     max-width: 680px; margin-bottom: 56px; font-weight: 300; 
+    text-align: justify;
+    hyphens: auto; 
+    -webkit-hyphens: auto; 
+    -ms-hyphens: auto;
   }
 
   /* CTAs */
@@ -224,11 +270,11 @@
     border-left: 3px solid var(--gold); padding-left: 32px; margin-top: 36px;
   }
 
-  /* Control de ancho para que la lectura sea óptima */
   .fil-text-container { max-width: 580px; }
+  .fil-text-container p { margin-bottom: 24px; }
 
   /* ═══════════════════════════════════════════════
-     EL PROFESIONAL & VENTAJA TECNOLÓGICA
+     EL PROFESIONAL & EFICIENCIA
   ═══════════════════════════════════════════════ */
   #profesional { background: var(--bg); }
 
@@ -236,6 +282,7 @@
   @media (max-width: 820px) { .prof-grid { grid-template-columns: 1fr; gap: 48px; } }
   
   .prof-text-container { max-width: 580px; }
+  .prof-text-container p { margin-top: 32px; }
 
   .badge-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
   .badge {
@@ -257,7 +304,6 @@
     letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 24px;
     display: flex; align-items: center; gap: 12px;
   }
-  .tech-box p { font-size: 16.5px; line-height: 1.95; color: var(--i60); }
 
   /* ═══════════════════════════════════════════════
      METODOLOGÍA
@@ -270,16 +316,15 @@
   @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
 
   .step {
-    background: var(--bg); padding: 64px 48px; text-align: center;
+    background: var(--bg); padding: 64px 48px;
     position: relative; overflow: hidden; transition: background .4s;
   }
   .step::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .5s ease; }
   .step:hover { background: var(--bg2); }
   .step:hover::after { transform: scaleX(1); }
 
-  .step-ico { color: var(--gold); font-size: 40px; margin-bottom: 28px; display: block; }
-  .step-t { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--ivory); margin-bottom: 16px; line-height: 1.25; }
-  .step-p { font-size: 16px; color: var(--i60); line-height: 1.85; }
+  .step-ico { color: var(--gold); font-size: 40px; margin-bottom: 28px; display: block; text-align: center;}
+  .step-t { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--ivory); margin-bottom: 16px; line-height: 1.25; text-align: center;}
 
   /* ═══════════════════════════════════════════════
      ÁREAS DE PRÁCTICA
@@ -307,7 +352,6 @@
   
   .acard-t { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 500; color: var(--ivory); line-height: 1.25; margin-bottom: 18px; transition: color .3s; }
   .acard:hover .acard-t { color: var(--gold-hi); }
-  .acard-p { font-size: 16.5px; color: var(--i60); line-height: 1.95; }
 
   /* ═══════════════════════════════════════════════
      CONTACTO (CON IMAGEN TRIBUNALES)
@@ -369,7 +413,7 @@
   }
   .fsub:hover { background: var(--ivory); }
 
-  .fdisclaimer { font-size: 13px; color: var(--i35); font-style: italic; margin-top: 24px; line-height: 1.8; }
+  .fdisclaimer { font-size: 13px; color: var(--i35); font-style: italic; margin-top: 24px; line-height: 1.8; text-align: justify;}
 
   /* ═══════════════════════════════════════════════
      FOOTER
@@ -391,6 +435,11 @@
 </head>
 <body>
 
+<!-- WHATSAPP FLOTANTE -->
+<a href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20agendar%20una%20consulta" class="wa-float" target="_blank" aria-label="Contactar por WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
 <!-- ══ NAV ══ -->
 <nav id="nav">
   <div class="nav-w">
@@ -405,9 +454,9 @@
       <a class="nl" href="#areas"       data-s="areas">Áreas</a>
       <a class="nl" href="#contacto"    data-s="contacto">Contacto</a>
     </div>
-    <a class="nav-cta" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20coordinar%20una%20evaluación%20de%20mi%20caso" target="_blank">
+    <a class="nav-cta" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20agendar%20una%20consulta" target="_blank">
       <i class="fa-brands fa-whatsapp"></i>
-      <span>Consultar mi caso</span>
+      <span>Agendar mi consulta</span>
     </a>
     <button id="ham" aria-label="Menú"><span></span><span></span><span></span></button>
   </div>
@@ -434,12 +483,12 @@
     </h1>
 
     <p class="hero-sub fu" style="transition-delay:.22s">
-      Representación legal tenaz y enfocada en la resolución de conflictos. <strong>Defiendo tus intereses patrimoniales, laborales y familiares</strong> con el rigor técnico y la dedicación exclusiva que tu caso merece.
+      Representación legal tenaz y orientada a la resolución eficiente de conflictos. Defiendo tus intereses patrimoniales, laborales y familiares peleando cada detalle con el rigor técnico y la energía que tu caso exige.
     </p>
 
     <div style="display:flex;flex-wrap:wrap;gap:16px" class="fu" style="transition-delay:.34s">
-      <a class="cta" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20coordinar%20una%20evaluación%20de%20mi%20caso" target="_blank">
-        <span>Coordinar Evaluación de Caso</span>
+      <a class="cta" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20agendar%20una%20consulta" target="_blank">
+        <span>Agendar mi consulta</span>
         <i class="fa-solid fa-arrow-right"></i>
       </a>
       <a class="cta-g" href="#areas">Ver áreas de práctica</a>
@@ -461,23 +510,23 @@
           Claridad legal<br>para decisiones<br><em>seguras.</em>
         </h2>
         <blockquote class="fil-quote fu" style="transition-delay:.18s">
-          "El derecho no debe ser un laberinto burocrático. Mi compromiso es ponerme la camiseta de tu caso, traducir la complejidad normativa y trabajar a tu lado para buscar la mejor solución posible."
+          "El derecho no debe ser un laberinto burocrático. Mi compromiso es asumir la defensa de tus intereses con absoluto rigor técnico, traduciendo la complejidad normativa en estrategias concretas para alcanzar la mejor solución posible."
         </blockquote>
       </div>
 
       <div class="fil-text-container">
-        <p class="body-t fu" style="margin-bottom:28px">
-          Comprendo que recurrir a la asistencia jurídica implica depositar en mí tu confianza sobre asuntos de vital importancia patrimonial o personal. Por ello, <strong>mi filosofía se aleja completamente de las estructuras burocráticas tradicionales</strong> y de los expedientes tratados como números.
-        </p>
         <p class="body-t fu" style="transition-delay:.1s">
-          Mi práctica se fundamenta en la <strong>honestidad profesional y el empuje constante</strong>. Evalúo la viabilidad real de tu caso desde la primera consulta, sin falsas promesas, para diseñar un plan de acción inteligente que priorice tus intereses en la jurisdicción de Córdoba y fueros federales.
+          Comprendo que recurrir a la asistencia jurídica implica depositar en mí tu confianza sobre asuntos de vital importancia patrimonial o personal. Por ello, mi filosofía se aleja completamente de las estructuras burocráticas tradicionales y de los expedientes tratados como números.
+        </p>
+        <p class="body-t fu" style="transition-delay:.16s">
+          Mi práctica se fundamenta en la honestidad técnica y el empuje constante. Evalúo la viabilidad real de tu caso desde la primera consulta, sin falsas promesas, para diseñar un plan de acción riguroso e inteligente que priorice tus intereses en la jurisdicción de Córdoba y fueros federales.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ EL PROFESIONAL Y VENTAJA TECNOLÓGICA ══ -->
+<!-- ══ EL PROFESIONAL Y EFICIENCIA ══ -->
 <section class="sec" id="profesional">
   <div class="w">
     <div class="prof-grid">
@@ -486,8 +535,8 @@
         <h2 class="h2 fu" style="margin-top:20px;transition-delay:.08s">
           Dr. Lautaro N.<br><em>Aristeo</em>
         </h2>
-        <p class="body-t fu" style="margin-top:32px;transition-delay:.14s">
-          Abogado egresado de la Universidad Empresarial Siglo 21, con matrículas habilitantes en el fuero provincial y federal. Mi ejercicio profesional <strong>combina la dedicación de una abogacía moderna</strong> con el estudio exhaustivo del expediente y un trato absolutamente humano y directo.
+        <p class="body-t fu" style="transition-delay:.14s">
+          Abogado egresado de la Universidad Empresarial Siglo 21, con matrículas habilitantes en el fuero provincial y federal. Mi ejercicio profesional combina la energía de una nueva generación de abogados con el estudio exhaustivo del expediente y un trato absolutamente humano y directo.
         </p>
         <div class="badge-row fu" style="transition-delay:.24s">
           <span class="badge">M.P. 1-43722</span>
@@ -498,9 +547,9 @@
 
       <div class="fu" style="transition-delay:.12s">
         <div class="tech-box">
-          <h3><i class="fa-solid fa-laptop-code"></i> Ventaja Tecnológica</h3>
-          <p>
-            Como valor agregado a mi atención personal y dedicada, <strong>integro herramientas tecnológicas avanzadas</strong> que agilizan todo el proceso legal. Mi infraestructura digital me permite gestionar tu expediente electrónico (SAC) con inmediatez, agendar reuniones por videollamada y aplicar firma electrónica. Mi objetivo es claro: optimizar los tiempos procesales y evitarte demoras o traslados innecesarios.
+          <h3><i class="fa-solid fa-bolt"></i> Eficiencia Operativa</h3>
+          <p class="step-p">
+            Como valor agregado a mi atención personalizada, aplico metodologías de gestión que optimizan el proceso legal. Mi objetivo es claro: reducir la burocracia, acelerar los tiempos procesales y evitarte demoras innecesarias, garantizando que tu expediente avance con la celeridad que el contexto exige.
           </p>
         </div>
       </div>
@@ -516,7 +565,7 @@
       <h2 class="h2 fu" style="margin-top:20px;transition-delay:.08s">
         Compromiso y <em>Transparencia</em>
       </h2>
-      <p class="body-t fu" style="text-align: center; margin-top:24px; transition-delay:.14s">
+      <p class="body-t fu" style="text-align: center; margin-top:24px; transition-delay:.14s; text-align-last: center;">
         Mi metodología de trabajo está estructurada para brindarte seguridad, un canal de comunicación directo y control riguroso sobre el avance de tu trámite legal.
       </p>
     </div>
@@ -525,17 +574,17 @@
       <div class="step">
         <i class="fa-solid fa-scale-balanced step-ico"></i>
         <h4 class="step-t">Evaluación Realista</h4>
-        <p class="step-p">Realizo un análisis técnico profundo de la viabilidad de tu caso. Te informo con franqueza sobre los tiempos, costos y escenarios posibles. Sin falsas expectativas.</p>
+        <p class="step-p">Realizo un análisis técnico profundo antes de iniciar cualquier acción. Te informo con total franqueza sobre los riesgos, costos y probabilidades de éxito de tu caso.</p>
       </div>
       <div class="step">
         <i class="fa-solid fa-user-tie step-ico"></i>
         <h4 class="step-t">Gestión Directa</h4>
-        <p class="step-p">No derivo tu caso ni lo delego en asistentes. Tu expediente es estudiado y gestionado exclusivamente por mí, garantizando máxima responsabilidad técnica y dedicación.</p>
+        <p class="step-p">No derivo tu caso ni lo delego en asistentes. Tu expediente es estudiado, peleado y gestionado exclusivamente por mí, garantizando máxima responsabilidad y dedicación.</p>
       </div>
       <div class="step">
         <i class="fa-solid fa-lock step-ico"></i>
         <h4 class="step-t">Secreto Profesional</h4>
-        <p class="step-p">Mantengo absoluta reserva y confidencialidad sobre tu información, tu patrimonio y tu identidad, amparado por el estricto cumplimiento de la Ley N° 5805.</p>
+        <p class="step-p">Mantengo absoluta reserva y confidencialidad sobre tu información, tu patrimonio y tu identidad, amparado por el estricto cumplimiento de la normativa vigente (Ley 5805).</p>
       </div>
     </div>
   </div>
@@ -559,13 +608,13 @@
       <div class="acard">
         <div class="acard-ico"><i class="fa-solid fa-file-signature"></i></div>
         <h3 class="acard-t">Derecho Civil y Comercial</h3>
-        <p class="acard-p">Asesoramiento integral en resguardo de tu patrimonio. Redacción y ejecución de contratos, gestión de cobros, sucesiones, declaratorias de herederos y acciones por daños y perjuicios. Abordaje preventivo y litigioso para buscar la reparación que te corresponde.</p>
+        <p class="acard-p">Asesoramiento integral en resguardo de tu patrimonio. Redacción y ejecución de contratos, gestión de cobros, sucesiones, declaratorias de herederos y acciones por daños y perjuicios. Abordaje preventivo y litigioso para asegurar la reparación que te corresponde.</p>
       </div>
       <!-- Laboral -->
       <div class="acard">
         <div class="acard-ico"><i class="fa-solid fa-briefcase"></i></div>
         <h3 class="acard-t">Laboral y Riesgos de Trabajo</h3>
-        <p class="acard-p">Defensa técnica y firme de tus derechos como trabajador. Intervención en reclamos por despidos, trabajo no registrado (en negro), diferencias salariales y accidentes o enfermedades laborales ante la ART. Negociación estratégica para perseguir tu justa indemnización.</p>
+        <p class="acard-p">Defensa técnica e inquebrantable de tus derechos como trabajador. Intervención en reclamos por despidos, trabajo no registrado (en negro), diferencias salariales y accidentes o enfermedades laborales ante la ART. Negociación estratégica y firme para asegurar tu justa indemnización.</p>
       </div>
       <!-- Familia -->
       <div class="acard">
@@ -577,7 +626,7 @@
       <div class="acard">
         <div class="acard-ico"><i class="fa-solid fa-shield-heart"></i></div>
         <h3 class="acard-t">Salud y Defensa del Consumidor</h3>
-        <p class="acard-p">Tutela efectiva frente a abusos corporativos. Redacción de amparos y medidas cautelares para exigir el cumplimiento de coberturas médicas a Obras Sociales y Prepagas. Reclamos formales ante tratos indignos, estafas bancarias e incumplimientos comerciales.</p>
+        <p class="acard-p">Tutela efectiva y urgente frente a abusos corporativos. Redacción de amparos y medidas cautelares para exigir coberturas médicas vitales a Obras Sociales y Prepagas. Reclamos formales y enérgicos ante tratos indignos, estafas bancarias e incumplimientos comerciales.</p>
       </div>
     </div>
   </div>
@@ -598,7 +647,7 @@
         </p>
         
         <div class="ch-list fu" style="transition-delay:.2s">
-          <a class="ch" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20coordinar%20una%20evaluación%20de%20mi%20caso" target="_blank">
+          <a class="ch" href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20agendar%20una%20consulta" target="_blank">
             <div class="ch-ico"><i class="fa-brands fa-whatsapp"></i></div>
             <div><div class="ch-label">WhatsApp Directo</div><div class="ch-val">+54 9 351 773 6170</div></div>
           </a>
@@ -649,10 +698,10 @@
             <textarea class="fi2" id="fm" placeholder="Describí brevemente tu situación..."></textarea>
           </div>
 
-          <button class="fsub" type="submit">Enviar Solicitud de Evaluación</button>
+          <button class="fsub" type="submit">Agendar Evaluación de Caso</button>
 
           <p class="fdisclaimer">
-            * El envío de este formulario no establece automáticamente una relación contractual abogado-cliente. Tus datos están 100% seguros y bajo secreto profesional.
+            * El envío de este formulario no establece automáticamente una relación contractual abogado-cliente. Tus datos están seguros bajo estricto secreto profesional.
           </p>
         </form>
       </div>
