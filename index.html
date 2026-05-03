@@ -3,37 +3,14 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo. Abogacía humana, clara y con absoluto rigor técnico en Córdoba. Dirección: Dr. Lautaro N. Aristeo."/>
+  <meta name="description" content="Estudio Jurídico Aristeo. Litigio estratégico y representación de alta complejidad para particulares y empresas en Córdoba. Dr. Lautaro N. Aristeo."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Estudio Jurídico Aristeo | Abogacía Real y Efectiva · Córdoba</title>
+  <title>Estudio Jurídico Aristeo | Derecho de Alta Precisión · Córdoba</title>
 
   <!-- ══ SEO LOCAL & METADATOS ══ -->
-  <meta property="og:title" content="Estudio Jurídico Aristeo | Rigor y Claridad">
-  <meta property="og:description" content="Defendemos sus derechos con la misma fuerza, sin importar quién esté del otro lado. Trato humano y excelencia técnica en Córdoba.">
+  <meta property="og:title" content="Estudio Jurídico Aristeo | Rigor y Estrategia">
+  <meta property="og:description" content="Defensa integral para particulares y empresas. Trato humano y excelencia técnica en fueros provinciales y federales.">
   <meta property="og:type" content="website">
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LegalService",
-    "name": "Estudio Jurídico Aristeo",
-    "founder": {
-      "@type": "Person",
-      "name": "Lautaro Nahuel Aristeo",
-      "jobTitle": "Abogado",
-      "identifier": "M.P. 1-43722 | Mat. Fed. T° 511 F° 222"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Córdoba",
-      "addressRegion": "Córdoba",
-      "addressCountry": "AR"
-    },
-    "telephone": "+5493517736170",
-    "email": "dr.aristeolautaro@gmail.com",
-    "areaServed": "Córdoba, Argentina"
-  }
-  </script>
 
   <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -201,7 +178,7 @@
   .cred-item strong { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); font-weight: 400;}
 
   /* ═══════════════════════════════════════════════
-     6. ÁREAS DE PRÁCTICA (ACORDEÓN ÉLITE)
+     6. ÁREAS DE PRÁCTICA (ACORDEÓN EXPANDIDO MULTI-ROL)
   ═══════════════════════════════════════════════ */
   .areas-container { margin-top: 4rem; border-top: 1px solid var(--line-color); }
   
@@ -213,48 +190,34 @@
     display: grid; grid-template-columns: 40px 1fr 30px; align-items: center; gap: 2rem;
   }
   .area-icon { color: var(--gold-main); font-size: 1.5rem; opacity: 0.8; }
-  .area-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; color: var(--text-main); transition: color var(--transition-fast); }
+  .area-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); transition: color var(--transition-fast); }
   .area-arrow { color: var(--gold-main); font-size: 1rem; transition: transform var(--transition-slow); }
   
   .area-content {
     max-height: 0; overflow: hidden; opacity: 0;
     transition: max-height var(--transition-slow), opacity var(--transition-slow);
   }
-  .area-item.open .area-content { max-height: 1200px; opacity: 1; }
+  .area-item.open .area-content { max-height: 1500px; opacity: 1; }
   .area-item.open .area-arrow { transform: rotate(180deg); }
   .area-item.open .area-title { color: var(--gold-light); }
   
-  .area-inner { padding: 0 0 3rem 4.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .area-inner { padding: 0 0 3rem 4.5rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
   @media (max-width: 768px) { 
-    .area-inner { grid-template-columns: 1fr; padding: 0 0 2rem 0; gap: 1.5rem; }
+    .area-inner { padding: 0 0 2rem 0; gap: 1.5rem; }
     .area-header { grid-template-columns: 30px 1fr 20px; gap: 1rem; padding: 2rem 0;}
-    .area-title { font-size: 1.5rem; }
+    .area-title { font-size: 1.6rem; }
   }
 
-  .area-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.9; text-align: justify; }
+  .area-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.9; text-align: justify; margin-bottom: 1rem;}
+  
+  .sub-area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 900px) { .sub-area-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+  .sub-area h4 { font-family: var(--font-body); font-size: 1.1rem; color: var(--gold-light); margin-bottom: 1rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;}
+  
   .area-list { list-style: none; }
-  .area-list li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.6;}
+  .area-list li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--text-main); margin-bottom: 1rem; line-height: 1.6;}
   .area-list li::before { content: '■'; position: absolute; left: 0; top: 6px; color: var(--gold-main); font-size: 0.4rem; }
-
-  /* ═══════════════════════════════════════════════
-     7. ATENCIÓN Y ALCANCE TERRITORIAL
-  ═══════════════════════════════════════════════ */
-  .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
-  @media (max-width: 900px) { .tools-grid { grid-template-columns: 1fr; } }
-  
-  .tool-box {
-    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 2.5rem;
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .tool-box h3 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; color: var(--gold-light); }
-  
-  .calendly-placeholder {
-    width: 100%; height: 350px; border: 1px dashed var(--gold-main); background: rgba(200, 169, 110, 0.05);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center; padding: 2rem;
-  }
-  
-  .maps-iframe { width: 100%; height: 350px; border: 1px solid var(--line-color); filter: grayscale(80%) contrast(1.2) opacity(0.8); transition: filter var(--transition-fast);}
-  .maps-iframe:hover { filter: grayscale(0%) contrast(1) opacity(1); }
 
   /* ═══════════════════════════════════════════════
      8. EVALUACIÓN Y CONTACTO (FORMULARIO EMPÁTICO)
@@ -343,8 +306,7 @@
     </a>
     <nav class="nav-links">
       <a href="#filosofia" class="nav-item">Nuestra Visión</a>
-      <a href="#areas" class="nav-item">Áreas de Práctica</a>
-      <a href="#alcance" class="nav-item">Atención y Cercanía</a>
+      <a href="#areas" class="nav-item">Espectro de Práctica</a>
       <a href="#contacto" class="btn-header">Hablemos de su Caso</a>
     </nav>
     <button class="mobile-toggle" id="mobile-toggle" aria-label="Menú">
@@ -353,8 +315,7 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <a href="#filosofia" class="nav-item">Nuestra Visión</a>
-    <a href="#areas" class="nav-item">Áreas de Práctica</a>
-    <a href="#alcance" class="nav-item">Atención y Cercanía</a>
+    <a href="#areas" class="nav-item">Espectro de Práctica</a>
     <a href="#contacto" class="nav-item">Hablemos de su Caso</a>
   </div>
 </header>
@@ -370,7 +331,7 @@
       Rigor en Tribunales. <br><em>Claridad con Usted.</em>
     </h1>
     <p class="hero-desc reveal" style="transition-delay: 0.2s;">
-      Detrás de cada expediente hay personas, esfuerzo y tranquilidad en juego. Mi compromiso es aplicar el máximo rigor técnico para defender sus derechos, manteniendo siempre un trato directo, honesto y accesible. Sin intermediarios, sin burocracia.
+      La excelencia jurídica no se trata de hablar difícil, se trata de resolver problemas complejos con precisión. Asumo la dirección estratégica de sus intereses con absoluta empatía en el trato humano y la máxima contundencia en los estrados judiciales. Ya sea para resguardar los derechos de un particular o blindar el patrimonio de una corporación.
     </p>
     <div class="reveal" style="transition-delay: 0.3s;">
       <a href="#contacto" class="btn-primary">Cuénteme su Situación <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></a>
@@ -383,18 +344,18 @@
   <div class="container">
     <div class="grid-50-50">
       <div class="reveal">
-        <div class="label">Compromiso y Empatía</div>
-        <h2 class="heading-2">Abogacía Real<br><em>para Problemas Reales.</em></h2>
+        <div class="label">Compromiso 360°</div>
+        <h2 class="heading-2">Abogacía de<br><em>Espectro Completo.</em></h2>
         <div class="quote-block">
-          <p class="quote-text">"La excelencia jurídica no se demuestra usando palabras difíciles que nadie entiende, sino resolviendo problemas complejos con claridad y eficacia."</p>
+          <p class="quote-text">"El abogado verdaderamente estratégico es aquel que conoce tan bien la ley que puede atacar o defender con la misma eficacia, independientemente del lado del mostrador en el que se encuentre."</p>
         </div>
       </div>
       <div class="reveal" style="transition-delay: 0.2s;">
         <p class="paragraph">
-          Creo en una abogacía de puertas abiertas y de trato igualitario. El mismo estándar de excelencia, firmeza probatoria y análisis detallado que aplico para resguardar la estructura patrimonial de una empresa, lo aplico para defender la indemnización, la salud o la familia de un trabajador.
+          Mi firma está diseñada bajo el principio de la <strong>perspectiva dual</strong>. Para defender con éxito el despido de un trabajador, hay que conocer exactamente cómo piensan las empresas. Para asesorar a una corporación en un conflicto de consumo, hay que entender las tácticas del damnificado.
         </p>
         <p class="paragraph">
-          Entiendo que quien busca a un abogado está atravesando un momento de tensión. Por eso, <strong>me siento a la mesa a escuchar su problema con empatía, y me paro en Tribunales a defenderlo con toda la fuerza de la ley.</strong> Mi objetivo es que usted sienta un respaldo absoluto y sepa exactamente dónde estamos parados en cada etapa del proceso.
+          Este nivel de comprensión integral de la realidad jurídica me permite ofrecer un servicio de élite, accesible, sin intermediarios y profundamente estructurado. Usted no será un número de expediente más. Analizamos la viabilidad de su caso, planificamos la estrategia y actuamos con un solo objetivo: <strong>su tranquilidad.</strong>
         </p>
         <div class="creds-box">
           <div class="cred-item">
@@ -406,7 +367,7 @@
             <strong>T° 511 F° 222</strong>
           </div>
           <div class="cred-item">
-            <span>Director del Estudio</span>
+            <span>Director Técnico</span>
             <strong>Dr. Lautaro N. Aristeo</strong>
           </div>
         </div>
@@ -415,14 +376,14 @@
   </div>
 </section>
 
-<!-- ══ ÁREAS DE PRÁCTICA ══ -->
+<!-- ══ ÁREAS DE PRÁCTICA (DOBLE ROL) ══ -->
 <section class="section" id="areas" style="background-color: var(--bg-surface);">
   <div class="container">
     <div class="reveal">
-      <div class="label">Áreas de Especialidad</div>
+      <div class="label">Capacidad de Intervención</div>
       <h2 class="heading-2">¿Cómo podemos <em>ayudarle?</em></h2>
-      <p class="paragraph" style="max-width: 700px;">
-        Seleccione el área que más se acerque a su problema actual. Le explicamos de forma sencilla cómo estructuramos la defensa de sus intereses basándonos en las leyes de nuestro país y nuestra provincia.
+      <p class="paragraph" style="max-width: 800px;">
+        Nuestra infraestructura técnica nos permite representar a particulares que buscan el reconocimiento de sus derechos fundamentales, y simultáneamente, proveer asesoramiento preventivo y defensa contenciosa a empresas, pymes e instituciones.
       </p>
     </div>
 
@@ -432,20 +393,32 @@
       <div class="area-item">
         <button class="area-header" onclick="toggleArea(this)">
           <i class="fa-solid fa-landmark area-icon"></i>
-          <span class="area-title">Derecho Civil y Comercial</span>
+          <span class="area-title">Derecho Civil, Comercial y Daños</span>
           <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
         <div class="area-content">
           <div class="area-inner">
             <div class="area-desc">
-              Protegemos el esfuerzo de toda su vida. Le damos seguridad a los negocios que emprende y actuamos rápidamente si alguien incumple un acuerdo, daña sus bienes o no le paga lo que le debe.
+              Garantizamos la seguridad jurídica de sus negocios y la restitución del orden patrimonial. Intervenimos con la misma firmeza para exigir el cumplimiento de una obligación, como para rechazar demandas civiles infundadas.
             </div>
-            <ul class="area-list">
-              <li><strong>Sucesiones:</strong> Lo acompañamos en trámites de herencia y declaratoria de herederos de forma clara, para que pueda disponer de los bienes de su familia sin trabas.</li>
-              <li><strong>Contratos:</strong> Redactamos boletos de compraventa y contratos de alquiler para que no tenga sorpresas en el futuro.</li>
-              <li><strong>Inmuebles y Cobros:</strong> Lo defendemos en juicios de desalojo, cobro de alquileres atrasados y cheques o pagarés sin fondo.</li>
-              <li><strong>Daños y Perjuicios:</strong> Exigimos la reparación justa si usted sufrió un accidente de tránsito o alguien perjudicó su propiedad.</li>
-            </ul>
+            <div class="sub-area-grid">
+              <div class="sub-area">
+                <h4>Sucesiones e Inmuebles</h4>
+                <ul class="area-list">
+                  <li><strong>Herederos:</strong> Tramitación ágil de declaratorias de herederos, partición de acervo hereditario y tracto abreviado para venta inmediata.</li>
+                  <li><strong>Acreedores:</strong> Ejecución de bienes de la sucesión por deudas del causante.</li>
+                  <li><strong>Propiedades:</strong> Juicios de desalojo para locadores, o defensas ante intentos de desalojo abusivos para inquilinos.</li>
+                </ul>
+              </div>
+              <div class="sub-area">
+                <h4>Contratos y Responsabilidad</h4>
+                <ul class="area-list">
+                  <li><strong>Preventivo:</strong> Redacción blindada de boletos de compraventa, locaciones, fideicomisos y contratos societarios.</li>
+                  <li><strong>Ejecuciones:</strong> Reclamo o defensa en ejecuciones de pagarés, cheques y cobro de pesos.</li>
+                  <li><strong>Daños y Perjuicios:</strong> Representación de víctimas de accidentes o mala praxis, y defensa de profesionales frente a demandas infundadas.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -454,19 +427,31 @@
       <div class="area-item">
         <button class="area-header" onclick="toggleArea(this)">
           <i class="fa-solid fa-briefcase area-icon"></i>
-          <span class="area-title">Trabajo y Accidentes (ART)</span>
+          <span class="area-title">Derecho Laboral y Riesgos del Trabajo</span>
           <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
         <div class="area-content">
           <div class="area-inner">
             <div class="area-desc">
-              Su trabajo vale. Lo defendemos frente a empleadores que no cumplen la ley o aseguradoras que lo abandonan cuando más las necesita. Aseguramos que cobre hasta el último peso que le corresponde.
+              El derecho del trabajo requiere una visión estratégica aguda. Patrocinamos a trabajadores para que perciban hasta el último centavo que les corresponde, y brindamos auditoría y defensa a empleadores para evitar contingencias financieras.
             </div>
-            <ul class="area-list">
-              <li><strong>Despidos:</strong> Si lo despidieron sin causa o lo obligaron a renunciar, calculamos su liquidación exacta y exigimos el pago inmediato.</li>
-              <li><strong>Trabajo "en negro":</strong> Reclamamos fuertes multas a su favor si trabajó sin estar registrado o le pagaban una parte fuera del recibo de sueldo.</li>
-              <li><strong>Accidentes y ART:</strong> Lo acompañamos a las Comisiones Médicas en Córdoba. Si se accidentó trabajando o yendo al trabajo, peleamos para que la ART no le dé el alta antes de tiempo y le pague la incapacidad real que le quedó.</li>
-            </ul>
+            <div class="sub-area-grid">
+              <div class="sub-area">
+                <h4>Perspectiva del Trabajador</h4>
+                <ul class="area-list">
+                  <li><strong>Desvinculaciones:</strong> Intimaciones, retención de tareas y cálculo exacto de indemnizaciones por despidos arbitrarios o trabajo no registrado (en negro).</li>
+                  <li><strong>Siniestros (ART):</strong> Patrocinio ante SRT. Exigimos el pago de incapacidad real por accidentes laborales, de trayecto o enfermedades, y rechazamos altas médicas apresuradas.</li>
+                </ul>
+              </div>
+              <div class="sub-area">
+                <h4>Perspectiva Empresarial</h4>
+                <ul class="area-list">
+                  <li><strong>Auditoría Preventiva:</strong> Revisión de nómina, modalidades de contratación, apercibimientos y suspensiones para mitigar juicios laborales.</li>
+                  <li><strong>Defensa Patronal:</strong> Contestación de telegramas, mediación prejudicial y representación en juicios laborales frente a reclamos desmedidos o fraudulentos.</li>
+                  <li><strong>Asesoría en ART:</strong> Control de cumplimiento de normas de higiene y seguridad para empresas.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -475,19 +460,32 @@
       <div class="area-item">
         <button class="area-header" onclick="toggleArea(this)">
           <i class="fa-solid fa-shield-halved area-icon"></i>
-          <span class="area-title">Consumidores y Obras Sociales</span>
+          <span class="area-title">Derecho del Consumidor y Salud</span>
           <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
         <div class="area-content">
           <div class="area-inner">
             <div class="area-desc">
-              Frenamos los abusos. Su salud y su economía diaria no pueden ser rehenes de empresas gigantes, bancos que no responden o prepagas que le dan la espalda.
+              Regulamos las tensiones entre prestadores de servicios y usuarios. Intervenimos mediante amparos y reclamos de daño punitivo a favor del ciudadano, y desarrollamos estrategias de <em>compliance</em> y defensa legal para corporaciones.
             </div>
-            <ul class="area-list">
-              <li><strong>Salud (Amparos):</strong> Presentamos recursos urgentes ante los jueces para obligar a Obras Sociales y Prepagas a cubrir operaciones, medicamentos oncológicos o tratamientos por discapacidad.</li>
-              <li><strong>Planes de Ahorro:</strong> Lo defendemos si la cuota de su auto se volvió impagable, presentando medidas para congelar los aumentos abusivos.</li>
-              <li><strong>Estafas Bancarias:</strong> Si le vaciaron la cuenta de Mercado Pago o el banco y sacaron préstamos a su nombre, obligamos a la entidad financiera a hacerse responsable.</li>
-            </ul>
+            <div class="sub-area-grid">
+              <div class="sub-area">
+                <h4>Representación a Usuarios</h4>
+                <ul class="area-list">
+                  <li><strong>Salud (Amparos):</strong> Vías judiciales urgentes para forzar a Obras Sociales y Prepagas a cubrir cirugías, tratamientos oncológicos o discapacidad.</li>
+                  <li><strong>Bancos y Financieras:</strong> Reclamos por vaciamiento de cuentas (phishing), créditos no solicitados y eliminación del Veraz.</li>
+                  <li><strong>Planes de Ahorro:</strong> Frenamos el aumento abusivo de cuotas y recuperamos fondos de planes caídos.</li>
+                </ul>
+              </div>
+              <div class="sub-area">
+                <h4>Asesoría a Entidades</h4>
+                <ul class="area-list">
+                  <li><strong>Prestadoras de Salud:</strong> Estrategia legal ante medidas cautelares abusivas y análisis de cobertura del PMO.</li>
+                  <li><strong>Empresas y PyMEs:</strong> Defensa administrativa en la Secretaría de Comercio ante denuncias infundadas de consumidores.</li>
+                  <li><strong>Prevención (Compliance):</strong> Revisión de términos y condiciones, contratos de adhesión y protocolos de ciberseguridad.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -502,52 +500,28 @@
         <div class="area-content">
           <div class="area-inner">
             <div class="area-desc">
-              Acompañamiento humano en momentos difíciles. Nuestro objetivo es resolver el conflicto protegiendo siempre a los niños y ordenando de forma justa el aspecto económico, para que usted pueda seguir adelante con paz mental.
+              Abordamos las crisis del seno familiar con extremo profesionalismo. Nuestro rol es ordenar patrimonialmente la ruptura y priorizar el interés superior de los menores, actuando como mediadores implacables o litigantes firmes.
             </div>
-            <ul class="area-list">
-              <li><strong>Divorcios:</strong> Gestionamos su divorcio (ya sea de común acuerdo o de un solo lado) de la manera más rápida y menos dolorosa posible.</li>
-              <li><strong>Bienes:</strong> Nos encargamos de la división justa de las casas, autos o bienes que hayan comprado durante el matrimonio.</li>
-              <li><strong>Hijos:</strong> Intervenimos para fijar una cuota alimentaria que realmente cubra las necesidades de los chicos, y organizamos un régimen de visitas (cuidado personal) equitativo.</li>
-            </ul>
+            <div class="sub-area-grid">
+              <div class="sub-area">
+                <h4>Desvinculación y Patrimonio</h4>
+                <ul class="area-list">
+                  <li><strong>Divorcios:</strong> Petición unilateral o presentación conjunta. Diseño de propuestas reguladoras que eviten juicios posteriores.</li>
+                  <li><strong>Liquidación de Bienes:</strong> Clasificación y división equitativa de la sociedad conyugal (bienes, empresas familiares, inmuebles).</li>
+                  <li><strong>Compensación Económica:</strong> Reclamos para quien sufrió un desequilibrio patrimonial manifiesto tras la separación.</li>
+                </ul>
+              </div>
+              <div class="sub-area">
+                <h4>Responsabilidad Parental</h4>
+                <ul class="area-list">
+                  <li><strong>Alimentos:</strong> Fijación, actualización de cuota alimentaria o incidentes de reducción/cese para el progenitor alimentante.</li>
+                  <li><strong>Cuidado Personal:</strong> Establecimiento de regímenes de comunicación (visitas) compartidos o indistintos.</li>
+                  <li><strong>Medidas Urgentes:</strong> Actuación inmediata frente a violencia familiar o impedimentos de contacto.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ ATENCIÓN Y ALCANCE ══ -->
-<section class="section" id="alcance">
-  <div class="container">
-    <div class="reveal">
-      <div class="label">Nuestra Estructura</div>
-      <h2 class="heading-2">Atención y <em>Cercanía</em></h2>
-    </div>
-    
-    <div class="tools-grid reveal" style="transition-delay: 0.2s;">
-      
-      <!-- Integración Calendly -->
-      <div class="tool-box">
-        <h3>Porque su tiempo vale</h3>
-        <p class="paragraph" style="font-size: 0.95rem;">Sabemos que tiene obligaciones y horarios complicados. Para hacerle las cosas más fáciles, integramos un sistema donde usted mismo puede ver nuestra agenda libre y elegir qué día y a qué hora prefiere que nos reunamos, ya sea en persona o por videollamada.</p>
-        
-        <div class="calendly-placeholder">
-          <i class="fa-regular fa-calendar-check" style="font-size: 3rem; color: var(--gold-main); opacity: 0.5;"></i>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">[Integración de Agenda Virtual]<br>Aquí podrá elegir su turno en segundos.</p>
-          <a href="#contacto" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Prefiero enviarles un mensaje ahora</a>
-        </div>
-      </div>
-
-      <!-- Integración Google Maps -->
-      <div class="tool-box">
-        <h3>Siempre cerca suyo</h3>
-        <p class="paragraph" style="font-size: 0.95rem;">Nuestra oficina central está en la Ciudad de Córdoba. Esto nos permite estar todos los días caminando los pasillos de Tribunales I, II, el Fuero de Familia y la Justicia Federal. Y si su caso es del interior provincial, también tenemos la capacidad de llegar hasta allá.</p>
-        
-        <iframe class="maps-iframe" 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.023223011311!2d-64.19129528430752!3d-31.413490703254924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432987fb40a0c49%3A0x6b149b1a7d65b741!2sPalacio%20de%20Justicia%20I!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
       </div>
 
     </div>
@@ -568,80 +542,80 @@
       <div class="contact-fast">
         <h3>Contacto Directo</h3>
         <p class="paragraph" style="font-size: 0.95rem; margin-bottom: 2rem;">
-          A veces las cosas son urgentes o simplemente prefiere hablar directamente con nosotros sin tener que llenar ningún formulario. Si es así, no hay problema, escribanos o llámenos por estos medios.
+          Comprendemos que existen situaciones de urgencia, consultas administrativas o simplemente la preferencia de dialogar directamente sin adelantar información por escrito. Nuestros canales institucionales están a su entera disposición.
         </p>
         
         <div class="contact-info-block">
           <div class="info-item">
-            <span class="info-label">WhatsApp Activo</span>
+            <span class="info-label">Línea WhatsApp Institucional</span>
             <a href="https://wa.me/5493517736170" class="info-value" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
           </div>
           <div class="info-item">
-            <span class="info-label">Correo Electrónico</span>
+            <span class="info-label">Correo Electrónico (Recepción)</span>
             <a href="mailto:dr.aristeolautaro@gmail.com" class="info-value"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
           </div>
         </div>
       </div>
 
-      <!-- Panel Formulario Educativo (Empático) -->
+      <!-- Panel Formulario (Triage Estratégico) -->
       <div class="contact-form-area">
         <p class="form-intro">
-          <strong>Ayúdeme a entender su situación antes de vernos:</strong> Completar este breve formulario (es opcional) me permite pensar en su caso antes de que hablemos. De esa forma, cuando nos sentemos en la entrevista, yo ya voy a tener un diagnóstico y opciones concretas para ofrecerle, valorando mucho más su tiempo.
+          <strong>Organice su consulta antes de vernos:</strong> Completar este breve formulario (es opcional) me permite pensar en su situación de forma preliminar. De esta manera, cuando nos comuniquemos, yo ya contaré con un panorama claro y opciones jurídicas concretas para ofrecerle, valorando y optimizando profundamente su tiempo.
         </p>
 
         <form id="evaluationForm">
           <div class="form-group">
-            <label class="form-label">Su nombre completo *</label>
-            <input type="text" class="form-input" id="f_nombre" placeholder="¿Cómo se llama?" required>
+            <label class="form-label">Su Nombre o Razón Social *</label>
+            <input type="text" class="form-input" id="f_nombre" placeholder="Nombre completo de quien consulta" required>
           </div>
           
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
             <div class="form-group">
-              <label class="form-label">Celular *</label>
+              <label class="form-label">Celular de Contacto *</label>
               <input type="tel" class="form-input" id="f_telefono" placeholder="Ej: 351 123 4567" required>
             </div>
             <div class="form-group">
-              <label class="form-label">Email de contacto</label>
+              <label class="form-label">Email Principal</label>
               <input type="email" class="form-input" id="f_email" placeholder="Opcional">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">¿Sobre qué tema necesita consultarme? *</label>
+            <label class="form-label">¿En qué área se enmarca su consulta? *</label>
             <select class="form-input" id="f_area" required onchange="cargarPreguntasBase()">
-              <option value="" disabled selected>Seleccione la opción que más se parezca a su problema...</option>
-              <option value="Laboral">Problemas de trabajo / Me despidieron / Estaba en negro</option>
-              <option value="ART">Me accidenté trabajando / Enfermedad laboral / Problemas con ART</option>
-              <option value="Consumo">Problemas con Bancos, Tarjetas, Estafas o Planes de auto</option>
-              <option value="Salud">La obra social o prepaga no me quiere cubrir lo que necesito</option>
-              <option value="Sucesiones">Falleció un familiar / Temas de herencia o sucesión</option>
-              <option value="Civil_Contratos">Alquileres / Alguien no cumplió un contrato / Daños y Perjuicios</option>
-              <option value="Familia">Me quiero divorciar / Problemas con la cuota alimentaria o visitas</option>
-              <option value="Otro">Es otro tema distinto a estos</option>
+              <option value="" disabled selected>Seleccione la especialidad relacionada...</option>
+              <option value="Laboral">Derecho Laboral / Despidos / Conflictos de trabajo</option>
+              <option value="ART">Accidentes Laborales / Enfermedades / ART</option>
+              <option value="Consumo">Defensa al Consumidor / Bancos / Planes de Ahorro</option>
+              <option value="Salud">Amparos de Salud / Obras Sociales y Prepagas</option>
+              <option value="Sucesiones">Fallecimiento / Herencias / Sucesiones</option>
+              <option value="Civil_Contratos">Incumplimientos Civiles / Contratos / Daños y Perjuicios</option>
+              <option value="Familia">Derecho de Familia / Divorcios / Alimentos</option>
+              <option value="Otro">Otras consultas u asesoramiento a empresas</option>
             </select>
           </div>
 
-          <!-- Contenedor dinámico (Preguntas amables y opcionales) -->
+          <!-- Contenedor dinámico (Preguntas de doble rol) -->
           <div id="dynamic-questions">
-            <div class="dq-title"><i class="fa-regular fa-comment-dots" style="margin-right: 5px;"></i> Detalles que me ayudan (Opcional)</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Si responde estas dos o tres preguntas, me da una ventaja enorme para pensar cómo ayudarlo mejor.</p>
+            <div class="dq-title"><i class="fa-solid fa-crosshairs" style="margin-right: 5px;"></i> Detalles Preliminares (Opcional)</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Responder estas breves preguntas nos ayuda a perfilar la estrategia correcta para su caso.</p>
             <div id="dq-fields"></div>
           </div>
 
           <div class="form-group">
-            <label class="form-label">Cuénteme con sus palabras qué sucedió *</label>
-            <textarea class="form-input" id="f_sintesis" placeholder="Dígame brevemente qué pasó, hace cuánto tiempo y qué es lo que le gustaría que resolvamos. Si tiene papeles, contratos o cartas documento, anótelo acá..." required></textarea>
+            <label class="form-label">Resumen de la Situación *</label>
+            <textarea class="form-input" id="f_sintesis" placeholder="Describa brevemente el contexto, desde cuándo ocurre y qué objetivo busca. Si cuenta con documentación (cartas, contratos, demandas en su contra), indíquelo aquí..." required></textarea>
           </div>
 
           <div class="action-buttons">
             <button type="button" class="btn-submit wsp" onclick="procesarEvaluacion('wsp')">
-              Enviar a nuestro WhatsApp <i class="fa-brands fa-whatsapp"></i>
+              Derivar Consulta a WhatsApp <i class="fa-brands fa-whatsapp"></i>
             </button>
             <button type="button" class="btn-submit" onclick="procesarEvaluacion('email')">
-              Enviar por E-Mail <i class="fa-regular fa-envelope"></i>
+              Derivar Consulta por E-Mail <i class="fa-regular fa-envelope"></i>
             </button>
           </div>
-          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; text-align: center; font-style: italic;">Todo lo que nos escriba está protegido por el secreto profesional. Es totalmente confidencial.</p>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; text-align: center; font-style: italic;">La información remitida queda amparada bajo el más estricto secreto profesional.</p>
         </form>
 
       </div>
@@ -655,7 +629,7 @@
     <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
     <div class="footer-text">Dirección Técnica a cargo del Dr. Lautaro N. Aristeo</div>
     <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
-    <div class="footer-text" style="color: var(--gold-dark);">Córdoba Capital, República Argentina | © 2026 Todos los derechos reservados.</div>
+    <div class="footer-text" style="color: var(--gold-dark);">Ciudad de Córdoba, República Argentina | © 2026 Todos los derechos reservados.</div>
   </div>
 </footer>
 
@@ -694,67 +668,81 @@
     currentItem.classList.toggle('open');
   }
 
-  /* ─── PREGUNTAS DINÁMICAS Y EMPÁTICAS ─── */
+  /* ─── PREGUNTAS DINÁMICAS Y DE DOBLE ROL ─── */
   const dynContainer = document.getElementById('dynamic-questions');
   const dqFields = document.getElementById('dq-fields');
 
   const cuestionarios = {
     "Laboral": `
-      <input type="text" class="form-input mb-2" id="dq_lab_1" placeholder="¿Hace cuánto tiempo trabaja o trabajaba ahí?">
-      <select class="form-input mb-2" id="dq_lab_2">
-        <option value="" disabled selected>¿Lo tenían en blanco (registrado)?</option>
-        <option value="En blanco">Sí, todo figuraba en el recibo de sueldo</option>
-        <option value="En negro">No, estaba totalmente en negro</option>
-        <option value="Mixto">Estaba media jornada en blanco y el resto en negro</option>
+      <select class="form-input mb-2" id="dq_lab_1">
+        <option value="" disabled selected>¿Desde qué lugar realiza la consulta?</option>
+        <option value="Trabajador">Soy el trabajador afectado</option>
+        <option value="Empleador">Soy el empleador / Represento a la empresa</option>
       </select>
-      <input type="text" class="form-input" id="dq_lab_3" placeholder="¿Ya mandó o recibió algún telegrama por correo?">
+      <select class="form-input mb-2" id="dq_lab_2">
+        <option value="" disabled selected>Estado de la relación laboral...</option>
+        <option value="Vigente">La relación laboral sigue vigente</option>
+        <option value="Extinguida">Ya hubo despido o renuncia</option>
+        <option value="Preventivo">Solo busco asesoramiento preventivo</option>
+      </select>
+      <input type="text" class="form-input" id="dq_lab_3" placeholder="¿Hubo intercambio de cartas documento o telegramas?">
     `,
     "ART": `
       <select class="form-input mb-2" id="dq_art_1">
-        <option value="" disabled selected>¿Dónde ocurrió el accidente o problema?</option>
-        <option value="Lugar de trabajo">Dentro de mi lugar de trabajo</option>
-        <option value="Yendo/Viniendo">En el camino de ida o vuelta a mi casa</option>
-        <option value="Enfermedad">Me enfermé por las tareas pesadas o repetitivas</option>
+        <option value="" disabled selected>¿Desde qué lugar consulta?</option>
+        <option value="Trabajador">Soy el trabajador accidentado</option>
+        <option value="Empresa">Represento a la empresa donde ocurrió el siniestro</option>
       </select>
-      <input type="text" class="form-input mb-2" id="dq_art_2" placeholder="¿Sabe cómo se llama la ART de su empresa?">
+      <input type="text" class="form-input mb-2" id="dq_art_2" placeholder="¿Conoce qué ART está interviniendo?">
       <select class="form-input" id="dq_art_3">
-        <option value="" disabled selected>¿Qué le dijeron los médicos hasta ahora?</option>
-        <option value="Me siguen atendiendo">Todavía me están dando curaciones o rehabilitación</option>
-        <option value="Ya tengo el alta">Ya me dieron el alta y tengo que volver a trabajar</option>
-        <option value="No me quieren atender">La ART me dijo que no se hace cargo</option>
+        <option value="" disabled selected>Estado del trámite en Superintendencia...</option>
+        <option value="En tratamiento">Actualmente en tratamiento médico</option>
+        <option value="Alta">Ya hay alta médica (con o sin incapacidad)</option>
+        <option value="Rechazo">El siniestro fue rechazado</option>
       </select>
     `,
     "Consumo": `
-      <input type="text" class="form-input mb-2" id="dq_cons_1" placeholder="¿Cómo se llama la empresa, banco o concesionaria?">
-      <select class="form-input" id="dq_cons_2">
-        <option value="" disabled selected>¿Ya presentó alguna queja en algún lado?</option>
-        <option value="Reclamo en la empresa">Sí, llamé a la empresa y me dieron un número de reclamo</option>
-        <option value="Defensa del Consumidor">Ya fui a la oficina de Defensa del Consumidor</option>
-        <option value="Nada todavía">No, todavía no hice ninguna queja formal</option>
+      <select class="form-input mb-2" id="dq_cons_1">
+        <option value="" disabled selected>¿Cuál es su rol en el conflicto?</option>
+        <option value="Usuario">Soy el consumidor / damnificado</option>
+        <option value="Empresa">Represento a la empresa o entidad denunciada</option>
       </select>
+      <input type="text" class="form-input mb-2" id="dq_cons_2" placeholder="¿Quién es la otra parte involucrada? (Banco, Empresa, etc.)">
     `,
     "Salud": `
-      <input type="text" class="form-input mb-2" id="dq_salud_1" placeholder="¿A qué Obra Social o Prepaga pertenece?">
-      <input type="text" class="form-input" id="dq_salud_2" placeholder="¿Qué operación, medicamento o estudio le están negando?">
+      <select class="form-input mb-2" id="dq_salud_1">
+        <option value="" disabled selected>¿Cuál es su posición?</option>
+        <option value="Afiliado">Soy afiliado/paciente requiriendo cobertura</option>
+        <option value="Prestador">Represento a la Obra Social / Prepaga</option>
+      </select>
+      <input type="text" class="form-input" id="dq_salud_2" placeholder="¿Qué prestación médica específica está en discusión?">
+    `,
+    "Civil_Contratos": `
+      <select class="form-input mb-2" id="dq_civ_1">
+        <option value="" disabled selected>Naturaleza del conflicto...</option>
+        <option value="Quiero reclamar">Soy yo quien necesita realizar el reclamo o cobro</option>
+        <option value="Me reclaman">Me están reclamando a mí (o a mi empresa)</option>
+      </select>
+      <input type="text" class="form-input" id="dq_civ_2" placeholder="¿Existe contrato firmado, pagaré o escritura?">
     `,
     "Sucesiones": `
       <select class="form-input mb-2" id="dq_suc_1">
-        <option value="" disabled selected>¿Cómo se llevan entre los herederos o familiares?</option>
-        <option value="Buen diálogo">Bien, todos queremos resolver esto juntos</option>
-        <option value="Conflicto">Hay problemas, discusiones o no nos hablamos</option>
+        <option value="" disabled selected>Situación general entre los involucrados...</option>
+        <option value="Acuerdo">Existe consenso entre todos los herederos</option>
+        <option value="Conflicto">Existen diferencias patrimoniales o falta de diálogo</option>
+        <option value="Acreedor">Soy acreedor y necesito cobrar de una sucesión</option>
       </select>
-      <input type="text" class="form-input" id="dq_suc_2" placeholder="Cuénteme más o menos qué cosas dejó la persona (ej: una casa, un lote, un auto)">
     `,
     "Familia": `
       <select class="form-input mb-2" id="dq_fam_1">
-        <option value="" disabled selected>¿Tienen hijos menores de 18 años?</option>
-        <option value="Si">Sí, tenemos hijos chicos</option>
-        <option value="No">No, no hay menores</option>
+        <option value="" disabled selected>¿Existen hijos menores de edad involucrados?</option>
+        <option value="Si">Sí, existen menores de edad</option>
+        <option value="No">No hay menores involucrados</option>
       </select>
       <select class="form-input" id="dq_fam_2">
-        <option value="" disabled selected>¿Tienen cosas que compraron estando juntos?</option>
-        <option value="Si">Sí, tenemos casa, lote, auto u otros bienes</option>
-        <option value="No">No, no hay nada para repartir</option>
+        <option value="" disabled selected>¿Existe patrimonio a dividir (inmuebles, autos, empresas)?</option>
+        <option value="Si">Sí, existen bienes en común</option>
+        <option value="No">No hay bienes a dividir</option>
       </select>
     `
   };
@@ -780,7 +768,7 @@
     const sintesis = document.getElementById('f_sintesis').value.trim();
 
     if (!nom || !tel || !area || !sintesis) {
-      alert("Por favor, asegúrese de completar su Nombre, Celular, el tema que necesita consultar y el resumen de lo que pasó.");
+      alert("Por favor, asegúrese de completar los campos obligatorios (*) para que podamos analizar su situación.");
       return;
     }
 
@@ -789,51 +777,54 @@
       const p1 = document.getElementById('dq_lab_1')?.value || "No especificado";
       const p2 = document.getElementById('dq_lab_2')?.value || "No especificado";
       const p3 = document.getElementById('dq_lab_3')?.value || "No especificado";
-      datosExtra = `Antigüedad: ${p1} | Estaba en blanco/negro: ${p2} | Recibió telegrama: ${p3}`;
+      datosExtra = `Rol: ${p1} | Estado Relación: ${p2} | Intercambio de notas: ${p3}`;
     } else if (area === "ART") {
       const p1 = document.getElementById('dq_art_1')?.value || "No especificado";
       const p2 = document.getElementById('dq_art_2')?.value || "No especificado";
       const p3 = document.getElementById('dq_art_3')?.value || "No especificado";
-      datosExtra = `Lugar del accidente: ${p1} | Nombre ART: ${p2} | ¿Le dieron alta?: ${p3}`;
+      datosExtra = `Rol: ${p1} | ART involucrada: ${p2} | Estado del trámite: ${p3}`;
     } else if (area === "Consumo") {
       const p1 = document.getElementById('dq_cons_1')?.value || "No especificado";
       const p2 = document.getElementById('dq_cons_2')?.value || "No especificado";
-      datosExtra = `Empresa deudora/banco: ${p1} | ¿Hizo reclamo previo?: ${p2}`;
+      datosExtra = `Rol: ${p1} | Contraparte: ${p2}`;
     } else if (area === "Salud") {
       const p1 = document.getElementById('dq_salud_1')?.value || "No especificado";
       const p2 = document.getElementById('dq_salud_2')?.value || "No especificado";
-      datosExtra = `Obra Social/Prepaga: ${p1} | Qué le niegan: ${p2}`;
+      datosExtra = `Rol: ${p1} | Prestación discutida: ${p2}`;
+    } else if (area === "Civil_Contratos") {
+      const p1 = document.getElementById('dq_civ_1')?.value || "No especificado";
+      const p2 = document.getElementById('dq_civ_2')?.value || "No especificado";
+      datosExtra = `Posición: ${p1} | Documentación: ${p2}`;
     } else if (area === "Sucesiones") {
       const p1 = document.getElementById('dq_suc_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_suc_2')?.value || "No especificado";
-      datosExtra = `Relación entre herederos: ${p1} | Qué bienes hay: ${p2}`;
+      datosExtra = `Situación partes: ${p1}`;
     } else if (area === "Familia") {
       const p1 = document.getElementById('dq_fam_1')?.value || "No especificado";
       const p2 = document.getElementById('dq_fam_2')?.value || "No especificado";
-      datosExtra = `¿Hay hijos menores?: ${p1} | ¿Hay bienes comprados juntos?: ${p2}`;
+      datosExtra = `Hijos menores: ${p1} | Bienes en común: ${p2}`;
     }
 
-    const extraStr = datosExtra ? `%0A*Detalles extras que completó:* ${datosExtra}` : '';
-    const extraStrMail = datosExtra ? `\nDetalles extras que completó: ${datosExtra}` : '';
+    const extraStr = datosExtra ? `%0A*Perfilaje Preliminar:* ${datosExtra}` : '';
+    const extraStrMail = datosExtra ? `\nPerfilaje Preliminar: ${datosExtra}` : '';
 
     if (metodo === 'wsp') {
-      const msj = `*NUEVA CONSULTA DESDE LA WEB - ESTUDIO ARISTEO*%0A%0A`
-        + `*Nombre del cliente:* ${nom}%0A`
+      const msj = `*NUEVA CONSULTA - ESTUDIO ARISTEO*%0A%0A`
+        + `*Nombre / Empresa:* ${nom}%0A`
         + `*Teléfono:* ${tel}%0A`
         + `*Email:* ${email}%0A`
-        + `*Tema principal:* ${area}${extraStr}%0A%0A`
-        + `*Lo que nos contó que le pasó:*%0A${sintesis}`;
+        + `*Área Dogmática:* ${area}${extraStr}%0A%0A`
+        + `*Resumen del Hecho:*%0A${sintesis}`;
       
       window.open(`https://wa.me/5493517736170?text=${msj}`, '_blank');
       
     } else if (metodo === 'email') {
       const asunto = `Nueva Consulta Web: ${area} - ${nom}`;
-      const cuerpo = `NUEVA CONSULTA DESDE LA WEB - ESTUDIO ARISTEO\n\n`
-        + `Nombre del cliente: ${nom}\n`
+      const cuerpo = `NUEVA CONSULTA - ESTUDIO ARISTEO\n\n`
+        + `Nombre / Empresa: ${nom}\n`
         + `Teléfono: ${tel}\n`
         + `Email: ${email}\n`
-        + `Tema principal: ${area}${extraStrMail}\n\n`
-        + `Lo que nos contó que le pasó:\n${sintesis}`;
+        + `Área Dogmática: ${area}${extraStrMail}\n\n`
+        + `Resumen del Hecho:\n${sintesis}`;
       
       window.location.href = `mailto:dr.aristeolautaro@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
     }
