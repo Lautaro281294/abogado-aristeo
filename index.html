@@ -3,16 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo — Abogacía estratégica en Córdoba a cargo del Dr. Lautaro N. Aristeo. Rigor técnico y control minucioso de su expediente."/>
+  <meta name="description" content="Estudio Jurídico Aristeo — Abogacía estratégica en Córdoba. Soluciones técnicas para planes de ahorro, estafas virtuales, despidos, sucesiones y derecho de familia."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
   <title>Estudio Jurídico Aristeo | Abogacía Estratégica · Córdoba</title>
 
-  <!-- ══ OPEN GRAPH ══ -->
-  <meta property="og:title" content="Estudio Jurídico Aristeo | Dr. Lautaro N. Aristeo">
-  <meta property="og:description" content="Representación legal tenaz, estrategia integral y enfoque en la resolución de conflictos.">
-  <meta property="og:type" content="website">
-
-  <!-- ══ SEO LOCAL: JSON-LD (CÓRDOBA) ══ -->
+  <!-- ══ SEO LOCAL: JSON-LD ══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +26,7 @@
       "addressCountry": "AR"
     },
     "telephone": "+5493517736170",
-    "priceRange": "$$$",
+    "email": "dr.aristeolautaro@gmail.com",
     "areaServed": "Córdoba, Argentina"
   }
   </script>
@@ -43,26 +38,24 @@
 
   <style>
   /* ═══════════════════════════════════════════════
-     TOKENS & PALETA (Verde Oliva, Hierro y Dorado)
+     TOKENS & PALETA (Verde Oliva y Dorado Institucional)
   ═══════════════════════════════════════════════ */
   :root {
     --bg:      #1a2016; 
     --bg2:     #21281d; 
     --bg3:     #2c3627; 
-    --line:    rgba(200, 169, 110, 0.2); 
+    --line:    rgba(200, 169, 110, 0.25); 
     
     --gold:    #C8A96E; 
     --gold-hi: #e8c682; 
     --gold-lo: #8a7346; 
-    --g08:     rgba(200,169,110,.08);
-    --g15:     rgba(200,169,110,.15);
     
     --ivory:   #F4F1EA; 
     --i60:     rgba(244,241,234,.75); 
     --i35:     rgba(244,241,234,.45);
     
     --wa:      #25D366;
-    --wa-hov:  #20BA56;
+    --mail:    #ea4335;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -76,7 +69,7 @@
   }
 
   ::selection { background: var(--gold-lo); color: var(--ivory); }
-  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--gold-lo); }
 
@@ -122,8 +115,8 @@
     color: var(--ivory); text-decoration: none; position: relative; padding-bottom: 4px; transition: color .3s;
   }
   .nl::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .3s; }
-  .nl:hover, .nl.act { color: var(--gold-hi); }
-  .nl:hover::after, .nl.act::after { width: 100%; }
+  .nl:hover { color: var(--gold-hi); }
+  .nl:hover::after { width: 100%; }
 
   .nav-cta {
     display: inline-flex; align-items: center; gap: 8px;
@@ -138,16 +131,6 @@
   #mob { display: none; flex-direction: column; gap: 30px; background: var(--bg); border-top: 1px solid var(--line); padding: 40px; }
   #mob.open { display: flex; }
   @media (max-width: 820px) { .nav-links, .nav-cta { display: none; } #ham { display: flex; } }
-
-  /* ═══════════════════════════════════════════════
-     WHATSAPP FLOTANTE
-  ═══════════════════════════════════════════════ */
-  .wa-float {
-    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
-    background-color: var(--wa); color: #FFF; display: flex; align-items: center; justify-content: center;
-    font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 1000; transition: transform 0.3s;
-  }
-  .wa-float:hover { transform: scale(1.1); background-color: var(--wa-hov); color: #FFF;}
 
   /* ═══════════════════════════════════════════════
      HERO
@@ -170,96 +153,62 @@
   .cta-pri {
     display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: .25em;
     text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 22px 45px; text-decoration: none;
-    border: 1px solid var(--gold); transition: all .3s;
+    border: 1px solid var(--gold); transition: all .3s; cursor: pointer;
   }
   .cta-pri:hover { background: transparent; color: var(--gold); }
-  .cta-sec {
-    display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 700; letter-spacing: .25em;
-    text-transform: uppercase; color: var(--ivory); border: 1px solid var(--line); padding: 22px 45px;
-    text-decoration: none; transition: all .3s; background: rgba(0,0,0,0.2);
-  }
-  .cta-sec:hover { border-color: var(--gold); background: var(--g08); }
 
   /* ═══════════════════════════════════════════════
-     FILOSOFÍA & PROFESIONAL
+     CUADRADOS EXPÁNSIBLES DE NICHO (ÁREAS DE PRÁCTICA)
   ═══════════════════════════════════════════════ */
-  #filosofia { background: var(--bg2); }
-  .split-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-  @media (max-width: 820px) { .split-grid { grid-template-columns: 1fr; gap: 50px; } }
+  #areas { background: var(--bg2); }
+  .squares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px; margin-top: 60px;
+  }
   
-  .quote-box {
-    border-left: 4px solid var(--gold); padding-left: 35px; margin-top: 40px;
-    font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(28px, 3vw, 38px); line-height: 1.4; color: var(--ivory);
+  .square {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 35px 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: flex; flex-direction: column;
   }
+  .square:hover { border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.3); transform: translateY(-5px); }
+  .square.open { background: var(--bg3); border-color: var(--gold); transform: translateY(0); box-shadow: none; }
+  
+  .sq-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; }
+  .sq-head-left { display: flex; flex-direction: column; gap: 15px; }
+  .sq-ico { color: var(--gold); font-size: 32px; }
+  .sq-title { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 600; color: var(--ivory); line-height: 1.2; }
+  .sq-arrow { color: var(--gold); font-size: 16px; transition: transform 0.4s ease; margin-top: 5px; }
+  .square.open .sq-arrow { transform: rotate(180deg); }
 
-  #profesional { background: var(--bg); }
-  .badge-row { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 40px; }
-  .badge {
-    font-size: 11px; letter-spacing: .3em; text-transform: uppercase; color: var(--gold);
-    border: 1px solid var(--gold-lo); padding: 14px 24px; font-weight: 700; background: var(--bg2);
+  .sq-body {
+    max-height: 0; overflow: hidden; opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease, padding-top 0.5s ease;
   }
-  .tech-box {
-    background: var(--bg2); border: 1px solid var(--line); padding: 60px 50px; position: relative;
+  .square.open .sq-body {
+    max-height: 800px; opacity: 1;
+    margin-top: 25px; padding-top: 25px; border-top: 1px solid var(--line);
   }
-  .tech-box::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--gold); }
-  .tech-box h3 { font-size: 16px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 25px; display: flex; align-items: center; gap: 15px; }
-
-  /* ═══════════════════════════════════════════════
-     METODOLOGÍA
-  ═══════════════════════════════════════════════ */
-  #metodologia { background: var(--bg2); border-top: 1px solid var(--line); }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); margin-top: 70px; }
-  @media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
-  .step { background: var(--bg); padding: 70px 50px; text-align: center; position: relative; transition: background .3s; }
-  .step::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform .4s; }
-  .step:hover { background: var(--bg3); }
-  .step:hover::after { transform: scaleX(1); }
-  .step-ico { font-size: 45px; color: var(--gold); margin-bottom: 30px; }
-  .step-t { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--ivory); margin-bottom: 20px; }
-
-  /* ═══════════════════════════════════════════════
-     ÁREAS DE PRÁCTICA
-  ═══════════════════════════════════════════════ */
-  #areas { background: var(--bg); }
-  .ac-wrap { border-top: 1px solid var(--line); max-width: 1000px; margin: 60px auto 0; }
-  .ac-item { border-bottom: 1px solid var(--line); background: var(--bg2); transition: background .3s; }
-  .ac-head {
-    width: 100%; text-align: left; padding: 35px 45px; background: none; border: none;
-    display: flex; align-items: center; justify-content: space-between; cursor: pointer;
-  }
-  .ac-head:hover { background: var(--bg3); }
-  .ac-title-wrap { display: flex; align-items: center; gap: 30px; }
-  .ac-ico { color: var(--gold); font-size: 28px; width: 40px; text-align: center; }
-  .ac-title { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--ivory); }
-  .ac-arrow { color: var(--gold); font-size: 18px; transition: transform 0.4s; }
-  .ac-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; padding: 0 45px; }
-  .ac-content-inner { padding: 10px 0 40px 70px; text-align: justify; color: var(--i60); line-height: 1.9;}
-  .ac-item.active .ac-content { max-height: 600px; }
-  .ac-item.active .ac-arrow { transform: rotate(180deg); }
+  .sq-body p { font-size: 15px; color: var(--i60); line-height: 1.8; text-align: justify; margin-bottom: 15px; }
+  .sq-body ul { list-style: none; margin-bottom: 15px; }
+  .sq-body ul li { position: relative; padding-left: 20px; font-size: 14px; color: var(--ivory); margin-bottom: 8px; }
+  .sq-body ul li::before { content: '■'; position: absolute; left: 0; top: 1px; color: var(--gold); font-size: 10px; }
 
   /* ═══════════════════════════════════════════════
-     FAQ (FILTRO)
-  ═══════════════════════════════════════════════ */
-  #faq { background: var(--bg2); padding: 100px 0; border-top: 1px solid var(--line); }
-  .faq-grid { max-width: 900px; margin: 0 auto; }
-  .faq-item { margin-bottom: 15px; border: 1px solid var(--line); background: var(--bg); }
-  .faq-q { 
-    width: 100%; text-align: left; padding: 25px 35px; background: none; border: none; cursor: pointer;
-    font-family: 'DM Sans', sans-serif; font-size: 17px; font-weight: 600; color: var(--ivory); display: flex; justify-content: space-between; align-items: center;
-  }
-  .faq-q:hover { color: var(--gold); }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; padding: 0 35px; }
-  .faq-a-inner { padding-bottom: 25px; color: var(--i60); font-size: 16px; text-align: justify; border-top: 1px solid var(--line); padding-top: 20px;}
-  .faq-item.active .faq-a { max-height: 400px; }
-
-  /* ═══════════════════════════════════════════════
-     CONTACTO & FORMULARIO WHATSAPP
+     CONTACTO & BRIEF DUAL (MAIL / WSP)
   ═══════════════════════════════════════════════ */
   #contacto { 
     background: linear-gradient(to right, rgba(26,32,22,0.98) 0%, rgba(26,32,22,0.88) 100%),
                 url('https://www.justiciacordoba.gob.ar/JusticiaCordoba/Inicio/fileImagen.aspx?id=67460') center/cover fixed;
   }
   
+  .split-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  @media (max-width: 900px) { .split-grid { grid-template-columns: 1fr; gap: 50px; } }
+
   .ch { display: flex; align-items: center; gap: 20px; padding: 25px 0; border-bottom: 1px solid var(--line); text-decoration: none; transition: padding-left .3s; }
   .ch:first-child { border-top: 1px solid var(--line); margin-top: 50px; }
   .ch:hover { padding-left: 15px; }
@@ -268,27 +217,31 @@
   .ch-label { font-size: 11px; font-weight: 700; letter-spacing: .4em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
   .ch-val { font-size: 18px; color: var(--ivory); font-weight: 400;}
 
-  .fbox { background: var(--bg2); border: 1px solid var(--line); padding: 65px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  .fbox { background: var(--bg2); border: 1px solid var(--line); padding: 50px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+  @media (max-width: 600px) { .fbox { padding: 30px 20px; } }
   .fbox::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); }
   
   .fl { display: block; font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-  .fg { margin-bottom: 30px; }
+  .fg { margin-bottom: 25px; }
   
   .fi2 {
     width: 100%; background: var(--bg); border: 1px solid var(--line); color: var(--ivory); font-family: 'DM Sans', sans-serif;
-    font-size: 16.5px; padding: 18px 20px; outline: none; transition: all .3s; appearance: none;
+    font-size: 16px; padding: 16px 20px; outline: none; transition: all .3s; appearance: none;
   }
   .fi2:focus { border-color: var(--gold); background: var(--bg3); box-shadow: inset 4px 0 0 var(--gold); }
   textarea.fi2 { resize: vertical; min-height: 120px; }
   select.fi2 option { background: var(--bg2); }
 
-  #dynamic-fields { display: none; margin-bottom: 30px; padding: 25px; background: var(--bg); border: 1px solid var(--line); border-left: 4px solid var(--gold); }
-
-  .fsub {
-    width: 100%; border: 1px solid var(--gold); background: var(--gold); color: var(--bg); font-family: 'DM Sans', sans-serif;
-    font-size: 12px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; padding: 25px; cursor: pointer; transition: all .3s;
+  .action-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 10px; }
+  .btn-dual {
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; 
+    padding: 22px; cursor: pointer; transition: all .3s; border: none;
   }
-  .fsub:hover { background: transparent; color: var(--gold); }
+  .btn-wsp { background: var(--wa); color: #fff; border: 1px solid var(--wa); }
+  .btn-wsp:hover { background: transparent; color: var(--wa); }
+  .btn-mail { background: var(--gold); color: var(--bg); border: 1px solid var(--gold); }
+  .btn-mail:hover { background: transparent; color: var(--gold); }
 
   /* ═══════════════════════════════════════════════
      FOOTER
@@ -306,10 +259,6 @@
 </head>
 <body>
 
-<a href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo%2C%20quisiera%20agendar%20una%20consulta" class="wa-float" target="_blank" aria-label="WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
 <!-- ══ NAV ══ -->
 <nav id="nav">
   <div class="w nav-w">
@@ -318,20 +267,15 @@
       <span class="logo-bot">Aristeo</span>
     </a>
     <div class="nav-links">
-      <a class="nl" href="#filosofia" data-s="filosofia">Filosofía</a>
-      <a class="nl" href="#profesional" data-s="profesional">Estudio</a>
-      <a class="nl" href="#metodologia" data-s="metodologia">Método</a>
-      <a class="nl" href="#areas" data-s="areas">Áreas</a>
-      <a class="nl" href="#faq" data-s="faq">FAQ</a>
+      <a class="nl" href="#areas">Áreas Especializadas</a>
+      <a class="nl" href="#contacto">Contacto y Derivación</a>
     </div>
-    <a class="nav-cta" href="#contacto"><span>Agendar Consulta</span></a>
+    <a class="nav-cta" href="#contacto"><span>Iniciar Trámite</span></a>
     <button id="ham"><span></span><span></span><span></span></button>
   </div>
   <div id="mob">
-    <a class="nl" href="#filosofia" onclick="cm()">Filosofía</a>
-    <a class="nl" href="#profesional" onclick="cm()">Estudio</a>
-    <a class="nl" href="#areas" onclick="cm()">Áreas de Práctica</a>
-    <a class="nl" href="#contacto" onclick="cm()">Contacto</a>
+    <a class="nl" href="#areas" onclick="cm()">Áreas Especializadas</a>
+    <a class="nl" href="#contacto" onclick="cm()">Contacto y Derivación</a>
   </div>
 </nav>
 
@@ -340,246 +284,266 @@
   <div class="w hero-inner">
     <div class="hero-flag fu">
       <i class="fa-solid fa-scale-balanced" style="font-size:13px"></i>
-      Precisión Técnica · Córdoba Capital
+      Abogacía de Alta Precisión · Córdoba Capital
     </div>
     <h1 class="hero-h1 fu" style="transition-delay:.1s">
-      Rigor Legal. <br><em>Dirección Estratégica.</em>
+      Rigor Técnico. <br><em>Resultados Concretos.</em>
     </h1>
     <p class="hero-sub fu" style="transition-delay:.2s">
-      Asumo la defensa de tu patrimonio y tus derechos con un control minucioso del expediente, eliminando burocracias innecesarias y actuando con celeridad operativa en fueros provinciales y federales.
+      No agrupo tus problemas en categorías genéricas. Ataco el conflicto específico con precisión quirúrgica. Evaluamos la viabilidad real de tu caso para frenar abusos, resguardar tu patrimonio y exigir lo que te corresponde legalmente.
     </p>
     <div class="cta-group fu" style="transition-delay:.3s">
-      <a class="cta-pri" href="#contacto">Evaluación de Viabilidad</a>
-      <a class="cta-sec" href="#metodologia">Conocer Metodología</a>
+      <a class="cta-pri" href="#contacto">Estructurar Brief de Caso <i class="fa-solid fa-arrow-down" style="margin-left: 8px;"></i></a>
     </div>
   </div>
 </section>
 
-<!-- ══ FILOSOFÍA ══ -->
-<section class="sec" id="filosofia">
-  <div class="w">
-    <div class="split-grid">
-      <div>
-        <div class="lbl fu">Enfoque Operativo</div>
-        <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">
-          Claridad legal<br>para decisiones<br><em>seguras.</em>
-        </h2>
-        <div class="quote-box fu" style="transition-delay:.2s">
-          "El derecho no debe ser un laberinto burocrático. Traduzco la complejidad normativa en estrategias concretas."
-        </div>
-      </div>
-      <div>
-        <p class="body-t fu" style="transition-delay:.1s; margin-bottom: 25px;">
-          Comprendo que recurrir a la asistencia jurídica implica depositar confianza sobre asuntos de vital importancia. Por ello, mi filosofía de trabajo rechaza las estructuras burocráticas tradicionales donde el cliente es solo un número de expediente.
-        </p>
-        <p class="body-t fu" style="transition-delay:.2s">
-          El objetivo primordial es el ahorro de tu tiempo. Evalúo la viabilidad técnica real de tu caso en la primera entrevista para evitar litigios estériles, priorizando siempre la ejecución de resultados concretos.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ EL PROFESIONAL ══ -->
-<section class="sec" id="profesional">
-  <div class="w">
-    <div class="split-grid">
-      <div>
-        <div class="lbl fu">Dirección Técnica</div>
-        <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">
-          Dr. Lautaro N.<br><em>Aristeo</em>
-        </h2>
-        <p class="body-t fu" style="margin-top:30px; transition-delay:.2s">
-          Ejerciendo en la Ciudad de Córdoba. Mi práctica combina el dinamismo lógico de la abogacía moderna con el estudio exhaustivo de cada causa. La representación es personal, directa e inquebrantable.
-        </p>
-        <div class="badge-row fu" style="transition-delay:.3s">
-          <span class="badge">M.P. 1-43722</span>
-          <span class="badge">Mat. Fed. T° 511 F° 222</span>
-        </div>
-      </div>
-      <div class="fu" style="transition-delay:.2s">
-        <div class="tech-box">
-          <h3><i class="fa-solid fa-crosshairs"></i> Atención de Escala</h3>
-          <p class="body-t">
-            Centralizo la toma de decisiones asumiendo la responsabilidad total frente a vos. Para litigios de alta complejidad, coordino la actuación probatoria con peritos y especialistas, garantizando un escudo legal impenetrable sin perder jamás la fluidez de nuestro contacto directo.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ METODOLOGÍA ══ -->
-<section class="sec" id="metodologia">
-  <div class="w">
-    <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-      <div class="lbl fu" style="justify-content:center;">Plan de Acción</div>
-      <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">
-        Sistema de <em>Trabajo</em>
-      </h2>
-    </div>
-    <div class="steps fu" style="transition-delay:.2s">
-      <div class="step">
-        <i class="fa-solid fa-filter step-ico"></i>
-        <h4 class="step-t">1. Triage Inicial</h4>
-        <p class="body-t" style="text-align: center;">Filtro de viabilidad técnica de los hechos. Descartamos planteos inviables y nos enfocamos únicamente en aquellos reclamos con asidero jurídico real.</p>
-      </div>
-      <div class="step">
-        <i class="fa-solid fa-chess-knight step-ico"></i>
-        <h4 class="step-t">2. Diseño Estratégico</h4>
-        <p class="body-t" style="text-align: center;">Estructuración de la táctica procesal (preventiva o contenciosa), estableciendo plazos tentativos y fijando honorarios de manera transparente.</p>
-      </div>
-      <div class="step">
-        <i class="fa-solid fa-gavel step-ico"></i>
-        <h4 class="step-t">3. Control y Ejecución</h4>
-        <p class="body-t" style="text-align: center;">Avance riguroso del expediente. Recibirás reportes precisos de las novedades sin necesidad de perseguir información sobre tu caso.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ÁREAS DE PRÁCTICA ══ -->
+<!-- ══ CUADRADOS EXPÁNSIBLES DE NICHO ══ -->
 <section class="sec" id="areas">
   <div class="w">
-    <div class="lbl fu">Intervención Especializada</div>
+    <div class="lbl fu">Micro-Nichos Legales</div>
     <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">
-      Áreas de <em>Práctica</em>
+      Soluciones <em>Específicas</em>
     </h2>
-    <div class="ac-wrap fu" style="transition-delay:.2s">
+    <p class="body-t fu" style="margin-top:20px; max-width: 700px; transition-delay:.2s">
+      Seleccioná la tarjeta que describe tu problema actual para conocer en detalle cómo estructuramos la defensa técnica y el plan de acción en la jurisdicción correspondiente.
+    </p>
+
+    <div class="squares-grid fu" style="transition-delay:.3s">
       
-      <div class="ac-item">
-        <button class="ac-head" onclick="tgAc(this)">
-          <div class="ac-title-wrap"><i class="fa-solid fa-file-contract ac-ico"></i><span class="ac-title">Derecho Civil y Comercial</span></div>
-          <i class="fa-solid fa-chevron-down ac-arrow"></i>
-        </button>
-        <div class="ac-content"><div class="ac-content-inner">
-          Resguardo patrimonial. Gestión de sucesiones, declaratorias de herederos, juicios de desalojo, ejecución de alquileres y expensas. Redacción blindada de contratos y acciones de reparación integral por daños y perjuicios.
-        </div></div>
+      <!-- Cuadrado 1: Planes de Ahorro -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-car-side sq-ico"></i>
+            <span class="sq-title">Planes de Ahorro (Autos)</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Las concesionarias y administradoras imponen cuotas asfixiantes y aumentos desproporcionados que violan la Ley de Defensa del Consumidor y el valor móvil real del vehículo.</p>
+          <ul>
+            <li>Medidas cautelares urgentes para retrotraer y congelar el valor de la cuota.</li>
+            <li>Reclamos por demoras excesivas en la adjudicación o entrega de la unidad.</li>
+            <li>Recupero de fondos por planes caídos o renunciados.</li>
+            <li>Freno a ejecuciones prendarias abusivas.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="ac-item">
-        <button class="ac-head" onclick="tgAc(this)">
-          <div class="ac-title-wrap"><i class="fa-solid fa-helmet-safety ac-ico"></i><span class="ac-title">Laboral y Riesgos de Trabajo</span></div>
-          <i class="fa-solid fa-chevron-down ac-arrow"></i>
-        </button>
-        <div class="ac-content"><div class="ac-content-inner">
-          Defensa inquebrantable frente a contingencias laborales. Reclamos por despidos, trabajo no registrado e indemnizaciones. Actuación técnica ante ART y Comisiones Médicas por accidentes in itinere o enfermedades profesionales.
-        </div></div>
+      <!-- Cuadrado 2: Billeteras Virtuales -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-mobile-screen-button sq-ico"></i>
+            <span class="sq-title">Estafas y Bancos</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Si vaciaron tu cuenta, te hackearon Home Banking o tomaron préstamos a tu nombre en billeteras virtuales (Mercado Pago, Naranja X, etc.), el banco o entidad financiera es solidariamente responsable por fallas de seguridad.</p>
+          <ul>
+            <li>Desconocimiento formal de compras y transferencias no autorizadas.</li>
+            <li>Acciones de nulidad sobre préstamos pre-aprobados fraudulentos.</li>
+            <li>Exigencia de daño punitivo contra la entidad bancaria por trato indigno.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="ac-item">
-        <button class="ac-head" onclick="tgAc(this)">
-          <div class="ac-title-wrap"><i class="fa-solid fa-shield-halved ac-ico"></i><span class="ac-title">Salud y Consumidor</span></div>
-          <i class="fa-solid fa-chevron-down ac-arrow"></i>
-        </button>
-        <div class="ac-content"><div class="ac-content-inner">
-          Acción rápida contra abusos corporativos. Redacción de amparos de salud contra Prepagas u Obras Sociales. Litigios por estafas en billeteras virtuales, fraudes bancarios, planes de ahorro e inclusión indebida en Veraz.
-        </div></div>
+      <!-- Cuadrado 3: Veraz y Deudas -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-file-invoice-dollar sq-ico"></i>
+            <span class="sq-title">Deudas y Veraz</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Los estudios de cobranza utilizan tácticas de hostigamiento ilegal, reclamando deudas prescritas o manteniéndote en bases de deudores (Veraz / BCRA) más tiempo del permitido por ley.</p>
+          <ul>
+            <li>Limpieza y supresión de datos crediticios (Derecho al Olvido).</li>
+            <li>Cese inmediato del acoso telefónico y extorsión por parte de estudios de cobranza.</li>
+            <li>Defensa ante embargos preventivos y ejecuciones de pagarés.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="ac-item">
-        <button class="ac-head" onclick="tgAc(this)">
-          <div class="ac-title-wrap"><i class="fa-solid fa-people-roof ac-ico"></i><span class="ac-title">Derecho de Familia</span></div>
-          <i class="fa-solid fa-chevron-down ac-arrow"></i>
-        </button>
-        <div class="ac-content"><div class="ac-content-inner">
-          Intervención jurídica con máxima reserva y eficiencia procesal. Divorcios de presentación conjunta o unilateral, fijación de cuotas alimentarias, división de bienes y establecimiento de regímenes de comunicación.
-        </div></div>
+      <!-- Cuadrado 4: Amparos de Salud -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-staff-snake sq-ico"></i>
+            <span class="sq-title">Amparos de Salud</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Obras Sociales y Prepagas suelen denegar coberturas vitales o aplicar aumentos ilegales argumentando exclusiones del PMO. La salud no puede esperar tiempos burocráticos.</p>
+          <ul>
+            <li>Amparos judiciales con medidas cautelares para provisión urgente de medicamentos de alto costo u oncológicos.</li>
+            <li>Cobertura integral del 100% para prestaciones de discapacidad y acompañantes terapéuticos.</li>
+            <li>Freno a aumentos desmedidos o bajas unilaterales por preexistencias.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cuadrado 5: Despidos y ART -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-user-injured sq-ico"></i>
+            <span class="sq-title">Despidos y ART</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Tutelamos firmemente tus derechos frente a la desvinculación arbitraria, el fraude laboral (trabajo en negro) o el abandono por parte de las Aseguradoras de Riesgos de Trabajo tras un siniestro.</p>
+          <ul>
+            <li>Cálculo e intimación por despido incausado o indirecto.</li>
+            <li>Exigencia de multas por trabajo no registrado o deficiente registración.</li>
+            <li>Reclamos ante Comisiones Médicas por divergencia en el alta o fijación de incapacidad real por accidentes in itinere.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cuadrado 6: Sucesiones -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-key sq-ico"></i>
+            <span class="sq-title">Sucesiones y Bienes</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Garantizamos la transmisión patrimonial ordenada, evitando conflictos prolongados entre herederos y asegurando la inscripción de los bienes a tu nombre con agilidad.</p>
+          <ul>
+            <li>Declaratoria de herederos rápida y eficiente.</li>
+            <li>Partición y adjudicación de bienes muebles e inmuebles.</li>
+            <li>Defensa de la porción legítima ante donaciones inoficiosas.</li>
+            <li>Tracto abreviado para venta directa de propiedades.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cuadrado 7: Contratos y Desalojos -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-house-crack sq-ico"></i>
+            <span class="sq-title">Contratos y Desalojos</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Protegemos la propiedad privada y la seguridad jurídica de tus acuerdos. Si hay incumplimiento, actuamos por la vía contenciosa para restituir el orden patrimonial.</p>
+          <ul>
+            <li>Juicios de desalojo por falta de pago o vencimiento de contrato.</li>
+            <li>Ejecución de alquileres adeudados contra inquilinos y garantes.</li>
+            <li>Redacción blindada de boletos de compraventa y contratos de locación.</li>
+            <li>Acciones por daños y perjuicios ante incumplimientos civiles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cuadrado 8: Familia -->
+      <div class="square" onclick="toggleSquare(this)">
+        <div class="sq-head">
+          <div class="sq-head-left">
+            <i class="fa-solid fa-children sq-ico"></i>
+            <span class="sq-title">Derecho de Familia</span>
+          </div>
+          <i class="fa-solid fa-chevron-down sq-arrow"></i>
+        </div>
+        <div class="sq-body">
+          <p>Intervenimos en crisis familiares con rigor técnico para proteger el patrimonio y el interés superior de los menores, evitando el desgaste psicológico del proceso judicial.</p>
+          <ul>
+            <li>Divorcios exprés (presentación conjunta o unilateral).</li>
+            <li>Liquidación de la sociedad conyugal y división de bienes.</li>
+            <li>Fijación, actualización o ejecución de cuota alimentaria adeudada.</li>
+            <li>Establecimiento de régimen de comunicación y cuidado personal.</li>
+          </ul>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES (FILTRO) ══ -->
-<section id="faq">
-  <div class="w">
-    <div style="text-align: center; margin-bottom: 60px;">
-      <div class="lbl fu">Optimización de Tiempo</div>
-      <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">Filtro de <em>Consultas</em></h2>
-    </div>
-    <div class="faq-grid fu" style="transition-delay:.2s">
-      <div class="faq-item">
-        <button class="faq-q" onclick="tgFq(this)">¿El análisis de viabilidad inicial tiene costo?<i class="fa-solid fa-plus" style="color:var(--gold)"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">
-          Sí. Todo análisis documental y diseño estratégico requiere tiempo y conocimiento técnico, por lo cual es remunerado. Este honorario de consulta se le informará antes de agendar y será descontado del honorario final en caso de asumir su representación.
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="tgFq(this)">¿Litigan en el interior de la provincia de Córdoba?<i class="fa-solid fa-plus" style="color:var(--gold)"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">
-          El núcleo de operaciones se encuentra en Córdoba Capital. Sin embargo, gracias a la matrícula provincial y federal, evaluamos la representación en jurisdicciones del interior dependiendo de la envergadura y complejidad del caso.
-        </div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="tgFq(this)">¿Cómo es la dinámica de comunicación una vez iniciado el caso?<i class="fa-solid fa-plus" style="color:var(--gold)"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">
-          Extremadamente fluida y estructurada. Usted no debe perseguir información. Cada vez que exista un movimiento procesal relevante (proveídos, audiencias, traslados), se le reportará la novedad y los pasos a seguir vía WhatsApp Institucional o Email.
-        </div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CONTACTO Y FORMULARIO A WHATSAPP ══ -->
+<!-- ══ CONTACTO Y SISTEMA DUAL DE ENVÍO ══ -->
 <section class="sec" id="contacto">
   <div class="w">
     <div class="split-grid">
       <div>
-        <div class="lbl fu">Acceso Directo</div>
+        <div class="lbl fu">Triage Automatizado</div>
         <h2 class="h2 fu" style="margin-top:20px; transition-delay:.1s">
-          Agendá tu<br><em>Evaluación.</em>
+          Generá tu<br><em>Brief Legal.</em>
         </h2>
         <p class="body-t fu" style="margin-top:25px; transition-delay:.2s">
-          Utilice el formulario inteligente para enviar un "brief" ordenado de su caso directo a mi sistema. El deber de secreto profesional rige desde el primer contacto.
+          Completá el formulario para estructurar la información de tu caso. Una vez llenado, <strong>podrás elegir si enviármelo de forma directa por WhatsApp o mediante un Correo Electrónico automático.</strong>
         </p>
         <div class="fu" style="transition-delay:.3s">
-          <a class="ch" href="mailto:dr.aristeolautaro@gmail.com">
-            <div class="ch-ico"><i class="fa-solid fa-envelope"></i></div>
-            <div><div class="ch-label">Correo Institucional</div><div class="ch-val">dr.aristeolautaro@gmail.com</div></div>
-          </a>
+          <div class="ch">
+            <div class="ch-ico"><i class="fa-solid fa-user-tie"></i></div>
+            <div><div class="ch-label">Dr. Lautaro N. Aristeo</div><div class="ch-val">M.P. 1-43722 · T° 511 F° 222</div></div>
+          </div>
         </div>
       </div>
 
       <div class="fbox fu" style="transition-delay:.2s">
-        <!-- El formulario ya NO simula el envío, construye un mensaje de WhatsApp -->
-        <form id="waForm">
+        <!-- Formulario sin action, manejado por JS -->
+        <form id="briefForm">
           <div class="fg">
             <label class="fl" for="fn">Nombre completo *</label>
-            <input class="fi2" type="text" id="fn" placeholder="Titular del derecho" required>
+            <input class="fi2" type="text" id="fn" placeholder="Titular del derecho o damnificado" required>
           </div>
           
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:30px;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px;">
             <div>
               <label class="fl" for="fe">Email de contacto *</label>
               <input class="fi2" type="email" id="fe" placeholder="tu@email.com" required>
             </div>
             <div>
-              <label class="fl" for="ft">DNI (Opcional)</label>
-              <input class="fi2" type="text" id="ft" placeholder="Para chequeos">
+              <label class="fl" for="ft">Teléfono Celular *</label>
+              <input class="fi2" type="tel" id="ft" placeholder="Cod. de área + número" required>
             </div>
           </div>
 
           <div class="fg">
-            <label class="fl" for="fa">Materia principal de la consulta *</label>
+            <label class="fl" for="fa">Materia exacta de la consulta *</label>
             <select class="fi2" id="fa" required>
-              <option value="" disabled selected>Seleccione la especialidad dogmática...</option>
-              <option value="Laboral/ART">Laboral, Despidos o ART</option>
-              <option value="Civil/Sucesiones">Derecho Civil, Contratos o Sucesiones</option>
-              <option value="Consumidor/Salud">Amparos de Salud o Defensa del Consumidor</option>
-              <option value="Familia">Derecho de Familia</option>
-              <option value="Otro">Otra especialidad</option>
+              <option value="" disabled selected>Seleccione el conflicto...</option>
+              <option value="Planes de Ahorro / Automotores">Planes de Ahorro (Autos)</option>
+              <option value="Estafas / Fraudes Bancarios">Estafas o Fraudes en Billeteras / Bancos</option>
+              <option value="Veraz / Estudios de Cobranza">Limpieza de Veraz / Acoso por Deudas</option>
+              <option value="Amparo de Salud / Discapacidad">Amparos de Salud (Obras Sociales / Prepagas)</option>
+              <option value="Laboral / Trabajo en Negro / Despido">Laboral (Despidos, Trabajo en Negro)</option>
+              <option value="Accidente ART">Accidente de Trabajo / ART</option>
+              <option value="Civil / Contratos / Desalojos">Derecho Civil, Contratos o Desalojos</option>
+              <option value="Sucesiones">Sucesiones o Declaratoria de Herederos</option>
+              <option value="Familia / Divorcio / Alimentos">Derecho de Familia (Divorcio, Alimentos)</option>
+              <option value="Otra especialidad">Otro tema legal</option>
             </select>
           </div>
           
-          <div id="dynamic-fields"></div>
-          
           <div class="fg">
-            <label class="fl" for="fm">Síntesis fáctica del caso *</label>
-            <textarea class="fi2" id="fm" placeholder="Describa los hechos relevantes de forma clara, indicando fechas importantes..." required></textarea>
+            <label class="fl" for="fm">Síntesis de los Hechos *</label>
+            <textarea class="fi2" id="fm" placeholder="Describí cronológicamente qué pasó, fechas importantes, entidades involucradas y si posees documentación probatoria..." required></textarea>
           </div>
 
-          <button class="fsub" type="submit">Generar Brief a WhatsApp <i class="fa-solid fa-paper-plane" style="margin-left: 8px"></i></button>
+          <div class="action-buttons">
+            <button type="button" class="btn-dual btn-wsp" onclick="enviarBrief('whatsapp')">
+              Enviar Brief por WhatsApp <i class="fa-brands fa-whatsapp" style="font-size: 16px;"></i>
+            </button>
+            <button type="button" class="btn-dual btn-mail" onclick="enviarBrief('email')">
+              Enviar Brief por Correo Electrónico <i class="fa-solid fa-envelope" style="font-size: 16px;"></i>
+            </button>
+          </div>
+          
+          <p style="font-size: 12px; color: var(--i35); margin-top: 20px; text-align: center; font-style: italic;">
+            * Los datos procesados se rigen bajo estricto secreto profesional.
+          </p>
         </form>
       </div>
     </div>
@@ -608,56 +572,57 @@
   const rv = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }); }, { threshold: 0.1 });
   document.querySelectorAll('.fu').forEach(el => rv.observe(el));
 
-  /* ─── ACORDEONES ─── */
-  function tgAc(btn) {
-    const item = btn.parentElement;
-    document.querySelectorAll('.ac-item').forEach(el => { if(el !== item) el.classList.remove('active'); });
-    item.classList.toggle('active');
-  }
-  function tgFq(btn) {
-    const item = btn.parentElement;
-    const icon = btn.querySelector('i');
-    document.querySelectorAll('.faq-item').forEach(el => { 
-      if(el !== item) { el.classList.remove('active'); el.querySelector('i').className = 'fa-solid fa-plus'; }
-    });
-    item.classList.toggle('active');
-    icon.className = item.classList.contains('active') ? 'fa-solid fa-minus' : 'fa-solid fa-plus';
+  /* ─── CUADRADOS EXPÁNSIBLES (ÁREAS DE PRÁCTICA) ─── */
+  function toggleSquare(element) {
+    // Si queremos que al abrir uno se cierren los demás, descomentar la siguiente línea:
+    // document.querySelectorAll('.square').forEach(sq => { if(sq !== element) sq.classList.remove('open'); });
+    element.classList.toggle('open');
   }
 
-  /* ─── TRIAGE AUTOMATIZADO A WHATSAPP ─── */
-  const fa = document.getElementById('fa');
-  const dy = document.getElementById('dynamic-fields');
-  
-  fa.addEventListener('change', () => {
-    let html = '';
-    const v = fa.value;
-    if(v === 'Laboral/ART') html = `<label class="fl">Filtro Técnico</label><select class="fi2" id="dq1"><option value="Despido/Negro">Despido o Trabajo en Negro</option><option value="Accidente ART">Accidente Laboral (ART)</option></select>`;
-    else if(v === 'Civil/Sucesiones') html = `<label class="fl">Estado Documental</label><select class="fi2" id="dq1"><option value="Tengo contratos/titulos">Poseo documental probatoria</option><option value="No tengo papeles">No poseo documentación firme</option></select>`;
-    else if(v === 'Consumidor/Salud') html = `<label class="fl">Reclamo Previo</label><select class="fi2" id="dq1"><option value="Reclamo formal hecho">Poseo número de reclamo formal previo</option><option value="Sin reclamo">Aún no reclamé formalmente</option></select>`;
-    
-    if(html) { dy.innerHTML = html; dy.style.display = 'block'; }
-    else { dy.innerHTML = ''; dy.style.display = 'none'; }
-  });
+  /* ─── SISTEMA DUAL DE ENVÍO (WSP / MAIL) ─── */
+  function recopilarDatos() {
+    const fn = document.getElementById('fn').value.trim();
+    const fe = document.getElementById('fe').value.trim();
+    const ft = document.getElementById('ft').value.trim();
+    const fa = document.getElementById('fa').value;
+    const fm = document.getElementById('fm').value.trim();
 
-  document.getElementById('waForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const fn = document.getElementById('fn').value;
-    const fe = document.getElementById('fe').value;
-    const ft = document.getElementById('ft').value || 'No precisado';
-    const area = document.getElementById('fa').value;
-    const dyQ = document.getElementById('dq1') ? document.getElementById('dq1').value : 'N/A';
-    const fm = document.getElementById('fm').value;
+    if(!fn || !fe || !ft || !fa || !fm) {
+      alert("Por favor, complete todos los campos obligatorios (*) para estructurar el Brief.");
+      return null;
+    }
 
-    const mensaje = `*NUEVA SOLICITUD DE EVALUACIÓN - ESTUDIO ARISTEO*%0A%0A`
-      + `*Titular:* ${fn}%0A`
-      + `*Email:* ${fe}%0A`
-      + `*DNI / Ref:* ${ft}%0A%0A`
-      + `*Materia Dogmática:* ${area}%0A`
-      + `*Filtro de Datos:* ${dyQ}%0A%0A`
-      + `*Síntesis Fáctica:*%0A${fm}`;
+    return { nombre: fn, email: fe, telefono: ft, area: fa, hechos: fm };
+  }
 
-    window.open(`https://wa.me/5493517736170?text=${mensaje}`, '_blank');
-  });
+  function enviarBrief(metodo) {
+    const datos = recopilarDatos();
+    if(!datos) return;
+
+    if (metodo === 'whatsapp') {
+      const textoMensaje = `*NUEVA SOLICITUD DE EVALUACIÓN - ESTUDIO ARISTEO*%0A%0A`
+        + `*Titular:* ${datos.nombre}%0A`
+        + `*Email:* ${datos.email}%0A`
+        + `*Celular:* ${datos.telefono}%0A`
+        + `*Materia Dogmática:* ${datos.area}%0A%0A`
+        + `*Síntesis Fáctica:*%0A${datos.hechos}`;
+      
+      const whatsappUrl = `https://wa.me/5493517736170?text=${textoMensaje}`;
+      window.open(whatsappUrl, '_blank');
+      
+    } else if (metodo === 'email') {
+      const asunto = `Solicitud de Evaluación Legal: ${datos.area} - ${datos.nombre}`;
+      const cuerpo = `NUEVA SOLICITUD DE EVALUACIÓN - ESTUDIO ARISTEO\n\n`
+        + `Titular: ${datos.nombre}\n`
+        + `Email: ${datos.email}\n`
+        + `Celular: ${datos.telefono}\n`
+        + `Materia Dogmática: ${datos.area}\n\n`
+        + `Síntesis Fáctica:\n${datos.hechos}`;
+      
+      const mailtoUrl = `mailto:dr.aristeolautaro@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+      window.location.href = mailtoUrl;
+    }
+  }
 </script>
 </body>
 </html>
