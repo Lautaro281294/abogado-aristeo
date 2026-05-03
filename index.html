@@ -3,34 +3,32 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo — Asesoramiento legal estratégico y representación técnica en Córdoba. Derecho civil, laboral, familia y salud. Trato directo y 100% digital."/>
-  <meta name="keywords" content="abogado Córdoba, estudio jurídico digital, derecho civil, derecho laboral, defensa consumidor, amparos de salud, abogado online"/>
+  <meta name="description" content="Estudio Jurídico Aristeo — Asesoramiento legal estratégico y representación técnica en Córdoba. Derecho civil, laboral, familia y salud. Trato directo y personal."/>
+  <meta name="keywords" content="abogado Córdoba, derecho civil, derecho laboral, defensa consumidor, amparos de salud, estudio jurídico Aristeo, abogado litigante"/>
   <title>Estudio Jurídico Aristeo | Abogacía Estratégica</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <!-- Librería FontAwesome (Iconos Solid) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     :root {
-      /* Paleta Verde Oliva Institucional (Estilo Corporate) */
-      --ink:      #161b14; 
-      --ink-2:    #1e251b; 
-      --ink-3:    #262e22; 
-      --ink-4:    #2f382a; 
-      --gold:     #BFA46A;
-      --gold-hi:  #D4BA82;
-      --gold-lo:  #9A8250;
-      --gold-15:  rgba(191,164,106,.15);
-      --gold-08:  rgba(191,164,106,.08);
-      --gold-30:  rgba(191,164,106,.30);
-      --ivory:    #F2EFE9;
-      --ivory-80: rgba(242,239,233,.80);
-      --ivory-60: rgba(242,239,233,.60);
-      --ivory-30: rgba(242,239,233,.30);
-      --line:     rgba(242,239,233,.08);
+      /* ── PALETA VERDE OLIVA Y DORADO (CANVA) ── */
+      --ink:      #1a2417; 
+      --ink-2:    #232e1f; 
+      --ink-3:    #2d3a28; 
+      --gold:     #C5A880; 
+      --gold-hi:  #DEB887; 
+      --gold-lo:  #9C8463; 
+      --gold-15:  rgba(197, 168, 128, 0.15);
+      --gold-30:  rgba(197, 168, 128, 0.30);
+      --ivory:    #F4F1EA; 
+      --ivory-80: rgba(244, 241, 234, 0.80);
+      --ivory-60: rgba(244, 241, 234, 0.60);
+      --line:     rgba(244, 241, 234, 0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -41,23 +39,16 @@
       color: var(--ivory);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
-      font-size: 16px; /* Tamaño aumentado para mejor legibilidad en todas las edades */
+      font-size: 16px; 
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    /* ── Textura sutil ── */
-    body::after {
-      content: '';
-      position: fixed; inset: 0; z-index: 9000; pointer-events: none;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
-    }
-
     ::selection { background: var(--gold-30); color: var(--ivory); }
-    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--ink); }
-    ::-webkit-scrollbar-thumb { background: var(--gold-lo); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-lo); border-radius: 4px; }
 
     /* ══════════════════════════════
        NAVBAR
@@ -68,7 +59,7 @@
       border-bottom: 1px solid transparent;
     }
     #nav.scrolled {
-      background: rgba(22, 27, 20, 0.95);
+      background: rgba(26, 36, 23, 0.95); 
       backdrop-filter: blur(16px);
       border-color: var(--line);
     }
@@ -92,7 +83,7 @@
 
     .nav-links { display: flex; align-items: center; gap: 40px; }
     .nl {
-      font-size: 10px; font-weight: 500; letter-spacing: .25em; text-transform: uppercase;
+      font-size: 10.5px; font-weight: 500; letter-spacing: .25em; text-transform: uppercase;
       color: var(--ivory-80); text-decoration: none;
       position: relative; padding-bottom: 4px;
       transition: color .3s;
@@ -107,13 +98,12 @@
 
     .nav-wa {
       display: inline-flex; align-items: center; gap: 10px;
-      font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
       color: var(--ink); background: var(--gold);
-      padding: 12px 28px; text-decoration: none;
-      position: relative; overflow: hidden;
-      transition: background .3s;
+      padding: 14px 32px; text-decoration: none;
+      transition: background .3s, transform .3s;
     }
-    .nav-wa:hover { background: var(--ivory); }
+    .nav-wa:hover { background: var(--ivory); transform: translateY(-2px); }
 
     /* Mobile */
     #ham { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 4px; }
@@ -121,8 +111,8 @@
     #ham span:nth-child(2) { width: 16px; background: var(--gold); }
     #mob {
       display: none; flex-direction: column; gap: 24px;
-      background: rgba(22, 27, 20, 0.98); backdrop-filter: blur(20px);
-      padding: 32px 28px; border-top: 1px solid var(--line);
+      background: var(--ink); border-top: 1px solid var(--line);
+      padding: 32px 28px;
     }
     #mob.open { display: flex; }
 
@@ -133,15 +123,14 @@
     }
 
     /* ══════════════════════════════
-       HERO (CON IMAGEN TRIBUNALES CÓRDOBA)
+       HERO 
     ══════════════════════════════ */
     .hero {
       min-height: 100vh;
       display: flex; align-items: center;
       position: relative; overflow: hidden;
-      /* Imagen de Tribunales Cba fusionada con el verde oliva */
       background: 
-        linear-gradient(135deg, rgba(22,27,20,0.95) 0%, rgba(22,27,20,0.7) 100%),
+        linear-gradient(135deg, rgba(26, 36, 23, 0.94) 0%, rgba(26, 36, 23, 0.75) 100%),
         url('https://upload.wikimedia.org/wikipedia/commons/4/4c/Palacio_de_Justicia_de_C%C3%B3rdoba.jpg') center/cover no-repeat fixed;
     }
 
@@ -149,18 +138,15 @@
       max-width: 1280px; margin: 0 auto;
       padding: 160px 56px 100px;
       width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px; align-items: center;
       position: relative; z-index: 10;
     }
 
     .hero-tag {
       display: inline-flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 24px;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 28px;
     }
-    .hero-tag::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    .hero-tag::before { content: ''; width: 35px; height: 1px; background: var(--gold); }
 
     .hero-h1 {
       font-family: 'Cormorant', serif;
@@ -174,33 +160,31 @@
     .hero-h1 em { font-style: italic; color: var(--gold-hi); }
 
     .hero-sub {
-      font-size: 16px; line-height: 1.9; font-weight: 300;
-      color: var(--ivory-80); max-width: 600px;
+      font-size: 17px; line-height: 1.9; font-weight: 300;
+      color: var(--ivory-80); max-width: 650px;
       margin-bottom: 48px;
     }
 
-    .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; }
-
     .cta-main {
       display: inline-flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase;
+      font-size: 11px; font-weight: 600; letter-spacing: .25em; text-transform: uppercase;
       color: var(--ink); background: var(--gold);
-      padding: 18px 42px; text-decoration: none;
+      padding: 20px 46px; text-decoration: none;
       transition: background .3s, transform .3s;
     }
     .cta-main:hover { background: var(--ivory); transform: translateY(-2px); }
 
     /* ══════════════════════════════
-       SECTION UTILITIES
+       UTILITIES & LAYOUT
     ══════════════════════════════ */
     .wrap { max-width: 1280px; margin: 0 auto; padding: 0 56px; }
     
     .sec-tag {
       display: inline-flex; align-items: center; gap: 12px;
-      font-size: 10px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .4em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 24px;
     }
-    .sec-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); }
+    .sec-tag::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
 
     .sec-h {
       font-family: 'Cormorant', serif;
@@ -229,63 +213,65 @@
     }
 
     .fil-right p {
-      font-size: 16px; line-height: 2; color: var(--ivory-80);
+      font-size: 16px; line-height: 2.1; color: var(--ivory-80);
       margin-bottom: 24px;
     }
 
     /* ══════════════════════════════
-       PROFESIONAL Y ESTUDIO DIGITAL
+       PROFESIONAL Y PLUS TECNOLÓGICO
     ══════════════════════════════ */
     #profesional { padding: 120px 0; border-top: 1px solid var(--line); }
 
     .prof-layout {
-      display: grid; grid-template-columns: 1fr 1.1fr;
+      display: grid; grid-template-columns: 1fr 1fr;
       gap: 80px; align-items: start;
     }
 
     .prof-badges { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
     .pbadge {
-      font-size: 9px; letter-spacing: .25em; text-transform: uppercase;
+      font-size: 9.5px; letter-spacing: .25em; text-transform: uppercase;
       color: var(--gold); border: 1px solid var(--gold-30);
-      padding: 10px 18px; font-weight: 600; background: var(--ink-2);
+      padding: 12px 20px; font-weight: 600; background: var(--ink-2);
     }
 
-    .digital-box {
-      background: var(--ink-3); border: 1px solid var(--line);
-      padding: 40px; margin-top: 0; position: relative;
+    .tech-plus-box {
+      background: var(--ink-2); border: 1px solid var(--line);
+      padding: 40px; position: relative;
     }
-    .digital-box::before {
+    .tech-plus-box::before {
       content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
       background: var(--gold);
     }
-    .digital-box h3 {
-      font-family: 'Cormorant', serif; font-size: 26px; color: var(--ivory); margin-bottom: 16px;
+    .tech-plus-box h3 {
+      font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 600; 
+      letter-spacing: .1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+      display: flex; align-items: center; gap: 12px;
     }
-    .digital-box p { font-size: 15px; line-height: 1.9; color: var(--ivory-80); }
+    .tech-plus-box p { font-size: 15px; line-height: 1.9; color: var(--ivory-80); }
 
     /* ══════════════════════════════
-       METODOLOGÍA (Generador de Confianza)
+       METODOLOGÍA
     ══════════════════════════════ */
     #metodologia {
       padding: 100px 0; border-top: 1px solid var(--line);
-      background: radial-gradient(ellipse at center, var(--ink-3) 0%, var(--ink) 100%);
+      background: var(--ink-3);
     }
     .boutique-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .boutique-inner p { margin: 24px auto 0; font-size: 16px; color: var(--ivory-80); max-width: 650px; }
+    .boutique-inner p { margin: 24px auto 0; font-size: 17px; color: var(--ivory-80); max-width: 650px; }
 
     .pillars-grid {
       display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
       margin-top: 60px;
     }
     .pillar-card {
-      background: var(--ink-2); border: 1px solid var(--line);
-      padding: 40px 32px; text-align: center;
+      background: var(--ink); border: 1px solid var(--line);
+      padding: 48px 36px; text-align: center;
       transition: transform .3s, border-color .3s;
     }
     .pillar-card:hover { transform: translateY(-5px); border-color: var(--gold-30); }
-    .pillar-card i { font-size: 28px; color: var(--gold); margin-bottom: 20px; }
-    .pillar-card h4 { font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; color: var(--ivory); }
-    .pillar-card p { font-size: 14px; color: var(--ivory-60); line-height: 1.7; }
+    .pillar-card i { font-size: 32px; color: var(--gold); margin-bottom: 24px; display: block; }
+    .pillar-card h4 { font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 16px; color: var(--ivory); }
+    .pillar-card p { font-size: 15px; color: var(--ivory-60); line-height: 1.8; }
 
     /* ══════════════════════════════
        ÁREAS DE PRÁCTICA
@@ -299,20 +285,22 @@
     .area-card {
       background: var(--ink); border: 1px solid var(--line);
       padding: 56px 48px;
-      transition: border-color .3s;
+      transition: border-color .3s, background .3s;
     }
-    .area-card:hover { border-color: var(--gold-lo); }
+    .area-card:hover { border-color: var(--gold-lo); background: var(--ink-3); }
+    
     .area-icon {
-      font-size: 28px; color: var(--gold); margin-bottom: 24px;
+      font-size: 36px; color: var(--gold); margin-bottom: 24px; display: block;
     }
+    
     .area-title {
       font-family: 'Cormorant', serif; font-size: 28px; font-weight: 500;
       color: var(--ivory); line-height: 1.2; margin-bottom: 20px;
     }
-    .area-text { font-size: 15px; color: var(--ivory-80); line-height: 1.9; }
+    .area-text { font-size: 15.5px; color: var(--ivory-80); line-height: 1.9; }
 
     /* ══════════════════════════════
-       CONTACTO
+       CONTACTO Y FORMULARIO
     ══════════════════════════════ */
     #contacto { padding: 120px 0; border-top: 1px solid var(--line); background: var(--ink); }
 
@@ -328,17 +316,17 @@
     }
     .ch:hover { padding-left: 10px; }
     .ch-ico {
-      width: 48px; height: 48px; border: 1px solid var(--gold-30);
+      width: 48px; height: 48px; background: var(--ink-3);
       display: flex; align-items: center; justify-content: center;
-      color: var(--gold); font-size: 18px; border-radius: 50%;
+      color: var(--gold); font-size: 20px; border-radius: 50%;
     }
-    .ch-l { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
+    .ch-l { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 4px; }
     .ch-v { font-size: 16px; color: var(--ivory); }
 
     /* Formulario */
     .form-box { background: var(--ink-2); border: 1px solid var(--line); padding: 48px; }
     .f-label {
-      display: block; font-size: 10px; font-weight: 600; letter-spacing: .2em;
+      display: block; font-size: 11px; font-weight: 600; letter-spacing: .2em;
       text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
     }
     .f-input {
@@ -348,11 +336,11 @@
     }
     select.f-input { cursor: pointer; appearance: none; }
     .f-input:focus { border-color: var(--gold); }
-    textarea.f-input { resize: none; height: 120px; }
+    textarea.f-input { resize: none; height: 130px; }
 
     .f-submit {
       width: 100%; background: var(--gold); color: var(--ink);
-      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
+      font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
       letter-spacing: .25em; text-transform: uppercase;
       padding: 20px; cursor: pointer; border: none; transition: background .3s;
       margin-top: 16px;
@@ -367,17 +355,17 @@
       max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px;
       align-items: center; text-align: center;
     }
-    .foot-logo { font-family: 'Cormorant', serif; font-size: 20px; letter-spacing: .1em; color: var(--ivory); }
-    .foot-meta { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ivory-60); }
+    .foot-logo { font-family: 'Cormorant', serif; font-size: 22px; letter-spacing: .1em; color: var(--ivory); }
+    .foot-meta { font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ivory-60); line-height: 1.8;}
 
-    /* Animaciones */
+    /* Animaciones Scroll */
     .fu { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
     .fu.in { opacity: 1; transform: translateY(0); }
 
     /* Responsive */
     @media (max-width: 900px) {
       .hero-inner { padding: 140px 28px 80px; }
-      .fil-layout, .prof-layout, .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+      .fil-layout, .prof-layout, .contact-layout { grid-template-columns: 1fr; gap: 56px; }
       .pillars-grid, .areas-grid { grid-template-columns: 1fr; }
       .wrap { padding: 0 28px; }
       .form-box, .area-card { padding: 32px 24px; }
@@ -395,7 +383,7 @@
     </a>
     <div class="nav-links">
       <a href="#filosofia" class="nl" data-s="filosofia">Institucional</a>
-      <a href="#profesional" class="nl" data-s="profesional">El Estudio</a>
+      <a href="#profesional" class="nl" data-s="profesional">El Profesional</a>
       <a href="#areas" class="nl" data-s="areas">Áreas de Práctica</a>
       <a href="#contacto" class="nl" data-s="contacto">Contacto</a>
     </div>
@@ -408,7 +396,7 @@
   </div>
   <div id="mob">
     <a href="#filosofia" class="nl" onclick="closeMob()">Institucional</a>
-    <a href="#profesional" class="nl" onclick="closeMob()">El Estudio</a>
+    <a href="#profesional" class="nl" onclick="closeMob()">El Profesional</a>
     <a href="#areas" class="nl" onclick="closeMob()">Áreas de Práctica</a>
     <a href="#contacto" class="nl" onclick="closeMob()">Contacto</a>
   </div>
@@ -417,23 +405,21 @@
 <!-- ══ HERO ══ -->
 <section id="hero" class="hero">
   <div class="hero-inner">
-    <div>
-      <div class="hero-tag fu">
-        Asesoramiento Integral &nbsp;·&nbsp; Córdoba
-      </div>
-      <h1 class="hero-h1 fu" style="transition-delay:.1s">
-        Rigor técnico y<br>
-        <em>Estrategia Jurídica</em><br>
-        a su medida.
-      </h1>
-      <p class="hero-sub fu" style="transition-delay:.2s">
-        Brindamos representación legal de excelencia orientada a la resolución eficiente de conflictos. Defendemos sus intereses patrimoniales, laborales y familiares con estricto apego a la ética profesional y la legislación vigente.
-      </p>
-      <div class="hero-ctas fu" style="transition-delay:.3s">
-        <a href="#contacto" class="cta-main">
-          <span>Coordinar Evaluación de Caso</span>
-        </a>
-      </div>
+    <div class="hero-tag fu">
+      Asesoramiento Integral &nbsp;·&nbsp; Córdoba
+    </div>
+    <h1 class="hero-h1 fu" style="transition-delay:.1s">
+      Rigor técnico y<br>
+      <em>Estrategia Jurídica</em><br>
+      a tu medida.
+    </h1>
+    <p class="hero-sub fu" style="transition-delay:.2s">
+      Representación legal tenaz y orientada a la resolución eficiente de conflictos. Defiendo tus intereses patrimoniales, laborales y familiares peleando cada detalle con el rigor técnico y la energía que tu caso exige.
+    </p>
+    <div class="fu" style="transition-delay:.3s">
+      <a href="#contacto" class="cta-main">
+        <span>Coordinar Evaluación de Caso</span>
+      </a>
     </div>
   </div>
 </section>
@@ -443,27 +429,27 @@
   <div class="wrap">
     <div class="fil-layout">
       <div>
-        <div class="sec-tag fu">Visión Institucional</div>
+        <div class="sec-tag fu">Mi Filosofía</div>
         <h2 class="sec-h fu" style="transition-delay:.1s">
           Claridad legal<br>para decisiones<br><em>seguras.</em>
         </h2>
         <blockquote class="fu" style="transition-delay:.2s">
-          "El derecho no debe ser un laberinto. Nuestro deber es traducir la complejidad normativa en estrategias viables, transparentes y orientadas a resultados concretos."
+          "El derecho no debe ser un laberinto burocrático. Mi compromiso es ponerme la camiseta de tu caso, traducir la complejidad normativa y pelear lado a lado para obtener resultados concretos."
         </blockquote>
       </div>
       <div>
         <p class="fu" style="transition-delay:.1s">
-          Comprendemos que recurrir a la asistencia jurídica implica depositar en nosotros la confianza sobre asuntos de vital importancia patrimonial o personal. Por ello, nuestra filosofía se aleja de las estructuras burocráticas tradicionales y las promesas infundadas.
+          Comprendo que recurrir a la asistencia jurídica implica depositar en mí tu confianza sobre asuntos de vital importancia patrimonial o personal. Por ello, mi filosofía se aleja completamente de las estructuras burocráticas tradicionales y de los expedientes tratados como números.
         </p>
         <p class="fu" style="transition-delay:.2s">
-          El <strong>Estudio Jurídico Aristeo</strong> se fundamenta en la honestidad profesional. Evaluamos la viabilidad real de su caso desde la primera consulta, diseñando un plan de acción que priorice sus intereses y optimice los tiempos procesales en la jurisdicción de Córdoba y fueros federales.
+          Mi práctica se fundamenta en la honestidad brutal y el empuje constante. Evalúo la viabilidad real de tu caso desde la primera consulta, sin falsas promesas, para diseñar un plan de acción agresivo e inteligente que priorice tus intereses en la jurisdicción de Córdoba y fueros federales.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ EL ESTUDIO DIGITAL ══ -->
+<!-- ══ EL ESTUDIO Y VENTAJA TECNOLÓGICA ══ -->
 <section id="profesional">
   <div class="wrap">
     <div class="prof-layout">
@@ -473,7 +459,7 @@
           Dr. Lautaro N.<br><em>Aristeo</em>
         </h2>
         <p class="fu" style="margin-top:24px; transition-delay:.2s">
-          Abogado egresado de la Universidad Empresarial Siglo 21, con matrículas habilitantes en el fuero provincial y federal. Mi ejercicio profesional se caracteriza por el trato humano, el estudio exhaustivo del expediente y la actualización doctrinaria constante.
+          Abogado egresado de la Universidad Empresarial Siglo 21, con matrículas habilitantes en el fuero provincial y federal. Mi ejercicio profesional combina la energía de una nueva generación de abogados con el estudio exhaustivo del expediente y un trato absolutamente humano y directo.
         </p>
         <div class="prof-badges fu" style="transition-delay:.3s">
           <span class="pbadge">M.P. 1-43722</span>
@@ -483,10 +469,10 @@
       </div>
 
       <div class="fu" style="transition-delay:.2s">
-        <div class="digital-box">
-          <h3>Un Estudio 100% Digital</h3>
+        <div class="tech-plus-box">
+          <h3><i class="fa-solid fa-microchip"></i> Ventaja Tecnológica</h3>
           <p>
-            La práctica moderna del derecho exige agilidad. Hemos eliminado la necesidad de que nuestros clientes se trasladen a una oficina física. <strong>Operamos mediante un modelo digital integral:</strong> consultas por videollamada, gestión electrónica de expedientes (SAC) y firma digital. Esto nos permite actuar con mayor celeridad, reducir costos innecesarios y brindarle asesoramiento desde la comodidad de su hogar o empresa, sin importar dónde se encuentre.
+            Como valor agregado a mi atención personal y dedicada, integro herramientas tecnológicas avanzadas que agilizan todo el proceso legal. Mi infraestructura digital me permite gestionar tu expediente electrónico (SAC) con inmediatez, agendar reuniones por videollamada y aplicar firma electrónica. Mi objetivo es claro: optimizar los tiempos procesales y evitarte demoras o traslados innecesarios.
           </p>
         </div>
       </div>
@@ -498,30 +484,30 @@
 <div id="metodologia">
   <div class="wrap">
     <div class="boutique-inner">
-      <div class="sec-tag fu" style="justify-content:center;">Cómo trabajamos</div>
+      <div class="sec-tag fu" style="justify-content:center;">Cómo trabajo</div>
       <h2 class="sec-h fu" style="transition-delay:.1s">
         Compromiso y <em>Transparencia</em>
       </h2>
       <p class="fu" style="transition-delay:.2s">
-        Nuestra estructura metodológica está diseñada para brindarle seguridad institucional y un control riguroso sobre el avance de sus trámites legales.
+        Mi metodología de trabajo está estructurada para brindarte seguridad, un canal de comunicación directo y control riguroso sobre el avance de tu trámite legal.
       </p>
     </div>
 
     <div class="pillars-grid fu" style="transition-delay:.3s">
       <div class="pillar-card">
-        <i class="fa-regular fa-scale-unbalanced"></i>
+        <i class="fa-solid fa-scale-balanced"></i>
         <h4>Evaluación Realista</h4>
-        <p>Análisis técnico profundo antes de iniciar cualquier acción. Le informamos con claridad sobre los riesgos, costos y probabilidades de su caso.</p>
+        <p>Realizo un análisis técnico profundo antes de iniciar cualquier acción. Te informo con total franqueza sobre los riesgos, costos y probabilidades de éxito de tu caso.</p>
       </div>
       <div class="pillar-card">
-        <i class="fa-regular fa-user-tie"></i>
+        <i class="fa-solid fa-user-tie"></i>
         <h4>Gestión Directa</h4>
-        <p>No derivamos su caso. Su expediente es analizado y gestionado exclusivamente por el abogado titular, garantizando trazabilidad y responsabilidad.</p>
+        <p>No derivo tu caso ni lo delego en asistentes. Tu expediente es estudiado, peleado y gestionado exclusivamente por mí, garantizando máxima responsabilidad y dedicación.</p>
       </div>
       <div class="pillar-card">
-        <i class="fa-regular fa-shield-check"></i>
+        <i class="fa-solid fa-lock"></i>
         <h4>Secreto Profesional</h4>
-        <p>Absoluta reserva y confidencialidad sobre la información, el patrimonio y la identidad de nuestros clientes, amparados por la Ley 5805.</p>
+        <p>Mantengo absoluta reserva y confidencialidad sobre tu información, tu patrimonio y tu identidad, amparado por el estricto cumplimiento de la Ley 5805.</p>
       </div>
     </div>
   </div>
@@ -535,35 +521,35 @@
       <h2 class="sec-h fu" style="transition-delay:.1s">
         Áreas de <em>Práctica</em>
       </h2>
-      <p class="fu" style="font-size:16px; color:var(--ivory-80); margin-top:20px; transition-delay:.2s">
-        Representación técnica especializada. Actuamos en sede administrativa, mediación perjudicial y litigio judicial, buscando siempre la resolución más eficiente para el cliente.
+      <p class="fu" style="font-size:17px; color:var(--ivory-80); margin-top:20px; transition-delay:.2s">
+        Representación técnica especializada. Actúo en sede administrativa, mediación perjudicial y litigio judicial con la agilidad necesaria para resolver tu conflicto.
       </p>
     </div>
 
     <div class="areas-grid fu" style="transition-delay:.3s">
       <!-- Civil -->
       <div class="area-card">
-        <div class="area-icon"><i class="fa-regular fa-building-columns"></i></div>
+        <i class="fa-solid fa-file-signature area-icon"></i>
         <h3 class="area-title">Derecho Civil y Comercial</h3>
-        <p class="area-text">Asesoramiento integral en resguardo patrimonial. Redacción y ejecución de contratos, gestión de cobros, sucesiones, declaratorias de herederos y acciones por daños y perjuicios (accidentes de tránsito, mala praxis). Abordaje preventivo y litigioso para asegurar la reparación integral.</p>
+        <p class="area-text">Asesoramiento integral en resguardo de tu patrimonio. Redacción y ejecución de contratos, gestión de cobros, sucesiones, declaratorias de herederos y acciones por daños y perjuicios. Abordaje preventivo y litigioso para asegurar la reparación que te corresponde.</p>
       </div>
       <!-- Laboral -->
       <div class="area-card">
-        <div class="area-icon"><i class="fa-regular fa-briefcase"></i></div>
+        <i class="fa-solid fa-briefcase area-icon"></i>
         <h3 class="area-title">Derecho Laboral y Riesgos de Trabajo</h3>
-        <p class="area-text">Defensa técnica de los derechos del trabajador. Intervención en reclamos por despidos, trabajo no registrado (en negro), diferencias salariales y accidentes o enfermedades laborales ante la ART y Comisiones Médicas. Negociación estratégica para asegurar la justa indemnización.</p>
+        <p class="area-text">Defensa técnica e inquebrantable de tus derechos como trabajador. Intervención en reclamos por despidos, trabajo no registrado (en negro), diferencias salariales y accidentes o enfermedades laborales ante la ART. Negociación estratégica y firme para asegurar tu justa indemnización.</p>
       </div>
       <!-- Familia -->
       <div class="area-card">
-        <div class="area-icon"><i class="fa-regular fa-users"></i></div>
+        <i class="fa-solid fa-people-roof area-icon"></i>
         <h3 class="area-title">Derecho de Familia</h3>
-        <p class="area-text">Representación legal con alto grado de empatía y reserva. Gestión de divorcios (unilaterales y de mutuo acuerdo), fijación de cuotas alimentarias, regímenes de comunicación y cuidado personal. Buscamos minimizar la conflictividad, protegiendo siempre el interés superior de los menores.</p>
+        <p class="area-text">Representación legal con alto grado de empatía y reserva absoluta. Gestión de divorcios, fijación de cuotas alimentarias, regímenes de comunicación y cuidado personal. Busco minimizar la conflictividad innecesaria, protegiendo siempre el interés superior familiar.</p>
       </div>
       <!-- Consumidor / Salud -->
       <div class="area-card">
-        <div class="area-icon"><i class="fa-regular fa-heart-pulse"></i></div>
+        <i class="fa-solid fa-shield-heart area-icon"></i>
         <h3 class="area-title">Salud y Defensa del Consumidor</h3>
-        <p class="area-text">Tutela efectiva frente a incumplimientos corporativos. Redacción de recursos de amparo y medidas cautelares para exigir coberturas médicas a Obras Sociales y Prepagas. Reclamos formales ante tratos indignos, estafas bancarias e incumplimientos de garantías comerciales.</p>
+        <p class="area-text">Tutela efectiva y urgente frente a abusos corporativos. Redacción de amparos y medidas cautelares para exigir coberturas médicas vitales a Obras Sociales y Prepagas. Reclamos formales y enérgicos ante tratos indignos, estafas bancarias e incumplimientos comerciales.</p>
       </div>
     </div>
   </div>
@@ -575,12 +561,12 @@
     <div class="contact-layout">
       <!-- Info de contacto -->
       <div>
-        <div class="sec-tag fu">Contacto Institucional</div>
+        <div class="sec-tag fu">Contacto Directo</div>
         <h2 class="sec-h fu" style="margin-top:16px; margin-bottom:24px; transition-delay:.1s">
-          Inicie su<br><em>consulta.</em>
+          Iniciá tu<br><em>consulta.</em>
         </h2>
         <p class="fu" style="font-size:16px; color:var(--ivory-80); margin-bottom:40px; transition-delay:.2s">
-          Complete el formulario o utilice nuestros canales directos. Evaluaremos su situación con rigor jurídico para informarle los pasos a seguir.
+          Completá el formulario o utilizá mis canales directos. Evaluaré tu situación con rigor jurídico para informarte los pasos a seguir con total honestidad.
         </p>
 
         <div class="fu" style="transition-delay:.3s">
@@ -593,24 +579,24 @@
             <div><div class="ch-l">Línea Telefónica</div><div class="ch-v">+54 9 351 773 6170</div></div>
           </a>
           <a href="mailto:dr.aristeolautaro@gmail.com" class="ch" style="border-bottom:none;">
-            <div class="ch-ico"><i class="fa-regular fa-envelope"></i></div>
+            <div class="ch-ico"><i class="fa-solid fa-envelope"></i></div>
             <div><div class="ch-l">Correo Electrónico</div><div class="ch-v">dr.aristeolautaro@gmail.com</div></div>
           </a>
         </div>
       </div>
 
-      <!-- Formulario Profesional -->
+      <!-- Formulario -->
       <div class="form-box fu" style="transition-delay:.2s">
         <form id="cForm" novalidate>
           <div style="margin-bottom:24px">
             <label class="f-label" for="fn">Nombre completo</label>
-            <input class="f-input" type="text" id="fn" placeholder="Ingrese su nombre y apellido" required>
+            <input class="f-input" type="text" id="fn" placeholder="Ingresá tu nombre y apellido" required>
           </div>
           
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:24px;">
             <div>
               <label class="f-label" for="fe">Correo Electrónico</label>
-              <input class="f-input" type="email" id="fe" placeholder="su@email.com" required>
+              <input class="f-input" type="email" id="fe" placeholder="tu@email.com" required>
             </div>
             <div>
               <label class="f-label" for="ft">Teléfono / Celular</label>
@@ -621,7 +607,7 @@
           <div style="margin-bottom:24px">
             <label class="f-label" for="farea">Materia de la consulta (Opcional)</label>
             <select class="f-input" id="farea">
-              <option value="" disabled selected>Seleccione el área jurídica...</option>
+              <option value="" disabled selected>Seleccioná el área jurídica...</option>
               <option value="civil">Civil, Comercial o Daños</option>
               <option value="laboral">Laboral o Riesgos de Trabajo (ART)</option>
               <option value="familia">Familia (Divorcio, Alimentos, etc.)</option>
@@ -632,13 +618,13 @@
 
           <div style="margin-bottom:32px">
             <label class="f-label" for="fm">Síntesis del caso</label>
-            <textarea class="f-input" id="fm" placeholder="Describa brevemente los hechos relevantes. No incluya datos sensibles ni contraseñas."></textarea>
+            <textarea class="f-input" id="fm" placeholder="Describí brevemente los hechos relevantes. No incluyas datos sensibles."></textarea>
           </div>
           
           <button type="submit" class="f-submit">Enviar Solicitud de Evaluación</button>
           
-          <p style="font-size: 11px; color: var(--ivory-60); margin-top: 20px; line-height: 1.6;">
-            * El envío de este formulario no establece automáticamente una relación contractual abogado-cliente. La información es confidencial y amparada por el secreto profesional.
+          <p style="font-size: 11.5px; color: var(--ivory-60); margin-top: 20px; line-height: 1.6;">
+            * El envío de este formulario no establece automáticamente una relación contractual abogado-cliente. La información es gestionada bajo estricto secreto profesional.
           </p>
         </form>
       </div>
@@ -655,7 +641,7 @@
       Matrícula Provincial 1-43722 · Matrícula Federal T° 511 F° 222 <br>
       Córdoba, República Argentina
     </div>
-    <div style="font-size: 10px; color: var(--ivory-30); margin-top: 16px;">
+    <div style="font-size: 11px; color: var(--ivory-30); margin-top: 16px;">
       &copy; 2026 Estudio Jurídico Aristeo. Todos los derechos reservados.
     </div>
   </div>
@@ -685,7 +671,7 @@
     const originalText = btn.textContent;
     btn.textContent = 'Procesando...';
     setTimeout(() => {
-      btn.style.background = '#F2EFE9';
+      btn.style.background = 'var(--ivory)';
       btn.textContent = 'Formulario Enviado Correctamente';
       e.target.reset();
       setTimeout(() => {
