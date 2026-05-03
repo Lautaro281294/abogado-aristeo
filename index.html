@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo. Litigio estratégico y representación de alta complejidad en la Provincia de Córdoba. Dr. Lautaro N. Aristeo."/>
+  <meta name="description" content="Estudio Jurídico Aristeo. Litigio estratégico, derecho civil, laboral, familia y consumidor en la Provincia de Córdoba. Dirección: Dr. Lautaro N. Aristeo."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Estudio Jurídico Aristeo | Litigio Estratégico · Córdoba</title>
+  <title>Estudio Jurídico Aristeo | Abogacía de Alta Complejidad · Córdoba</title>
 
-  <!-- ══ SEO LOCAL: JSON-LD ══ -->
+  <!-- ══ SEO LOCAL & METADATOS ══ -->
+  <meta property="og:title" content="Estudio Jurídico Aristeo | Dr. Lautaro N. Aristeo">
+  <meta property="og:description" content="Representación legal de precisión. Litigio estratégico en Córdoba.">
+  <meta property="og:type" content="website">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,287 +35,391 @@
   }
   </script>
 
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
   /* ═══════════════════════════════════════════════
-     PALETA ÉLITE (Verde Oliva Profundo, Marfil y Oro Viejo)
+     1. VARIABLES GLOBALES Y PALETA (ESTILO "SUITS")
   ═══════════════════════════════════════════════ */
   :root {
-    --bg:      #171b14; 
-    --bg2:     #1d2219; 
-    --line:    rgba(200, 169, 110, 0.2); 
+    --bg-base:     #121610; /* Verde muy oscuro, casi negro */
+    --bg-surface:  #1a1f17; /* Superficie elevada */
+    --bg-panel:    #22291e; /* Paneles destacados */
+    --line-color:  rgba(200, 169, 110, 0.15); /* Líneas sutiles doradas */
     
-    --gold:    #bca06b; 
-    --gold-hi: #e2c691; 
+    --gold-main:   #c2a36d; /* Oro institucional */
+    --gold-light:  #e6c88f; /* Oro iluminado para hover */
+    --gold-dark:   #8a7346; /* Oro oscuro para sombras */
     
-    --ivory:   #F4F1EA; 
-    --i60:     rgba(244,241,234,.65); 
-    --i35:     rgba(244,241,234,.35);
+    --text-main:   #F4F1EA; /* Marfil para legibilidad */
+    --text-muted:  rgba(244, 241, 234, 0.65); /* Marfil atenuado */
+    --text-dark:   #121610; /* Para texto sobre oro */
     
-    --wa:      #25D366;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body:    'DM Sans', sans-serif;
+
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  /* ═══════════════════════════════════════════════
+     2. RESET Y TIPOGRAFÍA BASE
+  ═══════════════════════════════════════════════ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
+  html { scroll-behavior: smooth; font-size: 16px; }
+  
   body {
-    background: var(--bg); color: var(--ivory);
-    font-family: 'DM Sans', sans-serif; font-size: 16.5px; font-weight: 300; line-height: 1.85; 
+    background-color: var(--bg-base); color: var(--text-main);
+    font-family: var(--font-body); font-weight: 300; line-height: 1.8; 
     -webkit-font-smoothing: antialiased; overflow-x: hidden;
   }
 
-  ::selection { background: var(--gold); color: var(--bg); }
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--gold); }
+  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
-  .w { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
-  @media (max-width: 820px) { .w { padding: 0 24px; } }
+  /* Contenedores */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .lbl {
-    display: inline-flex; align-items: center; gap: 15px;
-    font-size: 10.5px; font-weight: 500; letter-spacing: .4em; text-transform: uppercase; color: var(--gold);
+  /* Textos globales */
+  .label {
+    display: inline-flex; align-items: center; gap: 1rem;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main);
   }
-  .lbl::before { content: ''; width: 30px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .label::before { content: ''; width: 30px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
 
-  .h2 {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 60px);
-    font-weight: 400; line-height: 1.15; color: var(--ivory); letter-spacing: -.01em;
+  .heading-2 {
+    font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 1.5rem;
   }
-  .h2 em { font-style: italic; color: var(--gold-hi); }
+  .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  .body-t { font-size: 16.5px; line-height: 1.95; color: var(--i60); text-align: justify; hyphens: auto; }
-  .body-t strong { color: var(--ivory); font-weight: 400; }
-
-  .sec { padding: 150px 0; border-top: 1px solid var(--line); }
+  .paragraph { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 1.5rem; }
+  .paragraph strong { color: var(--text-main); font-weight: 500; }
 
   /* ═══════════════════════════════════════════════
-     NAVBAR INSTITUCIONAL
+     3. NAVEGACIÓN (HEADER)
   ═══════════════════════════════════════════════ */
-  #nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    transition: background .4s, border-color .4s; border-bottom: 1px solid transparent;
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    transition: background var(--transition-slow), padding var(--transition-slow), border-color var(--transition-slow);
+    padding: 1.5rem 0; border-bottom: 1px solid transparent;
   }
-  #nav.on { background: rgba(23, 27, 20, 0.98); backdrop-filter: blur(15px); border-color: var(--line); }
-  .nav-w { display: flex; align-items: center; justify-content: space-between; height: 90px; transition: height .4s; }
-  #nav.on .nav-w { height: 75px; }
-
-  .logo-a { text-decoration: none; display: flex; flex-direction: column; gap: 2px; }
-  .logo-top { font-size: 8px; letter-spacing: .5em; text-transform: uppercase; color: var(--gold); font-weight: 500; }
-  .logo-bot { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 500; letter-spacing: .12em; color: var(--ivory); text-transform: uppercase;}
-
-  .nav-links { display: flex; gap: 45px; }
-  .nl {
-    font-size: 10.5px; font-weight: 500; letter-spacing: .25em; text-transform: uppercase;
-    color: var(--ivory); text-decoration: none; position: relative; padding-bottom: 5px; transition: color .3s;
+  .header.scrolled {
+    background: rgba(18, 22, 16, 0.95); backdrop-filter: blur(12px);
+    padding: 1rem 0; border-color: var(--line-color);
   }
-  .nl::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width .4s ease; }
-  .nl:hover { color: var(--gold-hi); }
-  .nl:hover::after { width: 100%; }
+  
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+  
+  .brand { text-decoration: none; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase;}
 
-  #ham { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; }
-  #ham span { width: 30px; height: 1px; background: var(--ivory); transition: .3s; }
-  #mob { display: none; flex-direction: column; gap: 30px; background: var(--bg2); border-top: 1px solid var(--line); padding: 40px; }
-  #mob.open { display: flex; }
-  @media (max-width: 820px) { .nav-links { display: none; } #ham { display: flex; } }
+  .nav-links { display: flex; gap: 3rem; align-items: center; }
+  .nav-item {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--text-main); text-decoration: none; position: relative; padding-bottom: 5px; transition: color var(--transition-fast);
+  }
+  .nav-item::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+    background: var(--gold-main); transition: width var(--transition-fast);
+  }
+  .nav-item:hover { color: var(--gold-light); }
+  .nav-item:hover::after { width: 100%; }
+
+  .btn-header {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--bg-base); background: var(--gold-main); padding: 0.8rem 1.5rem; text-decoration: none;
+    transition: all var(--transition-fast); border: 1px solid var(--gold-main);
+  }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  .mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .mobile-toggle span { width: 30px; height: 2px; background: var(--text-main); transition: var(--transition-fast); }
+  
+  .mobile-menu {
+    display: none; flex-direction: column; gap: 2rem;
+    background: var(--bg-surface); padding: 2rem 5vw; border-top: 1px solid var(--line-color);
+  }
+  .mobile-menu.active { display: flex; }
+
+  @media (max-width: 992px) {
+    .nav-links { display: none; }
+    .mobile-toggle { display: flex; }
+  }
 
   /* ═══════════════════════════════════════════════
-     HERO ÉLITE
+     4. HERO SECTION (CINEMATOGRÁFICO)
   ═══════════════════════════════════════════════ */
-  #hero {
+  .hero {
     min-height: 100vh; display: flex; align-items: center; position: relative;
-    background: linear-gradient(180deg, rgba(23,27,20,0.92) 0%, rgba(23,27,20,0.7) 100%),
+    background: linear-gradient(180deg, rgba(18,22,16,0.85) 0%, rgba(18,22,16,0.95) 100%),
                 url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed;
   }
-  .hero-inner { width: 100%; position: relative; z-index: 10; padding-top: 100px; }
-  .hero-h1 { max-width: 900px; margin-bottom: 30px;}
-  .hero-sub { max-width: 650px; margin-bottom: 50px; font-size: 19px; text-align: justify; color: var(--i60); }
+  .hero-content { position: relative; z-index: 10; padding-top: 5rem; max-width: 900px; }
   
-  .btn-gold {
-    display: inline-flex; align-items: center; gap: 15px; font-size: 11px; font-weight: 500; letter-spacing: .3em;
-    text-transform: uppercase; color: var(--bg); background: var(--gold); padding: 22px 48px; text-decoration: none;
-    transition: background .4s, color .4s; cursor: pointer; border: 1px solid var(--gold);
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold-main); border: 1px solid var(--line-color); padding: 0.6rem 1.2rem;
+    margin-bottom: 2rem; background: rgba(0,0,0,0.3); backdrop-filter: blur(4px);
   }
-  .btn-gold:hover { background: transparent; color: var(--gold); }
+
+  .hero-title {
+    font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 400; line-height: 1.05; color: var(--text-main); margin-bottom: 2rem; letter-spacing: -0.02em;
+  }
+  .hero-title em { color: var(--gold-main); font-style: italic; }
+
+  .hero-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 3rem; text-align: justify; max-width: 700px; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 15px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1.2rem 2.5rem; text-decoration: none;
+    transition: all var(--transition-fast); border: 1px solid var(--gold-main); cursor: pointer;
+  }
+  .btn-primary:hover { background: transparent; color: var(--gold-main); }
 
   /* ═══════════════════════════════════════════════
-     FILOSOFÍA / CAPACIDAD
+     5. ESTRUCTURA Y DIRECCIÓN (FILOSOFÍA)
   ═══════════════════════════════════════════════ */
-  #filosofia { background: var(--bg2); }
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
-  @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; gap: 50px; } }
+  .grid-50-50 { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  @media (max-width: 900px) { .grid-50-50 { grid-template-columns: 1fr; gap: 3rem; } }
+
+  .quote-block {
+    border-left: 2px solid var(--gold-main); padding-left: 2rem; margin-top: 3rem;
+  }
+  .quote-text {
+    font-family: var(--font-heading); font-size: 1.8rem; font-style: italic; color: var(--gold-light); line-height: 1.4;
+  }
+
+  .creds-box {
+    margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line-color);
+    display: flex; gap: 3rem; flex-wrap: wrap;
+  }
+  .cred-item span { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.2em; margin-bottom: 5px; }
+  .cred-item strong { font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); font-weight: 400;}
 
   /* ═══════════════════════════════════════════════
-     UI: LISTA EXPÁNSIBLE ÉLITE (ÁREAS DE PRÁCTICA)
+     6. ÁREAS DE PRÁCTICA (ACORDEÓN ÉLITE)
   ═══════════════════════════════════════════════ */
-  #areas { background: var(--bg); }
-  .elite-list { margin-top: 60px; border-top: 1px solid var(--line); }
+  .areas-container { margin-top: 4rem; border-top: 1px solid var(--line-color); }
   
-  .elite-item { border-bottom: 1px solid var(--line); transition: background .4s; }
-  .elite-head {
-    width: 100%; text-align: left; padding: 45px 0; background: none; border: none; cursor: pointer;
-    display: grid; grid-template-columns: 40px 1fr 30px; align-items: center; gap: 30px;
+  .area-item { border-bottom: 1px solid var(--line-color); transition: background var(--transition-fast); }
+  .area-item:hover { background: var(--bg-surface); }
+  
+  .area-header {
+    width: 100%; text-align: left; padding: 2.5rem 0; background: none; border: none; cursor: pointer;
+    display: grid; grid-template-columns: 40px 1fr 30px; align-items: center; gap: 2rem;
   }
-  .elite-item:hover .eh-title { color: var(--gold); padding-left: 10px; }
-  .eh-ico { color: var(--gold); font-size: 24px; opacity: 0.7; }
-  .eh-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; color: var(--ivory); transition: all .4s ease; }
-  .eh-arrow { color: var(--gold); font-size: 14px; transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .area-icon { color: var(--gold-main); font-size: 1.5rem; opacity: 0.8; }
+  .area-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; color: var(--text-main); transition: color var(--transition-fast); }
+  .area-arrow { color: var(--gold-main); font-size: 1rem; transition: transform var(--transition-slow); }
   
-  .elite-body {
+  .area-content {
     max-height: 0; overflow: hidden; opacity: 0;
-    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    transition: max-height var(--transition-slow), opacity var(--transition-slow);
   }
-  .elite-item.open .elite-body { max-height: 1000px; opacity: 1; }
-  .elite-item.open .eh-arrow { transform: rotate(180deg); }
-  .elite-item.open .eh-title { color: var(--gold-hi); }
+  .area-item.open .area-content { max-height: 1200px; opacity: 1; }
+  .area-item.open .area-arrow { transform: rotate(180deg); }
+  .area-item.open .area-title { color: var(--gold-light); }
   
-  .eb-content {
-    padding: 0 0 60px 70px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+  .area-inner { padding: 0 0 3rem 4.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 768px) { 
+    .area-inner { grid-template-columns: 1fr; padding: 0 0 2rem 0; gap: 1.5rem; }
+    .area-header { grid-template-columns: 30px 1fr 20px; gap: 1rem; padding: 2rem 0;}
+    .area-title { font-size: 1.5rem; }
   }
-  @media (max-width: 768px) { .eb-content { grid-template-columns: 1fr; padding: 0 0 40px 0; gap: 30px;} .elite-head { grid-template-columns: 30px 1fr 20px; gap: 15px;} .eh-title { font-size: 26px; } }
 
-  .eb-text { font-size: 16px; color: var(--i60); line-height: 1.9; text-align: justify; }
-  .eb-list { list-style: none; }
-  .eb-list li { position: relative; padding-left: 20px; font-size: 15px; color: var(--ivory); margin-bottom: 12px; line-height: 1.6;}
-  .eb-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+  .area-desc { font-size: 1rem; color: var(--text-muted); line-height: 1.9; text-align: justify; }
+  .area-list { list-style: none; }
+  .area-list li { position: relative; padding-left: 1.5rem; font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.8rem; line-height: 1.6;}
+  .area-list li::before { content: '■'; position: absolute; left: 0; top: 6px; color: var(--gold-main); font-size: 0.4rem; }
 
   /* ═══════════════════════════════════════════════
-     ADMISIÓN DE CASOS (FORMULARIO SECRETARIA VIRTUAL)
+     7. METODOLOGÍA & HERRAMIENTAS EXTERNAS
   ═══════════════════════════════════════════════ */
-  #admision { background: var(--bg2); }
+  .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4rem; }
+  @media (max-width: 900px) { .tools-grid { grid-template-columns: 1fr; } }
   
-  .portal-wrap {
-    margin-top: 60px;
-    background: var(--bg); border: 1px solid var(--line);
+  .tool-box {
+    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 2.5rem;
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+  .tool-box h3 { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; color: var(--gold-light); }
+  
+  /* Placeholder interactivo para Calendly */
+  .calendly-placeholder {
+    width: 100%; height: 350px; border: 1px dashed var(--gold-main); background: rgba(200, 169, 110, 0.05);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; text-align: center; padding: 2rem;
+  }
+  
+  /* Iframe para Google Maps */
+  .maps-iframe { width: 100%; height: 350px; border: 1px solid var(--line-color); filter: grayscale(80%) contrast(1.2) opacity(0.8); transition: filter var(--transition-fast);}
+  .maps-iframe:hover { filter: grayscale(0%) contrast(1) opacity(1); }
+
+  /* ═══════════════════════════════════════════════
+     8. EVALUACIÓN Y CONTACTO (FORMULARIO INTELIGENTE)
+  ═══════════════════════════════════════════════ */
+  .contact-wrapper {
+    margin-top: 4rem; background: var(--bg-surface); border: 1px solid var(--line-color);
     display: grid; grid-template-columns: 35% 65%;
   }
-  @media (max-width: 900px) { .portal-wrap { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } }
 
-  .portal-info { padding: 60px; border-right: 1px solid var(--line); background: rgba(23, 27, 20, 0.5); }
-  .portal-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; margin-bottom: 20px; color: var(--gold-hi); }
-  .portal-info p { font-size: 15px; color: var(--i60); line-height: 1.8; margin-bottom: 40px; text-align: justify;}
+  /* Panel Izquierdo: Vía Rápida */
+  .contact-fast { padding: 4rem; border-right: 1px solid var(--line-color); background: var(--bg-panel); }
+  .contact-fast h3 { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; color: var(--gold-light); margin-bottom: 1.5rem; }
   
-  .contact-method { margin-bottom: 30px; }
-  .cm-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-  .cm-val { font-size: 16px; color: var(--ivory); display: flex; align-items: center; gap: 10px; text-decoration: none; transition: color .3s; }
-  .cm-val:hover { color: var(--gold-hi); }
+  .contact-info-block { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 2rem; }
+  .info-item { display: flex; flex-direction: column; gap: 0.3rem; }
+  .info-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-main); }
+  .info-value { font-size: 1rem; color: var(--text-main); display: flex; align-items: center; gap: 10px; text-decoration: none; transition: color var(--transition-fast); }
+  .info-value:hover { color: var(--gold-light); }
 
-  .portal-form { padding: 60px; }
-  @media (max-width: 600px) { .portal-info, .portal-form { padding: 30px; } }
+  /* Panel Derecho: Vía Estratégica (Formulario) */
+  .contact-form-area { padding: 4rem; }
+  @media (max-width: 600px) { .contact-fast, .contact-form-area { padding: 2rem; } }
   
-  .form-title { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: 40px; border-bottom: 1px solid var(--line); padding-bottom: 15px;}
+  .form-intro { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; text-align: justify; }
 
-  .fg { margin-bottom: 30px; }
-  .fl { display: block; font-size: 11px; font-weight: 400; letter-spacing: .2em; text-transform: uppercase; color: var(--i60); margin-bottom: 10px; }
+  .form-group { margin-bottom: 2rem; }
+  .form-label { display: block; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.8rem; }
   
-  .fi2 {
-    width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line);
-    color: var(--ivory); font-family: 'DM Sans', sans-serif; font-size: 16px; padding: 10px 0; outline: none; transition: border-color .4s; appearance: none;
+  .form-input {
+    width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color);
+    color: var(--text-main); font-family: var(--font-body); font-size: 1rem; padding: 0.8rem 0; outline: none; transition: border-color var(--transition-fast);
   }
-  .fi2:focus { border-color: var(--gold); }
-  textarea.fi2 { resize: vertical; min-height: 80px; }
-  select.fi2 { cursor: pointer; }
-  select.fi2 option { background: var(--bg2); }
+  .form-input:focus { border-color: var(--gold-main); }
+  textarea.form-input { resize: vertical; min-height: 80px; }
+  select.form-input { cursor: pointer; appearance: none; border-radius: 0; }
+  select.form-input option { background: var(--bg-panel); color: var(--text-main); }
 
-  .dual-btns { display: flex; gap: 20px; margin-top: 40px; }
-  @media (max-width: 600px) { .dual-btns { flex-direction: column; } }
+  /* Preguntas Dinámicas Opcionales */
+  #dynamic-questions {
+    display: none; margin-bottom: 2rem; padding: 2rem; background: rgba(0,0,0,0.2); border-left: 2px solid var(--gold-main);
+  }
+  .dq-title { font-size: 0.85rem; color: var(--gold-light); margin-bottom: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; }
+
+  .action-buttons { display: flex; gap: 1.5rem; margin-top: 3rem; }
+  @media (max-width: 600px) { .action-buttons { flex-direction: column; gap: 1rem; } }
   
-  .btn-outline {
+  .btn-submit {
     flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-    font-size: 10.5px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
-    color: var(--ivory); background: transparent; border: 1px solid var(--line); padding: 20px;
-    cursor: pointer; transition: all .4s ease;
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+    background: transparent; border: 1px solid var(--line-color); color: var(--text-main); padding: 1.2rem;
+    cursor: pointer; transition: all var(--transition-fast); font-family: var(--font-body);
   }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-submit:hover { border-color: var(--gold-main); color: var(--gold-main); }
+  .btn-submit.wsp:hover { border-color: var(--wa); color: var(--wa); }
 
   /* ═══════════════════════════════════════════════
-     FOOTER
+     9. FOOTER Y EXTRAS
   ═══════════════════════════════════════════════ */
-  footer { background: var(--bg); border-top: 1px solid var(--line); padding: 80px 0; text-align: center; }
-  .f-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; letter-spacing: .15em; color: var(--ivory); margin-bottom: 20px;}
-  .f-data { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--i35); line-height: 2.2; }
+  .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 5rem 0; text-align: center; }
+  .footer-logo { font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.5rem;}
+  .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
 
-  /* ANIMACIONES */
-  .fu { opacity: 0; transform: translateY(25px); transition: all .9s cubic-bezier(0.16, 1, 0.3, 1); }
-  .fu.in { opacity: 1; transform: none; }
+  .floating-wsp {
+    position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px;
+    background-color: var(--wa); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; box-shadow: 0 10px 25px rgba(0,0,0,0.5); z-index: 999; transition: transform var(--transition-fast); text-decoration: none;
+  }
+  .floating-wsp:hover { transform: scale(1.1); }
+
+  /* Animaciones Reveal */
+  .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
-<nav id="nav">
-  <div class="w nav-w">
-    <a href="#hero" class="logo-a">
-      <span class="logo-top">Estudio Jurídico</span>
-      <span class="logo-bot">Aristeo</span>
+<!-- Botón Flotante -->
+<a href="https://wa.me/5493517736170?text=Hola%20Dr.%20Aristeo.%20Me%20contacto%20desde%20su%20sitio%20web." class="floating-wsp" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- ══ NAVEGACIÓN ══ -->
+<header class="header" id="header">
+  <div class="container nav-wrapper">
+    <a href="#hero" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
     </a>
-    <div class="nav-links">
-      <a class="nl" href="#filosofia">Litigio Estratégico</a>
-      <a class="nl" href="#areas">Áreas de Práctica</a>
-      <a class="nl" href="#admision">Portal de Admisión</a>
-    </div>
-    <button id="ham"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="#filosofia" class="nav-item">Enfoque Operativo</a>
+      <a href="#areas" class="nav-item">Áreas de Práctica</a>
+      <a href="#herramientas" class="nav-item">Herramientas</a>
+      <a href="#contacto" class="btn-header">Evaluación de Caso</a>
+    </nav>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <div id="mob">
-    <a class="nl" href="#filosofia" onclick="cm()">Litigio Estratégico</a>
-    <a class="nl" href="#areas" onclick="cm()">Áreas de Práctica</a>
-    <a class="nl" href="#admision" onclick="cm()">Portal de Admisión</a>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#filosofia" class="nav-item">Enfoque Operativo</a>
+    <a href="#areas" class="nav-item">Áreas de Práctica</a>
+    <a href="#herramientas" class="nav-item">Herramientas</a>
+    <a href="#contacto" class="nav-item">Evaluación de Caso</a>
   </div>
-</nav>
+</header>
 
-<!-- ══ HERO ══ -->
-<section id="hero">
-  <div class="w hero-inner">
-    <div class="lbl fu" style="margin-bottom: 30px;">
-      Jurisdicción Provincial y Federal · Córdoba
+<!-- ══ HERO SECTION ══ -->
+<section class="hero" id="hero">
+  <div class="container hero-content">
+    <div class="hero-badge reveal">
+      <i class="fa-solid fa-scale-balanced" style="font-size: 1rem;"></i>
+      Litigio Estratégico · Córdoba Capital
     </div>
-    <h1 class="h2 hero-h1 fu" style="transition-delay:.1s">
-      Rigor Técnico.<br><em>Abogacía de Alta Complejidad.</em>
+    <h1 class="hero-title reveal" style="transition-delay: 0.1s;">
+      Dirección Técnica. <br><em>Resultados Precisos.</em>
     </h1>
-    <p class="hero-sub fu" style="transition-delay:.2s">
-      Asumo la dirección jurídica de su patrimonio e intereses con un control minucioso del expediente. Desde la resolución ágil de conflictos de consumo hasta litigios estructurales de magnitud, el enfoque es el mismo: eficiencia procesal, ahorro de tiempo y conexión absoluta con la realidad jurídica argentina.
+    <p class="hero-desc reveal" style="transition-delay: 0.2s;">
+      Asumo el control jurídico de sus intereses con un enfoque riguroso y analítico. Litigamos en los fueros provinciales y federales de Córdoba, garantizando una representación técnica que evita la burocracia y prioriza la eficiencia procesal.
     </p>
-    <div class="fu" style="transition-delay:.3s">
-      <a class="btn-gold" href="#admision">Solicitar Diagnóstico Preliminar</a>
+    <div class="reveal" style="transition-delay: 0.3s;">
+      <a href="#contacto" class="btn-primary">Estructurar Consulta <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></a>
     </div>
   </div>
 </section>
 
-<!-- ══ FILOSOFÍA ══ -->
-<section class="sec" id="filosofia">
-  <div class="w">
-    <div class="grid-2">
-      <div>
-        <div class="lbl fu">Enfoque Operativo</div>
-        <h2 class="h2 fu" style="margin-top:25px; transition-delay:.1s">
-          Estructura y<br><em>Escala.</em>
-        </h2>
-        <div style="border-left: 2px solid var(--gold); padding-left: 30px; margin-top: 40px;" class="fu" style="transition-delay:.2s">
-          <p style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-style: italic; color: var(--gold-hi); line-height: 1.4;">
-            "El derecho no admite improvisaciones. La complejidad normativa exige traducción en estrategias certeras y documentadas."
-          </p>
+<!-- ══ FILOSOFÍA Y DIRECCIÓN TÉCNICA ══ -->
+<section class="section" id="filosofia">
+  <div class="container">
+    <div class="grid-50-50">
+      <div class="reveal">
+        <div class="label">Dinámica de Trabajo</div>
+        <h2 class="heading-2">Arquitectura<br><em>Legal.</em></h2>
+        <div class="quote-block">
+          <p class="quote-text">"La complejidad del sistema jurídico argentino exige respuestas dinámicas, estructuradas y carentes de improvisación."</p>
         </div>
       </div>
-      <div>
-        <p class="body-t fu" style="transition-delay:.1s; margin-bottom: 25px;">
-          Mi práctica se aleja deliberadamente de las estructuras tradicionales lentas. Comprendo que el cliente contemporáneo valora, por sobre todo, <strong>la precisión lógica y el tiempo</strong>. El trato es directo y exento de intermediarios burocráticos.
+      <div class="reveal" style="transition-delay: 0.2s;">
+        <p class="paragraph">
+          Entiendo que el cliente contemporáneo busca soluciones tangibles. En un contexto económico e institucional fluctuante, <strong>el tiempo es su activo más valioso.</strong> Mi labor consiste en filtrar la viabilidad técnica de su conflicto desde la primera reunión, diseñando un mapa de acción claro y realista.
         </p>
-        <p class="body-t fu" style="transition-delay:.2s; margin-bottom: 25px;">
-          <strong>Capacidad de Adaptación:</strong> Poseo la infraestructura técnica para gestionar tanto negociaciones extrajudiciales rápidas —como la restitución de fondos por estafas bancarias—, como la dirección de litigios contenciosos de años de duración que requieren un análisis documental exhaustivo y coordinación pericial.
+        <p class="paragraph">
+          Asumo cada expediente con responsabilidad técnica directa. No delegará la discusión de su patrimonio o libertad a asistentes; el diseño de la estrategia probatoria, la redacción de demandas y la concurrencia a audiencias en Tribunales I o fueros federales están bajo mi estricto control.
         </p>
-        <div class="fu" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line); display: flex; gap: 30px;">
-          <div>
-            <span style="display:block; font-size: 10px; text-transform: uppercase; color: var(--gold); letter-spacing: .2em; margin-bottom: 5px;">Dr. Lautaro N. Aristeo</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--ivory);">M.P. 1-43722</span>
+        <div class="creds-box">
+          <div class="cred-item">
+            <span>Matrícula Provincial</span>
+            <strong>M.P. 1-43722</strong>
           </div>
-          <div>
-            <span style="display:block; font-size: 10px; text-transform: uppercase; color: var(--gold); letter-spacing: .2em; margin-bottom: 5px;">Fuero Federal</span>
-            <span style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--ivory);">T° 511 F° 222</span>
+          <div class="cred-item">
+            <span>Matrícula Federal</span>
+            <strong>T° 511 F° 222</strong>
+          </div>
+          <div class="cred-item">
+            <span>Titular</span>
+            <strong>Dr. Lautaro N. Aristeo</strong>
           </div>
         </div>
       </div>
@@ -319,98 +427,100 @@
   </div>
 </section>
 
-<!-- ══ ÁREAS DE PRÁCTICA (UI ÉLITE - LÍNEAS) ══ -->
-<section class="sec" id="areas">
-  <div class="w">
-    <div class="lbl fu">Expertise Dogmático</div>
-    <h2 class="h2 fu" style="margin-top:25px; transition-delay:.1s">Áreas de <em>Práctica</em></h2>
-    <p class="body-t fu" style="max-width: 700px; margin-top: 20px; transition-delay:.2s">
-      Aplicación estricta de la legislación sustancial y procesal vigente en la República Argentina y la Provincia de Córdoba. Despliegue el área de su interés para conocer el alcance técnico de nuestra representación.
-    </p>
+<!-- ══ ÁREAS DE PRÁCTICA (UI ÉLITE) ══ -->
+<section class="section" id="areas" style="background-color: var(--bg-surface);">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Expertise Dogmático</div>
+      <h2 class="heading-2">Intervención <em>Especializada</em></h2>
+      <p class="paragraph" style="max-width: 700px;">
+        Seleccione la rama del derecho correspondiente a su conflicto para conocer en detalle el enfoque técnico, la legislación aplicable y la metodología de resolución que implementamos.
+      </p>
+    </div>
 
-    <div class="elite-list fu" style="transition-delay:.3s">
+    <div class="areas-container reveal" style="transition-delay: 0.2s;">
       
-      <!-- Línea 1: Derecho de Consumo -->
-      <div class="elite-item" onclick="toggleElite(this)">
-        <button class="elite-head">
-          <i class="fa-solid fa-shield-halved eh-ico"></i>
-          <span class="eh-title">Derecho del Consumidor y Usuarios</span>
-          <i class="fa-solid fa-chevron-down eh-arrow"></i>
+      <!-- Civil y Comercial -->
+      <div class="area-item">
+        <button class="area-header" onclick="toggleArea(this)">
+          <i class="fa-solid fa-landmark area-icon"></i>
+          <span class="area-title">Derecho Civil y Comercial</span>
+          <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
-        <div class="elite-body">
-          <div class="eb-content">
-            <div class="eb-text">
-              Tutela efectiva frente a la asimetría de poder impuesta por grandes corporaciones, entidades financieras y administradoras de planes. Aplicación rigurosa de la Ley 24.240 y reclamo de Daño Punitivo ante conductas temerarias de las empresas.
+        <div class="area-content">
+          <div class="area-inner">
+            <div class="area-desc">
+              Resguardo absoluto de la propiedad privada y ejecución de obligaciones en el marco del Código Civil y Comercial de la Nación. Actuamos tanto en la redacción preventiva de acuerdos como en el litigio contencioso por incumplimientos.
             </div>
-            <ul class="eb-list">
-              <li><strong>Planes de Ahorro:</strong> Amparos y medidas cautelares para el recalculo de cuotas abusivas (Teoría de la imprevisión). Freno a ejecuciones prendarias.</li>
-              <li><strong>Fraudes Bancarios:</strong> Responsabilidad objetiva de bancos y billeteras virtuales ante <em>phishing</em>, vaciamiento de cuentas y préstamos pre-aprobados no solicitados.</li>
-              <li><strong>Salud (Obras Sociales y Prepagas):</strong> Amparos judiciales de urgencia para garantizar coberturas médicas, prótesis, medicación oncológica y prestaciones de la Ley de Discapacidad.</li>
-              <li><strong>Veraz:</strong> Supresión de datos crediticios caducos (Derecho al olvido financiero).</li>
+            <ul class="area-list">
+              <li><strong>Derecho Sucesorio:</strong> Tramitación ágil de declaratoria de herederos. Partición de herencia, adjudicación de bienes muebles e inmuebles y tracto abreviado para venta directa.</li>
+              <li><strong>Contratos Reales:</strong> Redacción técnica de boletos de compraventa, locaciones, fideicomisos y cesiones de derechos.</li>
+              <li><strong>Litigio Patrimonial:</strong> Juicios de desalojo, cobro de alquileres y expensas. Ejecución de títulos cambiarios (cheques, pagarés).</li>
+              <li><strong>Daños y Perjuicios:</strong> Reclamos por responsabilidad civil derivada de accidentes de tránsito, mala praxis o ruptura contractual.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Línea 2: Derecho Laboral -->
-      <div class="elite-item" onclick="toggleElite(this)">
-        <button class="elite-head">
-          <i class="fa-solid fa-briefcase eh-ico"></i>
-          <span class="eh-title">Derecho Laboral y Riesgos del Trabajo</span>
-          <i class="fa-solid fa-chevron-down eh-arrow"></i>
+      <!-- Laboral y ART -->
+      <div class="area-item">
+        <button class="area-header" onclick="toggleArea(this)">
+          <i class="fa-solid fa-briefcase area-icon"></i>
+          <span class="area-title">Derecho Laboral y Riesgos de Trabajo</span>
+          <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
-        <div class="elite-body">
-          <div class="eb-content">
-            <div class="eb-text">
-              Representación técnica frente a contingencias en el marco de la Ley de Contrato de Trabajo (LCT) y la Ley de Riesgos del Trabajo (LRT). Aseguramos que la reparación integral del daño físico o la indemnización por despido sea calculada con precisión pericial y reclamada con firmeza.
+        <div class="area-content">
+          <div class="area-inner">
+            <div class="area-desc">
+              Representación técnica y firme frente a contingencias en la Ley de Contrato de Trabajo (LCT) y el sistema de Aseguradoras de Riesgos del Trabajo (LRT). Aseguramos la correcta cuantificación y percepción de indemnizaciones.
             </div>
-            <ul class="eb-list">
-              <li><strong>Extinción del Vínculo:</strong> Liquidación e intimación fehaciente por despido incausado o despido indirecto fundado en graves incumplimientos patronales.</li>
-              <li><strong>Empleo no Registrado:</strong> Exigencia de multas indemnizatorias por trabajo "en negro" o registración deficiente (media jornada ficticia).</li>
-              <li><strong>Siniestralidad (ART):</strong> Patrocinio letrado obligatorio ante Comisiones Médicas por accidentes de trabajo, <em>in itinere</em> o enfermedades profesionales. Impugnación de altas médicas prematuras y divergencias en la determinación de incapacidad.</li>
+            <ul class="area-list">
+              <li><strong>Extinción del Vínculo:</strong> Intimaciones y cálculo de liquidación final por despido incausado, discriminatorio o despido indirecto (renuncia forzada por incumplimientos).</li>
+              <li><strong>Empleo no Registrado:</strong> Reclamos por trabajo "en negro" absoluto o registración deficiente (media jornada).</li>
+              <li><strong>Siniestralidad (ART):</strong> Patrocinio obligatorio ante la SRT / Comisiones Médicas en Córdoba. Reclamo por divergencia en el alta, accidentes in itinere, enfermedades profesionales y determinación de incapacidad laboral real.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Línea 3: Derecho Civil y Comercial -->
-      <div class="elite-item" onclick="toggleElite(this)">
-        <button class="elite-head">
-          <i class="fa-solid fa-landmark eh-ico"></i>
-          <span class="eh-title">Derecho Civil y Comercial</span>
-          <i class="fa-solid fa-chevron-down eh-arrow"></i>
+      <!-- Consumo y Salud -->
+      <div class="area-item">
+        <button class="area-header" onclick="toggleArea(this)">
+          <i class="fa-solid fa-shield-halved area-icon"></i>
+          <span class="area-title">Defensa del Consumidor y Salud</span>
+          <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
-        <div class="elite-body">
-          <div class="eb-content">
-            <div class="eb-text">
-              Resguardo de la propiedad privada, blindaje de acuerdos comerciales y restitución del orden patrimonial ante incumplimientos. Intervención contenciosa estructurada en el Código Civil y Comercial de la Nación.
+        <div class="area-content">
+          <div class="area-inner">
+            <div class="area-desc">
+              Intervención rápida para frenar asimetrías de poder frente a grandes corporaciones, bancos y administradoras. Utilización de vías sumarísimas y amparos para garantizar derechos fundamentales.
             </div>
-            <ul class="eb-list">
-              <li><strong>Sucesiones:</strong> Trámite de declaratoria de herederos (ab intestato y testamentarias). Partición, adjudicación de bienes y tracto abreviado para disposición inmobiliaria inmediata.</li>
-              <li><strong>Contratos Reales:</strong> Redacción técnica de boletos de compraventa, fideicomisos y locaciones, minimizando vacíos legales.</li>
-              <li><strong>Acciones Reales y Personales:</strong> Juicios de desalojo, ejecución de alquileres, cobro de pesos y ejecuciones de títulos de crédito (pagarés, cheques).</li>
-              <li><strong>Responsabilidad Civil:</strong> Acciones de reparación integral por daños y perjuicios derivados de accidentes de tránsito o responsabilidad profesional.</li>
+            <ul class="area-list">
+              <li><strong>Amparos de Salud:</strong> Interposición de medidas cautelares urgentes contra Prepagas y Obras Sociales por negativa de cobertura, prótesis, medicación oncológica o inclumplimiento de la Ley de Discapacidad.</li>
+              <li><strong>Planes de Ahorro:</strong> Planteos por aumentos desmedidos en cuotas de vehículos. Recupero de fondos y defensa en ejecuciones prendarias.</li>
+              <li><strong>Fraudes Financieros:</strong> Responsabilidad bancaria frente a vaciamiento de cuentas, <em>phishing</em>, préstamos pre-aprobados no solicitados en billeteras virtuales (Mercado Pago, Naranja X).</li>
+              <li><strong>Veraz:</strong> Eliminación de datos por deudas prescriptas y cese de hostigamiento de estudios de cobranza.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- Línea 4: Derecho de Familia -->
-      <div class="elite-item" onclick="toggleElite(this)">
-        <button class="elite-head">
-          <i class="fa-solid fa-scale-unbalanced eh-ico"></i>
-          <span class="eh-title">Derecho de las Familias</span>
-          <i class="fa-solid fa-chevron-down eh-arrow"></i>
+      <!-- Familia -->
+      <div class="area-item">
+        <button class="area-header" onclick="toggleArea(this)">
+          <i class="fa-solid fa-scale-unbalanced area-icon"></i>
+          <span class="area-title">Derecho de las Familias</span>
+          <i class="fa-solid fa-chevron-down area-arrow"></i>
         </button>
-        <div class="elite-body">
-          <div class="eb-content">
-            <div class="eb-text">
-              Abordaje de la crisis familiar con una premisa clara: proteger el patrimonio y el interés superior de los menores con la mayor agilidad procesal posible, evitando el desgaste psicológico innecesario que provocan los procesos prolongados.
+        <div class="area-content">
+          <div class="area-inner">
+            <div class="area-desc">
+              Abordaje de la crisis familiar priorizando el orden patrimonial, la eficiencia procesal y el interés superior de los menores, mitigando el desgaste emocional de los involucrados.
             </div>
-            <ul class="eb-list">
-              <li><strong>Desvinculación Matrimonial:</strong> Trámite de divorcio por presentación conjunta o petición unilateral. Convenios reguladores blindados.</li>
-              <li><strong>Régimen Patrimonial:</strong> Liquidación de la comunidad de bienes y establecimiento de compensaciones económicas por desequilibrio patrimonial manifiesto.</li>
-              <li><strong>Responsabilidad Parental:</strong> Litigios por fijación, actualización e incidentes de aumento o cese de cuota alimentaria. Plan de parentalidad y cuidado personal (régimen de comunicación).</li>
+            <ul class="area-list">
+              <li><strong>Desvinculación Matrimonial:</strong> Trámite de divorcio unilateral o por presentación conjunta con elaboración de convenios reguladores precisos.</li>
+              <li><strong>Régimen Patrimonial:</strong> Liquidación de la sociedad conyugal, división de bienes y solicitud de compensación económica.</li>
+              <li><strong>Responsabilidad Parental:</strong> Instancias de mediación prejudicial y litigio para fijación de cuota alimentaria, actualización y régimen de comunicación (cuidado personal).</li>
             </ul>
           </div>
         </div>
@@ -420,152 +530,344 @@
   </div>
 </section>
 
-<!-- ══ PORTAL DE ADMISIÓN (SECRETARIA VIRTUAL DUAL) ══ -->
-<section class="sec" id="admision">
-  <div class="w">
-    <div class="lbl fu">Gestión de Trámites</div>
-    <h2 class="h2 fu" style="margin-top:25px; transition-delay:.1s">
-      Portal de <em>Admisión</em>
-    </h2>
+<!-- ══ HERRAMIENTAS Y UBICACIÓN ══ -->
+<section class="section" id="herramientas">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Soporte Tecnológico</div>
+      <h2 class="heading-2">Gestión y <em>Logística</em></h2>
+    </div>
     
-    <div class="portal-wrap fu" style="transition-delay:.2s">
+    <div class="tools-grid reveal" style="transition-delay: 0.2s;">
       
-      <!-- Lado Izquierdo: Contacto Operativo (Rápido) -->
-      <div class="portal-info">
-        <h3>Contacto Operativo</h3>
-        <p>Para consultas administrativas breves, dudas de jurisdicción o agendamiento directo sin envío de antecedentes, utilice nuestros canales convencionales.</p>
+      <!-- Integración Calendly (Marcador) -->
+      <div class="tool-box">
+        <h3>Agendamiento Automático</h3>
+        <p class="paragraph" style="font-size: 0.9rem;">Visualice la disponibilidad de agenda en tiempo real, reserve su reunión presencial o virtual (Zoom/Meet) y gestione el pago de la consulta de forma automatizada.</p>
         
-        <div class="contact-method">
-          <div class="cm-label">Línea Directa / WhatsApp</div>
-          <a href="https://wa.me/5493517736170" class="cm-val" target="_blank"><i class="fa-brands fa-whatsapp" style="color: var(--wa)"></i> +54 9 351 773-6170</a>
-        </div>
-        <div class="contact-method">
-          <div class="cm-label">Despacho Electrónico</div>
-          <a href="mailto:dr.aristeolautaro@gmail.com" class="cm-val"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
-        </div>
-        <div class="contact-method">
-          <div class="cm-label">Sede</div>
-          <div class="cm-val" style="cursor: default;"><i class="fa-solid fa-location-dot"></i> Córdoba Capital, Argentina</div>
+        <!-- Marcador visual: Para integrar el real, reemplazar este div con el script de embed de Calendly -->
+        <div class="calendly-placeholder">
+          <i class="fa-regular fa-calendar-check" style="font-size: 3rem; color: var(--gold-main); opacity: 0.5;"></i>
+          <p style="font-size: 0.8rem; color: var(--text-muted);">[Integración Calendly]<br>El sistema de reservas interactivo se activará aquí mediante el enlace de su cuenta.</p>
+          <a href="#contacto" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.6rem;">Alternativa: Evaluar vía formulario</a>
         </div>
       </div>
 
-      <!-- Lado Derecho: Formulario Estructurado (El Plan Armado) -->
-      <div class="portal-form">
-        <div class="form-title">Solicitud de Diagnóstico Preliminar</div>
-        <p style="font-size: 14.5px; color: var(--i60); margin-bottom: 30px; line-height: 1.7;">
-          Completar este formulario <strong>opcional</strong> me permite analizar la viabilidad técnica y documental de su conflicto antes de nuestra primera comunicación. Llegaremos a la entrevista con un plan de acción y estrategia pre-armada, optimizando su tiempo de manera absoluta.
+      <!-- Integración Google Maps -->
+      <div class="tool-box">
+        <h3>Sede Territorial</h3>
+        <p class="paragraph" style="font-size: 0.9rem;">Litigamos activamente en los fueros con sede en la Ciudad Autónoma de Córdoba. Disponibilidad para audiencias en Tribunales I, II, Familia y Fuero Federal.</p>
+        
+        <!-- Mapa centrado en Tribunales de Córdoba -->
+        <iframe class="maps-iframe" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.023223011311!2d-64.19129528430752!3d-31.413490703254924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432987fb40a0c49%3A0x6b149b1a7d65b741!2sPalacio%20de%20Justicia%20I!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ EVALUACIÓN DE CASO (FORMULARIO INTELIGENTE) ══ -->
+<section class="section" id="contacto" style="background-color: var(--bg-surface);">
+  <div class="container">
+    <div class="reveal">
+      <div class="label">Admisión de Casos</div>
+      <h2 class="heading-2">Planificación de <em>Consulta</em></h2>
+    </div>
+
+    <div class="contact-wrapper reveal" style="transition-delay: 0.2s;">
+      
+      <!-- Panel Vía Rápida -->
+      <div class="contact-fast">
+        <h3>Vía de Acceso Rápido</h3>
+        <p class="paragraph" style="font-size: 0.85rem; margin-bottom: 2rem;">
+          Si su necesidad es urgente, requiere asistencia para una mediación inminente o prefiere coordinar directamente sin adelantar información técnica, utilice los canales institucionales directos.
+        </p>
+        
+        <div class="contact-info-block">
+          <div class="info-item">
+            <span class="info-label">WhatsApp Institucional</span>
+            <a href="https://wa.me/5493517736170" class="info-value" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Despacho Electrónico</span>
+            <a href="mailto:dr.aristeolautaro@gmail.com" class="info-value"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Base de Operaciones</span>
+            <span class="info-value"><i class="fa-solid fa-map-pin"></i> Ciudad de Córdoba</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Formulario Inteligente -->
+      <div class="contact-form-area">
+        <p class="form-intro">
+          <strong>Vía Estratégica:</strong> Completar este formulario (total o parcialmente) me permite realizar un triage técnico de su conflicto. Esto asegura que, al momento de nuestra consulta, ya contemos con un mapa de situación y estrategias jurídicas pre-elaboradas, optimizando el tiempo de diagnóstico.
         </p>
 
-        <form id="admisionForm">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-            <div class="fg">
-              <label class="fl">Nombre Completo del Titular *</label>
-              <input class="fi2" type="text" id="a_nom" required>
+        <form id="evaluationForm">
+          <div class="form-group">
+            <label class="form-label">Titular del Derecho *</label>
+            <input type="text" class="form-input" id="f_nombre" placeholder="Nombre completo" required>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div class="form-group">
+              <label class="form-label">Celular de Contacto *</label>
+              <input type="tel" class="form-input" id="f_telefono" placeholder="Ej: 351 123 4567" required>
             </div>
-            <div class="fg">
-              <label class="fl">Teléfono / Celular *</label>
-              <input class="fi2" type="tel" id="a_tel" required>
+            <div class="form-group">
+              <label class="form-label">Email Principal</label>
+              <input type="email" class="form-input" id="f_email" placeholder="Opcional">
             </div>
           </div>
 
-          <div class="fg">
-            <label class="fl">Materia Jurídica del Conflicto *</label>
-            <select class="fi2" id="a_mat" required>
-              <option value="" disabled selected>Seleccione la rama aplicable...</option>
-              <option value="Consumo_Planes">Planes de Ahorro / Automotores</option>
-              <option value="Consumo_Estafas">Estafas Bancarias / Billeteras Virtuales</option>
-              <option value="Consumo_Salud">Amparos de Salud / Obras Sociales</option>
-              <option value="Laboral">Despido / Trabajo no Registrado / Laboral</option>
-              <option value="ART">Accidente Laboral o Enfermedad (ART)</option>
-              <option value="Civil_Sucesiones">Sucesiones / Declaratoria de Herederos</option>
-              <option value="Civil_Contratos">Contratos / Desalojos / Ejecuciones</option>
-              <option value="Familia">Derecho de Familia (Divorcio, Alimentos)</option>
-              <option value="Otro">Otra materia legal</option>
+          <div class="form-group">
+            <label class="form-label">Rama Jurídica Aplicable *</label>
+            <select class="form-input" id="f_area" required onchange="cargarPreguntasBase()">
+              <option value="" disabled selected>Seleccione la materia de su conflicto...</option>
+              <option value="Laboral">Derecho Laboral / Despidos / Empleo no registrado</option>
+              <option value="ART">Siniestralidad ART / Comisiones Médicas</option>
+              <option value="Consumo">Defensa del Consumidor / Planes de Ahorro / Estafas</option>
+              <option value="Salud">Amparos de Salud / Obras Sociales</option>
+              <option value="Sucesiones">Sucesiones / Declaratoria de Herederos</option>
+              <option value="Civil_Contratos">Incumplimientos Civiles / Desalojos / Contratos</option>
+              <option value="Familia">Derecho de Familia / Divorcios / Alimentos</option>
+              <option value="Otro">Otras consultas u asesoramiento preventivo</option>
             </select>
           </div>
 
-          <div class="fg">
-            <label class="fl">Relato Cronológico de los Hechos *</label>
-            <textarea class="fi2" id="a_hechos" placeholder="Describa el conflicto detallando fechas relevantes, si hubo intimaciones previas (cartas documento) y qué documentación probatoria posee a su disposición..." required></textarea>
+          <!-- Contenedor dinámico para preguntas de diagnóstico (OPCIONALES) -->
+          <div id="dynamic-questions">
+            <div class="dq-title"><i class="fa-solid fa-list-check" style="margin-right: 5px;"></i> Cuestionario de Diagnóstico (Opcional)</div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1rem;">Responder estas preguntas base acelerará la elaboración de la estrategia procesal.</p>
+            <div id="dq-fields"></div>
           </div>
 
-          <div class="dual-btns">
-            <button type="button" class="btn-outline" onclick="procesarAdmision('whatsapp')">
-              Remitir por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+          <div class="form-group">
+            <label class="form-label">Síntesis Fáctica *</label>
+            <textarea class="form-input" id="f_sintesis" placeholder="Redacte brevemente los hechos, indicando si cuenta con documentación (cartas documento, contratos, comprobantes) o si ya hubo instancias de mediación previa..." required></textarea>
+          </div>
+
+          <div class="action-buttons">
+            <button type="button" class="btn-submit wsp" onclick="procesarEvaluacion('wsp')">
+              Derivar Informe por WhatsApp <i class="fa-brands fa-whatsapp"></i>
             </button>
-            <button type="button" class="btn-outline" onclick="procesarAdmision('email')">
-              Remitir por E-Mail <i class="fa-solid fa-envelope"></i>
+            <button type="button" class="btn-submit" onclick="procesarEvaluacion('email')">
+              Derivar Informe por Email <i class="fa-regular fa-envelope"></i>
             </button>
           </div>
         </form>
-      </div>
 
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
-<footer>
-  <div class="w">
-    <div class="f-logo">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="f-data">Dr. Lautaro N. Aristeo · Matrícula Provincial 1-43722 · Matrícula Federal T° 511 F° 222</div>
-    <div class="f-data" style="margin-bottom: 20px;">Ciudad Autónoma de Córdoba, República Argentina</div>
-    <div class="f-data" style="color: var(--gold); opacity: 0.6;">© 2026 Reservados todos los derechos técnicos y de propiedad intelectual.</div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text">Dirección Técnica: Dr. Lautaro N. Aristeo</div>
+    <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
+    <div class="footer-text" style="color: var(--gold-dark);">Ciudad de Córdoba, Argentina | © 2026 Reservados todos los derechos.</div>
   </div>
 </footer>
 
 <script>
-  /* ─── SCROLL NAV ─── */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('on', scrollY > 50), {passive:true});
+  /* ─── 1. COMPORTAMIENTO DEL NAVBAR ─── */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
 
-  /* ─── MOBILE MENU ─── */
-  document.getElementById('ham').addEventListener('click', () => document.getElementById('mob').classList.toggle('open'));
-  function cm() { document.getElementById('mob').classList.remove('open'); }
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navItems = document.querySelectorAll('.mobile-menu .nav-item');
 
-  /* ─── SPY & REVEAL ─── */
-  const rv = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); } }); }, { threshold: 0.1 });
-  document.querySelectorAll('.fu').forEach(el => rv.observe(el));
+  mobileToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+  });
 
-  /* ─── LÍNEAS EXPÁNSIBLES (ÁREAS DE PRÁCTICA) ─── */
-  function toggleElite(btn) {
-    const item = btn.closest('.elite-item');
-    // Cerrar los demás
-    document.querySelectorAll('.elite-item').forEach(el => {
-      if(el !== item) el.classList.remove('open');
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
     });
-    // Alternar el actual
-    item.classList.toggle('open');
+  });
+
+  /* ─── 2. REVEAL ANIMATIONS (INTERSECTION OBSERVER) ─── */
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+  
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, revealOptions);
+
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  /* ─── 3. ACORDEÓN DE ÁREAS DE PRÁCTICA ─── */
+  function toggleArea(btn) {
+    const currentItem = btn.closest('.area-item');
+    const allItems = document.querySelectorAll('.area-item');
+    
+    allItems.forEach(item => {
+      if (item !== currentItem) item.classList.remove('open');
+    });
+    
+    currentItem.classList.toggle('open');
   }
 
-  /* ─── PROCESAMIENTO DEL PORTAL DE ADMISIÓN (WSP/MAIL) ─── */
-  function procesarAdmision(metodo) {
-    const nom = document.getElementById('a_nom').value.trim();
-    const tel = document.getElementById('a_tel').value.trim();
-    const mat = document.getElementById('a_mat').value;
-    const hechos = document.getElementById('a_hechos').value.trim();
+  /* ─── 4. LÓGICA DEL CUESTIONARIO DINÁMICO (FORMULARIO) ─── */
+  const dynContainer = document.getElementById('dynamic-questions');
+  const dqFields = document.getElementById('dq-fields');
 
-    if(!nom || !tel || !mat || !hechos) {
-      alert("Para procesar el Diagnóstico Preliminar es necesario completar todos los campos del formulario.");
+  const cuestionarios = {
+    "Laboral": `
+      <input type="text" class="form-input mb-2" id="dq_lab_1" placeholder="¿Cuál fue su fecha aproximada de ingreso y egreso?">
+      <select class="form-input mb-2" id="dq_lab_2">
+        <option value="" disabled selected>Situación registral...</option>
+        <option value="Registrado">Totalmente en blanco</option>
+        <option value="No Registrado">Totalmente en negro</option>
+        <option value="Deficiente">Media jornada / Parte en negro</option>
+      </select>
+      <input type="text" class="form-input" id="dq_lab_3" placeholder="¿Recibió telegrama o carta documento?">
+    `,
+    "ART": `
+      <select class="form-input mb-2" id="dq_art_1">
+        <option value="" disabled selected>Tipo de contingencia...</option>
+        <option value="Lugar de trabajo">Accidente en el lugar de trabajo</option>
+        <option value="In Itinere">Accidente In Itinere (yendo/volviendo)</option>
+        <option value="Enfermedad">Enfermedad profesional</option>
+      </select>
+      <input type="text" class="form-input mb-2" id="dq_art_2" placeholder="Nombre de la ART involucrada">
+      <select class="form-input" id="dq_art_3">
+        <option value="" disabled selected>Estado del trámite médico...</option>
+        <option value="En tratamiento">Aún recibiendo prestaciones</option>
+        <option value="Alta médica">Alta médica otorgada</option>
+        <option value="Rechazo">Siniestro rechazado por la ART</option>
+      </select>
+    `,
+    "Consumo": `
+      <input type="text" class="form-input mb-2" id="dq_cons_1" placeholder="Entidad, Banco o Concesionaria demandada">
+      <select class="form-input" id="dq_cons_2">
+        <option value="" disabled selected>Instancia actual...</option>
+        <option value="Solo reclamo interno">Tengo número de reclamo interno</option>
+        <option value="Defensa Consumidor">Ya fui a Defensa del Consumidor</option>
+        <option value="Nada formal">Aún no reclamé formalmente</option>
+      </select>
+    `,
+    "Salud": `
+      <input type="text" class="form-input mb-2" id="dq_salud_1" placeholder="Nombre de la Prepagada u Obra Social">
+      <input type="text" class="form-input" id="dq_salud_2" placeholder="¿Qué prestación específica le están negando?">
+    `,
+    "Sucesiones": `
+      <select class="form-input mb-2" id="dq_suc_1">
+        <option value="" disabled selected>Situación de herederos...</option>
+        <option value="Acuerdo">Todos los herederos están de acuerdo</option>
+        <option value="Conflicto">Hay conflicto o falta de comunicación</option>
+      </select>
+      <input type="text" class="form-input" id="dq_suc_2" placeholder="¿Qué bienes componen el acervo? (Ej: 1 casa, 2 autos)">
+    `,
+    "Familia": `
+      <select class="form-input mb-2" id="dq_fam_1">
+        <option value="" disabled selected>¿Existen hijos menores de edad?</option>
+        <option value="Si">Sí</option>
+        <option value="No">No</option>
+      </select>
+      <select class="form-input" id="dq_fam_2">
+        <option value="" disabled selected>¿Existen bienes patrimoniales a dividir?</option>
+        <option value="Si">Sí</option>
+        <option value="No">No</option>
+      </select>
+    `
+  };
+
+  function cargarPreguntasBase() {
+    const area = document.getElementById('f_area').value;
+    if (cuestionarios[area]) {
+      // Agregar clase de margen para las utilidades del JS
+      const htmlFormatted = cuestionarios[area].replace(/mb-2/g, 'style="margin-bottom: 1rem;"');
+      dqFields.innerHTML = htmlFormatted;
+      dynContainer.style.display = 'block';
+    } else {
+      dqFields.innerHTML = '';
+      dynContainer.style.display = 'none';
+    }
+  }
+
+  /* ─── 5. PROCESAMIENTO Y ENVÍO (WSP / EMAIL) ─── */
+  function procesarEvaluacion(metodo) {
+    const nom = document.getElementById('f_nombre').value.trim();
+    const tel = document.getElementById('f_telefono').value.trim();
+    const email = document.getElementById('f_email').value.trim() || 'No informado';
+    const area = document.getElementById('f_area').value;
+    const sintesis = document.getElementById('f_sintesis').value.trim();
+
+    if (!nom || !tel || !area || !sintesis) {
+      alert("Para generar el perfil de caso, complete los campos obligatorios (*).");
       return;
     }
 
-    if (metodo === 'whatsapp') {
-      const msj = `*PORTAL DE ADMISIÓN - ESTUDIO JURÍDICO ARISTEO*%0A%0A`
+    // Recolectar datos dinámicos si existen
+    let datosExtra = "";
+    if (area === "Laboral") {
+      const p1 = document.getElementById('dq_lab_1')?.value || "-";
+      const p2 = document.getElementById('dq_lab_2')?.value || "-";
+      const p3 = document.getElementById('dq_lab_3')?.value || "-";
+      datosExtra = `Fechas: ${p1} | Registro: ${p2} | Notif: ${p3}`;
+    } else if (area === "ART") {
+      const p1 = document.getElementById('dq_art_1')?.value || "-";
+      const p2 = document.getElementById('dq_art_2')?.value || "-";
+      const p3 = document.getElementById('dq_art_3')?.value || "-";
+      datosExtra = `Siniestro: ${p1} | ART: ${p2} | Estado: ${p3}`;
+    } else if (area === "Consumo") {
+      const p1 = document.getElementById('dq_cons_1')?.value || "-";
+      const p2 = document.getElementById('dq_cons_2')?.value || "-";
+      datosExtra = `Demandado: ${p1} | Instancia: ${p2}`;
+    } else if (area === "Salud") {
+      const p1 = document.getElementById('dq_salud_1')?.value || "-";
+      const p2 = document.getElementById('dq_salud_2')?.value || "-";
+      datosExtra = `Entidad: ${p1} | Prestación denegada: ${p2}`;
+    } else if (area === "Sucesiones") {
+      const p1 = document.getElementById('dq_suc_1')?.value || "-";
+      const p2 = document.getElementById('dq_suc_2')?.value || "-";
+      datosExtra = `Herederos: ${p1} | Bienes: ${p2}`;
+    } else if (area === "Familia") {
+      const p1 = document.getElementById('dq_fam_1')?.value || "-";
+      const p2 = document.getElementById('dq_fam_2')?.value || "-";
+      datosExtra = `Menores: ${p1} | Bienes: ${p2}`;
+    }
+
+    const extraStr = datosExtra ? `%0A*Datos Preliminares:* ${datosExtra}` : '';
+    const extraStrMail = datosExtra ? `\nDatos Preliminares: ${datosExtra}` : '';
+
+    if (metodo === 'wsp') {
+      const msj = `*EVALUACIÓN ESTRATÉGICA - ESTUDIO ARISTEO*%0A%0A`
         + `*Titular:* ${nom}%0A`
-        + `*Contacto:* ${tel}%0A`
-        + `*Materia Dogmática:* ${mat}%0A%0A`
-        + `*Análisis de Hechos:*%0A${hechos}`;
+        + `*Celular:* ${tel}%0A`
+        + `*Email:* ${email}%0A`
+        + `*Rama Jurídica:* ${area}${extraStr}%0A%0A`
+        + `*Síntesis:*%0A${sintesis}`;
       
       window.open(`https://wa.me/5493517736170?text=${msj}`, '_blank');
       
     } else if (metodo === 'email') {
-      const asunto = `Diagnóstico Preliminar: ${mat} - ${nom}`;
-      const cuerpo = `PORTAL DE ADMISIÓN - ESTUDIO JURÍDICO ARISTEO\n\n`
+      const asunto = `Evaluación Estratégica: ${area} - ${nom}`;
+      const cuerpo = `EVALUACIÓN ESTRATÉGICA - ESTUDIO ARISTEO\n\n`
         + `Titular: ${nom}\n`
-        + `Contacto: ${tel}\n`
-        + `Materia Dogmática: ${mat}\n\n`
-        + `Análisis de Hechos:\n${hechos}`;
+        + `Celular: ${tel}\n`
+        + `Email: ${email}\n`
+        + `Rama Jurídica: ${area}${extraStrMail}\n\n`
+        + `Síntesis:\n${sintesis}`;
       
       window.location.href = `mailto:dr.aristeolautaro@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
     }
