@@ -749,13 +749,22 @@
           </div>
 
           <div class="fg">
-            <label class="fl" for="fa">Materia de la consulta</label>
+            <label class="fl" for="fa">Materia específica de la consulta</label>
             <select class="fi2" id="fa" required>
               <option value="" disabled selected>Seleccioná el área jurídica...</option>
-              <option value="civil">Civil, Comercial o Daños</option>
-              <option value="laboral">Laboral o Riesgos de Trabajo (ART)</option>
-              <option value="salud">Salud o Defensa del Consumidor</option>
-              <option value="familia">Familia (Divorcio, Alimentos, etc.)</option>
+              <optgroup label="Derecho Laboral">
+                <option value="laboral">Despidos, Trabajo no registrado y Diferencias Salariales</option>
+                <option value="art">Accidentes de Trabajo y Enfermedades Profesionales (ART)</option>
+              </optgroup>
+              <optgroup label="Derecho Civil y Familia">
+                <option value="civil">Derecho Civil, Comercial, Daños y Contratos</option>
+                <option value="familia">Derecho de Familia (Divorcios, Alimentos, etc.)</option>
+              </optgroup>
+              <optgroup label="Salud, Consumo y Estado">
+                <option value="salud">Amparos de Salud (Obras Sociales / Prepagas / Discapacidad)</option>
+                <option value="consumidor">Defensa del Consumidor (Estafas, Planes de ahorro, Incumplimientos)</option>
+                <option value="administrativo">Derecho Administrativo y Gestión Pública</option>
+              </optgroup>
               <option value="otro">Otras consultas</option>
             </select>
           </div>
@@ -841,67 +850,116 @@
     let html = '';
     const area = this.value;
     
-    if(area === 'civil') {
+    if(area === 'laboral') {
       html = `
-        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
-        <select class="fi2" style="margin-bottom:12px">
-            <option value="" disabled selected>Objeto principal del reclamo...</option>
-            <option>Incumplimiento de Contrato / Cobros</option>
-            <option>Sucesiones / Declaratoria de herederos</option>
-            <option>Daños y Perjuicios (Accidentes)</option>
+        <label class="fl">Cuestionario de pre-evaluación laboral</label>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>¿Cuál es tu situación registral actual?</option>
+            <option>Trabajo registrado (100% en blanco)</option>
+            <option>Trabajo no registrado (100% en negro)</option>
+            <option>Registro deficiente (Media jornada, parte en negro)</option>
+        </select>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>Estado del vínculo laboral...</option>
+            <option>Relación vigente (Sigo trabajando ahí)</option>
+            <option>Me despidieron (Recibí telegrama / carta documento)</option>
+            <option>Me consideré despedido / Renuncié</option>
+        </select>
+        <input type="text" class="fi2" placeholder="Antigüedad aproximada (Ej: 3 años y 2 meses)">
+      `;
+    } else if(area === 'art') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación ART</label>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>Tipo de siniestro...</option>
+            <option>Accidente en el lugar de trabajo</option>
+            <option>Accidente en el trayecto (In itinere)</option>
+            <option>Enfermedad profesional (Por el tipo de tareas)</option>
+        </select>
+        <select class="fi2">
+            <option value="" disabled selected>Estado del trámite en ART / Superintendencia...</option>
+            <option>No hice la denuncia todavía</option>
+            <option>Denuncia rechazada por la ART</option>
+            <option>Me dieron el alta médica sin incapacidad</option>
+            <option>Ya pasé por Comisión Médica (Tengo dictamen)</option>
+        </select>
+      `;
+    } else if(area === 'salud') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación Salud</label>
+        <input type="text" class="fi2" style="margin-bottom:16px" placeholder="Nombre de la Obra Social o Prepaga involucrada">
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>¿Qué prestación te están negando?</option>
+            <option>Medicamentos / Tratamientos oncológicos o de alto costo</option>
+            <option>Cirugías / Prótesis</option>
+            <option>Prestaciones por Discapacidad</option>
+            <option>Afiliación / Me dieron de baja sin motivo</option>
+            <option>Otra cobertura</option>
+        </select>
+        <select class="fi2">
+            <option value="" disabled selected>¿Tenés el rechazo formal?</option>
+            <option>Sí, me respondieron por escrito (Carta Documento o email oficial)</option>
+            <option>Solo tengo rechazo verbal / Falta de respuesta sistemática</option>
+        </select>
+      `;
+    } else if(area === 'consumidor') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación Consumidor</label>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>Motivo principal del reclamo...</option>
+            <option>Estafa bancaria / Phishing / Préstamos no solicitados</option>
+            <option>Planes de ahorro (Autos)</option>
+            <option>Incumplimiento de garantía o entrega de producto</option>
+            <option>Servicios aéreos o turísticos</option>
             <option>Otro</option>
         </select>
-        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="¿Cuenta con prueba documental (contratos, títulos)?">
-        <input type="text" class="fi2" placeholder="Monto económico estimado en conflicto (Aprox.)">
-      `;
-    } else if(area === 'laboral') {
-      html = `
-        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
-        <select class="fi2" style="margin-bottom:12px">
-            <option value="" disabled selected>Situación registral actual...</option>
-            <option>Trabajo registrado (En blanco)</option>
-            <option>Trabajo no registrado (En negro)</option>
-            <option>Registro deficiente (Media jornada, etc.)</option>
-        </select>
-        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="Fecha aproximada de inicio de la relación laboral">
+        <input type="text" class="fi2" style="margin-bottom:16px" placeholder="Empresa o Banco contra el que se reclama">
         <select class="fi2">
-            <option value="" disabled selected>Estado del vínculo...</option>
-            <option>Relación vigente</option>
-            <option>Despido o Renuncia (Extinguido)</option>
-            <option>Accidente o Enfermedad Laboral (ART)</option>
+            <option value="" disabled selected>¿Iniciaste reclamo previo?</option>
+            <option>Ya pasé por Defensa del Consumidor (Tengo cierre sin acuerdo)</option>
+            <option>Tengo número de reclamo interno en la empresa</option>
+            <option>Aún no inicié ningún reclamo formal</option>
         </select>
+      `;
+    } else if(area === 'civil') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación Civil</label>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>Objeto principal del asunto...</option>
+            <option>Accidentes de tránsito / Daños y perjuicios</option>
+            <option>Sucesiones / Declaratoria de herederos</option>
+            <option>Incumplimiento de contrato / Ejecución y Cobros</option>
+            <option>Otro conflicto civil o comercial</option>
+        </select>
+        <input type="text" class="fi2" placeholder="¿Posee documentación original respaldatoria? (Títulos, contratos, etc.)">
       `;
     } else if(area === 'familia') {
       html = `
-        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
-        <select class="fi2" style="margin-bottom:12px">
+        <label class="fl">Cuestionario de pre-evaluación Familia</label>
+        <select class="fi2" style="margin-bottom:16px">
             <option value="" disabled selected>¿Existen menores de edad o bienes en común?</option>
-            <option>Menores involucrados (Alimentos / Comunicación)</option>
+            <option>Menores involucrados (Alimentos / Régimen de comunicación)</option>
             <option>Bienes en común (División patrimonial)</option>
             <option>Ambos (Menores y Bienes)</option>
             <option>Ninguno</option>
         </select>
-        <select class="fi2" style="margin-bottom:12px">
-            <option value="" disabled selected>Estado de la situación...</option>
-            <option>Existe acuerdo o voluntad de dialogar con la otra parte</option>
-            <option>Alta conflictividad (No hay diálogo)</option>
-        </select>
-        <input type="text" class="fi2" placeholder="¿Ya existe algún expediente judicial iniciado?">
-      `;
-    } else if(area === 'salud') {
-      html = `
-        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
-        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="Entidad reclamada (Obra Social, Prepaga, Banco, etc.)">
-        <select class="fi2" style="margin-bottom:12px">
-            <option value="" disabled selected>¿Existe un riesgo inminente de salud?</option>
-            <option>Sí, requiere extrema urgencia (Coberturas vitales / Medicamentos)</option>
-            <option>No hay riesgo vital, pero requiere acción</option>
-        </select>
         <select class="fi2">
-            <option value="" disabled selected>¿Se efectuó un reclamo previo?</option>
-            <option>Sí, mediante nota administrativa o Carta Documento</option>
-            <option>Aún no se ha intimado formalmente</option>
+            <option value="" disabled selected>Estado de la situación con la otra parte...</option>
+            <option>Hay diálogo y voluntad de firmar un acuerdo</option>
+            <option>Alta conflictividad (No hay diálogo posible / Negativa rotunda)</option>
+            <option>Hay medidas de restricción vigentes</option>
         </select>
+      `;
+    } else if(area === 'administrativo') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación Administrativa</label>
+        <select class="fi2" style="margin-bottom:16px">
+            <option value="" disabled selected>¿Contra qué entidad es el conflicto?</option>
+            <option>Municipalidad / Comunas</option>
+            <option>Provincia de Córdoba</option>
+            <option>Estado Nacional</option>
+        </select>
+        <input type="text" class="fi2" placeholder="¿Te notificaron de alguna resolución o sumario? (Indicá fecha)">
       `;
     }
     
