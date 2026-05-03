@@ -359,10 +359,9 @@
     padding: 0 40px;
   }
   .accordion-content-inner {
-    padding: 10px 0 40px 64px; /* Alinear texto con el título */
+    padding: 10px 0 40px 64px; 
   }
 
-  /* Estado Activo Acordeón */
   .accordion-item.active .accordion-content { max-height: 500px; }
   .accordion-item.active .ac-arrow { transform: rotate(180deg); }
   .accordion-item.active .ac-title { color: var(--gold-hi); }
@@ -439,8 +438,8 @@
   #dynamic-fields {
     display: none;
     margin-bottom: 28px;
-    padding: 20px;
-    background: var(--bg3);
+    padding: 24px;
+    background: rgba(0,0,0,0.2);
     border: 1px solid var(--g28);
     border-left: 3px solid var(--gold);
   }
@@ -556,7 +555,7 @@
   </div>
 </section>
 
-<!-- ══ EL PROFESIONAL Y EFICIENCIA ══ -->
+<!-- ══ EL PROFESIONAL ══ -->
 <section class="sec" id="profesional">
   <div class="w">
     <div class="prof-grid">
@@ -576,9 +575,9 @@
 
       <div class="fu" style="transition-delay:.12s">
         <div class="tech-box">
-          <h3><i class="fa-solid fa-network-wired"></i> Estructura y Capacidad</h3>
+          <h3><i class="fa-solid fa-network-wired"></i> Estructura y Escala</h3>
           <p class="step-p">
-            Asumo la dirección técnica y el liderazgo de cada expediente. Para garantizar resultados óptimos, trabajo de forma interconectada con una red de profesionales asociados, lo que me permite abordar litigios de alta complejidad con un respaldo integral, asegurando que jamás pierdas el trato directo y personalizado conmigo.
+            Asumo la dirección técnica y el liderazgo inquebrantable de cada expediente. Para potenciar el alcance probatorio y estratégico, coordino recursos con especialistas de distintas áreas, permitiendo el abordaje integral de litigios complejos sin que jamás pierdas el trato directo y la responsabilidad técnica frente a mí.
           </p>
         </div>
       </div>
@@ -608,12 +607,12 @@
       <div class="step">
         <i class="fa-solid fa-chess-knight step-ico"></i>
         <h4 class="step-t">Dirección Estratégica</h4>
-        <p class="step-p">Lidero la táctica de tu expediente. Apoyado en una red de colegas especialistas cuando la materia lo requiere, garantizo una representación sólida manteniendo siempre yo la responsabilidad frente a vos.</p>
+        <p class="step-p">Lidero la táctica de tu expediente. Centralizo la toma de decisiones para garantizar una representación sólida, asumiendo la responsabilidad técnica exclusiva frente a vos en cada etapa del proceso.</p>
       </div>
       <div class="step">
-        <i class="fa-solid fa-lock step-ico"></i>
-        <h4 class="step-t">Secreto Profesional</h4>
-        <p class="step-p">Mantengo absoluta reserva y confidencialidad sobre tu información, tu patrimonio y tu identidad, como pilar ético y fundamental en el ejercicio de la abogacía.</p>
+        <i class="fa-solid fa-shield-halved step-ico"></i>
+        <h4 class="step-t">Rigor Técnico</h4>
+        <p class="step-p">Cada escrito, contestación o recurso es elaborado bajo un estricto control de calidad jurídico. No utilizo plantillas genéricas; cada defensa se diseña a medida de los hechos y la jurisprudencia actualizada.</p>
       </div>
     </div>
   </div>
@@ -766,13 +765,13 @@
           
           <div class="fg">
             <label class="fl" for="fm">Síntesis del caso</label>
-            <textarea class="fi2" id="fm" placeholder="Describí brevemente tu situación o motivo de consulta..."></textarea>
+            <textarea class="fi2" id="fm" placeholder="Describí los hechos más relevantes para tener contexto antes de contactarte..."></textarea>
           </div>
 
           <button class="fsub" type="submit">Enviar Solicitud de Evaluación</button>
 
           <p class="fdisclaimer">
-            * El envío de este formulario no establece automáticamente una relación contractual abogado-cliente. Tus datos están bajo estricto secreto profesional.
+            * El envío de este formulario es confidencial y no establece una relación contractual abogado-cliente hasta su confirmación formal.
           </p>
         </form>
       </div>
@@ -842,31 +841,67 @@
     let html = '';
     const area = this.value;
     
-    if(area === 'laboral') {
+    if(area === 'civil') {
       html = `
-        <label class="fl">Preguntas de evaluación (Opcional)</label>
-        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="¿Estás registrado/a en blanco?">
-        <input type="text" class="fi2" placeholder="Fecha aproximada de inicio de la relación laboral">
+        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
+        <select class="fi2" style="margin-bottom:12px">
+            <option value="" disabled selected>Objeto principal del reclamo...</option>
+            <option>Incumplimiento de Contrato / Cobros</option>
+            <option>Sucesiones / Declaratoria de herederos</option>
+            <option>Daños y Perjuicios (Accidentes)</option>
+            <option>Otro</option>
+        </select>
+        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="¿Cuenta con prueba documental (contratos, títulos)?">
+        <input type="text" class="fi2" placeholder="Monto económico estimado en conflicto (Aprox.)">
+      `;
+    } else if(area === 'laboral') {
+      html = `
+        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
+        <select class="fi2" style="margin-bottom:12px">
+            <option value="" disabled selected>Situación registral actual...</option>
+            <option>Trabajo registrado (En blanco)</option>
+            <option>Trabajo no registrado (En negro)</option>
+            <option>Registro deficiente (Media jornada, etc.)</option>
+        </select>
+        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="Fecha aproximada de inicio de la relación laboral">
+        <select class="fi2">
+            <option value="" disabled selected>Estado del vínculo...</option>
+            <option>Relación vigente</option>
+            <option>Despido o Renuncia (Extinguido)</option>
+            <option>Accidente o Enfermedad Laboral (ART)</option>
+        </select>
       `;
     } else if(area === 'familia') {
       html = `
-        <label class="fl">Preguntas de evaluación (Opcional)</label>
+        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
         <select class="fi2" style="margin-bottom:12px">
-            <option value="" disabled selected>¿Hay menores de edad involucrados?</option>
-            <option>Sí, hay menores</option>
-            <option>No</option>
+            <option value="" disabled selected>¿Existen menores de edad o bienes en común?</option>
+            <option>Menores involucrados (Alimentos / Comunicación)</option>
+            <option>Bienes en común (División patrimonial)</option>
+            <option>Ambos (Menores y Bienes)</option>
+            <option>Ninguno</option>
         </select>
-        <input type="text" class="fi2" placeholder="¿Existen medidas previas o acuerdos firmados?">
-      `;
-    } else if(area === 'civil') {
-      html = `
-        <label class="fl">Preguntas de evaluación (Opcional)</label>
-        <input type="text" class="fi2" placeholder="¿Posee documentación respaldatoria (contratos, títulos)?">
+        <select class="fi2" style="margin-bottom:12px">
+            <option value="" disabled selected>Estado de la situación...</option>
+            <option>Existe acuerdo o voluntad de dialogar con la otra parte</option>
+            <option>Alta conflictividad (No hay diálogo)</option>
+        </select>
+        <input type="text" class="fi2" placeholder="¿Ya existe algún expediente judicial iniciado?">
       `;
     } else if(area === 'salud') {
       html = `
-        <label class="fl">Preguntas de evaluación (Opcional)</label>
-        <input type="text" class="fi2" placeholder="Nombre de la Obra Social / Prepaga involucrada">
+        <label class="fl">Cuestionario de pre-evaluación (Opcional)</label>
+        <input type="text" class="fi2" style="margin-bottom:12px" placeholder="Entidad reclamada (Obra Social, Prepaga, Banco, etc.)">
+        <select class="fi2" style="margin-bottom:12px">
+            <option value="" disabled selected>¿Existe un riesgo inminente de salud?</option>
+            <option>Sí, requiere extrema urgencia (Coberturas vitales / Medicamentos)</option>
+            <option>No hay riesgo vital, pero requiere acción</option>
+        </select>
+        <select class="fi2">
+            <option value="" disabled selected>¿Se efectuó un reclamo previo?</option>
+            <option>Sí, mediante nota administrativa o Carta Documento</option>
+            <option>Aún no se ha intimado formalmente</option>
+        </select>
       `;
     }
     
