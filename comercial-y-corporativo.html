@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Derecho Comercial y Corporativo en Córdoba. Abogado Lautaro N. Aristeo. Ingeniería contractual, ejecución de títulos y asesoría para PyMEs."/>
+  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
+  <title>Comercial y Corporativo | Estudio Jurídico Aristeo</title>
+
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+  /* ════ VARIABLES GLOBALES (ADN ARISTEO) ════ */
+  :root {
+    --bg-base:     #121510; 
+    --bg-surface:  #181c15; 
+    --bg-panel:    #21261d; 
+    --line-color:  rgba(194, 163, 109, 0.2); 
+    --gold-main:   #c2a36d; 
+    --gold-light:  #dfc18c; 
+    --gold-dark:   #8a7346; 
+    --text-main:   #F4F1EA; 
+    --text-muted:  rgba(244, 241, 234, 0.65); 
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body:    'DM Sans', sans-serif;
+    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+  
+  .container { max-width: 1300px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 10rem 0; border-top: 1px solid var(--line-color); position: relative; }
+
+  /* ══ HEADER ══ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
+  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* ══ HERO INTERNO ══ */
+  .page-hero { padding: 15rem 0 8rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 2rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 850px; margin: 0 auto; line-height: 1.8; }
+
+  /* ══ CONTENIDO ══ */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 5rem; }
+  @media (max-width: 950px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  
+  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4.5rem; transition: 0.4s; }
+  .content-block:hover { border-color: var(--gold-main); }
+  .content-block h3 { font-family: var(--font-heading); font-size: 2.3rem; color: var(--gold-light); margin-bottom: 2rem; font-weight: 400; }
+  .content-block p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.9; text-align: justify; }
+  
+  .detail-list { list-style: none; }
+  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 2rem; color: var(--text-main); line-height: 1.7; }
+  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
+  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.02em; }
+
+  /* ══ FOOTER ══ */
+  .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
+  .footer-logo { font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+  .footer-text { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav-wrapper">
+    <a href="/index.html" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
+    </a>
+    <a href="/index.html#contacto" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <i class="fa-solid fa-file-contract ph-icon"></i>
+    <h1 class="ph-title">Derecho Comercial y Corporativo</h1>
+    <p class="ph-desc">
+      Aseguro la viabilidad jurídica de sus negocios. Diseño estructuras contractuales sólidas y ejecuto acciones contundentes para proteger los intereses de su empresa ante el mercado y la competencia.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      
+      <!-- Bloque 1: Empresa -->
+      <div class="content-block">
+        <h3>Estructura y Blindaje Corporativo</h3>
+        <p>
+          La prevención es la inversión más rentable para una PyME. Mi objetivo es que su organización opere sobre cimientos legales inexpugnables.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Ingeniería Contractual</strong>
+            Redacto contratos de distribución, franquicia, suministro y locaciones comerciales con cláusulas de rescisión y penalidades que blindan su posición ante incumplimientos.
+          </li>
+          <li>
+            <strong>Asesoría Preventiva (Compliance)</strong>
+            Audito sus procesos internos y relaciones con proveedores para mitigar riesgos legales antes de que se conviertan en litigios costosos.
+          </li>
+          <li>
+            <strong>Sociedades y Fideicomisos</strong>
+            Asesoro en la constitución, modificación y disolución de sociedades comerciales, buscando siempre la optimización de la responsabilidad patrimonial.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bloque 2: Ejecutivo -->
+      <div class="content-block">
+        <h3>Ejecución y Recupero Contundente</h3>
+        <p>
+          La liquidez es el motor de su negocio. Actúo con rapidez y rigor para transformar sus créditos impagos en dinero efectivo.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Cobro de Títulos Ejecutivos</strong>
+            Lidero juicios ejecutivos para el cobro de cheques rechazados, pagarés y facturas conformadas, aplicando embargos preventivos inmediatos.
+          </li>
+          <li>
+            <strong>Gestión de Cartera de Mora</strong>
+            Implemento procesos de intimación extrajudicial y judicial para sanear sus cuentas a cobrar de manera eficiente.
+          </li>
+          <li>
+            <strong>Conflictos Societarios y Comerciales</strong>
+            Represento sus intereses en disputas entre socios, exclusiones y reclamos por competencia desleal, defendiendo la integridad de su firma.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div style="text-align: center; margin-top: 6rem;">
+      <a href="/index.html#contacto" class="btn-header" style="padding: 1.5rem 3.5rem; font-size: 0.9rem;">
+        Consultar por Asesoría Corporativa <i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo" style="color: var(--text-main); font-weight: 500;">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text">Dr. Lautaro N. Aristeo | M.P. 1-43722</div>
+    <div class="footer-text" style="color: var(--gold-dark); margin-top: 1rem;">Córdoba, República Argentina | © 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
