@@ -3,140 +3,166 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Derecho Civil y Comercial en Córdoba. Abogado Lautaro N. Aristeo. Sucesiones, contratos, desalojos y daños."/>
-  <title>Derecho Civil y Comercial | Estudio Jurídico Aristeo</title>
+  <meta name="description" content="Derecho Civil y Sucesiones en Córdoba. Abogado Lautaro N. Aristeo. Gestión estratégica de herencias, protección de inmuebles y reclamos por daños."/>
+  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
+  <title>Derecho Civil y Sucesiones | Estudio Jurídico Aristeo</title>
 
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  :root { --bg-base: #121510; --bg-surface: #181c15; --bg-panel: #21261d; --line-color: rgba(194, 163, 109, 0.2); --gold-main: #c2a36d; --gold-light: #dfc18c; --gold-dark: #8a7346; --text-main: #F4F1EA; --text-muted: rgba(244, 241, 234, 0.65); --font-heading: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; --transition-fast: 0.3s ease; --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  /* ════ VARIABLES GLOBALES (Mismo ADN que Index) ════ */
+  :root {
+    --bg-base:     #121510; 
+    --bg-surface:  #181c15; 
+    --bg-panel:    #21261d; 
+    --line-color:  rgba(194, 163, 109, 0.2); 
+    --gold-main:   #c2a36d; 
+    --gold-light:  #dfc18c; 
+    --gold-dark:   #8a7346; 
+    --text-main:   #F4F1EA; 
+    --text-muted:  rgba(244, 241, 234, 0.65); 
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body:    'DM Sans', sans-serif;
+    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
   
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
+  .container { max-width: 1300px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 10rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  /* Header Minimalista */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+  /* ══ HEADER INTEGRAL ══ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   .brand { text-decoration: none; display: flex; flex-direction: column; }
   .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
-  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
-  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
+  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* Hero Interno */
-  .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
-  .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+  /* ══ HERO INTERNO ══ */
+  .page-hero { padding: 15rem 0 8rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 2rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 850px; margin: 0 auto; line-height: 1.8; }
 
-  /* Contenido */
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
-  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
-  .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
-  .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
-  .detail-list { list-style: none; margin-top: 2rem; }
-  .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
-  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
-  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
+  /* ══ CONTENIDO ESTRUCTURADO ══ */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 5rem; }
+  @media (max-width: 950px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  
+  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4.5rem; transition: 0.4s; }
+  .content-block:hover { border-color: var(--gold-main); }
+  .content-block h3 { font-family: var(--font-heading); font-size: 2.3rem; color: var(--gold-light); margin-bottom: 2rem; font-weight: 400; }
+  .content-block p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; line-height: 1.9; text-align: justify; }
+  
+  .detail-list { list-style: none; }
+  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 2rem; color: var(--text-main); line-height: 1.7; }
+  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
+  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.5rem; font-size: 1.1rem; letter-spacing: 0.02em; }
 
-  /* Footer */
-  .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
-  .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
-  .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
+  /* ══ FOOTER ══ */
+  .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
+  .footer-logo { font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+  .footer-text { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em; }
   </style>
 </head>
 <body>
 
+<!-- ══ NAVEGACIÓN ══ -->
 <header class="header">
   <div class="container nav-wrapper">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    <a href="/index.html#contacto" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
   </div>
 </header>
 
+<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="container">
     <i class="fa-solid fa-landmark ph-icon"></i>
-    <h1 class="ph-title">Derecho Civil y Comercial</h1>
+    <h1 class="ph-title">Derecho Civil y Sucesiones</h1>
     <p class="ph-desc">
-      El patrimonio que usted construyó exige protección jurídica activa. Intervengo mediante los mecanismos del Código Civil y Comercial para asegurar el cumplimiento de sus acuerdos, restituir propiedades o exigir reparaciones ante daños injustos.
+      El patrimonio que usted construyó merece un blindaje legal absoluto. Intervengo mediante los mecanismos del Código Civil para asegurar sus acuerdos, restituir sus bienes o exigir reparaciones ante daños injustos.
     </p>
   </div>
 </section>
 
+<!-- ══ DESARROLLO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
     <div class="content-grid">
       
+      <!-- Bloque 1: Sucesiones -->
       <div class="content-block">
-        <h3>Orden Patrimonial y Bienes</h3>
+        <h3>Orden Patrimonial y Herencias</h3>
         <p>
-          Cuando su patrimonio se encuentra en etapa de transición o bajo amenaza, la velocidad procesal y la precisión técnica son vitales para evitar la pérdida de valor de sus bienes.
+          Cuando el patrimonio familiar entra en etapa de transición, mi rol es garantizar que la transmisión de bienes sea ágil, justa y jurídicamente inatacable.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Derecho Sucesorio (Herencias)</strong>
-            Organizo y tramito ágilmente declaratorias de herederos y particiones de acervo, permitiendo la disposición o venta inmediata de inmuebles y vehículos sin fricciones familiares.
+            <strong>Sucesiones Ab-Intestato y Testamentarias</strong>
+            Tramito declaratorias de herederos y particiones de acervo de forma estratégica para evitar fricciones y permitir la libre disposición de bienes en el menor tiempo posible.
           </li>
           <li>
-            <strong>Protección Inmobiliaria y Desalojos</strong>
-            Ejecuto juicios de desalojo orientados a restituir la propiedad a locadores afectados por falta de pago. Asimismo, ejerzo la defensa técnica de inquilinos frente a rescisiones unilaterales.
+            <strong>Protección de Inmuebles y Desalojos</strong>
+            Ejecuto juicios de desalojo orientados a restituir su propiedad frente a la falta de pago o usurpación, actuando con la celeridad que exige la recuperación de su capital.
           </li>
           <li>
-            <strong>Usucapión (Prescripción Adquisitiva)</strong>
-            Conduzco procesos judiciales tendientes a regularizar y obtener la titularidad de inmuebles sobre los cuales se ha ejercido posesión pública y pacífica.
+            <strong>Usucapión y Regularización Dominial</strong>
+            Conduzco procesos judiciales para obtener la titularidad registral de inmuebles poseídos de forma pública, pacífica y continua, saneando títulos de propiedad deficientes.
           </li>
         </ul>
       </div>
 
+      <!-- Bloque 2: Daños -->
       <div class="content-block">
-        <h3>Contratos y Recupero de Activos</h3>
+        <h3>Daños, Perjuicios y Cobros</h3>
         <p>
-          La seguridad de sus operaciones requiere contratos blindados y respuestas contundentes ante incumplimientos que afecten sus intereses comerciales.
+          La vulneración de su esfera económica o personal requiere una respuesta directa y contundente ante los tribunales de Córdoba.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Ingeniería Contractual</strong>
-            Redacto y reviso exhaustivamente boletos de compraventa, locaciones y convenios societarios para prevenir lagunas legales y evitar futuros litigios.
+            <strong>Responsabilidad Civil Integral</strong>
+            Lidero acciones de reparación por daños derivados de accidentes de tránsito, siniestros en la vía pública o mala praxis, exigiendo la indemnización total de los perjuicios sufridos.
           </li>
           <li>
-            <strong>Ejecuciones y Cobros</strong>
-            Intimo extrajudicialmente y ejecuto de forma contundente en tribunales el cobro de cheques, pagarés, facturas impagas y reconocimientos de deudas.
+            <strong>Incumplimientos Contractuales</strong>
+            Frente a la ruptura de acuerdos, acciono para exigir el cumplimiento forzado o la resolución del contrato con su correspondiente resarcimiento económico.
           </li>
           <li>
-            <strong>Daños y Perjuicios</strong>
-            Lidero acciones de reparación integral derivadas de accidentes de tránsito, siniestros o incumplimientos contractuales que hayan vulnerado su esfera económica.
+            <strong>Cobro Ejecutivo de Deudas</strong>
+            Gestiono la ejecución judicial de cheques, pagarés y reconocimientos de deuda, aplicando medidas cautelares (embargos) para asegurar el cobro efectivo de su acreencia.
           </li>
         </ul>
       </div>
 
     </div>
     
-    <div style="text-align: center; margin-top: 5rem;">
-      <a href="/contacto.html" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem; background: transparent; color: var(--gold-main);">
-        Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+    <!-- Botón de Acción Directa -->
+    <div style="text-align: center; margin-top: 6rem;">
+      <a href="/index.html#contacto" class="btn-header" style="padding: 1.5rem 3.5rem; font-size: 0.9rem;">
+        Solicitar Análisis de Caso Civil <i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
       </a>
     </div>
   </div>
 </section>
 
+<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text">Dirección Estratégica: Dr. Lautaro N. Aristeo</div>
-    <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
-    <div class="footer-text" style="color: var(--gold-dark);">Córdoba, República Argentina | © 2026 Todos los derechos reservados.</div>
+    <div class="footer-logo" style="color: var(--text-main); font-weight: 500;">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text">Dr. Lautaro N. Aristeo | M.P. 1-43722</div>
+    <div class="footer-text" style="color: var(--gold-dark); margin-top: 1rem;">Córdoba, República Argentina | © 2026</div>
   </div>
 </footer>
 
