@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Evaluación de Caso | Estudio Jurídico Aristeo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+  
+  <style>
+    /* Pegá acá adentro TODO el bloque de <style> que está en el index.html */
+    /* Para no hacer esta respuesta kilométrica, copiá las mismas variables y estilos del index.html, es el mismo diseño. */
+  </style>
+</head>
+<body style="background-color: var(--bg-surface);">
+
+<header class="header scrolled">
+  <div class="container nav-wrapper">
+    <a href="/index.html" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
+    </a>
+    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+  </div>
+</header>
+
+<section class="section" style="padding-top: 10rem;">
+  <div class="container">
+    <div class="label" style="margin-bottom: 1rem;">Asistencia e Intervención</div>
+    <h1 class="heading-2">Evaluación de <em>Situación</em></h1>
+
+    <div class="contact-wrapper">
+      
+      <!-- Panel Izquierdo (Vía Rápida) -->
+      <div class="contact-fast">
+        <div>
+          <h3>Mis Canales Directos</h3>
+          <p class="paragraph" style="font-size: 0.95rem; margin-bottom: 2rem;">
+            Si prefiere un contacto inicial sin redactar los pormenores, escríbame directamente. Mantengo el más estricto secreto profesional en cada diálogo.
+          </p>
+          <div class="contact-info-block">
+            <div class="info-item">
+              <span class="info-label">Mi WhatsApp</span>
+              <a href="https://wa.me/5493517736170" class="info-value" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Correo Personal</span>
+              <a href="mailto:dr.aristeolautaro@gmail.com" class="info-value"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="schedule-box">
+          <h4>Días y Horarios de Atención</h4>
+          <p>Lunes a Viernes de <strong>09:00 a 18:00 hs.</strong></p>
+          <div class="urgency-alert">
+            <strong>Protocolo de Urgencias:</strong><br>
+            Ante detenciones o siniestros graves fuera de horario, inicie su mensaje con la palabra <strong>URGENCIA</strong> para activar mi respuesta inmediata.
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Formulario -->
+      <div class="contact-form-area">
+        <p class="form-intro">
+          <strong>Anticipe su estrategia:</strong> Completar este cuestionario me otorga la ventaja de analizar las variables de su conflicto antes de conversar. Optimicemos su tiempo.
+        </p>
+
+        <form id="evaluationForm">
+          <div class="form-group">
+            <label class="form-label">Su nombre o razón social *</label>
+            <input type="text" class="form-input" id="f_nombre" placeholder="Ingrese su nombre completo" required>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div class="form-group">
+              <label class="form-label">Número celular *</label>
+              <input type="tel" class="form-input" id="f_telefono" placeholder="Ej: 351 123 4567" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Correo electrónico</label>
+              <input type="email" class="form-input" id="f_email" placeholder="Opcional">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Rama Jurídica *</label>
+            <select class="form-input" id="f_area" required>
+              <option value="" disabled selected>Seleccione la especialidad...</option>
+              <option value="Civil_Comercial">Derecho Civil y Comercial</option>
+              <option value="Laboral_ART">Derecho Laboral y ART</option>
+              <option value="Amparos_Salud">Amparos de Salud</option>
+              <option value="Def_Consumidor">Defensa del Consumidor</option>
+              <option value="Familia">Derecho de las Familias</option>
+              <option value="Otro">Otro asunto</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Síntesis de su situación *</label>
+            <textarea class="form-input" id="f_sintesis" placeholder="Dígame qué sucedió y qué necesita resolver..." required></textarea>
+          </div>
+
+          <div class="action-buttons">
+            <button type="button" class="btn-submit wsp" onclick="procesarEvaluacion('wsp')">
+              Enviar por WhatsApp <i class="fa-brands fa-whatsapp"></i>
+            </button>
+            <button type="button" class="btn-submit" onclick="procesarEvaluacion('email')">
+              Enviar por E-Mail <i class="fa-regular fa-envelope"></i>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  async function procesarEvaluacion(metodo) {
+    const form = document.getElementById('evaluationForm');
+    const nom = document.getElementById('f_nombre').value.trim();
+    const tel = document.getElementById('f_telefono').value.trim();
+    const email = document.getElementById('f_email').value.trim() || 'No informado';
+    const area = document.getElementById('f_area').value;
+    const sintesis = document.getElementById('f_sintesis').value.trim();
+
+    if (!nom || !tel || !area || !sintesis) {
+      alert("Por favor, complete los campos marcados con (*) para que evalúe su perfil."); return;
+    }
+
+    if (metodo === 'wsp') {
+      const msj = `*NUEVA CONSULTA - ESTUDIO ARISTEO*%0A%0A*Titular:* ${nom}%0A*Teléfono:* ${tel}%0A*Rama:* ${area}%0A%0A*Síntesis:*%0A${sintesis}`;
+      window.open(`https://wa.me/5493517736170?text=${msj}`, '_blank');
+    } else if (metodo === 'email') {
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+      
+      const formData = new FormData();
+      formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd"); 
+      formData.append("subject", `Consulta Legal: ${area} - ${nom}`);
+      formData.append("Titular", nom); formData.append("Telefono", tel); formData.append("Email", email); formData.append("Sintesis", sintesis);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+        const data = await response.json();
+        if (data.success) {
+          btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
+          form.reset();
+          setTimeout(() => { btn.innerHTML = originalText; }, 5000);
+        }
+      } catch (error) {
+        alert("Error de conexión. Intente por WhatsApp."); btn.innerHTML = originalText;
+      }
+    }
+  }
+</script>
+</body>
+</html>
