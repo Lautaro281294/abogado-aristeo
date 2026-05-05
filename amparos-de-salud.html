@@ -3,36 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Especialistas en Defensa del Consumidor y Amparos de Salud en Córdoba. Litigios contra bancos, prepagas y planes de ahorro."/>
-  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Salud y Defensa del Consumidor | Estudio Jurídico Aristeo</title>
+  <meta name="description" content="Amparos de Salud en Córdoba. Abogado Lautaro N. Aristeo. Medidas urgentes contra Obras Sociales y Prepagas por medicación, cirugías y discapacidad."/>
+  <title>Amparos de Salud | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ═══════════════════════════════════════════════
-     MISMAS VARIABLES Y ESTILOS BASE QUE INDEX.HTML
-  ═══════════════════════════════════════════════ */
-  :root {
-    --bg-base:     #121510; 
-    --bg-surface:  #181c15; 
-    --bg-panel:    #21261d; 
-    --line-color:  rgba(194, 163, 109, 0.2); 
-    --gold-main:   #c2a36d; 
-    --gold-light:  #dfc18c; 
-    --gold-dark:   #8a7346; 
-    --text-main:   #F4F1EA; 
-    --text-muted:  rgba(244, 241, 234, 0.65); 
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body:    'DM Sans', sans-serif;
-    --transition-fast: 0.3s ease;
-    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
+  :root { --bg-base: #121510; --bg-surface: #181c15; --bg-panel: #21261d; --line-color: rgba(194, 163, 109, 0.2); --gold-main: #c2a36d; --gold-light: #dfc18c; --gold-dark: #8a7346; --text-main: #F4F1EA; --text-muted: rgba(244, 241, 234, 0.65); --font-heading: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; --transition-fast: 0.3s ease; --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -41,8 +21,8 @@
   .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
   .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  /* ══ HEADER ══ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 1.8rem 0; border-bottom: 1px solid transparent; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); border-color: var(--line-color);}
+  /* Header Minimalista */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
   .brand { text-decoration: none; display: flex; flex-direction: column; }
   .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
@@ -50,26 +30,24 @@
   .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ══ HERO INTERNO ══ */
+  /* Hero Interno */
   .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
   .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
   .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
-  /* ══ CONTENIDO DE LA SUBPÁGINA ══ */
+  /* Contenido */
   .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
   @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  
   .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
   .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
   .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
-  
   .detail-list { list-style: none; margin-top: 2rem; }
   .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
   .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
   .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
 
-  /* ══ FOOTER ══ */
+  /* Footer */
   .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
   .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
   .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
@@ -77,73 +55,68 @@
 </head>
 <body>
 
-<!-- ══ NAVEGACIÓN ══ -->
 <header class="header">
   <div class="container nav-wrapper">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <a href="/index.html#contacto" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
   </div>
 </header>
 
-<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="container">
-    <i class="fa-solid fa-shield-halved ph-icon"></i>
-    <h1 class="ph-title">Salud y Defensa del Consumidor</h1>
+    <i class="fa-solid fa-heart-pulse ph-icon"></i>
+    <h1 class="ph-title">Amparos de Salud</h1>
     <p class="ph-desc">
-      El derecho debe equilibrar la balanza frente a corporaciones. Aplicamos herramientas sumarísimas (rápidas) para frenar asimetrías y abusos, garantizando su acceso a la salud y protegiendo de manera tajante sus finanzas personales.
+      La salud no admite demoras administrativas. Interpongo medidas cautelares urgentes para obligar a Obras Sociales y Prepagas a brindar cirugías, tratamientos y medicación de alto costo sin dilaciones ni excusas.
     </p>
   </div>
 </section>
 
-<!-- ══ DESARROLLO DE LA MATERIA ══ -->
 <section class="section">
   <div class="container">
     <div class="content-grid">
       
-      <!-- Bloque 1: Consumidor -->
       <div class="content-block">
-        <h3>Protección Financiera y Comercial</h3>
+        <h3>Coberturas de Urgencia</h3>
         <p>
-          Las prácticas comerciales abusivas no deben tolerarse. Lideramos reclamos administrativos y judiciales para responsabilizar a entidades bancarias y empresas frente a vulneraciones de la Ley de Defensa del Consumidor.
+          Cuando su vida o la de su familia está en juego, la burocracia institucional es inaceptable. Utilizo las vías constitucionales más rápidas para forzar el cumplimiento legal inmediato.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Estafas Bancarias (Phishing)</strong>
-            Reclamo y exigencia de responsabilidad civil a bancos por fallas en sus sistemas de seguridad, logrando la anulación de créditos no solicitados y la restitución de fondos sustraídos.
+            <strong>Medicación Oncológica y Alto Costo</strong>
+            Exijo judicialmente la provisión al 100% de los medicamentos y tratamientos que las prestadoras intentan eludir, demorar o cubrir de forma parcial.
           </li>
           <li>
-            <strong>Planes de Ahorro para Fines Determinados</strong>
-            Presentación de medidas cautelares para frenar los aumentos desmedidos e ilegítimos en las cuotas de vehículos, y gestión para el recupero del capital en planes caídos o renunciados.
+            <strong>Cirugías y Prótesis</strong>
+            Impulso órdenes judiciales urgentes (Medidas Cautelares) para garantizar intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo estipulado por el médico tratante.
           </li>
           <li>
-            <strong>Derecho al Olvido (Veraz / Nosis)</strong>
-            Intimaciones y acciones de hábeas data para eliminar información crediticia caduca o errónea de los registros de morosos, permitiéndole reinsertarse en el sistema financiero.
+            <strong>Afiliaciones y Continuidad</strong>
+            Freno bajas arbitrarias de afiliación y obligo a mantener la continuidad de su cobertura médica frente a despidos, jubilaciones o cambios de situación laboral (Monotributo).
           </li>
         </ul>
       </div>
 
-      <!-- Bloque 2: Salud -->
       <div class="content-block">
-        <h3>Derecho a la Salud y Amparos</h3>
+        <h3>Discapacidad y Prácticas Abusivas</h3>
         <p>
-          Cuando una Obra Social o Medicina Prepaga niega una cobertura esencial, el tiempo apremia. Utilizamos las vías constitucionales de urgencia para obligar a las prestadoras a cumplir con la ley de forma inmediata.
+          El marco normativo nacional ampara de forma categórica a los sectores más vulnerables. No permito que las empresas de medicina prepaga impongan topes ilegales ni barreras de acceso.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Amparos Médicos de Urgencia</strong>
-            Interposición de acciones expeditas para garantizar la cobertura al 100% de cirugías, tratamientos crónicos, prótesis y medicación oncológica o de alto costo negada arbitrariamente.
+            <strong>Protección Integral (Ley 24.901)</strong>
+            Obligo al cumplimiento estricto y absoluto de terapias, maestras integradoras, transporte y acompañamiento terapéutico para personas con Certificado Único de Discapacidad (CUD).
           </li>
           <li>
-            <strong>Protección Integral por Discapacidad</strong>
-            Exigencia del cumplimiento estricto de la Ley 24.901, garantizando prestaciones de rehabilitación, transporte, acompañamiento terapéutico y cobertura educativa sin topes ni topes limitativos.
+            <strong>Freno a Aumentos Desmedidos</strong>
+            Presento acciones legales para detener incrementos abusivos en las cuotas de su prepaga, logrando reajustes justos y protegiendo a afiliados en situación de vulnerabilidad.
           </li>
           <li>
-            <strong>Aumentos Abusivos en Prepagas</strong>
-            Defensa legal y amparos frente a incrementos desproporcionados en las cuotas de medicina prepaga, especialmente para usuarios en situación de vulnerabilidad o jubilados.
+            <strong>Fertilización Asistida (TRHA)</strong>
+            Acciono para que las prestadoras cumplan con la ley nacional, asegurando la cobertura integral de los tratamientos de reproducción humana asistida sin topes engañosos.
           </li>
         </ul>
       </div>
@@ -151,14 +124,13 @@
     </div>
     
     <div style="text-align: center; margin-top: 5rem;">
-      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem;">
-        Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+      <a href="/contacto.html" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem; background: transparent; color: var(--gold-main);">
+        Solicitar Evaluación de Caso Urgente <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
