@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Especialistas en Derecho Civil y Comercial en Córdoba. Sucesiones, contratos, desalojos y daños y perjuicios. Representación estratégica."/>
+  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
+  <title>Derecho Civil y Comercial | Estudio Jurídico Aristeo</title>
+
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+  /* ═══════════════════════════════════════════════
+     MISMAS VARIABLES Y ESTILOS BASE QUE INDEX.HTML
+  ═══════════════════════════════════════════════ */
+  :root {
+    --bg-base:     #121510; 
+    --bg-surface:  #181c15; 
+    --bg-panel:    #21261d; 
+    --line-color:  rgba(194, 163, 109, 0.2); 
+    --gold-main:   #c2a36d; 
+    --gold-light:  #dfc18c; 
+    --gold-dark:   #8a7346; 
+    --text-main:   #F4F1EA; 
+    --text-muted:  rgba(244, 241, 234, 0.65); 
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body:    'DM Sans', sans-serif;
+    --transition-fast: 0.3s ease;
+    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
+
+  /* ══ HEADER ══ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 1.8rem 0; border-bottom: 1px solid transparent; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); border-color: var(--line-color);}
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* ══ HERO INTERNO ══ */
+  .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+  /* ══ CONTENIDO DE LA SUBPÁGINA ══ */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  
+  .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
+  .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
+  .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
+  
+  .detail-list { list-style: none; margin-top: 2rem; }
+  .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
+  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
+  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
+
+  /* ══ FOOTER ══ */
+  .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
+  .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
+  .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAVEGACIÓN ══ -->
+<header class="header">
+  <div class="container nav-wrapper">
+    <a href="/index.html" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
+    </a>
+    <a href="/index.html#contacto" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+  </div>
+</header>
+
+<!-- ══ HERO INTERNO ══ -->
+<section class="page-hero">
+  <div class="container">
+    <i class="fa-solid fa-landmark ph-icon"></i>
+    <h1 class="ph-title">Derecho Civil y Comercial</h1>
+    <p class="ph-desc">
+      El patrimonio que usted construyó exige protección jurídica activa. Intervenimos mediante los mecanismos del Código Civil y Comercial para asegurar el cumplimiento de acuerdos, restituir propiedades o exigir reparaciones ante daños injustos.
+    </p>
+  </div>
+</section>
+
+<!-- ══ DESARROLLO DE LA MATERIA ══ -->
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      
+      <!-- Bloque 1: Sucesiones e Inmuebles -->
+      <div class="content-block">
+        <h3>Orden Patrimonial y Bienes</h3>
+        <p>
+          Cuando el patrimonio se encuentra en etapa de transición o bajo amenaza, la velocidad procesal y la precisión del abogado son vitales para evitar la pérdida de valor de sus bienes.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Derecho Sucesorio (Herencias)</strong>
+            Organización y tramitación ágil de declaratorias de herederos, particiones de acervo y tracto abreviado para permitir la disposición o venta inmediata de bienes inmuebles y vehículos.
+          </li>
+          <li>
+            <strong>Protección Inmobiliaria y Desalojos</strong>
+            Ejecución de juicios de desalojo orientados a restituir la propiedad a locadores afectados por falta de pago o usurpación. Asimismo, ejercemos la defensa técnica de inquilinos frente a rescisiones unilaterales o cobros abusivos.
+          </li>
+          <li>
+            <strong>Usucapión (Prescripción Adquisitiva)</strong>
+            Procesos judiciales tendientes a regularizar y obtener la titularidad de dominio de inmuebles sobre los cuales se ha ejercido posesión pública, pacífica y continua.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Bloque 2: Contratos y Daños -->
+      <div class="content-block">
+        <h3>Acuerdos, Cobros y Reparaciones</h3>
+        <p>
+          La seguridad jurídica de sus operaciones comerciales y personales requiere contratos blindados y respuestas contundentes ante incumplimientos o actos ilícitos que afecten sus intereses.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Ingeniería Contractual</strong>
+            Redacción y revisión exhaustiva de boletos de compraventa, contratos de locación comercial, fideicomisos y convenios societarios para prevenir lagunas legales y futuros litigios.
+          </li>
+          <li>
+            <strong>Ejecuciones y Recupero de Activos</strong>
+            Gestión de carteras de mora, intimaciones extrajudiciales y ejecución judicial contundente para el cobro de cheques, pagarés, facturas impagas y reconocimiento de deudas.
+          </li>
+          <li>
+            <strong>Responsabilidad Civil (Daños y Perjuicios)</strong>
+            Liderazgo en acciones de reparación integral derivados de accidentes de tránsito, siniestros en la vía pública, mala praxis profesional o incumplimientos contractuales graves.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div style="text-align: center; margin-top: 5rem;">
+      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem;">
+        Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text">Dirección Estratégica: Dr. Lautaro N. Aristeo</div>
+    <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
+    <div class="footer-text" style="color: var(--gold-dark);">Córdoba, República Argentina | © 2026 Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+</body>
+</html>
