@@ -42,7 +42,10 @@
   .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2.5rem; }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  /* ════ HEADER (TODO EN UNA LÍNEA) ════ */
+  .paragraph { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 1.5rem; }
+  .paragraph strong { color: var(--text-main); font-weight: 400; }
+
+  /* ════ HEADER ════ */
   .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 2rem 0; }
   .header.scrolled { background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
@@ -67,7 +70,16 @@
   .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; white-space: nowrap; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ PRACTICE GRID 3x2 ════ */
+  /* ════ FILOSOFÍA ════ */
+  .grid-50-50 { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  @media (max-width: 900px) { .grid-50-50 { grid-template-columns: 1fr; gap: 4rem; } }
+  .quote-block { border-left: 2px solid var(--gold-main); padding-left: 2.5rem; margin-top: 3.5rem; }
+  .quote-text { font-family: var(--font-heading); font-size: 1.9rem; font-style: italic; color: var(--gold-light); line-height: 1.45; }
+  .creds-box { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); display: flex; gap: 3.5rem; flex-wrap: wrap; }
+  .cred-item span { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 8px; }
+  .cred-item strong { font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); font-weight: 400;}
+
+  /* ════ PRACTICE GRID ════ */
   .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 5rem; }
   @media (max-width: 1100px) { .practice-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) { .practice-grid { grid-template-columns: 1fr; } }
@@ -80,25 +92,20 @@
   .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.8; text-align: justify; }
   .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line-color); padding-top: 2rem; }
 
-  /* ════ CONTACTO RECONSTRUIDO (ELITE) ════ */
+  /* ════ CONTACTO ════ */
   .contact-wrapper { display: grid; grid-template-columns: 42% 58%; background: var(--bg-surface); border: 1px solid var(--line-color); margin-top: 5rem; }
   @media (max-width: 950px) { .contact-wrapper { grid-template-columns: 1fr; } }
-  
   .contact-fast { padding: 5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   .contact-form-area { padding: 5rem; }
-  
-  .info-item { margin-top: 3.5rem; }
   .info-link { font-size: 1.15rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 18px; margin-bottom: 2rem; transition: 0.3s; }
   .info-link i { color: var(--gold-main); font-size: 1.3rem; }
   .info-link:hover { color: var(--gold-light); transform: translateX(5px); }
-  
-  .form-group { margin-bottom: 3.5rem; position: relative; }
+  .form-group { margin-bottom: 3.5rem; }
   .form-label { display: block; font-size: 0.75rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1.2rem; letter-spacing: 0.25em; font-weight: 600; }
   .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 1.2rem 0; outline: none; font-size: 1.15rem; transition: 0.4s; font-family: var(--font-body); }
   .form-input:focus { border-color: var(--gold-main); }
-  
   .btn-submit { width: 100%; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3em; cursor: pointer; transition: 0.4s; display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 2rem; }
-  .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); box-shadow: 0 10px 30px rgba(194, 163, 109, 0.3); }
+  .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); }
 
   .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -118,7 +125,7 @@
       <div class="dropdown">
         <span class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem; margin-left: 6px;"></i></span>
         <div class="dropdown-menu">
-          <a href="/civil-y-sucesione.html" class="dropdown-item">Civil y Sucesiones</a>
+          <a href="/civil-y-comercial.html" class="dropdown-item">Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="dropdown-item">Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="dropdown-item">Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="dropdown-item">Amparos de Salud</a>
@@ -139,10 +146,38 @@
   </div>
 </section>
 
+<!-- ══ SECCIÓN MI ENFOQUE RESTAURADA ══ -->
+<section class="section" id="filosofia">
+  <div class="container">
+    <div class="grid-50-50">
+      <div class="reveal">
+        <div class="label">Perspectiva Sistémica</div>
+        <h2 class="heading-2">Conocimiento del<br><em>Sistema.</em></h2>
+        <div class="quote-block">
+          <p class="quote-text">"En la mesa de negociación, el único idioma que prevalece es la estrategia. Mi ventaja es anticipar los escenarios comprendiendo exactamente cómo piensa la contraparte."</p>
+        </div>
+      </div>
+      <div class="reveal" style="transition-delay: 0.2s;">
+        <p class="paragraph">
+          Ejerzo la profesión con una convicción técnica innegociable. El mismo estudio meticuloso que aplico para auditar la estructura de una compañía, lo utilizo para exigir la indemnización de un trabajador. Esa es la esencia de mi <strong>visión integral</strong>.
+        </p>
+        <p class="paragraph">
+          Conocer la dinámica interna del sector corporativo me otorga las herramientas necesarias para representarlo con contundencia frente a cualquier contingencia civil, laboral o comercial. <strong>Analizo su situación, estructuro la viabilidad del reclamo y actúo de manera directa.</strong>
+        </p>
+        <div class="creds-box">
+          <div class="cred-item"><span>Matrícula Provincial</span><strong>M.P. 1-43722</strong></div>
+          <div class="cred-item"><span>Matrícula Federal</span><strong>T° 511 F° 222</strong></div>
+          <div class="cred-item"><span>Director del Estudio</span><strong>Dr. Lautaro N. Aristeo</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="areas" style="background-color: var(--bg-surface);">
   <div class="container">
-    <div class="label">Mi campo de intervención</div>
-    <h2 class="heading-2">Especialidades <em>Jurídicas</em></h2>
+    <div class="label">Especialidades</div>
+    <h2 class="heading-2">Mi campo de <em>Intervención</em></h2>
     
     <div class="practice-grid reveal">
       <a href="/civil-y-comercial.html" class="practice-card">
@@ -194,7 +229,7 @@
       <div class="contact-fast">
         <div>
           <h3 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">Contacto Directo</h3>
-          <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem;">Escríbame para coordinar una entrevista. Mi respuesta es estrictia y personalmente dirigida bajo el más riguroso secreto profesional.</p>
+          <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem;">Escríbame para coordinar una entrevista. Mi respuesta es personalmente dirigida bajo secreto profesional.</p>
           <div class="info-item">
             <a href="https://wa.me/5493517736170" class="info-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
             <a href="mailto:dr.aristeolautaro@gmail.com" class="info-link"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
@@ -222,7 +257,7 @@
               <option value="Civil" style="background: var(--bg-panel);">Civil y Sucesiones</option>
               <option value="Comercial" style="background: var(--bg-panel);">Comercial y Empresas</option>
               <option value="Laboral" style="background: var(--bg-panel);">Laboral y ART</option>
-              <option value="Salud" style="background: var(--bg-panel);">Amparos Médicos</option>
+              <option value="Salud" style="background: var(--bg-panel);">Amparos de Salud</option>
               <option value="Consumo" style="background: var(--bg-panel);">Defensa al Consumidor</option>
               <option value="Familia" style="background: var(--bg-panel);">Derecho de Familias</option>
             </select>
@@ -241,7 +276,7 @@
 <footer class="footer">
   <div class="container">
     <div class="footer-logo" style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem;">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em;">Director: Dr. Lautaro Nahuel Aristeo | Córdoba, Rep. Argentina | © 2026</div>
+    <div class="footer-text" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em;">Director: Dr. Lautaro Nahuel Aristeo | Córdoba, Rep. Argentina</div>
   </div>
 </footer>
 
