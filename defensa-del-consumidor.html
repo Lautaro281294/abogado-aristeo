@@ -3,36 +3,16 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Especialistas en Derecho de las Familias en Córdoba. Divorcios, división de bienes, cuota alimentaria y regímenes de comunicación."/>
-  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Derecho de las Familias | Estudio Jurídico Aristeo</title>
+  <meta name="description" content="Defensa del Consumidor en Córdoba. Abogado Lautaro N. Aristeo. Litigios contra bancos, estafas (phishing), tarjetas y planes de ahorro."/>
+  <title>Defensa del Consumidor | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ═══════════════════════════════════════════════
-     MISMAS VARIABLES Y ESTILOS BASE QUE INDEX.HTML
-  ═══════════════════════════════════════════════ */
-  :root {
-    --bg-base:     #121510; 
-    --bg-surface:  #181c15; 
-    --bg-panel:    #21261d; 
-    --line-color:  rgba(194, 163, 109, 0.2); 
-    --gold-main:   #c2a36d; 
-    --gold-light:  #dfc18c; 
-    --gold-dark:   #8a7346; 
-    --text-main:   #F4F1EA; 
-    --text-muted:  rgba(244, 241, 234, 0.65); 
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body:    'DM Sans', sans-serif;
-    --transition-fast: 0.3s ease;
-    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
+  :root { --bg-base: #121510; --bg-surface: #181c15; --bg-panel: #21261d; --line-color: rgba(194, 163, 109, 0.2); --gold-main: #c2a36d; --gold-light: #dfc18c; --gold-dark: #8a7346; --text-main: #F4F1EA; --text-muted: rgba(244, 241, 234, 0.65); --font-heading: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; --transition-fast: 0.3s ease; --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -41,8 +21,8 @@
   .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
   .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  /* ══ HEADER ══ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 1.8rem 0; border-bottom: 1px solid transparent; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); border-color: var(--line-color);}
+  /* Header Minimalista */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
   .brand { text-decoration: none; display: flex; flex-direction: column; }
   .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
@@ -50,26 +30,24 @@
   .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ══ HERO INTERNO ══ */
+  /* Hero Interno */
   .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
   .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
   .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
 
-  /* ══ CONTENIDO DE LA SUBPÁGINA ══ */
+  /* Contenido */
   .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
   @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  
   .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
   .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
   .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
-  
   .detail-list { list-style: none; margin-top: 2rem; }
   .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
   .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
   .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
 
-  /* ══ FOOTER ══ */
+  /* Footer */
   .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
   .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
   .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
@@ -77,73 +55,68 @@
 </head>
 <body>
 
-<!-- ══ NAVEGACIÓN ══ -->
 <header class="header">
   <div class="container nav-wrapper">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <a href="/index.html#contacto" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
   </div>
 </header>
 
-<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="container">
-    <i class="fa-solid fa-scale-unbalanced ph-icon"></i>
-    <h1 class="ph-title">Derecho de las Familias</h1>
+    <i class="fa-solid fa-shield-halved ph-icon"></i>
+    <h1 class="ph-title">Defensa del Consumidor</h1>
     <p class="ph-desc">
-      Las crisis del seno familiar exigen reserva absoluta y celeridad procesal. Nuestro rol consiste en organizar las finanzas tras la separación y preservar el bienestar psicológico de los menores, actuando como negociadores racionales o litigantes firmes.
+      Las grandes corporaciones y entidades financieras no son intocables. Aplico la máxima rigurosidad de la Ley para frenar abusos, recuperar su dinero y exigir indemnizaciones por los daños causados a su economía.
     </p>
   </div>
 </section>
 
-<!-- ══ DESARROLLO DE LA MATERIA ══ -->
 <section class="section">
   <div class="container">
     <div class="content-grid">
       
-      <!-- Bloque 1: Vínculos y Menores -->
       <div class="content-block">
-        <h3>Organización Familiar y Menores</h3>
+        <h3>Finanzas y Estafas Bancarias</h3>
         <p>
-          Priorizamos el interés superior de los niños y adolescentes, estructurando legalmente la dinámica diaria post-separación para evitar que el proceso judicial se convierta en un conflicto crónico.
+          Los bancos tienen la obligación legal ineludible de proteger sus fondos. Si sus sistemas de seguridad fallan, ellos son los responsables directos. Lidero acciones judiciales contundentes para recuperar su capital.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Obligación Alimentaria</strong>
-            Fijación de cuotas alimentarias proporcionales a las necesidades reales de los menores y a la capacidad económica del alimentante, previendo mecanismos de actualización frente a la inflación. Demandas por incumplimiento y embargos.
+            <strong>Ciberdelitos y Estafas (Phishing)</strong>
+            Acciono judicialmente contra entidades financieras por vaciamientos de cuentas, transferencias no reconocidas y créditos fraudulentos preaprobados, exigiendo la anulación de la deuda y la restitución del dinero.
           </li>
           <li>
-            <strong>Cuidado Personal (Tenencia)</strong>
-            Definición legal del cuidado personal (compartido indistinto, alternado o unilateral) asegurando que el centro de vida del menor sea el más beneficioso para su desarrollo.
+            <strong>Tarjetas y Cobros Indebidos</strong>
+            Freno de manera inmediata débitos automáticos no autorizados, seguros impuestos compulsivamente y liquidaciones abusivas generadas en sus resúmenes de tarjeta de crédito.
           </li>
           <li>
-            <strong>Régimen de Comunicación (Visitas)</strong>
-            Establecimiento de cronogramas claros, predecibles y exigibles judicialmente para garantizar el contacto fluido y constante de los menores con el progenitor no conviviente.
+            <strong>Derecho al Olvido (Veraz / Nosis)</strong>
+            Ejecuto acciones de hábeas data para eliminar información crediticia caduca, falsa o errónea que ensucia su historial y le impide operar con normalidad en el sistema financiero.
           </li>
         </ul>
       </div>
 
-      <!-- Bloque 2: Patrimonio -->
       <div class="content-block">
-        <h3>Desvinculación y Patrimonio</h3>
+        <h3>Automotores y Servicios Deficientes</h3>
         <p>
-          La finalización de un proyecto de vida en común requiere desatar los lazos jurídicos y económicos de manera limpia, transparente y equitativa, resguardando el esfuerzo aportado por cada parte.
+          Nivelo la balanza en los tribunales frente a las asimetrías de poder que imponen las concesionarias, aseguradoras y grandes prestadoras de servicios.
         </p>
         <ul class="detail-list">
           <li>
-            <strong>Divorcios (Unilaterales o Conjuntos)</strong>
-            Iniciación célere del trámite de divorcio vincular. Elaboración de propuestas reguladoras estratégicas que abarquen todos los efectos derivados de la ruptura (bienes, hijos, vivienda).
+            <strong>Planes de Ahorro (Autoplanes)</strong>
+            Presento medidas cautelares para congelar y retrotraer aumentos desmedidos e ilegítimos en las cuotas. Asimismo, gestiono la intimación y el recupero del capital aportado en planes renunciados o caídos.
           </li>
           <li>
-            <strong>Liquidación de la Sociedad Conyugal</strong>
-            Identificación, tasación y división jurídica de los bienes gananciales adquiridos durante el matrimonio, previniendo maniobras de ocultamiento patrimonial por parte del otro cónyuge.
+            <strong>Garantías y Defectos de Fábrica</strong>
+            Exijo el cumplimiento inmediato de las garantías legales, obligando a la sustitución de vehículos o productos con defectos graves de fábrica y reclamando la aplicación de Daños Punitivos a la empresa.
           </li>
           <li>
-            <strong>Compensación Económica</strong>
-            Análisis, cálculo y reclamo de reparaciones financieras ante el desequilibrio económico manifiesto que padece uno de los cónyuges o convivientes como consecuencia directa de la separación.
+            <strong>Seguros y Servicios Contratados</strong>
+            Reclamos judiciales por rechazos infundados de cobertura por parte de compañías de seguros, cortes prolongados de servicios, o incumplimientos graves de agencias de turismo y aerolíneas.
           </li>
         </ul>
       </div>
@@ -151,14 +124,13 @@
     </div>
     
     <div style="text-align: center; margin-top: 5rem;">
-      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem;">
+      <a href="/contacto.html" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem; background: transparent; color: var(--gold-main);">
         Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
