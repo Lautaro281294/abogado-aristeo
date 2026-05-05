@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Estudio Jurídico Aristeo. Abogacía estratégica y representación directa en Córdoba. Director: Dr. Lautaro N. Aristeo."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Estudio Jurídico Aristeo | Abogacía de Alta Precisión · Córdoba</title>
+  <title>Estudio Jurídico Aristeo | Excelencia y Estrategia Legal · Córdoba</title>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
+  <!-- ══ FUENTES E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ VARIABLES GLOBALES ════ */
   :root {
     --bg-base:     #121510; 
     --bg-surface:  #181c15; 
@@ -27,104 +26,87 @@
     --text-muted:  rgba(244, 241, 234, 0.65); 
     --font-heading: 'Cormorant Garamond', serif;
     --font-body:    'DM Sans', sans-serif;
-    --transition-fast: 0.3s ease;
     --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  /* ════ RESET Y TIPOGRAFÍA ════ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
   
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 9rem 0; border-top: 1px solid var(--line-color); position: relative; }
+  .container { max-width: 1300px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 10rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-main); }
-  .label::before { content: ''; width: 35px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
+  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+  .label::before { content: ''; width: 35px; height: 1px; background: var(--gold-main); }
 
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.5rem, 4vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2rem; }
+  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2.5rem; }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  .paragraph { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 1.5rem; }
-  .paragraph strong { color: var(--text-main); font-weight: 400; }
-
-  /* ════ HEADER & DROPDOWN ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 1.8rem 0; }
-  .header.scrolled { background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+  /* ════ HEADER (TODO EN UNA LÍNEA) ════ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 2rem 0; }
+  .header.scrolled { background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   
-  .brand { text-decoration: none; display: flex; flex-direction: column; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; min-width: 200px; }
   .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
-  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
+  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
 
-  .nav-links { display: flex; gap: 3.5rem; align-items: center; }
-  .nav-item { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-main); text-decoration: none; position: relative; padding-bottom: 5px; transition: color var(--transition-fast); cursor: pointer; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; flex-grow: 1; justify-content: flex-end; }
+  .nav-item { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); text-decoration: none; position: relative; padding: 5px 0; cursor: pointer; white-space: nowrap; }
   
-  /* Dropdown Logic */
-  .dropdown { position: relative; }
+  .dropdown { position: relative; display: flex; align-items: center; }
   .dropdown-menu {
-    position: absolute; top: 100%; left: -1rem; background: var(--bg-surface);
-    border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px;
-    opacity: 0; visibility: hidden; transform: translateY(10px);
-    transition: all var(--transition-fast); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface);
+    border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 280px;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
   }
-  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-  .dropdown-item {
-    display: block; padding: 0.8rem 2rem; font-size: 0.75rem; color: var(--text-muted);
-    text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: all var(--transition-fast);
-  }
-  .dropdown-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left: 2px solid var(--gold-main); }
+  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .dropdown-item { display: block; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; }
+  .dropdown-item:hover { background: var(--bg-panel); color: var(--gold-light); padding-left: 3rem; }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; white-space: nowrap; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  .mobile-toggle { display: none; background: none; border: none; flex-direction: column; gap: 6px; cursor: pointer; }
-  .mobile-toggle span { width: 30px; height: 1px; background: var(--text-main); }
-
-  @media (max-width: 992px) { .nav-links { display: none; } .mobile-toggle { display: flex; } }
-
-  /* ════ HERO ════ */
-  .hero { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(180deg, rgba(18,21,16,0.85) 0%, rgba(18,21,16,0.98) 100%), url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed; }
-  .hero-title { font-family: var(--font-heading); font-size: clamp(3rem, 6.5vw, 5.5rem); line-height: 1.05; margin-bottom: 2rem; }
-  .hero-title em { color: var(--gold-main); font-style: italic; }
-
-  /* ════ PRACTICE GRID (3x2) ════ */
-  .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
-  @media (max-width: 1024px) { .practice-grid { grid-template-columns: repeat(2, 1fr); } }
+  /* ════ PRACTICE GRID 3x2 ════ */
+  .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 5rem; }
+  @media (max-width: 1100px) { .practice-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) { .practice-grid { grid-template-columns: 1fr; } }
   
-  .practice-card { background: var(--bg-surface); border: 1px solid var(--line-color); padding: 3rem; display: flex; flex-direction: column; text-decoration: none; transition: all var(--transition-slow); position: relative; overflow: hidden; }
-  .practice-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: var(--gold-main); transform: scaleX(0); transition: transform var(--transition-slow); }
-  .practice-card:hover { transform: translateY(-10px); background: var(--bg-panel); border-color: var(--gold-dark); }
-  .practice-card:hover::before { transform: scaleX(1); }
+  .practice-card { background: var(--bg-surface); border: 1px solid var(--line-color); padding: 4rem 3.5rem; display: flex; flex-direction: column; text-decoration: none; transition: all 0.5s ease; position: relative; }
+  .practice-card:hover { transform: translateY(-12px); background: var(--bg-panel); border-color: var(--gold-main); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+  .pc-icon { font-size: 2.2rem; color: var(--gold-main); margin-bottom: 2.5rem; transition: 0.3s; }
+  .practice-card:hover .pc-icon { color: var(--gold-light); transform: scale(1.1); }
+  .pc-title { font-family: var(--font-heading); font-size: 2.1rem; margin-bottom: 1.5rem; color: var(--text-main); font-weight: 400; line-height: 1.1; }
+  .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.8; text-align: justify; }
+  .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line-color); padding-top: 2rem; }
+
+  /* ════ CONTACTO RECONSTRUIDO (ELITE) ════ */
+  .contact-wrapper { display: grid; grid-template-columns: 42% 58%; background: var(--bg-surface); border: 1px solid var(--line-color); margin-top: 5rem; }
+  @media (max-width: 950px) { .contact-wrapper { grid-template-columns: 1fr; } }
   
-  .pc-icon { font-size: 2.5rem; color: var(--gold-main); margin-bottom: 2rem; }
-  .pc-title { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-main); }
-  .pc-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2rem; flex-grow: 1; }
-  .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.15em; color: var(--gold-main); padding-top: 1rem; border-top: 1px solid var(--line-color); display: flex; align-items: center; gap: 8px; }
-
-  /* ════ CONTACT WRAPPER ════ */
-  .contact-wrapper { display: grid; grid-template-columns: 38% 62%; background: var(--bg-surface); border: 1px solid var(--line-color); }
-  @media (max-width: 900px) { .contact-wrapper { grid-template-columns: 1fr; } }
-  .contact-fast { padding: 4rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); }
-  .contact-form-area { padding: 4rem; }
-  .form-group { margin-bottom: 2.5rem; }
-  .form-label { display: block; font-size: 0.75rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.1em;}
-  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 0.8rem 0; outline: none; font-size: 1.05rem; transition: border-color 0.3s; }
+  .contact-fast { padding: 5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+  .contact-form-area { padding: 5rem; }
+  
+  .info-item { margin-top: 3.5rem; }
+  .info-link { font-size: 1.15rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 18px; margin-bottom: 2rem; transition: 0.3s; }
+  .info-link i { color: var(--gold-main); font-size: 1.3rem; }
+  .info-link:hover { color: var(--gold-light); transform: translateX(5px); }
+  
+  .form-group { margin-bottom: 3.5rem; position: relative; }
+  .form-label { display: block; font-size: 0.75rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1.2rem; letter-spacing: 0.25em; font-weight: 600; }
+  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 1.2rem 0; outline: none; font-size: 1.15rem; transition: 0.4s; font-family: var(--font-body); }
   .form-input:focus { border-color: var(--gold-main); }
-  .btn-submit { width: 100%; padding: 1.2rem; background: transparent; border: 1px solid var(--line-color); color: var(--text-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-  .btn-submit:hover { border-color: var(--gold-main); color: var(--gold-main); }
-  #dynamic-questions { display: none; padding: 2rem; background: rgba(0,0,0,0.1); border-left: 2px solid var(--gold-main); margin-bottom: 2rem; }
+  
+  .btn-submit { width: 100%; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3em; cursor: pointer; transition: 0.4s; display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 2rem; }
+  .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); box-shadow: 0 10px 30px rgba(194, 163, 109, 0.3); }
 
-  .footer { padding: 6rem 0; text-align: center; border-top: 1px solid var(--line-color); }
-  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+  .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
+  .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="header" id="header">
   <div class="container nav-wrapper">
     <a href="#hero" class="brand">
@@ -134,7 +116,7 @@
     <nav class="nav-links">
       <a href="#filosofia" class="nav-item">Mi Enfoque</a>
       <div class="dropdown">
-        <span class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem;"></i></span>
+        <span class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem; margin-left: 6px;"></i></span>
         <div class="dropdown-menu">
           <a href="/civil-y-comercial.html" class="dropdown-item">Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="dropdown-item">Comercial y Empresas</a>
@@ -146,84 +128,87 @@
       </div>
       <a href="#contacto" class="btn-header">Contacto Directo <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
-    <button class="mobile-toggle"><span></span><span></span><span></span></button>
   </div>
 </header>
 
-<!-- ══ HERO ══ -->
-<section class="hero" id="hero">
+<section class="section hero" id="hero" style="min-height: 100vh; display: flex; align-items: center; border-top: none; background: linear-gradient(180deg, rgba(18,21,16,0.85) 0%, rgba(18,21,16,0.98) 100%), url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed;">
   <div class="container">
-    <div class="hero-content">
-      <h1 class="hero-title reveal">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-      <p class="hero-desc reveal" style="max-width: 750px;">La abogacía de élite requiere análisis dogmático y franqueza absoluta. Protejo sus derechos y lidero su estrategia legal de forma directa, sin intermediarios, ante la Justicia de Córdoba.</p>
-      <a href="#contacto" class="btn-primary reveal">Analizar mi caso ahora <i class="fa-solid fa-arrow-down"></i></a>
-    </div>
+    <h1 class="heading-2 reveal" style="font-size: clamp(3.5rem, 7.5vw, 6rem);">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
+    <p class="reveal" style="max-width: 800px; font-size: 1.25rem; color: var(--text-muted); margin-bottom: 4rem; line-height: 1.9;">La abogacía de alta complejidad no admite improvisaciones. Analizo su caso con la mayor exigencia dogmática y le hablo con absoluta franqueza. Asumo la dirección de su expediente personalmente ante la Justicia de Córdoba.</p>
+    <a href="#contacto" class="btn-primary reveal" style="display: inline-flex; align-items: center; gap: 15px; color: var(--bg-base); background: var(--gold-main); padding: 1.4rem 3.2rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; transition: 0.4s;">Analizar mi caso <i class="fa-solid fa-arrow-down"></i></a>
   </div>
 </section>
 
-<!-- ══ ÁREAS (GRILLA 3x2) ══ -->
 <section class="section" id="areas" style="background-color: var(--bg-surface);">
   <div class="container">
-    <div class="label">Especialidades</div>
-    <h2 class="heading-2">Mi campo de <em>Intervención</em></h2>
+    <div class="label">Mi campo de intervención</div>
+    <h2 class="heading-2">Especialidades <em>Jurídicas</em></h2>
     
     <div class="practice-grid reveal">
       <a href="/civil-y-comercial.html" class="practice-card">
         <i class="fa-solid fa-landmark pc-icon"></i>
         <h3 class="pc-title">Derecho Civil</h3>
-        <p class="pc-desc">Sucesiones, protección de inmuebles y reclamos por daños. Blindaje patrimonial absoluto.</p>
+        <p class="pc-desc">Sucesiones y protección de inmuebles. Brindo un blindaje patrimonial absoluto ante contingencias legales.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/comercial-y-corporativo.html" class="practice-card">
         <i class="fa-solid fa-file-contract pc-icon"></i>
         <h3 class="pc-title">Comercial</h3>
-        <p class="pc-desc">Ingeniería de contratos, cobro contundente de cheques y defensa de empresas.</p>
+        <p class="pc-desc">Ingeniería de contratos y ejecución de cobros. Aseguro la viabilidad jurídica de sus negocios y empresas.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/laboral-y-art.html" class="practice-card">
         <i class="fa-solid fa-briefcase pc-icon"></i>
         <h3 class="pc-title">Laboral y ART</h3>
-        <p class="pc-desc">Despidos e indemnizaciones. Reclamos urgentes ante accidentes de trabajo.</p>
+        <p class="pc-desc">Despidos e indemnizaciones. Actúo con firmeza para garantizar la reparación integral ante siniestros laborales.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/amparos-de-salud.html" class="practice-card">
         <i class="fa-solid fa-heart-pulse pc-icon"></i>
         <h3 class="pc-title">Amparos de Salud</h3>
-        <p class="pc-desc">Ordenes judiciales inmediatas por medicación, cirugías o discapacidad.</p>
+        <p class="pc-desc">Medidas judiciales inmediatas. Obligo a prestadoras a cumplir con medicación, cirugías y discapacidad.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/defensa-del-consumidor.html" class="practice-card">
         <i class="fa-solid fa-shield-halved pc-icon"></i>
         <h3 class="pc-title">Consumidor</h3>
-        <p class="pc-desc">Litigios contra bancos por estafas y reclamos contra planes de ahorro.</p>
+        <p class="pc-desc">Litigios contra bancos por estafas y reclamos contra planes de ahorro. El derecho debe equilibrar la balanza.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/derecho-de-familias.html" class="practice-card">
         <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
         <h3 class="pc-title">Familias</h3>
-        <p class="pc-desc">Divorcios estratégicos, cuota alimentaria y división de bienes gananciales.</p>
+        <p class="pc-desc">Divorcios estratégicos y división de bienes. Priorizo la paz de los menores involucrados en cada proceso.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACTO INTEGRADO ══ -->
 <section class="section" id="contacto">
   <div class="container">
+    <div class="label">Evaluación estratégica</div>
+    <h2 class="heading-2">Análisis de <em>Situación</em></h2>
+    
     <div class="contact-wrapper reveal">
       <div class="contact-fast">
-        <h3>Contacto Directo</h3>
-        <p class="paragraph" style="font-size: 0.95rem;">Escríbame para coordinar una entrevista. Mi respuesta es personal y bajo secreto profesional.</p>
-        <div class="contact-info-block" style="margin-top: 2rem;">
-          <a href="https://wa.me/5493517736170" class="info-value" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
-          <a href="mailto:dr.aristeolautaro@gmail.com" class="info-value" style="margin-top: 1.5rem; display: block;"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">Contacto Directo</h3>
+          <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem;">Escríbame para coordinar una entrevista. Mi respuesta es estrictia y personalmente dirigida bajo el más riguroso secreto profesional.</p>
+          <div class="info-item">
+            <a href="https://wa.me/5493517736170" class="info-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
+            <a href="mailto:dr.aristeolautaro@gmail.com" class="info-link"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
+          </div>
+        </div>
+        <div style="border-top: 1px solid var(--line-color); padding-top: 3rem; margin-top: 3rem;">
+           <p style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold-main); text-transform: uppercase;">M.P. 1-43722 | Córdoba, AR</p>
         </div>
       </div>
+      
       <div class="contact-form-area">
         <form id="evaluationForm">
           <div class="form-group">
-            <label class="form-label">Nombre Completo *</label>
+            <label class="form-label">Titular o Razón Social *</label>
             <input type="text" id="f_nombre" class="form-input" required>
           </div>
           <div class="form-group">
@@ -231,24 +216,22 @@
             <input type="tel" id="f_telefono" class="form-input" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Rama Jurídica *</label>
-            <select id="f_area" class="form-input" required onchange="cargarPreguntasBase()">
-              <option value="" disabled selected>Seleccione...</option>
-              <option value="Civil">Civil / Sucesiones</option>
-              <option value="Laboral">Laboral / ART</option>
-              <option value="Salud">Amparos Médicos</option>
-              <option value="Consumo">Defensa al Consumidor</option>
-              <option value="Familia">Familia / Divorcios</option>
+            <label class="form-label">Rama Jurídica de la consulta *</label>
+            <select id="f_area" class="form-input" required style="cursor: pointer; background: transparent;">
+              <option value="" disabled selected>Seleccione especialidad...</option>
+              <option value="Civil" style="background: var(--bg-panel);">Civil y Sucesiones</option>
+              <option value="Comercial" style="background: var(--bg-panel);">Comercial y Empresas</option>
+              <option value="Laboral" style="background: var(--bg-panel);">Laboral y ART</option>
+              <option value="Salud" style="background: var(--bg-panel);">Amparos Médicos</option>
+              <option value="Consumo" style="background: var(--bg-panel);">Defensa al Consumidor</option>
+              <option value="Familia" style="background: var(--bg-panel);">Derecho de Familias</option>
             </select>
           </div>
-          <div id="dynamic-questions">
-            <div id="dq-fields"></div>
-          </div>
           <div class="form-group">
-            <label class="form-label">Resumen del caso *</label>
-            <textarea id="f_sintesis" class="form-input" rows="3" required></textarea>
+            <label class="form-label">Síntesis de los hechos *</label>
+            <textarea id="f_sintesis" class="form-input" rows="2" style="resize: none;" required></textarea>
           </div>
-          <button type="button" class="btn-submit" onclick="procesarEvaluacion('email')">Derivar por E-Mail Seguro <i class="fa-solid fa-lock"></i></button>
+          <button type="button" class="btn-submit" onclick="procesarEvaluacion()">Derivar por E-Mail Seguro <i class="fa-solid fa-lock"></i></button>
         </form>
       </div>
     </div>
@@ -257,8 +240,8 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text">M.P. 1-43722 | Córdoba, Argentina</div>
+    <div class="footer-logo" style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem;">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em;">Director: Dr. Lautaro Nahuel Aristeo | Córdoba, Rep. Argentina | © 2026</div>
   </div>
 </footer>
 
@@ -274,27 +257,32 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-  function cargarPreguntasBase() {
-    const area = document.getElementById('f_area').value;
-    const dq = document.getElementById('dynamic-questions');
-    const fields = document.getElementById('dq-fields');
-    dq.style.display = 'block';
-    if(area === 'Laboral') fields.innerHTML = '<input type="text" class="form-input" id="dq_1" placeholder="¿Hubo telegramas laborales?">';
-    else if(area === 'Salud') fields.innerHTML = '<input type="text" class="form-input" id="dq_1" placeholder="Nombre de la Obra Social / Prepaga">';
-    else fields.innerHTML = '<input type="text" class="form-input" id="dq_1" placeholder="¿Existe contrato o documentación escrita?">';
-  }
-
-  async function procesarEvaluacion(m) {
+  async function procesarEvaluacion() {
     const btn = event.currentTarget;
-    btn.innerHTML = 'Enviando...';
+    const nom = document.getElementById('f_nombre').value;
+    const tel = document.getElementById('f_telefono').value;
+    const area = document.getElementById('f_area').value;
+    const caso = document.getElementById('f_sintesis').value;
+
+    if(!nom || !tel || !area || !caso) { alert("Complete los campos obligatorios."); return; }
+
+    btn.innerHTML = 'Procesando... <i class="fa-solid fa-spinner fa-spin"></i>';
+    btn.disabled = true;
+
     const formData = new FormData();
     formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd");
-    formData.append("Nombre", document.getElementById('f_nombre').value);
-    formData.append("Tel", document.getElementById('f_telefono').value);
-    formData.append("Caso", document.getElementById('f_sintesis').value);
+    formData.append("Titular", nom);
+    formData.append("WhatsApp", tel);
+    formData.append("Materia", area);
+    formData.append("Sintesis", caso);
     
-    const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-    if(response.ok) { btn.innerHTML = '¡Enviado!'; document.getElementById('evaluationForm').reset(); }
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
+      if(response.ok) { 
+        btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
+        document.getElementById('evaluationForm').reset();
+      }
+    } catch(e) { alert("Error de conexión."); btn.innerHTML = 'Reintentar'; btn.disabled = false; }
   }
 </script>
 </body>
