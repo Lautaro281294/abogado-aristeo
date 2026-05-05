@@ -43,7 +43,7 @@
 
   <style>
   /* ═══════════════════════════════════════════════
-     1. VARIABLES GLOBALES (PALETA "CANVAS" Y ÉLITE)
+     1. VARIABLES GLOBALES (PALETA ÉLITE)
   ═══════════════════════════════════════════════ */
   :root {
     --bg-base:     #121510; 
@@ -101,7 +101,7 @@
   .paragraph strong { color: var(--text-main); font-weight: 400; }
 
   /* ═══════════════════════════════════════════════
-     3. NAVEGACIÓN (HEADER ÉLITE)
+     3. NAVEGACIÓN (HEADER ÉLITE CON DROPDOWN)
   ═══════════════════════════════════════════════ */
   .header {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -130,6 +130,21 @@
   }
   .nav-item:hover { color: var(--gold-light); }
   .nav-item:hover::after { width: 100%; }
+
+  /* Dropdown Menú */
+  .dropdown { position: relative; }
+  .dropdown-menu {
+    position: absolute; top: 100%; left: -1rem; background: var(--bg-surface);
+    border: 1px solid var(--line-color); padding: 1rem 0; min-width: 250px;
+    opacity: 0; visibility: hidden; transform: translateY(10px);
+    transition: all var(--transition-fast); box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  .dropdown-item {
+    display: block; padding: 0.8rem 2rem; font-size: 0.75rem; color: var(--text-muted);
+    text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: background var(--transition-fast), color var(--transition-fast);
+  }
+  .dropdown-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left: 2px solid var(--gold-main); }
 
   .btn-header {
     display: inline-flex; align-items: center; gap: 10px;
@@ -162,7 +177,7 @@
                 url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed;
   }
   .hero-content { position: relative; z-index: 10; padding-top: 6rem; max-width: 900px; }
-
+  
   .hero-title {
     font-family: var(--font-heading); font-size: clamp(3rem, 6.5vw, 5.5rem);
     font-weight: 400; line-height: 1.05; color: var(--text-main); margin-bottom: 1.5rem; letter-spacing: -0.02em;
@@ -195,49 +210,46 @@
   .cred-item strong { font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); font-weight: 400;}
 
   /* ═══════════════════════════════════════════════
-     6. ÁREAS DE PRÁCTICA (UI DE ALTO NIVEL)
+     6. ÁREAS DE PRÁCTICA (GRILLA MOGLIANI/MU STYLE)
   ═══════════════════════════════════════════════ */
-  .areas-container { margin-top: 5rem; border-top: 1px solid var(--line-color); }
-  
-  .area-item { border-bottom: 1px solid var(--line-color); transition: background var(--transition-fast); }
-  .area-item:hover { background: var(--bg-surface); }
-  
-  .area-header {
-    width: 100%; text-align: left; padding: 3rem 0; background: none; border: none; cursor: pointer;
-    display: grid; grid-template-columns: 45px 1fr 30px; align-items: center; gap: 2.5rem;
+  .practice-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem; margin-top: 4rem;
   }
-  .area-icon { color: var(--gold-main); font-size: 1.6rem; opacity: 0.85; }
-  .area-title { font-family: var(--font-heading); font-size: 2.3rem; font-weight: 400; color: var(--text-main); transition: color var(--transition-fast); }
-  .area-arrow { color: var(--gold-main); font-size: 1rem; transition: transform var(--transition-slow); }
-  
-  .area-content {
-    max-height: 0; overflow: hidden; opacity: 0;
-    transition: max-height var(--transition-slow), opacity var(--transition-slow);
-  }
-  .area-item.open .area-content { max-height: 1800px; opacity: 1; }
-  .area-item.open .area-arrow { transform: rotate(180deg); }
-  .area-item.open .area-title { color: var(--gold-light); }
-  
-  .area-inner { padding: 0 0 4rem 5.5rem; display: flex; flex-direction: column; gap: 2.5rem; }
-  @media (max-width: 768px) { 
-    .area-inner { padding: 0 0 2.5rem 0; gap: 1.5rem; }
-    .area-header { grid-template-columns: 35px 1fr 20px; gap: 1.5rem; padding: 2.5rem 0;}
-    .area-title { font-size: 1.7rem; }
-  }
+  @media (max-width: 768px) { .practice-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-  .area-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.95; text-align: justify; border-left: 2px solid var(--line-color); padding-left: 1.5rem;}
+  .practice-card {
+    background: var(--bg-surface); border: 1px solid var(--line-color);
+    padding: 3.5rem; display: flex; flex-direction: column;
+    text-decoration: none; transition: all var(--transition-slow); position: relative;
+    overflow: hidden;
+  }
+  .practice-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+    background: var(--gold-main); transform: scaleX(0); transform-origin: left; transition: transform var(--transition-slow);
+  }
   
-  .sub-area-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 1rem;}
-  @media (max-width: 900px) { .sub-area-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  .practice-card:hover { transform: translateY(-8px); border-color: var(--gold-dark); box-shadow: 0 15px 40px rgba(0,0,0,0.4); background: var(--bg-panel); }
+  .practice-card:hover::before { transform: scaleX(1); }
 
-  .sub-area h4 { font-family: var(--font-body); font-size: 1.05rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.1em; border-bottom: 1px dashed var(--line-color); padding-bottom: 0.8rem;}
+  .pc-icon { font-size: 2.5rem; color: var(--gold-main); margin-bottom: 2rem; transition: transform var(--transition-fast); }
+  .practice-card:hover .pc-icon { transform: scale(1.1); color: var(--gold-light); }
+
+  .pc-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1; }
+  .pc-desc { font-size: 1.05rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 2.5rem; flex-grow: 1; text-align: justify;}
   
-  .area-list { list-style: none; }
-  .area-list li { position: relative; padding-left: 1.8rem; font-size: 0.95rem; color: var(--text-main); margin-bottom: 1.2rem; line-height: 1.7;}
-  .area-list li::before { content: '■'; position: absolute; left: 0; top: 7px; color: var(--gold-main); font-size: 0.35rem; }
+  .pc-link {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold-main); border-top: 1px solid var(--line-color); padding-top: 1.5rem;
+    transition: color var(--transition-fast);
+  }
+  .pc-arrow { transition: transform var(--transition-fast); }
+  .practice-card:hover .pc-link { color: var(--gold-light); border-color: var(--gold-dark); }
+  .practice-card:hover .pc-arrow { transform: translateX(10px); }
 
   /* ═══════════════════════════════════════════════
-     7. CONTACTO, HORARIOS Y URGENCIAS
+     7. CONTACTO Y EVALUACIÓN
   ═══════════════════════════════════════════════ */
   .contact-wrapper {
     margin-top: 5rem; background: var(--bg-surface); border: 1px solid var(--line-color);
@@ -320,7 +332,7 @@
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<!-- ══ NAVEGACIÓN ══ -->
+<!-- ══ NAVEGACIÓN CON DROPDOWN ══ -->
 <header class="header" id="header">
   <div class="container nav-wrapper">
     <a href="#hero" class="brand">
@@ -329,7 +341,15 @@
     </a>
     <nav class="nav-links">
       <a href="#filosofia" class="nav-item">Enfoque y Visión</a>
-      <a href="#areas" class="nav-item">Áreas de Práctica</a>
+      <div class="dropdown">
+        <a href="#areas" class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem; margin-left: 3px;"></i></a>
+        <div class="dropdown-menu">
+          <a href="/civil-y-comercial.html" class="dropdown-item">Derecho Civil y Comercial</a>
+          <a href="/laboral-y-siniestralidad.html" class="dropdown-item">Laboral y Riesgos de Trabajo</a>
+          <a href="/salud-y-consumidor.html" class="dropdown-item">Consumo y Salud</a>
+          <a href="/derecho-de-familias.html" class="dropdown-item">Derecho de las Familias</a>
+        </div>
+      </div>
       <a href="#contacto" class="btn-header">Evaluación Estratégica</a>
     </nav>
     <button class="mobile-toggle" id="mobile-toggle" aria-label="Menú">
@@ -338,7 +358,7 @@
   </div>
   <div class="mobile-menu" id="mobile-menu">
     <a href="#filosofia" class="nav-item">Enfoque y Visión</a>
-    <a href="#areas" class="nav-item">Áreas de Práctica</a>
+    <a href="#areas" class="nav-item">Áreas de Especialidad</a>
     <a href="#contacto" class="nav-item">Evaluación Estratégica</a>
   </div>
 </header>
@@ -371,10 +391,10 @@
       </div>
       <div class="reveal" style="transition-delay: 0.2s;">
         <p class="paragraph">
-          Ejerzo la profesión con una convicción técnica innegociable: el rigor no distingue de títulos ni de orígenes. El mismo estudio meticuloso que aplico para organizar la estructura laboral de una compañía, lo utilizo para resguardar la indemnización de un trabajador. Esa es la esencia de una <strong>visión integral</strong>.
+          Ejerzo la profesión con una convicción técnica innegociable: el rigor no distingue de posiciones ni de orígenes. El mismo estudio meticuloso que aplico para organizar y auditar la estructura de una compañía, lo utilizo para exigir y resguardar la indemnización de un trabajador. Esa es la esencia de una <strong>visión integral</strong>.
         </p>
         <p class="paragraph">
-          Entender cómo se estructuran las demandas me permite brindar asesorías preventivas impecables al sector empresarial. A la inversa, conocer la dinámica interna del sector corporativo es lo que me otorga las herramientas para defender con éxito a un particular frente a abusos sistémicos. <strong>Analizo su situación, organizo la viabilidad del reclamo y actúo de manera directa, sin intermediarios.</strong>
+          Entender cómo se estructuran las demandas me permite brindar asesorías preventivas impecables al sector empresarial. A la inversa, conocer la dinámica interna del sector corporativo es lo que me otorga las herramientas necesarias para representar con contundencia a un ciudadano frente a abusos sistémicos. <strong>Analizo su situación, organizo la viabilidad del reclamo y actúo de manera directa, asumiendo la responsabilidad de su expediente sin intermediarios.</strong>
         </p>
         <div class="creds-box">
           <div class="cred-item">
@@ -395,146 +415,58 @@
   </div>
 </section>
 
-<!-- ══ ÁREAS DE PRÁCTICA (EXPLICACIÓN DIDÁCTICA PERO DE LUJO) ══ -->
+<!-- ══ ÁREAS DE PRÁCTICA (GRILLA MOGLIANI/MU ABOGADOS) ══ -->
 <section class="section" id="areas" style="background-color: var(--bg-surface);">
   <div class="container">
     <div class="reveal">
       <div class="label">Capacidad de Intervención</div>
       <h2 class="heading-2">Soluciones <em>Jurídicas</em></h2>
       <p class="paragraph" style="max-width: 800px;">
-        Seleccione el área relacionada a su situación. Le explico de manera clara cómo la ley actúa como nuestra principal herramienta para restituir el orden y proteger su posición frente a cualquier contingencia civil, laboral o comercial.
+        Seleccione la especialidad relacionada a su conflicto. Descubra de forma clara y sin tecnicismos cómo utilizo la ley como herramienta principal para restituir el orden, defender sus derechos fundamentales o estructurar preventivamente su empresa en la Provincia de Córdoba.
       </p>
     </div>
 
-    <div class="areas-container reveal" style="transition-delay: 0.2s;">
+    <div class="practice-grid reveal" style="transition-delay: 0.2s;">
       
       <!-- Civil y Comercial -->
-      <div class="area-item">
-        <button class="area-header" onclick="toggleArea(this)">
-          <i class="fa-solid fa-landmark area-icon"></i>
-          <span class="area-title">Derecho Civil y Comercial</span>
-          <i class="fa-solid fa-chevron-down area-arrow"></i>
-        </button>
-        <div class="area-content">
-          <div class="area-inner">
-            <div class="area-desc">
-              El patrimonio que usted construyó exige protección jurídica activa. Intervengo mediante los mecanismos del Código Civil y Comercial de la Nación para asegurar el cumplimiento de acuerdos o exigir reparaciones ante daños injustos.
-            </div>
-            <div class="sub-area-grid">
-              <div class="sub-area">
-                <h4>Orden Patrimonial</h4>
-                <ul class="area-list">
-                  <li><strong>Sucesiones:</strong> Organizo la transmisión de bienes tras un fallecimiento. Conduzco la declaratoria de herederos y la partición del acervo para que la familia pueda disponer de inmuebles y vehículos sin trabas legales.</li>
-                  <li><strong>Protección Inmobiliaria:</strong> Gestiono procesos de desalojo ágiles para propietarios, y ejerzo la defensa técnica de inquilinos frente a rescisiones unilaterales o ejecuciones desmedidas.</li>
-                </ul>
-              </div>
-              <div class="sub-area">
-                <h4>Contratos y Ejecuciones</h4>
-                <ul class="area-list">
-                  <li><strong>Ingeniería Contractual:</strong> Redacción precisa de boletos de compraventa, fideicomisos y locaciones comerciales para blindar preventivamente sus operaciones.</li>
-                  <li><strong>Cobros y Daños:</strong> Ejecución de cheques, pagarés y honorarios. Asimismo, lidero acciones de reparación integral por accidentes de tránsito y responsabilidad civil.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/civil-y-comercial.html" class="practice-card">
+        <i class="fa-solid fa-landmark pc-icon"></i>
+        <h3 class="pc-title">Derecho Civil y Comercial</h3>
+        <p class="pc-desc">
+          Protegemos sus bienes, inversiones y la seguridad jurídica de sus negocios. Actuamos con firmeza ante incumplimientos contractuales, daños injustos o procesos sucesorios, garantizando la correcta transición o recuperación de su patrimonio.
+        </p>
+        <div class="pc-link">Explorar especialidad <i class="fa-solid fa-arrow-right-long pc-arrow"></i></div>
+      </a>
 
       <!-- Laboral y ART -->
-      <div class="area-item">
-        <button class="area-header" onclick="toggleArea(this)">
-          <i class="fa-solid fa-briefcase area-icon"></i>
-          <span class="area-title">Derecho Laboral y Siniestralidad</span>
-          <i class="fa-solid fa-chevron-down area-arrow"></i>
-        </button>
-        <div class="area-content">
-          <div class="area-inner">
-            <div class="area-desc">
-              Una relación de trabajo mal gestionada acarrea graves consecuencias. Mi objetivo es que el trabajador cobre la totalidad de sus acreencias y reciba cobertura médica justa, mientras proporciono auditoría a empleadores para prevenir litigios nocivos.
-            </div>
-            <div class="sub-area-grid">
-              <div class="sub-area">
-                <h4>Representación al Trabajador</h4>
-                <ul class="area-list">
-                  <li><strong>Conflictos de Despido:</strong> Reclamo de indemnizaciones precisas ante despidos sin causa. Exigencia de multas gravosas si hubo trabajo no registrado (en negro) o fraude contractual.</li>
-                  <li><strong>Riesgos del Trabajo (ART):</strong> Acompañamiento técnico ante Comisiones Médicas de la SRT por accidentes in itinere o enfermedades. Impugno altas médicas prematuras y exijo la fijación de la incapacidad real.</li>
-                </ul>
-              </div>
-              <div class="sub-area">
-                <h4>Asesoría a Empleadores</h4>
-                <ul class="area-list">
-                  <li><strong>Prevención y Organización:</strong> Revisión de nóminas, modalidades de contratación y redacción de sanciones (apercibimientos y suspensiones) para organizar el capital humano conforme a la ley.</li>
-                  <li><strong>Defensa en Tribunales:</strong> Contestación estratégica de telegramas laborales, asistencia a audiencias de conciliación y defensa técnica de la empresa ante demandas infundadas.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/laboral-y-siniestralidad.html" class="practice-card">
+        <i class="fa-solid fa-briefcase pc-icon"></i>
+        <h3 class="pc-title">Laboral y Siniestralidad</h3>
+        <p class="pc-desc">
+          Equilibramos la balanza del trabajo. Intervenimos para reclamar indemnizaciones justas y reparación integral por accidentes (ART) a favor del trabajador, y diseñamos estrategias de blindaje preventivo para evitar contingencias en empresas.
+        </p>
+        <div class="pc-link">Explorar especialidad <i class="fa-solid fa-arrow-right-long pc-arrow"></i></div>
+      </a>
 
       <!-- Consumo y Salud -->
-      <div class="area-item">
-        <button class="area-header" onclick="toggleArea(this)">
-          <i class="fa-solid fa-shield-halved area-icon"></i>
-          <span class="area-title">Salud y Defensa del Consumidor</span>
-          <i class="fa-solid fa-chevron-down area-arrow"></i>
-        </button>
-        <div class="area-content">
-          <div class="area-inner">
-            <div class="area-desc">
-              El derecho debe equilibrar la balanza. Aplico herramientas sumarísimas (rápidas) para frenar asimetrías y abusos de grandes entidades corporativas, garantizando el acceso a la salud y protegiendo el bolsillo del ciudadano.
-            </div>
-            <div class="sub-area-grid">
-              <div class="sub-area">
-                <h4>Tutela del Ciudadano</h4>
-                <ul class="area-list">
-                  <li><strong>Amparos de Salud:</strong> Interposición de medidas cautelares urgentes para obligar a Obras Sociales y Prepagas a brindar medicación de alto costo, cirugías o cobertura integral por discapacidad.</li>
-                  <li><strong>Finanzas y Estafas:</strong> Acciones contra bancos por vaciamiento de cuentas (Phishing), créditos fraudulentos y mantenimiento indebido en registros de morosos (Veraz).</li>
-                  <li><strong>Planes de Ahorro:</strong> Planteos judiciales para congelar cuotas vehiculares atadas a aumentos abusivos y recupero de fondos aportados.</li>
-                </ul>
-              </div>
-              <div class="sub-area">
-                <h4>Compliance Institucional</h4>
-                <ul class="area-list">
-                  <li><strong>Representación Corporativa:</strong> Asesoría a pymes, clínicas y comercializadoras para ajustar sus prácticas a la ley y ejercer su defensa en la Secretaría de Comercio ante denuncias infundadas.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/salud-y-consumidor.html" class="practice-card">
+        <i class="fa-solid fa-shield-halved pc-icon"></i>
+        <h3 class="pc-title">Salud y Def. del Consumidor</h3>
+        <p class="pc-desc">
+          Frenamos los abusos institucionales. Mediante vías judiciales rápidas (amparos y cautelares) obligamos a obras sociales a cumplir con tratamientos vitales, y exigimos responsabilidad a bancos y administradoras ante estafas o cobros indebidos.
+        </p>
+        <div class="pc-link">Explorar especialidad <i class="fa-solid fa-arrow-right-long pc-arrow"></i></div>
+      </a>
 
       <!-- Familia -->
-      <div class="area-item">
-        <button class="area-header" onclick="toggleArea(this)">
-          <i class="fa-solid fa-scale-unbalanced area-icon"></i>
-          <span class="area-title">Derecho de las Familias</span>
-          <i class="fa-solid fa-chevron-down area-arrow"></i>
-        </button>
-        <div class="area-content">
-          <div class="area-inner">
-            <div class="area-desc">
-              Las crisis del seno familiar exigen reserva absoluta y celeridad procesal. Mi rol consiste en organizar las finanzas tras la separación y preservar el bienestar psicológico de los menores involucrados, actuando como negociador racional o litigante firme.
-            </div>
-            <div class="sub-area-grid">
-              <div class="sub-area">
-                <h4>Desvinculación Matrimonial</h4>
-                <ul class="area-list">
-                  <li><strong>Divorcios:</strong> Inicio la petición de manera unilateral o por presentación conjunta, estructurando acuerdos reguladores que brinden paz a largo plazo.</li>
-                  <li><strong>Patrimonio:</strong> Me encargo de la tasación y división equitativa de los bienes gananciales (inmuebles, vehículos, sociedades) adquiridos durante la unión.</li>
-                </ul>
-              </div>
-              <div class="sub-area">
-                <h4>Responsabilidad Parental</h4>
-                <ul class="area-list">
-                  <li><strong>Obligación Alimentaria:</strong> Fijación de cuotas acordes a las necesidades de los menores y a la inflación, y defensa en incidentes de disminución para quien la abona.</li>
-                  <li><strong>Cuidado Personal:</strong> Organización legal de los regímenes de comunicación y visitas para asegurar el vínculo fluido y sano con ambos progenitores.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <a href="/derecho-de-familias.html" class="practice-card">
+        <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
+        <h3 class="pc-title">Derecho de las Familias</h3>
+        <p class="pc-desc">
+          Abordamos las crisis del seno familiar con absoluta reserva y tacto. Nuestro objetivo es organizar la división patrimonial, fijar cuotas alimentarias equitativas y priorizar el cuidado personal de los menores sin prolongar la conflictividad.
+        </p>
+        <div class="pc-link">Explorar especialidad <i class="fa-solid fa-arrow-right-long pc-arrow"></i></div>
+      </a>
 
     </div>
   </div>
@@ -685,14 +617,6 @@
     });
   }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
   revealElements.forEach(el => revealObserver.observe(el));
-
-  /* ─── ACORDEÓN DE ÁREAS ─── */
-  function toggleArea(btn) {
-    const currentItem = btn.closest('.area-item');
-    const allItems = document.querySelectorAll('.area-item');
-    allItems.forEach(item => { if (item !== currentItem) item.classList.remove('open'); });
-    currentItem.classList.toggle('open');
-  }
 
   /* ─── PREGUNTAS DINÁMICAS (LENGUAJE HUMANO Y DE DOBLE ROL) ─── */
   const dynContainer = document.getElementById('dynamic-questions');
