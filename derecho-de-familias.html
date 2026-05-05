@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Derecho de las Familias en Córdoba. Abogado Lautaro N. Aristeo. Divorcios, división de bienes gananciales, cuota alimentaria y régimen de visitas."/>
+  <title>Derecho de las Familias | Estudio Jurídico Aristeo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+  :root { --bg-base: #121510; --bg-surface: #181c15; --bg-panel: #21261d; --line-color: rgba(194, 163, 109, 0.2); --gold-main: #c2a36d; --gold-light: #dfc18c; --gold-dark: #8a7346; --text-main: #F4F1EA; --text-muted: rgba(244, 241, 234, 0.65); --font-heading: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; --transition-fast: 0.3s ease; --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
+
+  /* Header Minimalista */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* Hero Interno */
+  .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+  /* Contenido */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
+  .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
+  .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
+  .detail-list { list-style: none; margin-top: 2rem; }
+  .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
+  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
+  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
+
+  /* Footer */
+  .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
+  .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
+  .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav-wrapper">
+    <a href="/index.html" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
+    </a>
+    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <i class="fa-solid fa-scale-unbalanced ph-icon"></i>
+    <h1 class="ph-title">Derecho de las Familias</h1>
+    <p class="ph-desc">
+      Las crisis del seno familiar exigen reserva absoluta y estrategia procesal. Mi rol consiste en organizar sus finanzas tras la separación y preservar la paz de sus hijos, actuando como un negociador racional o un litigante firme según lo exija la contraparte.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="content-grid">
+      
+      <div class="content-block">
+        <h3>Organización Familiar y Menores</h3>
+        <p>
+          Priorizo el interés superior de los niños y adolescentes, estructurando legalmente la dinámica diaria post-separación para evitar que el proceso judicial se convierta en un foco de desgaste emocional para usted.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Obligación Alimentaria</strong>
+            Fijo y exijo cuotas alimentarias acordes a las necesidades reales de los menores y a la capacidad económica del alimentante, aplicando mecanismos de actualización para blindarlas contra la inflación.
+          </li>
+          <li>
+            <strong>Cuidado Personal (Tenencia)</strong>
+            Defino judicialmente el cuidado personal (compartido indistinto, alternado o unilateral) asegurando que el centro de vida del menor sea el más sano y seguro para su desarrollo.
+          </li>
+          <li>
+            <strong>Régimen de Comunicación (Visitas)</strong>
+            Establezco cronogramas claros, predecibles y exigibles por ley para garantizar el contacto fluido y constante, evitando manipulaciones o impedimentos de contacto.
+          </li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h3>Desvinculación y Patrimonio</h3>
+        <p>
+          La finalización de un proyecto de vida en común requiere desatar los lazos jurídicos y económicos de manera limpia y equitativa, resguardando estrictamente el esfuerzo patrimonial que usted aportó.
+        </p>
+        <ul class="detail-list">
+          <li>
+            <strong>Divorcios (Unilaterales o Conjuntos)</strong>
+            Inicio de manera ágil el trámite de divorcio vincular, elaborando propuestas reguladoras estratégicas que abarquen todos los efectos derivados de la ruptura sin someterlo a demoras innecesarias.
+          </li>
+          <li>
+            <strong>Liquidación de la Sociedad Conyugal</strong>
+            Identifico, taso y divido jurídicamente los bienes gananciales adquiridos durante el matrimonio, actuando rápidamente para prevenir cualquier maniobra de ocultamiento patrimonial.
+          </li>
+          <li>
+            <strong>Compensación Económica</strong>
+            Analizo y reclamo reparaciones financieras contundentes ante el desequilibrio económico manifiesto que padece uno de los cónyuges o convivientes a raíz de la separación.
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <div style="text-align: center; margin-top: 5rem;">
+      <a href="/contacto.html" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem; background: transparent; color: var(--gold-main);">
+        Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
+    <div class="footer-text">Dirección Estratégica: Dr. Lautaro N. Aristeo</div>
+    <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
+    <div class="footer-text" style="color: var(--gold-dark);">Córdoba, República Argentina | © 2026 Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+</body>
+</html>
