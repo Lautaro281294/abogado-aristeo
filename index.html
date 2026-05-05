@@ -7,7 +7,6 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
   <title>Estudio Jurídico Aristeo | Excelencia y Estrategia Legal · Córdoba</title>
 
-  <!-- ══ FUENTES E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -42,73 +41,61 @@
   .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2.5rem; }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  .paragraph { font-size: 1.05rem; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 1.5rem; }
-  .paragraph strong { color: var(--text-main); font-weight: 400; }
-
   /* ════ HEADER ════ */
   .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 2rem 0; }
   .header.scrolled { background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   
-  .brand { text-decoration: none; display: flex; flex-direction: column; min-width: 200px; }
+  .brand { text-decoration: none; display: flex; flex-direction: column; }
   .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
   .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; flex-grow: 1; justify-content: flex-end; }
-  .nav-item { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); text-decoration: none; position: relative; padding: 5px 0; cursor: pointer; white-space: nowrap; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; }
+  .nav-item { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); text-decoration: none; position: relative; cursor: pointer; }
   
-  .dropdown { position: relative; display: flex; align-items: center; }
-  .dropdown-menu {
-    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface);
-    border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 280px;
-    opacity: 0; visibility: hidden; transition: all 0.3s ease; box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-  }
-  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .dropdown-item { display: block; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; }
-  .dropdown-item:hover { background: var(--bg-panel); color: var(--gold-light); padding-left: 3rem; }
-
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; white-space: nowrap; }
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
-
-  /* ════ FILOSOFÍA ════ */
-  .grid-50-50 { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-  @media (max-width: 900px) { .grid-50-50 { grid-template-columns: 1fr; gap: 4rem; } }
-  .quote-block { border-left: 2px solid var(--gold-main); padding-left: 2.5rem; margin-top: 3.5rem; }
-  .quote-text { font-family: var(--font-heading); font-size: 1.9rem; font-style: italic; color: var(--gold-light); line-height: 1.45; }
-  .creds-box { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); display: flex; gap: 3.5rem; flex-wrap: wrap; }
-  .cred-item span { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 8px; }
-  .cred-item strong { font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); font-weight: 400;}
 
   /* ════ PRACTICE GRID ════ */
   .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 5rem; }
   @media (max-width: 1100px) { .practice-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) { .practice-grid { grid-template-columns: 1fr; } }
   
-  .practice-card { background: var(--bg-surface); border: 1px solid var(--line-color); padding: 4rem 3.5rem; display: flex; flex-direction: column; text-decoration: none; transition: all 0.5s ease; position: relative; }
-  .practice-card:hover { transform: translateY(-12px); background: var(--bg-panel); border-color: var(--gold-main); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-  .pc-icon { font-size: 2.2rem; color: var(--gold-main); margin-bottom: 2.5rem; transition: 0.3s; }
-  .practice-card:hover .pc-icon { color: var(--gold-light); transform: scale(1.1); }
-  .pc-title { font-family: var(--font-heading); font-size: 2.1rem; margin-bottom: 1.5rem; color: var(--text-main); font-weight: 400; line-height: 1.1; }
-  .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.8; text-align: justify; }
-  .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); display: flex; align-items: center; gap: 12px; border-top: 1px solid var(--line-color); padding-top: 2rem; }
+  .practice-card { background: var(--bg-surface); border: 1px solid var(--line-color); padding: 4rem 3.5rem; display: flex; flex-direction: column; text-decoration: none; transition: 0.5s; position: relative; }
+  .practice-card:hover { transform: translateY(-10px); border-color: var(--gold-main); background: var(--bg-panel); }
+  .pc-icon { font-size: 2.2rem; color: var(--gold-main); margin-bottom: 2.5rem; }
+  .pc-title { font-family: var(--font-heading); font-size: 2.1rem; margin-bottom: 1.5rem; color: var(--text-main); font-weight: 400; }
+  .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.8; }
+  .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); border-top: 1px solid var(--line-color); padding-top: 2rem; display: flex; align-items: center; gap: 10px; }
 
   /* ════ CONTACTO ════ */
-  .contact-wrapper { display: grid; grid-template-columns: 42% 58%; background: var(--bg-surface); border: 1px solid var(--line-color); margin-top: 5rem; }
-  @media (max-width: 950px) { .contact-wrapper { grid-template-columns: 1fr; } }
-  .contact-fast { padding: 5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
-  .contact-form-area { padding: 5rem; }
-  .info-link { font-size: 1.15rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 18px; margin-bottom: 2rem; transition: 0.3s; }
-  .info-link i { color: var(--gold-main); font-size: 1.3rem; }
-  .info-link:hover { color: var(--gold-light); transform: translateX(5px); }
-  .form-group { margin-bottom: 3.5rem; }
-  .form-label { display: block; font-size: 0.75rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1.2rem; letter-spacing: 0.25em; font-weight: 600; }
-  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 1.2rem 0; outline: none; font-size: 1.15rem; transition: 0.4s; font-family: var(--font-body); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 5rem; }
+  @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+  /* Canales Elegantes */
+  .contact-channels { display: flex; flex-direction: column; gap: 1.5rem; }
+  .channel-card { 
+    display: flex; align-items: center; justify-content: space-between; 
+    padding: 2.5rem; background: var(--bg-surface); border: 1px solid var(--line-color); 
+    text-decoration: none; transition: 0.4s;
+  }
+  .channel-card:hover { border-color: var(--gold-main); background: var(--bg-panel); transform: translateX(10px); }
+  .channel-info { display: flex; align-items: center; gap: 2rem; }
+  .channel-info i { font-size: 2.2rem; color: var(--gold-main); width: 40px; text-align: center; }
+  .channel-text span { display: block; font-size: 0.7rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.2em; margin-bottom: 5px; }
+  .channel-text strong { font-size: 1.2rem; color: var(--text-main); font-weight: 400; }
+
+  /* Formulario Opcional */
+  .form-container { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem; }
+  .form-group { margin-bottom: 2.5rem; }
+  .form-label { display: block; font-size: 0.7rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1rem; letter-spacing: 0.2em; font-weight: 600; }
+  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 1rem 0; outline: none; font-size: 1.1rem; transition: 0.4s; font-family: var(--font-body); }
   .form-input:focus { border-color: var(--gold-main); }
-  .btn-submit { width: 100%; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.3em; cursor: pointer; transition: 0.4s; display: flex; align-items: center; justify-content: center; gap: 15px; margin-top: 2rem; }
+  .btn-submit { width: 100%; padding: 1.5rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.4s; }
   .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); }
 
-  .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
-  .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
+  .footer { padding: 5rem 0; text-align: center; border-top: 1px solid var(--line-color); }
+  .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
   .reveal.active { opacity: 1; transform: translateY(0); }
   </style>
 </head>
@@ -116,59 +103,35 @@
 
 <header class="header" id="header">
   <div class="container nav-wrapper">
-    <a href="#hero" class="brand">
+    <a href="#" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
     <nav class="nav-links">
       <a href="#filosofia" class="nav-item">Mi Enfoque</a>
-      <div class="dropdown">
-        <span class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem; margin-left: 6px;"></i></span>
-        <div class="dropdown-menu">
-          <a href="/civil-y-comercial.html" class="dropdown-item">Civil y Sucesiones</a>
-          <a href="/comercial-y-corporativo.html" class="dropdown-item">Comercial y Empresas</a>
-          <a href="/laboral-y-art.html" class="dropdown-item">Laboral y ART</a>
-          <a href="/amparos-de-salud.html" class="dropdown-item">Amparos de Salud</a>
-          <a href="/defensa-del-consumidor.html" class="dropdown-item">Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="dropdown-item">Derecho de Familias</a>
-        </div>
-      </div>
-      <a href="#contacto" class="btn-header">Contacto Directo <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#areas" class="nav-item">Áreas</a>
+      <a href="#contacto" class="btn-header">Contacto Directo</a>
     </nav>
   </div>
 </header>
 
-<section class="section hero" id="hero" style="min-height: 100vh; display: flex; align-items: center; border-top: none; background: linear-gradient(180deg, rgba(18,21,16,0.85) 0%, rgba(18,21,16,0.98) 100%), url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed;">
+<section class="section" style="min-height: 90vh; display: flex; align-items: center; border-top: none;">
   <div class="container">
-    <h1 class="heading-2 reveal" style="font-size: clamp(3.5rem, 7.5vw, 6rem);">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-    <p class="reveal" style="max-width: 800px; font-size: 1.25rem; color: var(--text-muted); margin-bottom: 4rem; line-height: 1.9;">La abogacía de alta complejidad no admite improvisaciones. Analizo su caso con la mayor exigencia dogmática y le hablo con absoluta franqueza. Asumo la dirección de su expediente personalmente ante la Justicia de Córdoba.</p>
-    <a href="#contacto" class="btn-primary reveal" style="display: inline-flex; align-items: center; gap: 15px; color: var(--bg-base); background: var(--gold-main); padding: 1.4rem 3.2rem; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; transition: 0.4s;">Analizar mi caso <i class="fa-solid fa-arrow-down"></i></a>
+    <h1 class="heading-2 reveal" style="font-size: clamp(3.5rem, 7vw, 6rem);">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
+    <p class="reveal" style="max-width: 750px; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 4rem;">Asumo la dirección de su expediente personalmente ante la Justicia de Córdoba, combinando profundidad técnica con una gestión estratégica orientada a resultados.</p>
+    <a href="#contacto" class="btn-header reveal" style="padding: 1.5rem 3.5rem;">Iniciar Consulta</a>
   </div>
 </section>
 
-<!-- ══ SECCIÓN MI ENFOQUE RESTAURADA ══ -->
 <section class="section" id="filosofia">
   <div class="container">
-    <div class="grid-50-50">
-      <div class="reveal">
-        <div class="label">Perspectiva Sistémica</div>
-        <h2 class="heading-2">Conocimiento del<br><em>Sistema.</em></h2>
-        <div class="quote-block">
-          <p class="quote-text">"En la mesa de negociación, el único idioma que prevalece es la estrategia. Mi ventaja es anticipar los escenarios comprendiendo exactamente cómo piensa la contraparte."</p>
-        </div>
-      </div>
-      <div class="reveal" style="transition-delay: 0.2s;">
-        <p class="paragraph">
-          Ejerzo la profesión con una convicción técnica innegociable. El mismo estudio meticuloso que aplico para auditar la estructura de una compañía, lo utilizo para exigir la indemnización de un trabajador. Esa es la esencia de mi <strong>visión integral</strong>.
-        </p>
-        <p class="paragraph">
-          Conocer la dinámica interna del sector corporativo me otorga las herramientas necesarias para representarlo con contundencia frente a cualquier contingencia civil, laboral o comercial. <strong>Analizo su situación, estructuro la viabilidad del reclamo y actúo de manera directa.</strong>
-        </p>
-        <div class="creds-box">
-          <div class="cred-item"><span>Matrícula Provincial</span><strong>M.P. 1-43722</strong></div>
-          <div class="cred-item"><span>Matrícula Federal</span><strong>T° 511 F° 222</strong></div>
-          <div class="cred-item"><span>Director del Estudio</span><strong>Dr. Lautaro N. Aristeo</strong></div>
-        </div>
+    <div style="max-width: 900px;">
+      <div class="label">Perspectiva Sistémica</div>
+      <h2 class="heading-2">Conocimiento del <em>Sistema.</em></h2>
+      <p style="font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem;">Ejerzo la profesión bajo una convicción técnica innegociable. Mi ventaja competitiva radica en anticipar escenarios comprendiendo exactamente cómo opera la contraparte y el juzgador.</p>
+      <div style="display: flex; gap: 4rem; margin-top: 4rem;">
+        <div><span style="display:block; color: var(--gold-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;">Matrícula Provincial</span><strong style="font-size: 1.5rem; font-family: var(--font-heading);">M.P. 1-43722</strong></div>
+        <div><span style="display:block; color: var(--gold-main); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em;">Director</span><strong style="font-size: 1.5rem; font-family: var(--font-heading);">Dr. Lautaro N. Aristeo</strong></div>
       </div>
     </div>
   </div>
@@ -177,44 +140,26 @@
 <section class="section" id="areas" style="background-color: var(--bg-surface);">
   <div class="container">
     <div class="label">Especialidades</div>
-    <h2 class="heading-2">Mi campo de <em>Intervención</em></h2>
+    <h2 class="heading-2">Áreas de Práctica <em>Estratégica</em></h2>
     
     <div class="practice-grid reveal">
       <a href="/civil-y-comercial.html" class="practice-card">
         <i class="fa-solid fa-landmark pc-icon"></i>
         <h3 class="pc-title">Derecho Civil</h3>
-        <p class="pc-desc">Sucesiones y protección de inmuebles. Brindo un blindaje patrimonial absoluto ante contingencias legales.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
+        <p class="pc-desc">Sucesiones, protección de inmuebles y blindaje patrimonial ante contingencias.</p>
+        <div class="pc-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/comercial-y-corporativo.html" class="practice-card">
         <i class="fa-solid fa-file-contract pc-icon"></i>
         <h3 class="pc-title">Comercial</h3>
-        <p class="pc-desc">Ingeniería de contratos y ejecución de cobros. Aseguro la viabilidad jurídica de sus negocios y empresas.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
+        <p class="pc-desc">Ingeniería de contratos, cobros ejecutivos y asesoría a empresas y PyMEs.</p>
+        <div class="pc-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></div>
       </a>
       <a href="/laboral-y-art.html" class="practice-card">
         <i class="fa-solid fa-briefcase pc-icon"></i>
         <h3 class="pc-title">Laboral y ART</h3>
-        <p class="pc-desc">Despidos e indemnizaciones. Actúo con firmeza para garantizar la reparación integral ante siniestros laborales.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
-      </a>
-      <a href="/amparos-de-salud.html" class="practice-card">
-        <i class="fa-solid fa-heart-pulse pc-icon"></i>
-        <h3 class="pc-title">Amparos de Salud</h3>
-        <p class="pc-desc">Medidas judiciales inmediatas. Obligo a prestadoras a cumplir con medicación, cirugías y discapacidad.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
-      </a>
-      <a href="/defensa-del-consumidor.html" class="practice-card">
-        <i class="fa-solid fa-shield-halved pc-icon"></i>
-        <h3 class="pc-title">Consumidor</h3>
-        <p class="pc-desc">Litigios contra bancos por estafas y reclamos contra planes de ahorro. El derecho debe equilibrar la balanza.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
-      </a>
-      <a href="/derecho-de-familias.html" class="practice-card">
-        <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
-        <h3 class="pc-title">Familias</h3>
-        <p class="pc-desc">Divorcios estratégicos y división de bienes. Priorizo la paz de los menores involucrados en cada proceso.</p>
-        <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
+        <p class="pc-desc">Despidos e indemnizaciones. Reparación integral ante siniestros y enfermedades laborales.</p>
+        <div class="pc-link">Ver detalles <i class="fa-solid fa-arrow-right"></i></div>
       </a>
     </div>
   </div>
@@ -222,51 +167,57 @@
 
 <section class="section" id="contacto">
   <div class="container">
-    <div class="label">Evaluación estratégica</div>
-    <h2 class="heading-2">Análisis de <em>Situación</em></h2>
+    <div class="label">Canales de comunicación</div>
+    <h2 class="heading-2">Contacto</h2>
     
-    <div class="contact-wrapper reveal">
-      <div class="contact-fast">
-        <div>
-          <h3 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">Contacto Directo</h3>
-          <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.05rem;">Escríbame para coordinar una entrevista. Mi respuesta es personalmente dirigida bajo secreto profesional.</p>
-          <div class="info-item">
-            <a href="https://wa.me/5493517736170" class="info-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170</a>
-            <a href="mailto:dr.aristeolautaro@gmail.com" class="info-link"><i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com</a>
+    <div class="contact-grid">
+      <div class="contact-channels reveal">
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Elija la vía de su preferencia para una respuesta inmediata o coordinar una entrevista en el estudio.</p>
+        
+        <a href="https://wa.me/5493517736170" class="channel-card" target="_blank">
+          <div class="channel-info">
+            <i class="fa-brands fa-whatsapp"></i>
+            <div class="channel-text">
+              <span>Comunicación Instantánea</span>
+              <strong>WhatsApp Business</strong>
+            </div>
           </div>
-        </div>
-        <div style="border-top: 1px solid var(--line-color); padding-top: 3rem; margin-top: 3rem;">
-           <p style="font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold-main); text-transform: uppercase;">M.P. 1-43722 | Córdoba, AR</p>
-        </div>
+          <i class="fa-solid fa-chevron-right" style="color: var(--gold-dark);"></i>
+        </a>
+
+        <a href="mailto:dr.aristeolautaro@gmail.com" class="channel-card">
+          <div class="channel-info">
+            <i class="fa-regular fa-envelope"></i>
+            <div class="channel-text">
+              <span>Envío de Documentación</span>
+              <strong>Correo Electrónico</strong>
+            </div>
+          </div>
+          <i class="fa-solid fa-chevron-right" style="color: var(--gold-dark);"></i>
+        </a>
       </div>
-      
-      <div class="contact-form-area">
-        <form id="evaluationForm">
+
+      <div class="form-container reveal">
+        <p style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); margin-bottom: 2rem;">Evaluación Técnica de Caso</p>
+        <form id="contactForm">
           <div class="form-group">
-            <label class="form-label">Titular o Razón Social *</label>
-            <input type="text" id="f_nombre" class="form-input" required>
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-input" id="name" required>
           </div>
           <div class="form-group">
-            <label class="form-label">WhatsApp de contacto *</label>
-            <input type="tel" id="f_telefono" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Rama Jurídica de la consulta *</label>
-            <select id="f_area" class="form-input" required style="cursor: pointer; background: transparent;">
-              <option value="" disabled selected>Seleccione especialidad...</option>
-              <option value="Civil" style="background: var(--bg-panel);">Civil y Sucesiones</option>
-              <option value="Comercial" style="background: var(--bg-panel);">Comercial y Empresas</option>
-              <option value="Laboral" style="background: var(--bg-panel);">Laboral y ART</option>
-              <option value="Salud" style="background: var(--bg-panel);">Amparos de Salud</option>
-              <option value="Consumo" style="background: var(--bg-panel);">Defensa al Consumidor</option>
-              <option value="Familia" style="background: var(--bg-panel);">Derecho de Familias</option>
+            <label class="form-label">Materia de Consulta</label>
+            <select class="form-input" id="subject" style="background: var(--bg-panel); border-radius: 0;">
+                <option value="Civil">Civil / Sucesiones</option>
+                <option value="Comercial">Comercial / Empresa</option>
+                <option value="Laboral">Laboral / ART</option>
+                <option value="Otro">Otros asuntos</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Síntesis de los hechos *</label>
-            <textarea id="f_sintesis" class="form-input" rows="2" style="resize: none;" required></textarea>
+            <label class="form-label">Resumen del caso</label>
+            <textarea class="form-input" id="message" rows="1" style="resize: none;"></textarea>
           </div>
-          <button type="button" class="btn-submit" onclick="procesarEvaluacion()">Derivar por E-Mail Seguro <i class="fa-solid fa-lock"></i></button>
+          <button type="submit" class="btn-submit">Enviar para Análisis</button>
         </form>
       </div>
     </div>
@@ -275,8 +226,8 @@
 
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo" style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem;">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em;">Director: Dr. Lautaro Nahuel Aristeo | Córdoba, Rep. Argentina</div>
+    <p style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-main); margin-bottom: 1rem;">ESTUDIO JURÍDICO ARISTEO</p>
+    <p style="font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em;">Dr. Lautaro N. Aristeo | M.P. 1-43722 | Córdoba, Argentina</p>
   </div>
 </footer>
 
@@ -287,38 +238,11 @@
     else header.classList.remove('scrolled');
   });
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  async function procesarEvaluacion() {
-    const btn = event.currentTarget;
-    const nom = document.getElementById('f_nombre').value;
-    const tel = document.getElementById('f_telefono').value;
-    const area = document.getElementById('f_area').value;
-    const caso = document.getElementById('f_sintesis').value;
-
-    if(!nom || !tel || !area || !caso) { alert("Complete los campos obligatorios."); return; }
-
-    btn.innerHTML = 'Procesando... <i class="fa-solid fa-spinner fa-spin"></i>';
-    btn.disabled = true;
-
-    const formData = new FormData();
-    formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd");
-    formData.append("Titular", nom);
-    formData.append("WhatsApp", tel);
-    formData.append("Materia", area);
-    formData.append("Sintesis", caso);
-    
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-      if(response.ok) { 
-        btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
-        document.getElementById('evaluationForm').reset();
-      }
-    } catch(e) { alert("Error de conexión."); btn.innerHTML = 'Reintentar'; btn.disabled = false; }
-  }
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
