@@ -46,16 +46,16 @@
      1. VARIABLES GLOBALES (PALETA "CANVAS" Y ÉLITE)
   ═══════════════════════════════════════════════ */
   :root {
-    --bg-base:     #121510; /* Verde muy oscuro, profundo */
-    --bg-surface:  #181c15; /* Nivel 1 de elevación */
-    --bg-panel:    #21261d; /* Nivel 2 de elevación */
+    --bg-base:     #121510; 
+    --bg-surface:  #181c15; 
+    --bg-panel:    #21261d; 
     --line-color:  rgba(194, 163, 109, 0.2); 
     
-    --gold-main:   #c2a36d; /* Oro institucional (estilo hierro oxidado/bronce) */
+    --gold-main:   #c2a36d; 
     --gold-light:  #dfc18c; 
     --gold-dark:   #8a7346; 
     
-    --text-main:   #F4F1EA; /* Marfil para lectura cómoda */
+    --text-main:   #F4F1EA; 
     --text-muted:  rgba(244, 241, 234, 0.65); 
     
     --font-heading: 'Cormorant Garamond', serif;
@@ -162,12 +162,6 @@
                 url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover fixed;
   }
   .hero-content { position: relative; z-index: 10; padding-top: 6rem; max-width: 900px; }
-  
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.25em;
-    text-transform: uppercase; color: var(--gold-main); border: 1px solid var(--line-color); padding: 0.7rem 1.5rem;
-    margin-bottom: 2.5rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(5px);
-  }
 
   .hero-title {
     font-family: var(--font-heading); font-size: clamp(3rem, 6.5vw, 5.5rem);
@@ -352,15 +346,11 @@
 <!-- ══ HERO SECTION ══ -->
 <section class="hero" id="hero">
   <div class="container hero-content">
-    <div class="hero-badge reveal">
-      <i class="fa-solid fa-scale-balanced" style="font-size: 1.1rem;"></i>
-      Jurisdicción Provincial y Federal · Córdoba
-    </div>
     <h1 class="hero-title reveal" style="transition-delay: 0.1s;">
       Rigor en Tribunales. <br><em>Claridad en el trato.</em>
     </h1>
     <p class="hero-desc reveal" style="transition-delay: 0.2s;">
-      Analizo su caso con la mayor exigencia dogmática y le hablo con absoluta franqueza sobre sus opciones legales. Cada persona y cada organización que cruza nuestra puerta recibe la misma representación inquebrantable, orientada siempre a proteger lo que le corresponde por ley. 
+      Analizo su caso con la mayor exigencia dogmática y le hablo con absoluta franqueza sobre sus opciones legales. Cada persona y cada organización que cruza mi puerta recibe la misma representación inquebrantable, orientada siempre a proteger lo que le corresponde por ley. 
     </p>
     <div class="reveal" style="transition-delay: 0.3s;">
       <a href="#contacto" class="btn-primary">Concertar una Entrevista <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i></a>
@@ -384,7 +374,7 @@
           Ejerzo la profesión con una convicción técnica innegociable: el rigor no distingue de títulos ni de orígenes. El mismo estudio meticuloso que aplico para organizar la estructura laboral de una compañía, lo utilizo para resguardar la indemnización de un trabajador. Esa es la esencia de una <strong>visión integral</strong>.
         </p>
         <p class="paragraph">
-          Entender cómo se estructuran las demandas permite brindar asesorías preventivas impecables al sector empresarial. A la inversa, conocer la dinámica interna del sector corporativo es lo que me otorga las herramientas para defender con éxito a un particular frente a abusos sistémicos. <strong>Analizo su situación, organizo la viabilidad del reclamo y actúo de manera directa, sin intermediarios.</strong>
+          Entender cómo se estructuran las demandas me permite brindar asesorías preventivas impecables al sector empresarial. A la inversa, conocer la dinámica interna del sector corporativo es lo que me otorga las herramientas para defender con éxito a un particular frente a abusos sistémicos. <strong>Analizo su situación, organizo la viabilidad del reclamo y actúo de manera directa, sin intermediarios.</strong>
         </p>
         <div class="creds-box">
           <div class="cred-item">
@@ -565,7 +555,7 @@
         <div>
           <h3>Canales Directos</h3>
           <p class="paragraph" style="font-size: 0.95rem; margin-bottom: 2rem;">
-            Si prefiere un primer contacto fluido sin redactar los pormenores de su caso, nuestras líneas de comunicación directa están operativas. Todo diálogo se rige bajo estricto secreto profesional.
+            Si prefiere un primer contacto fluido sin redactar los pormenores de su caso, mis líneas de comunicación directa están operativas. Todo diálogo se rige bajo estricto secreto profesional.
           </p>
           
           <div class="contact-info-block">
@@ -586,7 +576,7 @@
           
           <div class="urgency-alert">
             <strong>Protocolo de Urgencias:</strong><br>
-            Ante detenciones, notificaciones de desalojo inminente o siniestros laborales graves que ocurran fuera del horario de atención, le solicitamos que inicie su mensaje de WhatsApp con la palabra <strong>URGENCIA</strong> para activar de inmediato la respuesta prioritaria de nuestro equipo.
+            Ante detenciones, notificaciones de desalojo inminente o siniestros laborales graves que ocurran fuera del horario de atención, le solicito que inicie su mensaje de WhatsApp con la palabra <strong>URGENCIA</strong> para activar de inmediato mi respuesta prioritaria.
           </div>
         </div>
       </div>
@@ -642,9 +632,12 @@
           </div>
 
           <div class="action-buttons">
+            <!-- BOTÓN A WHATSAPP -->
             <button type="button" class="btn-submit wsp" onclick="procesarEvaluacion('wsp')">
               Derivar Formulario por WhatsApp <i class="fa-brands fa-whatsapp"></i>
             </button>
+            
+            <!-- BOTÓN A EMAIL CON LA LÓGICA WEB3FORMS OCULTA (JS FETCH) -->
             <button type="button" class="btn-submit" onclick="procesarEvaluacion('email')">
               Derivar Formulario por E-Mail <i class="fa-regular fa-envelope"></i>
             </button>
@@ -792,8 +785,9 @@
     }
   }
 
-  /* ─── ENVÍO DE FORMULARIO ─── */
-  function procesarEvaluacion(metodo) {
+  /* ─── ENVÍO DE FORMULARIO (WEB3FORMS INVISIBLE + WHATSAPP) ─── */
+  async function procesarEvaluacion(metodo) {
+    const form = document.getElementById('evaluationForm');
     const nom = document.getElementById('f_nombre').value.trim();
     const tel = document.getElementById('f_telefono').value.trim();
     const email = document.getElementById('f_email').value.trim() || 'No informado';
@@ -801,47 +795,21 @@
     const sintesis = document.getElementById('f_sintesis').value.trim();
 
     if (!nom || !tel || !area || !sintesis) {
-      alert("La excelencia requiere precisión. Por favor, asegúrese de completar los campos indicados con (*) para que evalúe su perfil.");
+      alert("La excelencia requiere precisión. Por favor, asegúrese de completar los campos marcados con (*) para que evalúe su perfil.");
       return;
     }
 
     let datosExtra = "";
-    if (area === "Laboral") {
-      const p1 = document.getElementById('dq_lab_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_lab_2')?.value || "No especificado";
-      const p3 = document.getElementById('dq_lab_3')?.value || "No especificado";
-      datosExtra = `Posición: ${p1} | Estado del vínculo: ${p2} | Telegramas: ${p3}`;
-    } else if (area === "ART") {
-      const p1 = document.getElementById('dq_art_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_art_2')?.value || "No especificado";
-      const p3 = document.getElementById('dq_art_3')?.value || "No especificado";
-      datosExtra = `Posición: ${p1} | ART involucrada: ${p2} | Criterio médico: ${p3}`;
-    } else if (area === "Consumo") {
-      const p1 = document.getElementById('dq_cons_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_cons_2')?.value || "No especificado";
-      datosExtra = `Posición: ${p1} | Contraparte: ${p2}`;
-    } else if (area === "Salud") {
-      const p1 = document.getElementById('dq_salud_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_salud_2')?.value || "No especificado";
-      datosExtra = `Posición: ${p1} | Prestación médica: ${p2}`;
-    } else if (area === "Civil_Contratos") {
-      const p1 = document.getElementById('dq_civ_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_civ_2')?.value || "No especificado";
-      datosExtra = `Posición: ${p1} | Documentación existente: ${p2}`;
-    } else if (area === "Sucesiones") {
-      const p1 = document.getElementById('dq_suc_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_suc_2')?.value || "No especificado";
-      datosExtra = `Relación entre deudos: ${p1} | Patrimonio denunciado: ${p2}`;
-    } else if (area === "Familia") {
-      const p1 = document.getElementById('dq_fam_1')?.value || "No especificado";
-      const p2 = document.getElementById('dq_fam_2')?.value || "No especificado";
-      datosExtra = `Presencia de menores: ${p1} | Bienes matrimoniales: ${p2}`;
-    }
-
-    const extraStr = datosExtra ? `%0A*Datos Complementarios:* ${datosExtra}` : '';
-    const extraStrMail = datosExtra ? `\nDatos Complementarios: ${datosExtra}` : '';
+    const questions = document.querySelectorAll('#dq-fields input, #dq-fields select');
+    questions.forEach(q => {
+      if (q.value) {
+        const label = q.placeholder || q.options?.[q.selectedIndex]?.text || "Dato";
+        datosExtra += `${label}: ${q.value}\n`;
+      }
+    });
 
     if (metodo === 'wsp') {
+      const extraStr = datosExtra ? `%0A*Datos Complementarios:*%0A${datosExtra.replace(/\n/g, '%0A')}` : '';
       const msj = `*EVALUACIÓN ESTRATÉGICA WEB - ESTUDIO ARISTEO*%0A%0A`
         + `*Titular / Razón Social:* ${nom}%0A`
         + `*Teléfono:* ${tel}%0A`
@@ -852,15 +820,59 @@
       window.open(`https://wa.me/5493517736170?text=${msj}`, '_blank');
       
     } else if (metodo === 'email') {
-      const asunto = `Evaluación Estratégica: ${area} - ${nom}`;
-      const cuerpo = `EVALUACIÓN ESTRATÉGICA WEB - ESTUDIO ARISTEO\n\n`
-        + `Titular / Razón Social: ${nom}\n`
-        + `Teléfono: ${tel}\n`
-        + `Email: ${email}\n`
-        + `Rama Jurídica: ${area}${extraStrMail}\n\n`
-        + `Síntesis Fáctica:\n${sintesis}`;
       
-      window.location.href = `mailto:dr.aristeolautaro@gmail.com?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      
+      // Feedback visual
+      btn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+      btn.style.opacity = '0.7';
+      btn.style.pointerEvents = 'none';
+
+      // Preparar datos para Web3Forms (100% Invisible para el usuario)
+      const formData = new FormData();
+      formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd"); 
+      formData.append("subject", `Evaluación Estratégica: ${area} - ${nom}`);
+      formData.append("from_name", "Portal Estudio Aristeo");
+      
+      formData.append("Titular", nom);
+      formData.append("Telefono", tel);
+      formData.append("Email", email);
+      formData.append("Materia", area);
+      formData.append("Datos_Adicionales", datosExtra || "No brindó detalles extra.");
+      formData.append("Sintesis", sintesis);
+
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
+          btn.style.borderColor = 'var(--gold-light)';
+          btn.style.color = 'var(--gold-light)';
+          form.reset();
+          document.getElementById('dynamic-questions').style.display = 'none';
+          
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.borderColor = 'var(--line-color)';
+            btn.style.color = 'var(--text-main)';
+            btn.style.opacity = '1';
+            btn.style.pointerEvents = 'auto';
+          }, 5000);
+        } else {
+          throw new Error();
+        }
+      } catch (error) {
+        alert("Hubo un problema de conexión con el servidor. Por favor, intente derivar la consulta mediante WhatsApp.");
+        btn.innerHTML = originalText;
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+      }
     }
   }
 </script>
