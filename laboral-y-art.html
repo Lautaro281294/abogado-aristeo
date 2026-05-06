@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Derecho Laboral y ART en Córdoba. Abogado Lautaro N. Aristeo. Despidos, trabajo no registrado, accidentes laborales y defensa a empresas."/>
+  <meta name="description" content="Derecho Laboral y ART en Córdoba. Abogado Lautaro N. Aristeo. Despidos, trabajo no registrado, accidentes laborales y defensa corporativa."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Laboral y ART | Estudio Jurídico Aristeo</title>
 
@@ -27,7 +27,7 @@
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
     --text-main:   #F7F5F0; 
-    --text-muted:  rgba(247, 245, 240, 0.7); 
+    --text-muted:  rgba(247, 245, 240, 0.75); 
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
@@ -76,25 +76,25 @@
   .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO INTERNO ════ */
-  .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+  /* ════ HERO INTERNO (CON IMAGEN DE FONDO) ════ */
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(80%); }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
+  
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO (TARJETAS) ════ */
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
-  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
-  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3rem; transition: 0.4s var(--ease); }
-  .content-block:hover { border-color: var(--gold-main); transform: translateY(-5px); }
-  .content-block h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
-  .content-block p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; text-align: justify; font-size: 1.05rem; }
-  
-  .detail-list { list-style: none; }
-  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1.8rem; color: var(--text-main); line-height: 1.6; }
-  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
-  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
+  .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
+  .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); background: var(--bg-surface); }
+  .sc-icon { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; }
+  .sc-title { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 1.2rem; font-weight: 400; }
+  .sc-desc { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; text-align: justify; }
 
   /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
   .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
@@ -132,7 +132,7 @@
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
         </span>
         <div class="drop-menu">
-          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/civil-y-sucesione.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
@@ -140,76 +140,66 @@
           <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
         </div>
       </div>
-      <a href="/index.html#contacto" class="btn-header">Contactarme <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
   </div>
 </header>
 
 <!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
-  <div class="container">
+  <div class="ph-bg"></div>
+  <div class="ph-overlay"></div>
+  <div class="container ph-content">
     <i class="fa-solid fa-briefcase ph-icon reveal"></i>
     <h1 class="ph-title reveal">Laboral y Siniestralidad (ART)</h1>
     <p class="ph-desc reveal">
-      Equilibro la balanza del trabajo. Intervengo con precisión técnica para exigir sus derechos frente a abusos o accidentes laborales, o diseño estrategias de compliance preventivo para estructurar el capital humano de su empresa.
+      Equilibro la balanza del trabajo. Intervengo con precisión técnica para exigir tus derechos frente a abusos o accidentes laborales, o diseño estrategias preventivas para estructurar el capital humano de tu empresa.
     </p>
   </div>
 </section>
 
-<!-- ══ CONTENIDO TÉCNICO ══ -->
+<!-- ══ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ══ -->
 <section class="section">
   <div class="container">
-    <div class="content-grid">
+    <div class="services-grid">
       
-      <!-- Trabajador -->
-      <div class="content-block reveal">
-        <h3>Representación al Trabajador</h3>
-        <p>
-          Si su esfuerzo no es valorado o sus derechos han sido vulnerados, actúo con la firmeza que la ley laboral exige. No permito dilaciones ni liquidaciones por debajo de la norma.
+      <div class="service-card reveal">
+        <i class="fa-solid fa-file-signature sc-icon"></i>
+        <h3 class="sc-title">Despidos y Extinción</h3>
+        <p class="sc-desc">
+          Realizo el cálculo exacto de tu indemnización, redacto el intercambio telegráfico formal y te represento en audiencias conciliatorias o juicios por despido sin causa, asegurando que no cobres un peso menos de lo que marca la ley.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Despidos y Extinción del Vínculo</strong>
-            Realizo el cálculo exacto de su indemnización, redacto el intercambio telegráfico y lo represento en audiencias conciliatorias o juicios por despido sin causa.
-          </li>
-          <li>
-            <strong>Trabajo No Registrado (En Negro)</strong>
-            Intimo formalmente la regularización del vínculo y, ante la negativa, reclamo las fuertes multas indemnizatorias que establece la ley por mantenerlo fuera del sistema.
-          </li>
-          <li>
-            <strong>Riesgos del Trabajo (ART)</strong>
-            Patrocinio obligatorio ante Comisiones Médicas. Impugno altas apresuradas y exijo el pago íntegro de su incapacidad real derivada de accidentes o enfermedades profesionales.
-          </li>
-        </ul>
       </div>
 
-      <!-- Empresa -->
-      <div class="content-block reveal">
-        <h3>Defensa y Auditoría Corporativa</h3>
-        <p>
-          Una relación laboral mal estructurada es un riesgo financiero grave. Brindo auditoría preventiva y defensa contenciosa sólida para proteger el patrimonio de su compañía.
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-user-slash sc-icon"></i>
+        <h3 class="sc-title">Trabajo No Registrado</h3>
+        <p class="sc-desc">
+          Si trabajás "en negro" o con media jornada ficticia, intimo formalmente la regularización del vínculo. Ante la negativa, reclamo las fuertes multas indemnizatorias que castigan al empleador por mantenerte fuera del sistema.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Auditoría Preventiva (Compliance)</strong>
-            Reviso nóminas, modalidades de contratación y encuadres convencionales para mitigar de raíz el riesgo de multas y futuros litigios.
-          </li>
-          <li>
-            <strong>Régimen Disciplinario</strong>
-            Lo asesoro en la correcta redacción y aplicación de apercibimientos y suspensiones, generando antecedentes documentados para justificar eventuales despidos con causa.
-          </li>
-          <li>
-            <strong>Defensa Técnica en Tribunales</strong>
-            Contesto intimaciones telegráficas para frenar reclamos infundados y asumo la representación procesal estratégica de su empresa ante las cámaras del trabajo.
-          </li>
-        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-user-doctor sc-icon"></i>
+        <h3 class="sc-title">Riesgos del Trabajo (ART)</h3>
+        <p class="sc-desc">
+          Ejerzo el patrocinio obligatorio ante las Comisiones Médicas de la SRT. Impugno altas médicas apresuradas y demando a las aseguradoras para exigir el pago íntegro de tu incapacidad derivada de accidentes o enfermedades profesionales.
+        </p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-building-shield sc-icon"></i>
+        <h3 class="sc-title">Defensa Corporativa</h3>
+        <p class="sc-desc">
+          Una relación laboral mal estructurada es un riesgo financiero grave. Brindo auditoría preventiva (compliance), redacción de apercibimientos y defensa contenciosa sólida para proteger el patrimonio de tu empresa frente a reclamos infundados.
+        </p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES (NUEVO) ══ -->
+<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -226,7 +216,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Debe realizarse la denuncia formal de manera inmediata. Si la aseguradora rechaza el siniestro o le otorga el alta médica de forma apresurada estando aún convaleciente, intervenimos administrativamente ante la Superintendencia de Riesgos del Trabajo (SRT) para forzar el tratamiento y reclamar la indemnización por incapacidad que le corresponda.
+            Debe realizarse la denuncia formal de manera inmediata. Si la aseguradora rechaza el siniestro o te otorga el alta médica de forma apresurada estando aún convaleciente, intervenimos administrativamente ante la Superintendencia de Riesgos del Trabajo (SRT) para forzar el tratamiento y reclamar la indemnización que te corresponda.
           </div>
         </div>
       </div>
@@ -238,7 +228,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Absolutamente no; la Ley de Contrato de Trabajo lo protege. A través del envío de telegramas laborales formales, exigimos que su empleador registre la relación indicando su fecha real de ingreso y sueldo verdadero. Si se niega o guarda silencio, usted tiene derecho a considerarse despedido y reclamar multas económicas muy severas a su favor.
+            Absolutamente no; la Ley de Contrato de Trabajo te protege. A través del envío de telegramas laborales formales, exigimos que tu empleador registre la relación indicando tu fecha real de ingreso y sueldo verdadero. Si se niega, tenés derecho a considerarte despedido y reclamar multas económicas muy severas a tu favor.
           </div>
         </div>
       </div>
@@ -250,7 +240,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            El plazo general de prescripción en materia laboral es de <strong>dos (2) años</strong> a contar desde que el crédito es exigible (por ejemplo, desde la fecha del despido o de la falta de pago del salario). Sin embargo, es vital iniciar el asesoramiento rápidamente para resguardar pruebas fundamentales.
+            El plazo general de prescripción en materia laboral es de <strong>dos (2) años</strong> a contar desde que el crédito es exigible (por ejemplo, desde la fecha del despido o de la falta de pago del salario). Sin embargo, es vital iniciar el asesoramiento rápidamente para no perder el derecho a intimar y resguardar pruebas fundamentales.
           </div>
         </div>
       </div>
@@ -262,7 +252,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            El litigio se evita en la oficina, no en tribunales. La clave es el "Compliance Laboral": registrar correctamente al personal desde el primer día, entregar recibos de sueldo conforme a la ley, respetar el convenio colectivo aplicable y, fundamentalmente, documentar cualquier falta del empleado (mediante apercibimientos formales por escrito) para tener sustento legal ante un despido con causa.
+            El litigio se gana en la oficina, no en tribunales. La clave es el "Compliance Laboral": registrar correctamente al personal desde el día uno, entregar recibos conforme a la ley, y fundamentalmente, documentar cualquier falta del empleado (mediante sanciones por escrito) para tener sustento legal ante un despido con causa.
           </div>
         </div>
       </div>
@@ -271,8 +261,8 @@
 
     <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
-      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
-        Contactarme para Evaluación <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+      <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
+        Evaluar mi caso laboral <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
       </a>
     </div>
 
@@ -283,7 +273,7 @@
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div class="foot-side">
+      <div class="foot-side" style="text-align: left;">
         Córdoba Capital<br>Fuero Provincial y Federal
       </div>
       <div class="foot-logo">Estudio Jurídico Aristeo</div>
@@ -313,13 +303,11 @@
       const answer = button.nextElementSibling;
       const isOpen = button.classList.contains('active');
       
-      // Cerrar todos
       document.querySelectorAll('.faq-question').forEach(btn => {
         btn.classList.remove('active');
         btn.nextElementSibling.style.maxHeight = null;
       });
 
-      // Si no estaba abierto, abrir el clickeado
       if (!isOpen) {
         button.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + "px";
