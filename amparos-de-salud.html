@@ -27,7 +27,7 @@
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
     --text-main:   #F7F5F0; 
-    --text-muted:  rgba(247, 245, 240, 0.7); 
+    --text-muted:  rgba(247, 245, 240, 0.75); 
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
@@ -77,24 +77,24 @@
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
   /* ════ HERO INTERNO ════ */
-  .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(100%); }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
+  
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO (TARJETAS) ════ */
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
-  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
-  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3rem; transition: 0.4s var(--ease); }
-  .content-block:hover { border-color: var(--gold-main); transform: translateY(-5px); }
-  .content-block h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
-  .content-block p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; text-align: justify; font-size: 1.05rem; }
-  
-  .detail-list { list-style: none; }
-  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1.8rem; color: var(--text-main); line-height: 1.6; }
-  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
-  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
+  .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
+  .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); background: var(--bg-surface); }
+  .sc-icon { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; }
+  .sc-title { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 1.2rem; font-weight: 400; }
+  .sc-desc { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; text-align: justify; }
 
   /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
   .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
@@ -132,7 +132,7 @@
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
         </span>
         <div class="drop-menu">
-          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/civil-y-sucesione.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
@@ -140,76 +140,66 @@
           <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
         </div>
       </div>
-      <a href="/contacto.html" class="btn-header">Contactarme <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
   </div>
 </header>
 
 <!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
-  <div class="container">
+  <div class="ph-bg"></div>
+  <div class="ph-overlay"></div>
+  <div class="container ph-content">
     <i class="fa-solid fa-heart-pulse ph-icon reveal"></i>
     <h1 class="ph-title reveal">Amparos de Salud</h1>
     <p class="ph-desc reveal">
-      La salud de su familia no admite demoras institucionales ni excusas administrativas. Interpongo medidas judiciales urgentes para obligar a Obras Sociales y Prepagas a garantizar la cobertura médica vital que le corresponde por ley.
+      La salud de tu familia no admite demoras ni excusas administrativas. Interpongo medidas judiciales urgentes para obligar a Obras Sociales y Prepagas a garantizar la cobertura médica vital que te corresponde por ley.
     </p>
   </div>
 </section>
 
-<!-- ══ CONTENIDO TÉCNICO ══ -->
+<!-- ══ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ══ -->
 <section class="section">
   <div class="container">
-    <div class="content-grid">
+    <div class="services-grid">
       
-      <!-- Bloque 1 -->
-      <div class="content-block reveal">
-        <h3>Coberturas y Prácticas de Urgencia</h3>
-        <p>
-          Cuando su vida está en juego, la burocracia es inaceptable. Utilizo la vía constitucional del Amparo para forzar el cumplimiento legal y resguardar su derecho inalienable a la salud.
+      <div class="service-card reveal">
+        <i class="fa-solid fa-pills sc-icon"></i>
+        <h3 class="sc-title">Medicación de Alto Costo</h3>
+        <p class="sc-desc">
+          Frente a la negativa o demora en la entrega de drogas oncológicas o tratamientos crónicos, exijo judicialmente la provisión al 100% de los medicamentos que las prestadoras intentan eludir o cubrir parcialmente.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Medicación Oncológica y de Alto Costo</strong>
-            Exijo judicialmente la provisión al 100% de los medicamentos y tratamientos crónicos que las prestadoras intentan eludir, rechazar o cubrir de forma parcial.
-          </li>
-          <li>
-            <strong>Cirugías y Prótesis</strong>
-            Impulso órdenes judiciales (Medidas Cautelares) para garantizar internaciones, intervenciones quirúrgicas y entrega de prótesis en el tiempo estipulado por su médico tratante.
-          </li>
-          <li>
-            <strong>Fertilización Asistida (TRHA)</strong>
-            Acciono para que las prestadoras cumplan con la ley nacional, asegurando la cobertura integral de los tratamientos de reproducción médicamente asistida sin topes ilegales.
-          </li>
-        </ul>
       </div>
 
-      <!-- Bloque 2 -->
-      <div class="content-block reveal">
-        <h3>Discapacidad y Abusos de Prepagas</h3>
-        <p>
-          El marco normativo nacional protege categóricamente a los sectores vulnerables. Freno inmediatamente las barreras de acceso y los aumentos desproporcionados impuestos por las empresas.
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-bed-pulse sc-icon"></i>
+        <h3 class="sc-title">Cirugías y Prótesis</h3>
+        <p class="sc-desc">
+          Impulso órdenes judiciales urgentes (Medidas Cautelares) para garantizar internaciones, intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo exacto estipulado por tu médico tratante.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Protección Integral (CUD - Ley 24.901)</strong>
-            Obligo al cumplimiento estricto de la cobertura al 100% en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
-          </li>
-          <li>
-            <strong>Freno a Aumentos Desmedidos</strong>
-            Presento acciones legales para detener incrementos abusivos e injustificados en la cuota de su medicina prepaga, protegiendo fundamentalmente a jubilados y pacientes crónicos.
-          </li>
-          <li>
-            <strong>Afiliaciones y Continuidad</strong>
-            Revierto bajas arbitrarias y obligo a mantener la continuidad de su plan médico frente a despidos, jubilación o diagnóstico de enfermedades preexistentes.
-          </li>
-        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-wheelchair sc-icon"></i>
+        <h3 class="sc-title">Discapacidad (CUD)</h3>
+        <p class="sc-desc">
+          Amparados en la Ley 24.901, obligo al cumplimiento estricto de la cobertura al 100% en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
+        </p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-ban sc-icon"></i>
+        <h3 class="sc-title">Abusos y Aumentos</h3>
+        <p class="sc-desc">
+          Presento acciones legales para detener incrementos abusivos en las cuotas de medicina prepaga. Además, revierto bajas arbitrarias y obligo a mantener tu cobertura frente a despidos, jubilación o "enfermedades preexistentes".
+        </p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES (NUEVO) ══ -->
+<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -226,43 +216,43 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Además, siempre se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en cuestión de pocos días, mientras se resuelve el fondo del juicio.
+            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en cuestión de días (a veces horas), mientras se resuelve el fondo del juicio.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>La prepaga rechazó afiliarme por tener una "enfermedad preexistente". ¿Es legal?</span>
+          <span>La prepaga me rechazó por tener una "enfermedad preexistente". ¿Es legal?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No, es completamente ilegal. La Ley 26.682 de Medicina Prepaga prohíbe rechazar a un afiliado por contar con una enfermedad preexistente. Lo único que la empresa puede hacer, previa autorización de la Superintendencia de Servicios de Salud, es cobrar una cuota diferencial razonable, pero jamás negarle el ingreso.
+            No, es completamente ilegal. La Ley 26.682 prohíbe rechazar a un afiliado por contar con una enfermedad preexistente. Lo único que la empresa puede hacer, previa autorización de la Superintendencia de Servicios de Salud, es cobrar una cuota diferencial razonable, pero jamás negarte el ingreso a la cobertura.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>Tengo Certificado Único de Discapacidad (CUD). ¿Qué me corresponde?</span>
+          <span>Mi hijo tiene Certificado Único de Discapacidad (CUD). ¿Me pueden cobrar copagos?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Si usted o su hijo poseen el CUD, la Ley 24.901 garantiza el <strong>100% de cobertura integral</strong> en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante terapéutico, transporte especial y educación). No pueden imponerle topes de sesiones ni copagos.
+            No. Si poseés el CUD, la Ley Nacional garantiza el <strong>100% de cobertura integral</strong> en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante, transporte y educación). Las obras sociales y prepagas tienen expresamente prohibido imponerte topes de sesiones o cobrarte copagos/coseguros por estas prestaciones.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>Me despidieron o renuncié. ¿Me dejan sin obra social al instante?</span>
+          <span>Me despidieron de mi trabajo. ¿Me quedo sin obra social de inmediato?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No. Por ley, usted tiene derecho a mantener la cobertura de su obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si está en medio de un tratamiento, podemos exigir la continuidad más allá de ese plazo.
+            No. Por ley, tenés el derecho irrenunciable a mantener la cobertura de tu obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si estás en medio de un tratamiento médico prolongado, podemos accionar para exigir la continuidad más allá de ese plazo.
           </div>
         </div>
       </div>
@@ -272,7 +262,7 @@
     <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
       <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
-        Contactarme por un caso de Urgencia <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+        Contactame por una urgencia médica <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
       </a>
     </div>
 
@@ -283,7 +273,7 @@
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div class="foot-side">
+      <div class="foot-side" style="text-align: left;">
         Córdoba Capital<br>Fuero Provincial y Federal
       </div>
       <div class="foot-logo">Estudio Jurídico Aristeo</div>
@@ -313,13 +303,11 @@
       const answer = button.nextElementSibling;
       const isOpen = button.classList.contains('active');
       
-      // Cerrar todos
       document.querySelectorAll('.faq-question').forEach(btn => {
         btn.classList.remove('active');
         btn.nextElementSibling.style.maxHeight = null;
       });
 
-      // Si no estaba abierto, abrir el clickeado
       if (!isOpen) {
         button.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + "px";
