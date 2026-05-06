@@ -3,142 +3,329 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Defensa del Consumidor en Córdoba. Abogado Lautaro N. Aristeo. Litigios contra bancos, estafas (phishing), tarjetas y planes de ahorro."/>
+  <meta name="description" content="Defensa del Consumidor en Córdoba. Abogado Lautaro N. Aristeo. Litigios contra bancos, estafas (phishing), tarjetas y planes de ahorro automotor."/>
+  <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Defensa del Consumidor | Estudio Jurídico Aristeo</title>
 
+  <!-- ══ VERCEL ANALYTICS ══ -->
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  :root { --bg-base: #121510; --bg-surface: #181c15; --bg-panel: #21261d; --line-color: rgba(194, 163, 109, 0.2); --gold-main: #c2a36d; --gold-light: #dfc18c; --gold-dark: #8a7346; --text-main: #F4F1EA; --text-muted: rgba(244, 241, 234, 0.65); --font-heading: 'Cormorant Garamond', serif; --font-body: 'DM Sans', sans-serif; --transition-fast: 0.3s ease; --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+  /* ════ SISTEMA DE DISEÑO DE ALTA GAMA ════ */
+  :root {
+    --bg-base:     #080a06; 
+    --bg-surface:  #0e120a; 
+    --bg-panel:    #13180e; 
+    --line-color:  rgba(194, 163, 109, 0.15); 
+    --gold-main:   #c2a36d; 
+    --gold-light:  #e3c999; 
+    --gold-dark:   #8a7346; 
+    --text-main:   #F7F5F0; 
+    --text-muted:  rgba(247, 245, 240, 0.7); 
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', system-ui, sans-serif;
+    --ease:         cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
-  
-  .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
-  /* Header Minimalista */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.95); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; }
-  .brand { text-decoration: none; display: flex; flex-direction: column; }
-  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
-  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
-  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 1.8rem; text-decoration: none; transition: all var(--transition-fast); border: 1px solid var(--gold-main); }
+  .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
+
+  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+  .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
+  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
+  .heading-2 em { font-style: italic; color: var(--gold-light); }
+
+  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ════ HEADER ════ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
+  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  
+  .brand { text-decoration: none; flex-shrink: 0; }
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
+  .brand:hover .brand-name { color: var(--gold-light); }
+
+  .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
+  .nav-a:hover { color: var(--gold-light); }
+
+  .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
+  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
+
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* Hero Interno */
-  .page-hero { padding: 12rem 0 6rem; background: var(--bg-surface); text-align: center; border-bottom: 1px solid var(--line-color); }
-  .ph-icon { font-size: 3rem; color: var(--gold-main); margin-bottom: 1.5rem; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 400; color: var(--text-main); margin-bottom: 1rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.1rem; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+  /* ════ HERO INTERNO ════ */
+  .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
 
-  /* Contenido */
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+  /* ════ CONTENIDO (TARJETAS) ════ */
+  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
   @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
-  .content-block { background: var(--bg-base); border: 1px solid var(--line-color); padding: 3rem; }
-  .content-block h3 { font-family: var(--font-heading); font-size: 2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
-  .content-block p { color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
-  .detail-list { list-style: none; margin-top: 2rem; }
-  .detail-list li { position: relative; padding-left: 2rem; margin-bottom: 1.5rem; color: var(--text-main); line-height: 1.6; }
-  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 2px; color: var(--gold-main); font-size: 1rem; }
-  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.2rem; font-size: 1.05rem; }
+  
+  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3rem; transition: 0.4s var(--ease); }
+  .content-block:hover { border-color: var(--gold-main); transform: translateY(-5px); }
+  .content-block h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
+  .content-block p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; text-align: justify; font-size: 1.05rem; }
+  
+  .detail-list { list-style: none; }
+  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1.8rem; color: var(--text-main); line-height: 1.6; }
+  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
+  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
 
-  /* Footer */
-  .footer { background: var(--bg-base); border-top: 1px solid var(--line-color); padding: 6rem 0; text-align: center; }
-  .footer-logo { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1.8rem;}
-  .footer-text { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
+  /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
+  .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
+  .faq-item { border-bottom: 1px solid var(--line-color); }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); transition: color 0.3s; }
+  .faq-question:hover { color: var(--gold-light); }
+  .faq-question i { color: var(--gold-main); transition: transform 0.4s var(--ease); font-size: 1.2rem; }
+  .faq-question.active i { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
+  .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
+
+  /* ════ FOOTER ════ */
+  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-align: center; color: var(--text-main); }
+  .foot-side { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
+  .foot-r { text-align: right; }
   </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container nav-wrapper">
+<!-- ══ HEADER ══ -->
+<header class="header" id="hdr">
+  <div class="container nav-wrap">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    <nav class="nav-links">
+      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
+      <div class="drop">
+        <span class="nav-a" style="cursor:default;">
+          Áreas
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
+        </span>
+        <div class="drop-menu">
+          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
+          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
+          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+        </div>
+      </div>
+      <a href="/index.html#contacto" class="btn-header">Contactarme <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
   </div>
 </header>
 
+<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="container">
-    <i class="fa-solid fa-shield-halved ph-icon"></i>
-    <h1 class="ph-title">Defensa del Consumidor</h1>
-    <p class="ph-desc">
-      Las grandes corporaciones y entidades financieras no son intocables. Aplico la máxima rigurosidad de la Ley para frenar abusos, recuperar su dinero y exigir indemnizaciones por los daños causados a su economía.
+    <i class="fa-solid fa-shield-halved ph-icon reveal"></i>
+    <h1 class="ph-title reveal">Defensa del Consumidor</h1>
+    <p class="ph-desc reveal">
+      Las grandes corporaciones y entidades financieras no son intocables. Aplico la máxima rigurosidad de la ley para frenar abusos, recuperar sus fondos sustraídos y exigir fuertes indemnizaciones por daños a su economía.
     </p>
   </div>
 </section>
 
+<!-- ══ CONTENIDO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
     <div class="content-grid">
       
-      <div class="content-block">
+      <!-- Bloque 1 -->
+      <div class="content-block reveal">
         <h3>Finanzas y Estafas Bancarias</h3>
         <p>
-          Los bancos tienen la obligación legal ineludible de proteger sus fondos. Si sus sistemas de seguridad fallan, ellos son los responsables directos. Lidero acciones judiciales contundentes para recuperar su capital.
+          Los bancos tienen el deber objetivo e ineludible de garantizar la seguridad de sus sistemas. Si fallan en proteger sus fondos, ellos son los responsables directos. Lidero acciones judiciales contundentes para recuperar su capital.
         </p>
         <ul class="detail-list">
           <li>
             <strong>Ciberdelitos y Estafas (Phishing)</strong>
-            Acciono judicialmente contra entidades financieras por vaciamientos de cuentas, transferencias no reconocidas y créditos fraudulentos preaprobados, exigiendo la anulación de la deuda y la restitución del dinero.
+            Acciono contra entidades bancarias por vaciamientos de cuentas, transferencias desconocidas y préstamos preaprobados fraudulentos. Exijo la nulidad de las deudas y la restitución del dinero.
           </li>
           <li>
             <strong>Tarjetas y Cobros Indebidos</strong>
-            Freno de manera inmediata débitos automáticos no autorizados, seguros impuestos compulsivamente y liquidaciones abusivas generadas en sus resúmenes de tarjeta de crédito.
+            Freno de manera inmediata los débitos automáticos no autorizados, seguros impuestos compulsivamente y liquidaciones abusivas en sus resúmenes de tarjeta de crédito.
           </li>
           <li>
             <strong>Derecho al Olvido (Veraz / Nosis)</strong>
-            Ejecuto acciones de hábeas data para eliminar información crediticia caduca, falsa o errónea que ensucia su historial y le impide operar con normalidad en el sistema financiero.
+            Ejecuto acciones de Hábeas Data para eliminar información crediticia caduca o errónea que ensucia su historial financiero, reclamando daños punitivos a la empresa informante.
           </li>
         </ul>
       </div>
 
-      <div class="content-block">
+      <!-- Bloque 2 -->
+      <div class="content-block reveal">
         <h3>Automotores y Servicios Deficientes</h3>
         <p>
-          Nivelo la balanza en los tribunales frente a las asimetrías de poder que imponen las concesionarias, aseguradoras y grandes prestadoras de servicios.
+          Nivelo la balanza en los tribunales frente a las enormes asimetrías de poder que imponen las concesionarias, las administradoras de planes y las prestadoras de servicios masivos.
         </p>
         <ul class="detail-list">
           <li>
             <strong>Planes de Ahorro (Autoplanes)</strong>
-            Presento medidas cautelares para congelar y retrotraer aumentos desmedidos e ilegítimos en las cuotas. Asimismo, gestiono la intimación y el recupero del capital aportado en planes renunciados o caídos.
+            Interpongo medidas cautelares urgentes para retrotraer aumentos ilegítimos en las cuotas. Asimismo, intimo judicialmente el recupero del capital aportado en planes caídos o renunciados.
           </li>
           <li>
             <strong>Garantías y Defectos de Fábrica</strong>
-            Exijo el cumplimiento inmediato de las garantías legales, obligando a la sustitución de vehículos o productos con defectos graves de fábrica y reclamando la aplicación de Daños Punitivos a la empresa.
+            Exijo el cumplimiento inmediato de las garantías legales, obligando a la reparación, sustitución del vehículo o producto defectuoso, y reclamando indemnizaciones por la privación de uso.
           </li>
           <li>
             <strong>Seguros y Servicios Contratados</strong>
-            Reclamos judiciales por rechazos infundados de cobertura por parte de compañías de seguros, cortes prolongados de servicios, o incumplimientos graves de agencias de turismo y aerolíneas.
+            Reclamos por rechazos infundados de cobertura en compañías de seguros, sobrefacturación en servicios públicos (telefonía, internet) o incumplimientos graves de agencias de turismo.
           </li>
         </ul>
       </div>
 
     </div>
-    
-    <div style="text-align: center; margin-top: 5rem;">
-      <a href="/contacto.html" class="btn-header" style="font-size: 0.9rem; padding: 1.2rem 2.5rem; background: transparent; color: var(--gold-main);">
-        Solicitar Evaluación de Caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
-      </a>
-    </div>
   </div>
 </section>
 
+<!-- ══ PREGUNTAS FRECUENTES (NUEVO) ══ -->
+<section class="section" style="background-color: var(--bg-surface);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div class="label reveal">Claridad Legal</div>
+      <h2 class="heading-2 reveal">Preguntas <em>Frecuentes</em></h2>
+    </div>
+
+    <div class="faq-container reveal">
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Fui víctima de una estafa virtual y vaciaron mi cuenta. ¿El banco debe responder?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Sí. Las entidades bancarias tienen un deber de seguridad objetivo sobre los depósitos de sus clientes (Art. 40 Ley de Defensa del Consumidor). Si sus sistemas de alerta fallaron en detectar un préstamo preaprobado anómalo o transferencias inusuales que vaciaron su cuenta, el banco debe hacerse cargo de restituir el dinero y anular la deuda generada por los estafadores.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Mi cuota del plan de ahorro automotor subió excesivamente. ¿Qué puedo hacer?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Se puede solicitar una medida cautelar ante la Justicia para frenar el aumento y obligar a la administradora a reliquidar las cuotas. Las concesionarias y fábricas no pueden incrementar caprichosamente el "valor móvil" del vehículo por encima de los índices de inflación oficiales o de los salarios.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Renuncié a mi plan de ahorro o dejé de pagarlo. ¿Perdí mi dinero?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. La ley prohíbe que las administradoras se queden con su capital. Una vez finalizado el plazo original del grupo (generalmente a la cuota 84 o 120), tienen la obligación legal de reintegrarle todo el "haber de ahorro" actualizado al valor del vehículo al momento de la devolución, deduciendo únicamente gastos administrativos específicos.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Me incluyeron en el Veraz por una deuda que ya pagué.</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Usted tiene derecho a iniciar una acción judicial de Hábeas Data. Si la deuda fue cancelada, o si pasaron más de 5 años desde que incurrió en mora (haya pagado o no), sus datos deben ser borrados automáticamente. Si la empresa o el banco informante no lo hace, se exigen fuertes multas por Daño Punitivo a su favor.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Final -->
+    <div class="reveal" style="text-align: center; margin-top: 4rem;">
+      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
+        Agendar Consulta <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text">Dirección Estratégica: Dr. Lautaro N. Aristeo</div>
-    <div class="footer-text" style="margin-bottom: 1.5rem;">Matrícula Provincial 1-43722 | Matrícula Federal T° 511 F° 222</div>
-    <div class="footer-text" style="color: var(--gold-dark);">Córdoba, República Argentina | © 2026 Todos los derechos reservados.</div>
+    <div class="foot-grid">
+      <div class="foot-side">
+        Córdoba Capital<br>Fuero Provincial y Federal
+      </div>
+      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+      <div class="foot-side foot-r">
+        Dr. Lautaro N. Aristeo<br>
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | Mat. Fed. T° 511 F° 222</span>
+      </div>
+    </div>
   </div>
 </footer>
 
+<script>
+  /* Efecto Header */
+  window.addEventListener('scroll', () => {
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  /* Observador de Revelado */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Lógica Acordeón FAQ */
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = button.classList.contains('active');
+      
+      // Cerrar todos
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.classList.remove('active');
+        btn.nextElementSibling.style.maxHeight = null;
+      });
+
+      // Si no estaba abierto, abrir el clickeado
+      if (!isOpen) {
+        button.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
 </body>
 </html>
