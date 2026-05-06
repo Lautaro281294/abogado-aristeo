@@ -3,169 +3,288 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Contacto directo con el Dr. Lautaro N. Aristeo. Evaluación técnica de casos legales en Córdoba. Vías de comunicación urgente."/>
+  <meta name="description" content="Contacto directo con el Dr. Lautaro N. Aristeo. Evaluación técnica de casos legales en Córdoba. Vías de comunicación y cuestionario de pre-consulta."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
   <title>Contacto | Estudio Jurídico Aristeo</title>
+
+  <!-- ══ VERCEL ANALYTICS ══ -->
+  <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
   <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ VARIABLES DE ÉLITE ════ */
+  /* ════ SISTEMA DE DISEÑO DE ALTA GAMA ════ */
   :root {
-    --bg-base:     #121510; 
-    --bg-surface:  #181c15; 
-    --bg-panel:    #21261d; 
-    --line-color:  rgba(194, 163, 109, 0.2); 
+    --bg-base:     #080a06; 
+    --bg-surface:  #0e120a; 
+    --bg-panel:    #13180e; 
+    --line-color:  rgba(194, 163, 109, 0.15); 
+    --line-hover:  rgba(194, 163, 109, 0.35);
+    
     --gold-main:   #c2a36d; 
-    --gold-light:  #dfc18c; 
+    --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
-    --text-main:   #F4F1EA; 
-    --text-muted:  rgba(244, 241, 234, 0.65); 
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body:    'DM Sans', sans-serif;
-    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    --text-main:   #F7F5F0; 
+    --text-muted:  rgba(247, 245, 240, 0.7); 
+    
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', system-ui, sans-serif;
+    --ease:         cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
-  .container { max-width: 1300px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 10rem 0; position: relative; }
+  .container { max-width: 1350px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 8rem 0; position: relative; }
 
-  /* ══ HEADER INTEGRAL ══ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(18, 21, 16, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-  .brand { text-decoration: none; display: flex; flex-direction: column; }
-  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
-  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase;}
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2rem; text-decoration: none; border: 1px solid var(--gold-main); transition: 0.4s; }
-  .btn-header:hover { background: transparent; color: var(--gold-main); }
-
-  /* ══ TITULARES ══ */
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
-  .label::before { content: ''; width: 35px; height: 1px; background: var(--gold-main); }
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2.5rem; }
+  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+  .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
+  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  /* ══ GRID DE CONTACTO ══ */
-  .contact-wrapper { display: grid; grid-template-columns: 42% 58%; background: var(--bg-surface); border: 1px solid var(--line-color); margin-top: 5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
-  @media (max-width: 950px) { .contact-wrapper { grid-template-columns: 1fr; } }
+  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* ════ HEADER ════ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
+  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   
-  /* Panel Izquierdo: Canales Rápidos */
-  .contact-fast { padding: 5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
-  .info-link { font-size: 1.15rem; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 18px; margin-bottom: 2rem; transition: 0.3s; }
-  .info-link i { color: var(--gold-main); font-size: 1.3rem; }
-  .info-link:hover { color: var(--gold-light); transform: translateX(10px); }
+  .brand { text-decoration: none; flex-shrink: 0; }
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
+  .brand:hover .brand-name { color: var(--gold-light); }
 
-  .urgency-alert { background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); padding: 2.5rem; margin-top: 4rem; }
-  .urgency-alert strong { display: block; color: var(--gold-light); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.8rem; }
-  .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
+  .nav-a:hover { color: var(--gold-light); }
 
-  /* Panel Derecho: Formulario */
-  .contact-form-area { padding: 5rem; }
-  .form-group { margin-bottom: 3.5rem; }
-  .form-label { display: block; font-size: 0.75rem; color: var(--gold-main); text-transform: uppercase; margin-bottom: 1.2rem; letter-spacing: 0.25em; font-weight: 600; }
-  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); padding: 1.2rem 0; outline: none; font-size: 1.15rem; transition: 0.4s; font-family: var(--font-body); }
-  .form-input:focus { border-color: var(--gold-main); }
+  .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
+  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
+
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* ════ HERO INTERNO ════ */
+  .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
+
+  /* ════ ESTRUCTURA DE CONTACTO DUAL ════ */
+  .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 2rem; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
+  @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
   
-  .action-buttons { display: flex; gap: 1.5rem; margin-top: 2rem; }
-  .btn-submit { flex: 1; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.4s; display: flex; align-items: center; justify-content: center; gap: 15px; }
-  .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); }
+  /* Panel Vías Rápidas */
+  .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+  .contact-left h3 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main); }
+  .contact-left p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.8; }
+  
+  .channel { display: flex; align-items: center; justify-content: space-between; padding: 2.2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
+  .channel::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-main); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s var(--ease); }
+  .channel:hover { border-color: var(--line-hover); transform: translateX(12px); background: var(--bg-base); }
+  .channel:hover::before { transform: scaleY(1); }
+  
+  .ch-l { display: flex; align-items: center; gap: 1.8rem; }
+  .ch-l i { font-size: 2.2rem; color: var(--gold-main); }
+  .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
+  .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; }
 
-  /* ══ FOOTER ══ */
-  .footer { padding: 7rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
-  .footer-logo { font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem; }
-  .footer-text { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.25em; }
+  .urgency-alert { margin-top: 4rem; padding: 2.5rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
+  .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
+  .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
-  .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.active { opacity: 1; transform: translateY(0); }
+  /* Panel Formulario Inteligente */
+  .contact-right { padding: 5rem; }
+  .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3.5rem; font-weight: 600; }
+  
+  .fg { margin-bottom: 3rem; }
+  .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1.2rem; letter-spacing: 0.25em; }
+  .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; padding: 1rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
+  .fi:focus { border-color: var(--gold-main); }
+  .fi option { background: var(--bg-panel); color: var(--text-main); }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
+
+  /* Caja Dinámica */
+  .dyn-box { margin-bottom: 3rem; display: none; padding: 3rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
+  .dyn-box.show { display: block; }
+  .dyn-title { font-size: 0.8rem; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+  .dyn-title i { color: var(--gold-main); }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(-15px); } to { opacity:1; transform: translateY(0); } }
+
+  /* Botones Dobles */
+  .action-buttons { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
+  .btn-sub { flex: 1; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 15px; position: relative; overflow: hidden; min-width: 250px; }
+  .btn-sub::before { content: ''; position: absolute; inset: 0; background: var(--gold-main); transform: translateY(101%); transition: transform 0.4s var(--ease); }
+  .btn-sub:hover::before { transform: translateY(0); }
+  .btn-sub:hover { color: var(--bg-base); }
+  .btn-sub.wsp { border-color: #25D366; color: #25D366; }
+  .btn-sub.wsp::before { background: #25D366; }
+  .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
+
+  /* Disclaimer Ético */
+  .disclaimer { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--line-color); padding-top: 2rem; margin-top: 3.5rem; text-align: justify; }
+
+  /* ════ FOOTER ════ */
+  .footer { padding: 8rem 0 4rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
+  .foot-side { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.5; }
+  .foot-r { text-align: right; }
+  .foot-bottom { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); text-align: center; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="container nav-wrapper">
+<!-- ══ HEADER ══ -->
+<header class="header" id="hdr">
+  <div class="container nav-wrap">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <a href="/index.html" class="btn-header"><i class="fa-solid fa-arrow-left"></i> Volver al Inicio</a>
+    <nav class="nav-links">
+      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
+      <div class="drop">
+        <span class="nav-a" style="cursor:default;">
+          Áreas
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
+        </span>
+        <div class="drop-menu">
+          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
+          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
+          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+        </div>
+      </div>
+      <a href="/index.html#contacto" class="btn-header">Volver al Inicio <i class="fa-solid fa-arrow-left"></i></a>
+    </nav>
   </div>
 </header>
 
-<section class="section">
+<!-- ══ HERO INTERNO ══ -->
+<section class="page-hero">
   <div class="container">
-    <div class="reveal">
-      <div class="label">Asistencia Técnica Directa</div>
-      <h1 class="heading-2">Canales de <em>Intervención</em></h1>
-    </div>
+    <i class="fa-regular fa-envelope ph-icon reveal"></i>
+    <h1 class="ph-title reveal">Comunicación Directa</h1>
+    <p class="ph-desc reveal">
+      Mi prioridad es brindarle respuestas precisas y un plan de acción concreto. Utilice el canal que le resulte más conveniente para iniciar la evaluación técnica de su caso.
+    </p>
+  </div>
+</section>
+
+<!-- ══ CONTACTO Y CUESTIONARIO INTELIGENTE ══ -->
+<section class="section" style="padding-top: 0;">
+  <div class="container">
     
-    <div class="contact-wrapper reveal">
-      <!-- PANEL IZQUIERDO: RÁPIDO -->
-      <div class="contact-fast">
+    <div class="contact-wrap reveal">
+      
+      <!-- Panel Izquierdo: Vías Rápidas -->
+      <div class="contact-left">
         <div>
-          <h3 style="font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 2rem; color: var(--gold-light);">Vía Directa</h3>
-          <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.1rem;">Escríbame para coordinar una entrevista. Mi respuesta es personalmente dirigida bajo el más riguroso secreto profesional.</p>
+          <h3>Canales Rápidos</h3>
+          <p>Para consultas urgentes, seguimiento de expedientes o para coordinar una cita presencial en el estudio.</p>
           
-          <div class="info-item">
-            <a href="https://wa.me/5493517736170" class="info-link" target="_blank">
-              <i class="fa-brands fa-whatsapp"></i> +54 9 351 773-6170
-            </a>
-            <a href="mailto:dr.aristeolautaro@gmail.com" class="info-link">
-              <i class="fa-regular fa-envelope"></i> dr.aristeolautaro@gmail.com
-            </a>
-          </div>
+          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+            <div class="ch-l">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <span class="ch-tag">Respuesta Inmediata</span>
+                <strong class="ch-name">WhatsApp Business</strong>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+          </a>
+          
+          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel">
+            <div class="ch-l">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <span class="ch-tag">Recepción de Documentos</span>
+                <strong class="ch-name">E-Mail del Estudio</strong>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+          </a>
         </div>
 
         <div class="urgency-alert">
           <strong>Protocolo de Urgencia</strong>
-          <p>Ante siniestros, detenciones o medidas cautelares de cumplimiento inmediato fuera de horario comercial, inicie su mensaje de WhatsApp con la palabra URGENCIA.</p>
+          <p>Ante detenciones, accidentes laborales o medidas cautelares fuera de horario comercial, inicie su mensaje de WhatsApp con la palabra URGENCIA.</p>
         </div>
       </div>
-      
-      <!-- PANEL DERECHO: COMPLETO -->
-      <div class="contact-form-area">
-        <p style="font-size: 0.8rem; letter-spacing: 0.3em; color: var(--gold-main); text-transform: uppercase; margin-bottom: 3rem;">Evaluación Técnica de Caso</p>
+
+      <!-- Panel Derecho: Formulario y Pre-Consulta -->
+      <div class="contact-right">
+        <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
         
-        <form id="evaluationForm">
-          <div class="form-group">
-            <label class="form-label">Titular o Razón Social *</label>
-            <input type="text" id="f_nombre" class="form-input" required placeholder="Nombre completo">
+        <form id="evalForm">
+          <div class="fg">
+            <label class="fl">Nombre y Apellido *</label>
+            <input type="text" id="fn" class="fi" required placeholder="Ingrese su nombre completo">
           </div>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
-            <div class="form-group">
-              <label class="form-label">WhatsApp de contacto *</label>
-              <input type="tel" id="f_telefono" class="form-input" required placeholder="Ej: 351 123 4567">
+          <div class="frow">
+            <div class="fg">
+              <label class="fl">Celular (WhatsApp) *</label>
+              <input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000">
             </div>
-            <div class="form-group">
-              <label class="form-label">Rama Jurídica *</label>
-              <select id="f_area" class="form-input" required style="background: transparent; cursor: pointer;">
-                <option value="" disabled selected>Seleccione especialidad...</option>
-                <option value="Civil" style="background: var(--bg-panel);">Civil y Sucesiones</option>
-                <option value="Comercial" style="background: var(--bg-panel);">Comercial y Empresas</option>
-                <option value="Laboral" style="background: var(--bg-panel);">Laboral y ART</option>
-                <option value="Salud" style="background: var(--bg-panel);">Amparos de Salud</option>
-                <option value="Consumo" style="background: var(--bg-panel);">Defensa al Consumidor</option>
-                <option value="Familia" style="background: var(--bg-panel);">Derecho de Familias</option>
+            <div class="fg">
+              <label class="fl">Área de Consulta *</label>
+              <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
+                <option value="" disabled selected>Seleccione un área...</option>
+                <option value="civil">Civil y Sucesiones</option>
+                <option value="comercial">Comercial y Empresas</option>
+                <option value="laboral">Laboral y ART</option>
+                <option value="salud">Amparos de Salud</option>
+                <option value="consumidor">Defensa del Consumidor</option>
+                <option value="familia">Derecho de Familias</option>
               </select>
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Síntesis de los hechos *</label>
-            <textarea id="f_sintesis" class="form-input" rows="2" style="resize: none;" required placeholder="Relate brevemente la situación..."></textarea>
+          <!-- Preguntas Dinámicas Inteligentes -->
+          <div class="dyn-box" id="dynBox">
+            <div class="dyn-title"><i class="fa-solid fa-list-check"></i> Plan de Acción (Opcional)</div>
+            <div id="dyn-content"></div>
           </div>
 
+          <div class="fg">
+            <label class="fl">Breve resumen de su caso *</label>
+            <textarea id="fs" class="fi" rows="3" required placeholder="Describa la situación para que podamos evaluar la viabilidad legal..." style="resize: none;"></textarea>
+          </div>
+          
           <div class="action-buttons">
-            <button type="button" class="btn-submit" onclick="derivar('mail')">
-              Derivar por E-Mail Seguro <i class="fa-solid fa-lock" style="margin-left: 10px;"></i>
+            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
+              <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
             </button>
+            <button type="button" class="btn-sub" onclick="enviar('mail')">
+              <span>Enviar por E-Mail</span> <i class="fa-solid fa-lock" style="font-size: 1rem;"></i>
+            </button>
+          </div>
+
+          <!-- Cumplimiento Ético Ley 5805 -->
+          <div class="disclaimer">
+            La información suministrada está protegida por el <strong>secreto profesional (Ley 5805 de la Prov. de Córdoba)</strong>. Completar este cuestionario ayuda a preparar un diagnóstico para su consulta, pero no garantiza resultados ni implica contratación automática de servicios.
           </div>
         </form>
       </div>
@@ -173,45 +292,129 @@
   </div>
 </section>
 
+<!-- ══ FOOTER DE 3 COLUMNAS ══ -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-logo" style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; margin-bottom: 1.5rem;">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="footer-text">Dr. Lautaro Nahuel Aristeo | Córdoba, Rep. Argentina | M.P. 1-43722</div>
+    <div class="foot-grid">
+      <div class="foot-side">
+        Córdoba Capital<br>Fuero Provincial y Federal
+      </div>
+      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+      <div class="foot-side foot-r">
+        Dr. Lautaro N. Aristeo<br>
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Estudio Jurídico Aristeo · Todos los derechos reservados
+    </div>
   </div>
 </footer>
 
 <script>
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  /* Efecto Header */
+  window.addEventListener('scroll', () => {
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  /* Observador de Revelado */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  async function derivar(m) {
+  /* Lógica Cuestionario Inteligente */
+  const DYN_HTML = {
+    'civil': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Posee documentación a mano?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
+    'comercial': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Empresa / PyME">Empresa / PyME</option><option value="Particular">Particular</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">Motivo principal</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Cobro de deudas / Pagarés">Cobro de deudas / Pagarés</option><option value="Revisión de Contratos">Revisión de Contratos</option></select></div>`,
+    'laboral': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Situación actual</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Despido">Despido</option><option value="Trabajo no registrado (en negro)">Trabajo no registrado</option><option value="Accidente / ART">Accidente / ART</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Se enviaron telegramas?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option><option value="No estoy seguro">No estoy seguro</option></select></div>`,
+    'salud': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación le niegan?</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
+    'consumidor': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hizo reclamo previo?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
+    'familia': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Existen bienes para dividir?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`
+  };
+
+  function cargarPreguntas() {
+    const val = document.getElementById('fa').value;
+    const box = document.getElementById('dynBox');
+    const content = document.getElementById('dyn-content');
+    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } 
+    else { box.classList.remove('show'); content.innerHTML = ''; }
+  }
+
+  /* Envío Dual: WSP o Email */
+  async function enviar(metodo) {
     const btn = event.currentTarget;
-    const nom = document.getElementById('f_nombre').value;
-    const tel = document.getElementById('f_telefono').value;
-    const area = document.getElementById('f_area').value;
-    const caso = document.getElementById('f_sintesis').value;
+    const nom = document.getElementById('fn').value.trim();
+    const tel = document.getElementById('ft').value.trim();
+    const selectArea = document.getElementById('fa');
+    const area = selectArea.options[selectArea.selectedIndex].text;
+    const res = document.getElementById('fs').value.trim();
 
-    if(!nom || !tel || !area || !caso) { alert("Complete los campos obligatorios."); return; }
+    if(!nom || !tel || selectArea.value === "" || !res) { 
+      alert('Para un correcto análisis, complete los campos obligatorios (*).'); return; 
+    }
 
-    btn.innerHTML = 'Procesando... <i class="fa-solid fa-spinner fa-spin"></i>';
-    btn.disabled = true;
+    // Recolectar datos opcionales
+    let respuestasExtra = "";
+    const dynInputs = document.querySelectorAll('.dyn-input');
+    dynInputs.forEach(input => {
+      if(input.value) { respuestasExtra += `- ${input.previousElementSibling ? input.previousElementSibling.innerText : 'Dato'}: ${input.value}\n`; }
+    });
 
-    const formData = new FormData();
-    formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd");
-    formData.append("Titular", nom);
-    formData.append("WhatsApp", tel);
-    formData.append("Materia", area);
-    formData.append("Sintesis", caso);
-    
-    try {
-      const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-      if(response.ok) { 
-        btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
-        document.getElementById('evaluationForm').reset();
+    if (metodo === 'wsp') {
+      let msg = `*Pre-Consulta Estudio Aristeo*\n\n*Nombre:* ${nom}\n*Temática:* ${area}\n`;
+      if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
+      msg += `\n*Resumen:* ${res}`;
+      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
+    } else {
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<span>Enviando...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+      btn.style.pointerEvents = 'none';
+
+      const fd = new FormData();
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+      fd.append('subject', `Consulta Web: ${area} - ${nom}`);
+      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
+      if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
+      fd.append('Resumen', res);
+
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+        if (r.ok) {
+          btn.innerHTML = '<span>¡Recibido!</span> <i class="fa-solid fa-check"></i>';
+          document.getElementById('evalForm').reset();
+          document.getElementById('dynBox').classList.remove('show');
+          setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
+        } else throw new Error();
+      } catch(e) {
+        alert('Error al enviar el correo. Por favor, intente vía WhatsApp.');
+        btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
       }
-    } catch(e) { alert("Error de conexión."); btn.innerHTML = 'Reintentar'; btn.disabled = false; }
+    }
   }
 </script>
 </body>
