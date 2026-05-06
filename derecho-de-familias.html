@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Derecho de las Familias en Córdoba. Abogado Lautaro N. Aristeo. Divorcios ágiles, división de bienes gananciales, cuota alimentaria y compensación económica."/>
+  <meta name="description" content="Derecho de las Familias en Córdoba. Abogado Lautaro N. Aristeo. Divorcios, cuota alimentaria, régimen de comunicación y división de bienes."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
-  <title>Derecho de las Familias | Estudio Jurídico Aristeo</title>
+  <title>Familias y Divorcios | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -23,28 +21,19 @@
     --bg-surface:  #0e120a; 
     --bg-panel:    #13180e; 
     --line-color:  rgba(194, 163, 109, 0.15); 
-    --line-hover:  rgba(194, 163, 109, 0.35);
-    
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
-    
     --text-main:   #F7F5F0; 
     --text-muted:  rgba(247, 245, 240, 0.75); 
-    
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
-    
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
-  body { 
-    background-color: var(--bg-base); color: var(--text-main); 
-    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
-    -webkit-font-smoothing: antialiased; overflow-x: hidden; 
-  }
+  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg-base); }
@@ -53,73 +42,45 @@
   .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
   .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .label { 
-    display: inline-flex; align-items: center; gap: 1rem; 
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; 
-    text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; 
-  }
+  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
   .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
-
-  .heading-2 { 
-    font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); 
-    font-weight: 400; line-height: 1.1; color: var(--text-main); 
-    margin-bottom: 2.5rem; 
-  }
+  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
   .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ════ HEADER ════ */
-  .header { 
-    position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
-    padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
-  }
-  .header.scrolled { 
-    background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); 
-    padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
-  }
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
+  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
-  
-  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
-  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
+  .brand { text-decoration: none; flex-shrink: 0; }
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
   .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
   .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
-  .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
-  .nav-a:hover::after { width: 100%; }
 
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
-  .drop-menu { 
-    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
-    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; 
-    min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
-  }
+  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
-  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
-  .drop-item:hover i { color: var(--gold-main); }
+  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
 
-  .btn-header { 
-    display: inline-flex; align-items: center; gap: 12px; font-size: 0.7rem; font-weight: 600; 
-    letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
-    padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); flex-shrink: 0; 
-  }
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO INTERNO (NUEVA IMAGEN DE FONDO) ════ */
+  /* ════ HERO INTERNO (IMAGEN DE CASA/HOGAR) ════ */
   .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
   .ph-bg { 
     position: absolute; inset: 0; z-index: 0; 
-    /* Imagen de manos de familia unidas, mucho más clara y representativa */
-    background: url('https://images.unsplash.com/photo-1505069190533-da1c9af13346?q=80&w=2000') center/cover no-repeat; 
-    opacity: 0.15; 
-    filter: grayscale(80%) contrast(110%); 
+    background: url('https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2000') center/cover no-repeat; 
+    opacity: 0.18; 
+    filter: grayscale(90%) contrast(110%); 
   }
   .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
   
@@ -128,7 +89,7 @@
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
   .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO TÉCNICO (GRILLA) ════ */
+  /* ════ CONTENIDO TÉCNICO (ICONOS LITERALES) ════ */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
   @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
@@ -162,7 +123,6 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="header" id="hdr">
   <div class="container nav-wrap">
     <a href="/index.html" class="brand">
@@ -190,53 +150,51 @@
   </div>
 </header>
 
-<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="ph-bg"></div>
   <div class="ph-overlay"></div>
   <div class="container ph-content">
-    <i class="fa-solid fa-scale-unbalanced ph-icon reveal"></i>
+    <i class="fa-solid fa-people-roof ph-icon reveal"></i>
     <h1 class="ph-title reveal">Derecho de las Familias</h1>
     <p class="ph-desc reveal">
-      Organizo las crisis familiares separando las emociones del capital. Intervengo con sensibilidad para proteger la paz de tus hijos y con estricto rigor estratégico para salvaguardar tus bienes y derechos patrimoniales.
+      Acompaño tu proceso de separación con el equilibrio que necesitás: firmeza para defender tus bienes y sensibilidad para proteger el bienestar de tus hijos en cada etapa del divorcio.
     </p>
   </div>
 </section>
 
-<!-- ══ CONTENIDO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
     <div class="services-grid">
       
       <div class="service-card reveal">
-        <i class="fa-solid fa-hand-holding-dollar sc-icon"></i>
-        <h3 class="sc-title">Obligación Alimentaria</h3>
+        <i class="fa-solid fa-person-walking-arrow-right sc-icon"></i>
+        <h3 class="sc-title">Divorcios y Separación</h3>
         <p class="sc-desc">
-          Fijo y exijo cuotas alimentarias acordes a las necesidades reales de los menores y a los ingresos del alimentante, aplicando mecanismos de actualización probados para que el dinero no pierda valor frente a la inflación.
+          Tramito tu divorcio vincular (ya sea de forma unilateral o de mutuo acuerdo) de manera ágil. Mi enfoque es lograr convenios reguladores sólidos que cierren etapas de forma definitiva y sin demoras innecesarias.
         </p>
       </div>
 
       <div class="service-card reveal d1">
-        <i class="fa-solid fa-people-roof sc-icon"></i>
-        <h3 class="sc-title">Cuidado y Visitas</h3>
+        <i class="fa-solid fa-child-reaching sc-icon"></i>
+        <h3 class="sc-title">Hijos: Cuota y Cuidado</h3>
         <p class="sc-desc">
-          Defino legalmente el cuidado personal (tenencia) y establezco cronogramas claros de comunicación (visitas) garantizando el contacto fluido con tus hijos, previniendo manipulaciones o impedimentos de contacto.
+          Tu prioridad son tus hijos, la mía es que tengan lo que les corresponde. Fijo y exijo cuotas alimentarias justas, defino regímenes de comunicación estables y aseguro un cuidado personal que priorice su seguridad emocional.
         </p>
       </div>
 
       <div class="service-card reveal">
-        <i class="fa-solid fa-file-contract sc-icon"></i>
-        <h3 class="sc-title">Divorcios Express</h3>
+        <i class="fa-solid fa-house-chimney-user sc-icon"></i>
+        <h3 class="sc-title">División de Bienes</h3>
         <p class="sc-desc">
-          Tramito tu divorcio vincular (ya sea de forma unilateral o de mutuo acuerdo) de manera ágil, elaborando convenios reguladores que resuelvan todos los efectos de la separación sin someterte a demoras procesales innecesarias.
+          Cuido lo que construiste con tu esfuerzo. Realizo la liquidación de la sociedad conyugal resguardando tu patrimonio, identificando bienes gananciales y frenando cualquier intento de ocultamiento por parte de tu ex pareja.
         </p>
       </div>
 
       <div class="service-card reveal d1">
-        <i class="fa-solid fa-house-chimney-crack sc-icon"></i>
-        <h3 class="sc-title">División de Bienes</h3>
+        <i class="fa-solid fa-hand-holding-heart sc-icon"></i>
+        <h3 class="sc-title">Compensación Económica</h3>
         <p class="sc-desc">
-          Identifico, taso y divido el patrimonio adquirido durante el matrimonio o la convivencia. Solicito medidas cautelares urgentes si existe riesgo de ocultamiento o vaciamiento de bienes por parte de tu ex pareja.
+          Si la separación te deja en una situación de desequilibrio financiero por haber relegado tu carrera o profesión, analizo y reclamo la compensación económica que la ley argentina prevé para equilibrar la balanza.
         </p>
       </div>
 
@@ -244,7 +202,6 @@
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -256,55 +213,54 @@
       
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Puedo divorciarme si mi ex pareja no está de acuerdo?</span>
+          <span>¿Cuánto demora un divorcio en Córdoba?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Sí. En Argentina rige el <strong>divorcio unilateral incausado</strong>. Esto significa que no necesitás demostrar un motivo (causal) ni requerís el consentimiento o la firma de la otra parte para que el juez dicte la sentencia de divorcio. Con tu sola voluntad basta para iniciar el trámite.
+            Si ambas partes están de acuerdo, el trámite es sumamente rápido (pocas semanas). Si es unilateral, la sentencia de divorcio se dicta igual de rápido, quedando para una etapa posterior la discusión sobre los bienes o los hijos, lo que permite que recuperes tu estado civil de soltero sin esperas eternas.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Cómo se calcula el monto de la cuota alimentaria?</span>
+          <span>¿Qué pasa si mi ex no paga la cuota alimentaria?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No existe un "porcentaje fijo" automático dictado por ley (el famoso mito del 20%). El monto se determina evaluando dos variables fundamentales: los ingresos y el nivel de vida de ambos progenitores, y las necesidades reales de los hijos (vivienda, educación, salud, vestimenta y esparcimiento).
+            La ley es muy estricta. Podemos iniciar ejecuciones sobre su sueldo, embargar bienes, prohibirle la salida del país o inscribirlo en el Registro de Deudores Alimentarios Morosos. Mi objetivo es que la cuota se cumpla de forma efectiva y actualizada.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Qué sucede con los bienes que compramos estando casados?</span>
+          <span>Vivimos juntos pero no nos casamos. ¿Tengo derechos?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Por regla general, los bienes adquiridos a título oneroso durante el matrimonio se consideran "gananciales". Tras el divorcio, se inicia la etapa de liquidación de la sociedad conyugal, donde estos bienes se dividen en partes iguales (50% y 50%) sin importar a nombre de quién estén inscriptos registralmente.
+            Sí. Las uniones convivenciales tienen derechos reconocidos, como la compensación económica, la atribución de la vivienda o la protección del hogar. Es fundamental analizar el tiempo de convivencia y las pruebas para reclamar lo que te corresponde.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Qué es la compensación económica?</span>
+          <span>¿Cómo se dividen los bienes si la casa estaba a nombre de uno solo?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Es una herramienta legal (un pago único o una renta) pensada para el cónyuge o conviviente que sufre un desequilibrio económico manifiesto a raíz de la ruptura. Suele aplicarse cuando uno de los dos relegó su carrera profesional o laboral para dedicarse exclusivamente al cuidado del hogar y de los hijos. Tenés un plazo máximo de 6 meses desde el divorcio o cese de la convivencia para reclamarla.
+            Si la casa se compró durante el matrimonio con dinero de la pareja, es un bien ganancial y se divide en partes iguales (50% y 50%) sin importar quién figure en la escritura. Hay excepciones (herencias o donaciones) que analizamos caso por caso para proteger tu parte.
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
       <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
         Agendar Consulta de Familia <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
@@ -314,7 +270,6 @@
   </div>
 </section>
 
-<!-- ══ FOOTER IDÉNTICO AL INDEX ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
@@ -334,18 +289,15 @@
 </footer>
 
 <script>
-  /* Efecto Header */
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  /* Observador de Revelado */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* Lógica Acordeón FAQ */
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
