@@ -23,19 +23,28 @@
     --bg-surface:  #0e120a; 
     --bg-panel:    #13180e; 
     --line-color:  rgba(194, 163, 109, 0.15); 
+    --line-hover:  rgba(194, 163, 109, 0.35);
+    
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
+    
     --text-main:   #F7F5F0; 
     --text-muted:  rgba(247, 245, 240, 0.75); 
+    
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
+    
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
-  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { 
+    background-color: var(--bg-base); color: var(--text-main); 
+    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; 
+  }
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg-base); }
@@ -44,41 +53,73 @@
   .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
   .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+  .label { 
+    display: inline-flex; align-items: center; gap: 1rem; 
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; 
+    text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; 
+  }
   .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
+
+  .heading-2 { 
+    font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); 
+    font-weight: 400; line-height: 1.1; color: var(--text-main); 
+    letter-spacing: -0.01em; margin-bottom: 2.5rem; 
+  }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
   .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ════ HEADER ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
-  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .header { 
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
+    padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
+  }
+  .header.scrolled { 
+    background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); 
+    padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
+  }
   
-  .brand { text-decoration: none; flex-shrink: 0; }
-  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
-  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
+  
+  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
+  .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
+  .nav-a:hover::after { width: 100%; }
 
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
-  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+  .drop-menu { 
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
+    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; 
+    min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
+  }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
-  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
+  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
+  .drop-item:hover i { color: var(--gold-main); }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
+  .btn-header { 
+    display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; 
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
+    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; 
+  }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
   /* ════ HERO INTERNO ════ */
   .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
-  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(80%); }
+  .ph-bg { 
+    position: absolute; inset: 0; z-index: 0; 
+    background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2000') center/cover no-repeat; 
+    opacity: 0.15; 
+    filter: grayscale(80%) contrast(110%); 
+  }
   .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
   
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
@@ -86,7 +127,7 @@
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
   .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO TÉCNICO ════ */
+  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
   @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
@@ -132,7 +173,7 @@
       <div class="drop">
         <span class="nav-a" style="cursor:default;">
           Áreas
-          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
@@ -214,48 +255,48 @@
       
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Fui víctima de una estafa virtual y vaciaron mi cuenta. ¿El banco debe responder?</span>
+          <span>Fui víctima de una estafa virtual y vaciaron mi cuenta. ¿El banco debe responder?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Sí. Las entidades bancarias tienen un deber de seguridad objetivo sobre los depósitos de sus clientes. Si sus sistemas de alerta fallaron en detectar un préstamo anómalo o transferencias inusuales que vaciaron tu cuenta, el banco debe hacerse cargo de restituir el dinero y anular la deuda generada por los estafadores.
+            Sí. Las entidades bancarias tienen un <strong>deber de seguridad objetivo</strong> sobre los depósitos de sus clientes. Si sus sistemas de alerta fallaron en detectar un préstamo anómalo o transferencias inusuales que vaciaron tu cuenta, el banco debe hacerse cargo de restituir el dinero y anular la deuda generada por los estafadores.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Mi cuota del plan de ahorro automotor subió excesivamente. ¿Qué puedo hacer?</span>
+          <span>Mi cuota del plan de ahorro automotor subió excesivamente. ¿Qué puedo hacer?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Podemos solicitar una medida cautelar ante la Justicia para frenar el aumento y obligar a la administradora a reliquidar las cuotas. Las concesionarias y fábricas no pueden incrementar caprichosamente el "valor móvil" del vehículo muy por encima de los índices de inflación oficiales o de los salarios.
+            Podemos solicitar una <strong>medida cautelar</strong> ante la Justicia para frenar el aumento y obligar a la administradora a reliquidar las cuotas. Las concesionarias y fábricas no pueden incrementar caprichosamente el "valor móvil" del vehículo muy por encima de los índices de inflación oficiales o de la suba general de salarios.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Renuncié a mi plan de ahorro o dejé de pagarlo. ¿Perdí mi dinero?</span>
+          <span>Renuncié a mi plan de ahorro o dejé de pagarlo. ¿Perdí mi dinero?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No. La ley prohíbe que las administradoras se queden con tu capital. Una vez finalizado el plazo original del grupo (generalmente a la cuota 84 o 120), tienen la obligación legal de reintegrarte todo el "haber de ahorro" actualizado al valor del vehículo al momento de la devolución.
+            No. La ley prohíbe que las administradoras se queden con tu capital. Una vez finalizado el plazo original del grupo (generalmente a la cuota 84 o 120), tienen la obligación legal de reintegrarte todo el "haber de ahorro", actualizado al valor del vehículo al momento de la devolución y deduciendo únicamente gastos preestablecidos.
           </div>
         </div>
       </div>
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>¿Me incluyeron en el Veraz por una deuda que ya pagué. ¿Qué hago?</span>
+          <span>Me incluyeron en el Veraz por una deuda que ya pagué. ¿Qué hago?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Tenés derecho a iniciar una acción judicial de Hábeas Data. Si la deuda fue cancelada, o si pasaron más de 5 años desde que entraste en mora (hayas pagado o no), tus datos deben ser borrados automáticamente. Si la empresa no lo hace, exigimos fuertes multas económicas a tu favor.
+            Tenés derecho a iniciar una acción judicial de <strong>Hábeas Data</strong>. Si la deuda fue cancelada, o si pasaron más de 5 años desde que entraste en mora (hayas pagado o no), tus datos deben ser borrados automáticamente. Si la empresa no lo hace, exigimos judicialmente fuertes multas económicas (Daños Punitivos) a tu favor.
           </div>
         </div>
       </div>
@@ -292,15 +333,18 @@
 </footer>
 
 <script>
+  /* Efecto Header */
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  /* Observador de Revelado */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  /* Lógica Acordeón FAQ */
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
