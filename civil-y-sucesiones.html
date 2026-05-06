@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Derecho Civil y Sucesiones en Córdoba. Abogado Lautaro N. Aristeo. Gestión ágil de herencias, protección de inmuebles y juicios por daños."/>
+  <meta name="description" content="Derecho Civil y Sucesiones en Córdoba. Abogado Lautaro N. Aristeo. Gestión de herencias, protección de inmuebles y juicios por daños."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Derecho Civil y Sucesiones | Estudio Jurídico Aristeo</title>
 
@@ -17,11 +17,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ SISTEMA DE DISEÑO DE ALTA GAMA ════ */
+  /* ════ SISTEMA DE DISEÑO (OLIVA) ════ */
   :root {
-    --bg-base:     #080a06; 
-    --bg-surface:  #0e120a; 
-    --bg-panel:    #13180e; 
+    --bg-base:     #161913; 
+    --bg-surface:  #1f241a; 
+    --bg-panel:    #292f22; 
     --line-color:  rgba(194, 163, 109, 0.15); 
     --line-hover:  rgba(194, 163, 109, 0.35);
     
@@ -74,22 +74,22 @@
   .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ════════════════════════════════════════════════
-     2. HEADER (UNA LÍNEA PERFECTA)
+     2. HEADER 
   ════════════════════════════════════════════════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
   }
   .header.scrolled { 
-    background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(15px); 
+    background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
     padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
   }
   
   .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
   
   .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
-  .brand-top { font-size: 0.5rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
-  .brand-name { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
+  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
@@ -127,7 +127,7 @@
     opacity: 0.15; 
     filter: grayscale(80%) contrast(110%); 
   }
-  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
   
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
@@ -162,13 +162,11 @@
      6. FOOTER
   ════════════════════════════════════════════════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; margin-bottom: 4rem; }
-  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; } .foot-r { text-align: center !important; } }
+  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
+  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
   
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
-  .foot-side { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
-  .foot-r { text-align: right; }
-  
+  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
   </style>
 </head>
@@ -210,7 +208,7 @@
     <i class="fa-solid fa-landmark ph-icon reveal"></i>
     <h1 class="ph-title reveal">Derecho Civil y Sucesiones</h1>
     <p class="ph-desc reveal">
-      Ordeno y protejo tu patrimonio familiar. Intervengo mediante los mecanismos del Código Civil para asegurar la correcta transmisión de tus bienes, restituir tu propiedad o exigir reparaciones ante daños injustos.
+      Ordeno y protejo tu patrimonio familiar. Intervengo para gestionar la correcta transmisión de tus bienes, restituir tu propiedad o reclamar reparaciones ante daños injustos.
     </p>
   </div>
 </section>
@@ -224,7 +222,7 @@
         <i class="fa-solid fa-file-invoice sc-icon"></i>
         <h3 class="sc-title">Sucesiones y Declaratorias</h3>
         <p class="sc-desc">
-          Tramito declaratorias de herederos y particiones de acervo de forma estratégica. Busco generar acuerdos claros para permitir la libre disposición de los bienes familiares en el menor tiempo procesal posible.
+          Tramito declaratorias de herederos y particiones. Busco generar acuerdos claros para permitir la libre disposición de los bienes familiares.
         </p>
       </div>
 
@@ -232,7 +230,7 @@
         <i class="fa-solid fa-house-circle-check sc-icon"></i>
         <h3 class="sc-title">Usucapión</h3>
         <p class="sc-desc">
-          Conduzco procesos judiciales para que obtengas la titularidad registral (escritura) de los inmuebles que venís poseyendo de forma pública, pacífica y continua, saneando así títulos de propiedad deficientes.
+          Gestiono procesos judiciales para que obtengas la titularidad registral (escritura) de los inmuebles que venís poseyendo de forma pública, pacífica y continua, saneando así la situación dominial.
         </p>
       </div>
 
@@ -240,7 +238,7 @@
         <i class="fa-solid fa-house-lock sc-icon"></i>
         <h3 class="sc-title">Desalojos y Recupero</h3>
         <p class="sc-desc">
-          Ejecuto juicios de desalojo orientados a restituir tu inmueble de forma inmediata frente a la falta de pago por parte de inquilinos, vencimiento de contratos o situaciones de usurpación y ocupación ilegal.
+          Inicio juicios de desalojo orientados a restituir tu inmueble frente a la falta de pago por parte de inquilinos, vencimiento de contratos o situaciones de usurpación y ocupación ilegal.
         </p>
       </div>
 
@@ -248,7 +246,7 @@
         <i class="fa-solid fa-car-burst sc-icon"></i>
         <h3 class="sc-title">Accidentes y Daños</h3>
         <p class="sc-desc">
-          Lidero acciones contra compañías aseguradoras por siniestros en la vía pública o incumplimientos contractuales, exigiendo una indemnización integral que cubra daños materiales, lucro cesante y daño moral.
+          Promuevo acciones contra compañías aseguradoras por siniestros en la vía pública o incumplimientos contractuales, demandando una reparación integral que cubra daños materiales, lucro cesante y daño moral.
         </p>
       </div>
 
@@ -273,7 +271,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            El tiempo depende del nivel de acuerdo entre los herederos y del estado de la documentación. Si no hay conflictos, en pocos meses se obtiene la declaratoria. Respecto a los honorarios, se regulan por la ley arancelaria provincial sobre el valor de los bienes, pero mi política es fijar acuerdos por escrito desde el primer día para darte total previsibilidad.
+            El tiempo depende del nivel de acuerdo entre los herederos y del estado de la documentación. Si no hay conflictos, el trámite avanza con mayor celeridad hasta obtener la declaratoria. Respecto a los honorarios, se regulan por la ley arancelaria provincial (Ley 9459) sobre el valor de los bienes, fijando pautas claras y por escrito desde el inicio del proceso.
           </div>
         </div>
       </div>
@@ -292,12 +290,12 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>Me ocuparon un terreno o mi inquilino dejó de pagar. ¿Cómo lo recupero?</span>
+          <span>Me ocuparon una propiedad o mi inquilino dejó de pagar. ¿Cómo la recupero?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Debemos iniciar un <strong>juicio de desalojo</strong> de inmediato. Hoy en día, los códigos procesales de Córdoba cuentan con herramientas que nos permiten solicitar la restitución anticipada del inmueble apenas iniciado el juicio (desalojo anticipado), minimizando tu pérdida de tiempo y dinero.
+            Se debe interponer una demanda de desalojo. El Código Procesal Civil y Comercial de Córdoba (art. 755) prevé la figura de la entrega anticipada del inmueble, lo que permite, cumplidos ciertos requisitos y prestando caución, recuperar la propiedad antes del dictado de la sentencia definitiva.
           </div>
         </div>
       </div>
@@ -326,19 +324,21 @@
   </div>
 </section>
 
-<!-- ══ FOOTER IDÉNTICO AL INDEX ══ -->
+<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
-    <div class="foot-grid">
-      <div class="foot-side" style="text-align: left;">
-        CÓRDOBA CAPITAL<br>FUERO PROVINCIAL Y FEDERAL
-      </div>
+    <div class="foot-center">
       <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-side foot-r">
-        DR. LAUTARO N. ARISTEO<br>
-        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+      <div class="foot-info">
+        Córdoba Capital | Fuero Provincial y Federal<br>
+        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
       </div>
     </div>
+    
+    <div class="legal-warning">
+      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
+    </div>
+
     <div class="foot-bottom">
       © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
     </div>
