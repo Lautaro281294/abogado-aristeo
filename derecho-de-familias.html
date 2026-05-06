@@ -27,7 +27,7 @@
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
     --text-main:   #F7F5F0; 
-    --text-muted:  rgba(247, 245, 240, 0.7); 
+    --text-muted:  rgba(247, 245, 240, 0.75); 
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
@@ -77,24 +77,24 @@
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
   /* ════ HERO INTERNO ════ */
-  .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(80%); }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
+  
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO (TARJETAS) ════ */
-  .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
-  @media (max-width: 900px) { .content-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
+  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
-  .content-block { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3rem; transition: 0.4s var(--ease); }
-  .content-block:hover { border-color: var(--gold-main); transform: translateY(-5px); }
-  .content-block h3 { font-family: var(--font-heading); font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; font-weight: 400; }
-  .content-block p { color: var(--text-muted); margin-bottom: 2rem; line-height: 1.8; text-align: justify; font-size: 1.05rem; }
-  
-  .detail-list { list-style: none; }
-  .detail-list li { position: relative; padding-left: 2.5rem; margin-bottom: 1.8rem; color: var(--text-main); line-height: 1.6; }
-  .detail-list li::before { content: '\f058'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 0; top: 4px; color: var(--gold-main); font-size: 1.1rem; }
-  .detail-list strong { color: var(--gold-light); display: block; margin-bottom: 0.3rem; font-size: 1.1rem; }
+  .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
+  .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); background: var(--bg-surface); }
+  .sc-icon { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; }
+  .sc-title { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 1.2rem; font-weight: 400; }
+  .sc-desc { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; text-align: justify; }
 
   /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
   .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
@@ -106,13 +106,16 @@
   .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
   .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
 
-  /* ════ FOOTER ════ */
+  /* ════ FOOTER EXACTO AL INDEX ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
-  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; text-align: center; color: var(--text-main); }
-  .foot-side { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
+  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; margin-bottom: 4rem; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; } .foot-r { text-align: center !important; } }
+  
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
+  .foot-side { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
   .foot-r { text-align: right; }
+  
+  .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
   </style>
 </head>
 <body>
@@ -132,7 +135,7 @@
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
         </span>
         <div class="drop-menu">
-          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
@@ -140,18 +143,20 @@
           <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
         </div>
       </div>
-      <a href="/index.html#contacto" class="btn-header">Contactarme <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
   </div>
 </header>
 
 <!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
-  <div class="container">
+  <div class="ph-bg"></div>
+  <div class="ph-overlay"></div>
+  <div class="container ph-content">
     <i class="fa-solid fa-scale-unbalanced ph-icon reveal"></i>
     <h1 class="ph-title reveal">Derecho de las Familias</h1>
     <p class="ph-desc reveal">
-      Organizo las crisis familiares separando las emociones del capital. Intervengo con sensibilidad para proteger la paz de los menores y con estricto rigor estratégico para salvaguardar sus bienes y derechos.
+      Organizo las crisis familiares separando las emociones del capital. Intervengo con sensibilidad para proteger la paz de tus hijos y con estricto rigor estratégico para salvaguardar tus bienes y derechos.
     </p>
   </div>
 </section>
@@ -159,57 +164,45 @@
 <!-- ══ CONTENIDO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
-    <div class="content-grid">
+    <div class="services-grid">
       
-      <!-- Menores -->
-      <div class="content-block reveal">
-        <h3>Organización Familiar y Menores</h3>
-        <p>
-          Priorizo el interés superior de los niños y adolescentes. Estructuro jurídicamente la dinámica diaria post-separación para evitar que el conflicto judicial desgaste la relación con sus hijos.
+      <div class="service-card reveal">
+        <i class="fa-solid fa-hand-holding-dollar sc-icon"></i>
+        <h3 class="sc-title">Obligación Alimentaria</h3>
+        <p class="sc-desc">
+          Fijo y exijo cuotas alimentarias acordes a las necesidades reales de los menores y a los ingresos del alimentante, aplicando mecanismos de actualización para que el dinero no pierda valor frente a la inflación.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Obligación Alimentaria</strong>
-            Fijo y exijo cuotas alimentarias acordes a las necesidades reales de los menores y a los ingresos del alimentante, aplicando mecanismos de actualización para blindarlas contra la inflación.
-          </li>
-          <li>
-            <strong>Cuidado Personal (Tenencia)</strong>
-            Defino legalmente el cuidado personal (modalidad compartida o unilateral) asegurando que el centro de vida del menor sea el más estable para su desarrollo.
-          </li>
-          <li>
-            <strong>Régimen de Comunicación (Visitas)</strong>
-            Establezco cronogramas claros y exigibles judicialmente para garantizar el contacto fluido, previniendo manipulaciones o impedimentos de contacto.
-          </li>
-        </ul>
       </div>
 
-      <!-- Patrimonio -->
-      <div class="content-block reveal">
-        <h3>Desvinculación y Patrimonio</h3>
-        <p>
-          La ruptura de un proyecto de vida requiere desatar los lazos económicos de manera limpia y equitativa. Actúo con celeridad para proteger estrictamente el capital que usted aportó al matrimonio.
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-people-roof sc-icon"></i>
+        <h3 class="sc-title">Cuidado y Visitas</h3>
+        <p class="sc-desc">
+          Defino legalmente el cuidado personal (tenencia) y establezco cronogramas claros de comunicación (visitas) garantizando el contacto fluido con tus hijos, previniendo manipulaciones o impedimentos de contacto.
         </p>
-        <ul class="detail-list">
-          <li>
-            <strong>Divorcios (Unilaterales o Conjuntos)</strong>
-            Tramito el divorcio vincular de manera ágil, elaborando convenios reguladores que resuelvan todos los efectos de la separación sin demoras innecesarias.
-          </li>
-          <li>
-            <strong>Liquidación de Bienes Gananciales</strong>
-            Identifico, taso y divido el patrimonio adquirido durante el matrimonio. Solicito medidas cautelares urgentes para prevenir el ocultamiento o vaciamiento de bienes.
-          </li>
-          <li>
-            <strong>Compensación Económica</strong>
-            Analizo y reclamo reparaciones financieras contundentes ante el desequilibrio económico manifiesto que padece uno de los cónyuges a raíz de la ruptura.
-          </li>
-        </ul>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-file-contract sc-icon"></i>
+        <h3 class="sc-title">Divorcios Express</h3>
+        <p class="sc-desc">
+          Tramito tu divorcio vincular (unilateral o de mutuo acuerdo) de manera ágil, elaborando convenios reguladores que resuelvan todos los efectos de la separación sin someterte a demoras procesales innecesarias.
+        </p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-house-chimney-crack sc-icon"></i>
+        <h3 class="sc-title">División de Bienes</h3>
+        <p class="sc-desc">
+          Identifico, taso y divido el patrimonio adquirido durante el matrimonio o convivencia. Solicito medidas cautelares urgentes si existe riesgo de ocultamiento o vaciamiento de bienes por parte de tu ex pareja.
+        </p>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES (NUEVO) ══ -->
+<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -226,7 +219,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Sí. En Argentina rige el divorcio unilateral incausado. Esto significa que usted no necesita demostrar un motivo (causal) ni requiere el consentimiento o la firma de la otra parte para que el juez dicte la sentencia de divorcio.
+            Sí. En Argentina rige el <strong>divorcio unilateral incausado</strong>. Esto significa que no necesitás demostrar un motivo (causal) ni requerís el consentimiento o la firma de la otra parte para que el juez dicte la sentencia de divorcio. Con tu sola voluntad basta para iniciarlo.
           </div>
         </div>
       </div>
@@ -238,7 +231,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No existe un "porcentaje fijo" automático dictado por ley. El monto se determina evaluando dos variables principales: los ingresos y el nivel de vida de ambos progenitores, y las necesidades reales del menor (vivienda, educación, salud, vestimenta y esparcimiento).
+            No existe un "porcentaje fijo" automático dictado por ley (el famoso mito del 20%). El monto se determina evaluando dos variables: los ingresos/nivel de vida de ambos progenitores, y las necesidades reales de los hijos (vivienda, educación, salud, vestimenta y esparcimiento).
           </div>
         </div>
       </div>
@@ -262,7 +255,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Es una herramienta legal (que puede consistir en un pago único o en una renta) pensada para el cónyuge o conviviente que, a raíz de la separación, sufre un desequilibrio económico manifiesto. Suele aplicarse, por ejemplo, cuando una de las partes relegó su carrera profesional o laboral para dedicarse exclusivamente al cuidado del hogar y los hijos.
+            Es una herramienta legal (un pago único o una renta) pensada para el cónyuge o conviviente que sufre un desequilibrio económico manifiesto a raíz de la ruptura. Suele aplicarse cuando uno de los dos relegó su carrera profesional o laboral para dedicarse exclusivamente al cuidado del hogar y los hijos. Tenés un plazo máximo de 6 meses desde el divorcio o cese de la convivencia para reclamarla.
           </div>
         </div>
       </div>
@@ -271,7 +264,7 @@
 
     <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
-      <a href="/index.html#contacto" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
+      <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
         Agendar Consulta <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
       </a>
     </div>
@@ -279,47 +272,48 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- ══ FOOTER IDÉNTICO AL INDEX ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div class="foot-side">
-        Córdoba Capital<br>Fuero Provincial y Federal
+      <div class="foot-side" style="text-align: left;">
+        CÓRDOBA CAPITAL<br>FUERO PROVINCIAL Y FEDERAL
       </div>
-      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+      
+      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
+      
       <div class="foot-side foot-r">
-        Dr. Lautaro N. Aristeo<br>
-        <span style="color:var(--gold-main);">M.P. 1 - 43722 | Mat. Fed. T° 511 F° 222</span>
+        DR. LAUTARO N. ARISTEO<br>
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
       </div>
+    </div>
+    
+    <div class="foot-bottom">
+      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
     </div>
   </div>
 </footer>
 
 <script>
-  /* Efecto Header */
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  /* Observador de Revelado */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* Lógica Acordeón FAQ */
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
       const isOpen = button.classList.contains('active');
       
-      // Cerrar todos
       document.querySelectorAll('.faq-question').forEach(btn => {
         btn.classList.remove('active');
         btn.nextElementSibling.style.maxHeight = null;
       });
 
-      // Si no estaba abierto, abrir el clickeado
       if (!isOpen) {
         button.classList.add('active');
         answer.style.maxHeight = answer.scrollHeight + "px";
