@@ -7,7 +7,6 @@
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   
-  <!-- Open Graph -->
   <meta property="og:title" content="Estudio Jurídico Aristeo | Abogacía en Córdoba"/>
   <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Claridad y honestidad desde la primera consulta."/>
   <meta property="og:type" content="website"/>
@@ -23,9 +22,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════════════════════════════════════════════════
-     1. SISTEMA DE DISEÑO Y VARIABLES GLOBALES
-  ════════════════════════════════════════════════ */
+  /* ════ SISTEMA DE DISEÑO Y VARIABLES GLOBALES ════ */
   :root {
     --bg-base:     #080a06; 
     --bg-surface:  #0e120a; 
@@ -36,10 +33,9 @@
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
-    --gold-glow:   rgba(194, 163, 109, 0.05);
     
     --text-main:   #F7F5F0; 
-    --text-muted:  rgba(247, 245, 240, 0.65); 
+    --text-muted:  rgba(247, 245, 240, 0.75); 
     
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
@@ -70,23 +66,19 @@
   .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
 
   .heading-2 { 
-    font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.8rem); 
+    font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); 
     font-weight: 400; line-height: 1.1; color: var(--text-main); 
     letter-spacing: -0.01em; margin-bottom: 2.5rem; 
   }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  .paragraph { font-size: 1.1rem; line-height: 1.95; color: var(--text-muted); text-align: justify; margin-bottom: 1.8rem; }
+  .paragraph { font-size: 1.15rem; line-height: 1.95; color: var(--text-muted); text-align: justify; margin-bottom: 1.8rem; }
   .paragraph strong { color: var(--text-main); font-weight: 400; }
 
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
-  .delay-1 { transition-delay: 0.15s; }
-  .delay-2 { transition-delay: 0.3s; }
 
-  /* ════════════════════════════════════════════════
-     2. HEADER (UNA LÍNEA PERFECTA)
-  ════════════════════════════════════════════════ */
+  /* ════ HEADER ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -128,63 +120,49 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════════════════════════════════════════════════
-     3. HERO (CON VIDEO Y BARRA DE ESTADÍSTICAS)
-  ════════════════════════════════════════════════ */
+  /* ════ HERO (MEJORADA LA LEGIBILIDAD) ════ */
   .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
-  .hero-bg { position: absolute; inset: 0; z-index: 0; background: linear-gradient(155deg, rgba(8,10,6,0.92) 0%, rgba(8,10,6,0.6) 50%, rgba(8,10,6,0.95) 100%), url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; }
   
   .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
-  .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(20%); }
-  .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(8,10,6,0.8) 0%, transparent 40%, rgba(8,10,6,1) 100%); }
+  .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(10%); }
   
-  .hero-content { position: relative; z-index: 10; max-width: 1000px; padding-top: 6rem; }
-  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 7rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 2rem; }
+  /* Gradiente más oscuro para que el texto resalte perfecto */
+  .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(8,10,6,0.85) 0%, rgba(8,10,6,0.7) 50%, rgba(8,10,6,1) 100%); }
+  
+  .hero-content { position: relative; z-index: 10; max-width: 1000px; padding-top: 6rem; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 2rem; color: #ffffff; }
   .hero-h1 em { font-style: italic; color: var(--gold-light); }
-  .hero-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 800px; margin-bottom: 4rem; line-height: 1.9; }
+  .hero-desc { font-size: 1.3rem; color: #eaeaea; max-width: 800px; margin-bottom: 4rem; line-height: 1.9; }
   
   .btn-primary { 
     display: inline-flex; align-items: center; gap: 15px; font-size: 0.85rem; font-weight: 600; 
     letter-spacing: 0.25em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
-    padding: 1.4rem 3.5rem; text-decoration: none; transition: 0.4s var(--ease); border: 1px solid var(--gold-main); 
+    padding: 1.4rem 3.5rem; text-decoration: none; transition: 0.4s var(--ease); border: 1px solid var(--gold-main); text-shadow: none;
   }
   .btn-primary:hover { background: transparent; color: var(--gold-main); transform: translateY(-3px); }
 
-  .hero-stats { display: flex; gap: 5rem; flex-wrap: wrap; margin-top: 6rem; padding-top: 3rem; border-top: 1px solid var(--line-color); }
-  .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
-  .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; }
-
-  /* ════════════════════════════════════════════════
-     4. FILOSOFÍA Y PILARES
-  ════════════════════════════════════════════════ */
+  /* ════ FILOSOFÍA Y PILARES (CORREGIDO ERROR VISUAL) ════ */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
   @media (max-width: 950px) { .grid-2 { grid-template-columns: 1fr; gap: 5rem; } }
   
   .qblock { 
-    font-family: var(--font-heading); font-style: italic; font-size: clamp(1.8rem, 3vw, 2.4rem); 
+    font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); 
     color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); 
     padding: 1rem 0 1rem 2.5rem; margin: 3rem 0; 
   }
-  
-  .creds { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--line-color); display: flex; flex-direction: column; gap: 0.8rem; }
-  .creds-role { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); }
-  .creds-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); }
-  .creds-matriculas { display: flex; gap: 2rem; margin-top: 0.5rem; flex-wrap: wrap; }
-  .creds-mp { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
 
-  /* Pilares */
-  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 8rem; }
+  /* Pilares sin el highlight raro */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 6rem; }
   @media (max-width: 800px) { .pillars { grid-template-columns: 1fr; } }
-  .pillar { background: var(--bg-surface); padding: 4.5rem 3.5rem; transition: background 0.4s; }
-  .pillar:hover { background: var(--bg-panel); }
+  .pillar { background: var(--bg-panel); padding: 4.5rem 3.5rem; transition: background 0.4s; }
+  .pillar:hover { background: var(--bg-surface); }
   .pillar-icon { font-size: 1.8rem; color: var(--gold-main); margin-bottom: 2rem; display: block; }
   .pillar-h { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text-main); }
-  .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; }
+  .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
 
-  /* ════════════════════════════════════════════════
-     5. ÁREAS DE PRÁCTICA (HOVER REVEAL)
-  ════════════════════════════════════════════════ */
-  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 5rem; }
+  /* ════ ÁREAS DE PRÁCTICA (TEXTOS PULIDOS Y LINK CORREGIDO) ════ */
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
   @media (max-width: 1100px) { .pgrid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 768px) { .pgrid { grid-template-columns: 1fr; } }
   
@@ -197,74 +175,69 @@
   .pc-main { 
     position: absolute; inset: 0; display: flex; flex-direction: column; 
     justify-content: center; align-items: center; text-align: center; 
-    transition: 0.6s var(--ease); padding: 2rem; 
+    transition: 0.6s var(--ease); padding: 2rem; z-index: 2;
   }
   .pc-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 2rem; transition: 0.4s; }
   .pc-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); line-height: 1.2; }
   
   .pc-hover { 
-    position: absolute; inset: 0; background: rgba(14,18,10,0.96); 
+    position: absolute; inset: 0; background: rgba(14,18,10,0.98); 
     display: flex; flex-direction: column; justify-content: center; align-items: center; 
-    padding: 3.5rem; text-align: center; opacity: 0; transform: translateY(100%); 
-    transition: 0.6s var(--ease); 
+    padding: 3rem; text-align: center; opacity: 0; transform: translateY(20px); 
+    transition: 0.6s var(--ease); z-index: 3;
   }
-  .pc-desc { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.8; }
+  .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.7; }
   .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); display: inline-flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; transition: 0.3s; }
   
   .pc-card:hover { border-color: var(--gold-main); }
-  .pc-card:hover .pc-main { opacity: 0; transform: scale(0.9) translateY(-20px); }
+  .pc-card:hover .pc-main { opacity: 0; transform: scale(0.95); }
   .pc-card:hover .pc-hover { opacity: 1; transform: translateY(0); }
   .pc-card:hover .pc-link { border-color: var(--gold-main); gap: 15px; }
 
-  /* ════════════════════════════════════════════════
-     6. BANDA INTERMEDIA
-  ════════════════════════════════════════════════ */
-  .band { padding: 10rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; text-align: center; }
-  .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.3; max-width: 1000px; margin: 0 auto; }
+  /* ════ BANDA INTERMEDIA (FRASE CORREGIDA) ════ */
+  .band { padding: 8rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; text-align: center; }
+  .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.3; max-width: 900px; margin: 0 auto; color: var(--text-main); }
   .band-quote em { color: var(--gold-light); font-style: italic; }
 
-  /* ════════════════════════════════════════════════
-     7. CONTACTO Y CUESTIONARIO INTELIGENTE
-  ════════════════════════════════════════════════ */
-  .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 6rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
+  /* ════ CONTACTO Y CUESTIONARIO ════ */
+  .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
   @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
   
-  .contact-left { padding: 6rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+  .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   
-  .channel { display: flex; align-items: center; justify-content: space-between; padding: 2.2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
+  .channel { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
   .channel::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-main); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s var(--ease); }
-  .channel:hover { border-color: var(--line-hover); transform: translateX(12px); background: var(--bg-base); }
+  .channel:hover { border-color: var(--line-hover); transform: translateX(10px); background: var(--bg-base); }
   .channel:hover::before { transform: scaleY(1); }
   
-  .ch-l { display: flex; align-items: center; gap: 1.8rem; }
-  .ch-l i { font-size: 2.2rem; color: var(--gold-main); }
+  .ch-l { display: flex; align-items: center; gap: 1.5rem; }
+  .ch-l i { font-size: 2rem; color: var(--gold-main); }
   .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
-  .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; }
+  .ch-name { font-size: 1.1rem; color: var(--text-main); font-weight: 400; }
 
-  .urgency-alert { margin-top: 4rem; padding: 2.5rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
+  .urgency-alert { margin-top: 3rem; padding: 2rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
   .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
   .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
-  .contact-right { padding: 6rem 5rem; }
-  .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3.5rem; font-weight: 600; }
+  .contact-right { padding: 5rem; }
+  .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3rem; font-weight: 600; }
   
-  .fg { margin-bottom: 3rem; }
-  .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1.2rem; letter-spacing: 0.25em; }
-  .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; padding: 1rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
+  .fg { margin-bottom: 2.5rem; }
+  .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1rem; letter-spacing: 0.2em; }
+  .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.1rem; padding: 0.8rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
   .fi:focus { border-color: var(--gold-main); }
   .fi option { background: var(--bg-panel); color: var(--text-main); }
-  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
   @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
 
-  /* Caja de Preguntas Dinámicas */
-  .dyn-box { margin-bottom: 3rem; display: none; padding: 3rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
+  .dyn-box { margin-bottom: 2.5rem; display: none; padding: 2.5rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
   .dyn-box.show { display: block; }
-  .dyn-title { font-size: 0.8rem; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+  .dyn-title { font-size: 0.8rem; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
   .dyn-title i { color: var(--gold-main); }
   @keyframes fadeIn { from { opacity:0; transform: translateY(-15px); } to { opacity:1; transform: translateY(0); } }
 
   .action-buttons { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
-  .btn-sub { flex: 1; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 15px; position: relative; overflow: hidden; min-width: 250px; }
+  .btn-sub { flex: 1; padding: 1.5rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 12px; position: relative; overflow: hidden; min-width: 220px; }
   .btn-sub::before { content: ''; position: absolute; inset: 0; background: var(--gold-main); transform: translateY(101%); transition: transform 0.4s var(--ease); }
   .btn-sub:hover::before { transform: translateY(0); }
   .btn-sub:hover { color: var(--bg-base); }
@@ -272,18 +245,16 @@
   .btn-sub.wsp::before { background: #25D366; }
   .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
-  .disclaimer { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--line-color); padding-top: 2rem; margin-top: 3.5rem; text-align: justify; }
-
-  /* ════════════════════════════════════════════════
-     8. FOOTER DE 3 COLUMNAS
-  ════════════════════════════════════════════════ */
-  .footer { padding: 8rem 0 4rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+  /* ════ FOOTER (REORGANIZADO CON LEGALES) ════ */
+  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
   @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
+  
   .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
-  .foot-side { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.5; }
+  .foot-side { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
   .foot-r { text-align: right; }
-  .foot-bottom { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); text-align: center; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+  
+  .foot-bottom { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line-color); text-align: center; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
   </style>
 </head>
 <body>
@@ -303,7 +274,7 @@
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
-          <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
           <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
@@ -312,13 +283,13 @@
         </div>
       </div>
       <a href="#contacto" class="btn-header">
-        <span>Contactarme</span> <i class="fa-solid fa-arrow-right"></i>
+        <span>Contactame</span> <i class="fa-solid fa-arrow-right"></i>
       </a>
     </nav>
   </div>
 </header>
 
-<!-- ══ HERO CON VIDEO ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-vid">
@@ -329,25 +300,18 @@
   <div class="hero-overlay"></div>
   
   <div class="container hero-content">
-    <h1 class="hero-h1 reveal d1">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-    <p class="hero-desc reveal d2">
-      Defiendo sus intereses con la seriedad que su caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.
+    <h1 class="hero-h1 reveal">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
+    <p class="hero-desc reveal">
+      Defiendo tus intereses con la seriedad que tu caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.
     </p>
-    <a href="#contacto" class="btn-primary reveal d2">
-      <span>Contactarme</span>
+    <a href="#contacto" class="btn-primary reveal">
+      <span>Contactame</span>
       <i class="fa-solid fa-arrow-down"></i>
     </a>
-    
-    <!-- Barra de Estadísticas Restaurada -->
-    <div class="hero-stats reveal d2">
-      <div><span class="stat-n">6</span><span class="stat-l">Áreas de Práctica</span></div>
-      <div><span class="stat-n">M.P.</span><span class="stat-l">1 - 43722</span></div>
-      <div><span class="stat-n">T° 511</span><span class="stat-l">Matrícula Federal</span></div>
-    </div>
   </div>
 </section>
 
-<!-- ══ MI ENFOQUE ══ -->
+<!-- ══ MI ENFOQUE (MODIFICADO A PEDIDO) ══ -->
 <section class="section" id="filosofia">
   <div class="container">
     <div class="grid-2">
@@ -355,49 +319,42 @@
         <div class="label">Compromiso y Realidad</div>
         <h2 class="heading-2">Resolución de<br><em>Conflictos.</em></h2>
         <div class="qblock">
-          "Un asesoramiento claro a tiempo previene años de desgaste judicial. Mi prioridad es brindarle respuestas, no falsas expectativas."
+          <!-- Text placeholder para mejorar juntos en la próxima interacción -->
+          "La abogacía no se trata de prometer resultados mágicos, sino de trazar la estrategia más sólida. Estudio tu caso a fondo para darte un diagnóstico claro desde el primer día."
         </div>
       </div>
-      <div class="reveal d1">
+      <div class="reveal">
         <p class="paragraph">
-          Le hablo con absoluta franqueza. El litigio requiere un estudio normativo detallado y una atención constante del expediente. Como abogado, me encargo personalmente de cada etapa de su caso para asegurar que sus derechos no queden relegados por la burocracia judicial.
+          Te hablo con absoluta franqueza. Un conflicto legal requiere estudio normativo detallado y atención constante. Como abogado, me encargo personalmente de cada etapa de tu expediente para que siempre sepas dónde estamos parados.
         </p>
         <p class="paragraph">
-          Ya sea frente a un despido, un conflicto familiar o la estructuración de su empresa, mi objetivo es brindarle certeza legal mediante un plan de acción concreto y transparente.
+          Ya sea frente a un problema laboral, un conflicto familiar o la estructuración de tu empresa, mi objetivo es brindarte certeza mediante un plan de acción concreto, transparente y sin falsas expectativas.
         </p>
-        <div class="creds">
-          <span class="creds-role">Abogado Litigante</span>
-          <strong class="creds-name">Dr. Lautaro N. Aristeo</strong>
-          <div class="creds-matriculas">
-            <span class="creds-mp">Mat. Prov. 1 - 43722</span>
-            <span class="creds-mp" style="color: var(--gold-main);">Mat. Fed. T° 511 F° 222</span>
-          </div>
-        </div>
       </div>
     </div>
     
-    <!-- Pilares Restaurados -->
+    <!-- Pilares (Error de imagen corregido) -->
     <div class="pillars reveal">
       <div class="pillar">
         <i class="fa-solid fa-magnifying-glass pillar-icon"></i>
         <h3 class="pillar-h">Estudio Normativo</h3>
-        <p class="pillar-p">Analizo cada expediente desde la base legal antes de trazar cualquier acción. Sin improvisaciones.</p>
+        <p class="pillar-p">Analizo cada expediente desde la base legal antes de trazar cualquier acción procesal. Sin improvisaciones.</p>
       </div>
       <div class="pillar">
         <i class="fa-solid fa-scale-balanced pillar-icon"></i>
         <h3 class="pillar-h">Atención Directa</h3>
-        <p class="pillar-p">Su caso es dirigido exclusivamente por mí. No derivo su expediente ni su atención a terceros.</p>
+        <p class="pillar-p">Tu caso es dirigido exclusivamente por mí. No derivo tu expediente ni su atención a terceros ni intermediarios.</p>
       </div>
       <div class="pillar">
         <i class="fa-solid fa-comments pillar-icon"></i>
         <h3 class="pillar-h">Claridad Absoluta</h3>
-        <p class="pillar-p">Le informo el estado real de su situación con precisión y sin eufemismos que distorsionen la realidad.</p>
+        <p class="pillar-p">Te informo el estado real de tu situación procesal con precisión y sin eufemismos que distorsionen la realidad.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ ÁREAS DE PRÁCTICA (HOVER INTERACTIVO) ══ -->
+<!-- ══ ÁREAS DE PRÁCTICA (HOVER REVEAL - MEJORADO) ══ -->
 <section class="section" id="areas" style="background:var(--bg-surface);">
   <div class="container">
     <div class="reveal">
@@ -405,7 +362,7 @@
       <h2 class="heading-2">Áreas de <em>Práctica</em></h2>
     </div>
     
-    <div class="pgrid reveal d1">
+    <div class="pgrid reveal">
       <!-- Civil -->
       <a href="/civil-y-comercial.html" class="pc-card">
         <div class="pc-main">
@@ -413,7 +370,7 @@
           <h3 class="pc-title">Derecho Civil</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Sucesiones, usucapión, contratos y protección de inmuebles. Resoluciones para ordenar y resguardar su patrimonio familiar.</p>
+          <p class="pc-desc">Sucesiones, contratos y protección inmobiliaria. Soluciones prácticas para ordenar tu patrimonio.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -424,7 +381,7 @@
           <h3 class="pc-title">Comercial</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Ejecución de deudas (cheques, pagarés) y estructuración de contratos. Asesoramiento para brindar seguridad a su negocio.</p>
+          <p class="pc-desc">Asesoramiento a PyMEs, cobro de carteras en mora y blindaje de contratos comerciales.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -435,7 +392,7 @@
           <h3 class="pc-title">Laboral y ART</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Reclamos por despidos, trabajo no registrado y accidentes. Exijo la reparación integral que le corresponde por ley.</p>
+          <p class="pc-desc">Defensa integral ante despidos, accidentes (ART) y regularización de trabajo no registrado.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -443,10 +400,10 @@
       <a href="/amparos-de-salud.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-heart-pulse pc-icon"></i>
-          <h3 class="pc-title">Salud</h3>
+          <h3 class="pc-title">Amparos de Salud</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Amparos judiciales urgentes por falta de cobertura médica, medicación de alto costo y prestaciones por discapacidad.</p>
+          <p class="pc-desc">Medidas urgentes y efectivas para garantizar tratamientos, medicación y coberturas por discapacidad.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -457,7 +414,7 @@
           <h3 class="pc-title">Consumidor</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Defensa frente a estafas bancarias, cobros indebidos de tarjetas de crédito y abusos en planes de ahorro automotor.</p>
+          <p class="pc-desc">Acciones contra bancos y empresas por estafas virtuales, planes de ahorro y abusos financieros.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -465,10 +422,10 @@
       <a href="/derecho-de-familias.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
-          <h3 class="pc-title">Familias</h3>
+          <h3 class="pc-title">Derecho de Familias</h3>
         </div>
         <div class="pc-hover">
-          <p class="pc-desc">Divorcios, fijación de cuotas alimentarias y división de bienes, gestionados con celeridad y reserva absoluta.</p>
+          <p class="pc-desc">Divorcios y acuerdos familiares gestionados con empatía, celeridad y resguardo patrimonial.</p>
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
@@ -476,35 +433,35 @@
   </div>
 </section>
 
-<!-- ══ BANDA INTERMEDIA RESTAURADA ══ -->
+<!-- ══ BANDA INTERMEDIA (MODIFICADA) ══ -->
 <div class="band reveal">
   <div class="container">
     <h2 class="band-quote">
-      "La defensa de sus derechos comienza con<br>
+      "La defensa de tus derechos comienza con<br>
       <em>información veraz</em> y trabajo honesto."
     </h2>
   </div>
 </div>
 
-<!-- ══ CONTACTO Y CUESTIONARIO INTELIGENTE ══ -->
+<!-- ══ CONTACTO Y PRE-CONSULTA ══ -->
 <section class="section" id="contacto">
   <div class="container">
     <div class="label">Comunicación Directa</div>
-    <h2 class="heading-2">Contacto</h2>
+    <h2 class="heading-2">Contactame</h2>
     
-    <div class="contact-wrap reveal d1">
+    <div class="contact-wrap reveal">
       
-      <!-- Izquierda: Vías Rápidas -->
+      <!-- Panel Vías Rápidas con Horarios -->
       <div class="contact-left">
         <div>
-          <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem;">Canales Rápidos</h3>
-          <p class="paragraph" style="margin-bottom: 3.5rem; font-size: 1.05rem;">Utilice estas vías para respuestas inmediatas o para agendar una cita en el estudio.</p>
+          <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main);">Vías de Contacto</h3>
+          <p class="paragraph" style="margin-bottom: 3.5rem; font-size: 1.05rem;">Utilizá estas vías para respuestas inmediatas o para agendar una cita en el estudio.</p>
           
           <a href="https://wa.me/5493517736170" class="channel" target="_blank">
             <div class="ch-l">
               <i class="fa-brands fa-whatsapp"></i>
               <div>
-                <span class="ch-tag">Respuesta Inmediata</span>
+                <span class="ch-tag">Mensajería Directa</span>
                 <strong class="ch-name">WhatsApp Business</strong>
               </div>
             </div>
@@ -524,19 +481,21 @@
         </div>
 
         <div class="urgency-alert">
-          <strong>Protocolo de Urgencia</strong>
-          <p>Ante detenciones, accidentes o medidas urgentes fuera de horario, inicie su mensaje de WhatsApp con la palabra URGENCIA.</p>
+          <strong><i class="fa-regular fa-clock"></i> Horario de Atención</strong>
+          <p style="margin-bottom: 1rem;">Lunes a Viernes de 09:00 a 18:00 hs. (Atención con turno previo).</p>
+          <strong style="color: var(--gold-light);">Protocolo de Urgencia</strong>
+          <p>Ante detenciones o emergencias fuera de horario, iniciá tu mensaje con la palabra URGENCIA.</p>
         </div>
       </div>
 
-      <!-- Derecha: Formulario Pre-Consulta -->
+      <!-- Panel Formulario Pre-Consulta -->
       <div class="contact-right">
         <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
         
         <form id="evalForm">
           <div class="fg">
             <label class="fl">Nombre y Apellido *</label>
-            <input type="text" id="fn" class="fi" required placeholder="Ingrese su nombre completo">
+            <input type="text" id="fn" class="fi" required placeholder="Ingresá tu nombre completo">
           </div>
           
           <div class="frow">
@@ -547,12 +506,12 @@
             <div class="fg">
               <label class="fl">Área de Consulta *</label>
               <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
-                <option value="" disabled selected>Seleccione un área...</option>
+                <option value="" disabled selected>Seleccioná un área...</option>
                 <option value="civil">Civil y Sucesiones</option>
                 <option value="comercial">Comercial y Empresas</option>
                 <option value="laboral">Laboral y ART</option>
                 <option value="salud">Amparos de Salud</option>
-                <option value="consumo">Defensa del Consumidor</option>
+                <option value="consumidor">Defensa del Consumidor</option>
                 <option value="familia">Derecho de Familias</option>
               </select>
             </div>
@@ -565,8 +524,8 @@
           </div>
 
           <div class="fg">
-            <label class="fl">Breve resumen de su caso *</label>
-            <textarea id="fs" class="fi" rows="2" required placeholder="Describa su situación en pocas palabras..." style="resize: none;"></textarea>
+            <label class="fl">Breve resumen de tu caso *</label>
+            <textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea>
           </div>
           
           <div class="action-buttons">
@@ -577,32 +536,35 @@
               <span>Enviar por E-Mail</span> <i class="fa-solid fa-lock" style="font-size: 1rem;"></i>
             </button>
           </div>
-
-          <!-- Cumplimiento de Ley 5805 -->
-          <div class="disclaimer">
-            La información suministrada está protegida por el <strong>secreto profesional (Ley 5805 de la Prov. de Córdoba)</strong>. Completar este cuestionario ayuda a preparar un plan de acción para su consulta, pero no garantiza resultados ni implica contratación automática.
-          </div>
         </form>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FOOTER DE 3 COLUMNAS RESTAURADO ══ -->
+<!-- ══ FOOTER DE 3 COLUMNAS Y LEGALES ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-grid">
-      <div class="foot-side">
-        Córdoba Capital<br>Fuero Provincial y Federal
+      <div class="foot-side" style="text-align: left;">
+        <span style="color: var(--text-main); font-weight: 500; font-size: 0.8rem; display: block; margin-bottom: 5px;">Sede Central</span>
+        Córdoba Capital<br>Atención con Turno Previo<br>
+        Lunes a Viernes · 09:00 a 18:00 hs.
       </div>
-      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+      
+      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
+      
       <div class="foot-side foot-r">
+        <span style="color: var(--text-main); font-weight: 500; font-size: 0.8rem; display: block; margin-bottom: 5px;">Abogado Titular</span>
         Dr. Lautaro N. Aristeo<br>
-        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span><br>
+        Monotributo Cat. B
       </div>
     </div>
+    
     <div class="foot-bottom">
-      © 2026 Estudio Jurídico Aristeo · Todos los derechos reservados
+      <p style="margin-bottom: 10px;">La información suministrada mediante este sitio web se encuentra amparada por el secreto profesional establecido en la Ley 5805 de la Provincia de Córdoba.</p>
+      © 2026 Estudio Jurídico Aristeo · Todos los derechos reservados.
     </div>
   </div>
 </footer>
@@ -624,7 +586,7 @@
     'civil': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
       <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
-      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Posee documentación a mano?</label>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Poseés documentación a mano?</label>
       <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
     'comercial': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
@@ -639,12 +601,12 @@
     'salud': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
       <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
-      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación le niegan?</label>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación te niegan?</label>
       <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
     'consumidor': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
       <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
-      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hizo reclamo previo?</label>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hiciste reclamo previo?</label>
       <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
     'familia': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
@@ -671,10 +633,9 @@
     const res = document.getElementById('fs').value.trim();
 
     if(!nom || !tel || selectArea.value === "" || !res) { 
-      alert('Para un correcto análisis, complete los campos obligatorios (*).'); return; 
+      alert('Para un correcto análisis, completá los campos obligatorios (*).'); return; 
     }
 
-    // Recolectar datos opcionales
     let respuestasExtra = "";
     const dynInputs = document.querySelectorAll('.dyn-input');
     dynInputs.forEach(input => {
@@ -688,7 +649,7 @@
       window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
     } else {
       const originalHtml = btn.innerHTML;
-      btn.innerHTML = '<span>Enviando...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
       btn.style.pointerEvents = 'none';
 
       const fd = new FormData();
@@ -701,13 +662,13 @@
       try {
         const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
         if (r.ok) {
-          btn.innerHTML = '<span>¡Recibido!</span> <i class="fa-solid fa-check"></i>';
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recibido!';
           document.getElementById('evalForm').reset();
           document.getElementById('dynBox').classList.remove('show');
           setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
         } else throw new Error();
       } catch(e) {
-        alert('Error al enviar el correo. Por favor, intente vía WhatsApp.');
+        alert('Error al enviar el correo. Por favor, intentá vía WhatsApp.');
         btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
       }
     }
