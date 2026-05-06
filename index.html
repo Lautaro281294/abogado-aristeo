@@ -3,207 +3,380 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo. Abogacía de alta complejidad y representación directa en Córdoba. Director: Dr. Lautaro N. Aristeo."/>
-  <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
-  <title>Estudio Jurídico Aristeo | Excelencia Legal · Córdoba</title>
+  <meta name="description" content="Estudio Jurídico Aristeo. Abogacía de alta complejidad, estrategia patrimonial y representación en el fuero provincial y federal. Director: Dr. Lautaro N. Aristeo."/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Estudio Jurídico Aristeo | Estrategia y Rigor Legal"/>
+  <meta property="og:description" content="Anticipación, blindaje y representación directa ante la Justicia de Córdoba y fueros federales."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_AR"/>
+  <title>Estudio Jurídico Aristeo | Abogacía de Excelencia · Córdoba</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
+  <!-- Vercel Analytics -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
+  <!-- Fuentes Premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ VARIABLES GLOBALES DE ÉLITE ════ */
+  /* ════════════════════════════════════════
+     1. SISTEMA DE DISEÑO DE ALTA GAMA
+  ════════════════════════════════════════ */
   :root {
-    --bg-base:     #0c0f08; 
-    --bg-surface:  #131710; 
-    --bg-panel:    #1a1f16; 
-    --line-color:  rgba(194, 163, 109, 0.15); 
+    --bg-base:     #080a06; 
+    --bg-surface:  #0e120a; 
+    --bg-panel:    #13180e; 
+    --bg-card:     #171d11;
+    --line-color:  rgba(194,163,109,0.12); 
+    --line-hover:  rgba(194,163,109,0.35); 
+    
     --gold-main:   #c2a36d; 
-    --gold-light:  #dfc18c; 
+    --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
-    --text-main:   #F4F1EA; 
-    --text-muted:  rgba(244, 241, 234, 0.65); 
-    --font-heading: 'Cormorant Garamond', serif;
-    --font-body:    'DM Sans', sans-serif;
-    --transition-slow: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    --gold-glow:   rgba(194,163,109,0.08);
+    
+    --text-main:   #F7F5F0; 
+    --text-muted:  rgba(247,245,240,0.65); 
+    
+    --font-heading: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', system-ui, sans-serif;
+    
+    --ease:         cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
-  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  
+  body {
+    background-color: var(--bg-base); color: var(--text-main);
+    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
-  
-  .container { max-width: 1350px; margin: 0 auto; padding: 0 5vw; position: relative; z-index: 10; }
-  .section { padding: 10rem 0; border-top: 1px solid var(--line-color); position: relative; }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg-base); }
+  ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
 
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
-  .label::before { content: ''; width: 35px; height: 1px; background: var(--gold-main); }
+  /* ── Layout & Espaciado (Estilo Boutique) ── */
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 12rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.8rem); font-weight: 400; line-height: 1.1; color: var(--text-main); letter-spacing: -0.01em; margin-bottom: 2.5rem; }
+  /* ── Tipografía Base ── */
+  .label {
+    display: inline-flex; align-items: center; gap: 1rem;
+    font-size: 0.65rem; font-weight: 600; letter-spacing: 0.4em; 
+    text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem;
+  }
+  .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
+
+  .heading-2 {
+    font-family: var(--font-heading); font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 400; line-height: 1.05; color: var(--text-main); 
+    letter-spacing: -0.01em; margin-bottom: 3rem;
+  }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
-  .paragraph { font-size: 1.1rem; line-height: 1.9; color: var(--text-muted); text-align: justify; margin-bottom: 1.5rem; }
 
-  /* ════ HEADER ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition-slow); padding: 2.2rem 0; }
-  .header.scrolled { background: rgba(12, 15, 8, 0.96); backdrop-filter: blur(20px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .paragraph { font-size: 1.15rem; line-height: 1.95; color: var(--text-muted); text-align: justify; margin-bottom: 1.8rem; }
+  .paragraph strong { color: var(--text-main); font-weight: 400; }
+
+  /* ── Animaciones de Revelado ── */
+  .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.15s; }
+  .d2 { transition-delay: 0.3s; }
+
+  /* ── Cursor de Lujo ── */
+  .cursor-dot {
+    width: 6px; height: 6px; background: var(--gold-main); border-radius: 50%;
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%); transition: transform 0.1s, opacity 0.3s;
+  }
+  .cursor-ring {
+    width: 40px; height: 40px; border: 1px solid rgba(194,163,109,0.4); border-radius: 50%;
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%); transition: transform 0.2s var(--ease), width 0.4s var(--ease), height 0.4s var(--ease);
+  }
+  .cursor-ring.hov { width: 60px; height: 60px; border-color: var(--gold-light); background: rgba(194,163,109,0.05); }
+  @media (hover: none) { .cursor-dot, .cursor-ring { display: none; } }
+
+  /* ════════════════════════════════════════
+     2. HEADER UNIFICADO (1 LÍNEA)
+  ════════════════════════════════════════ */
+  .header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+    padding: 2.5rem 0; transition: padding 0.6s var(--ease), background 0.6s var(--ease);
+  }
+  .header.scrolled {
+    background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(20px);
+    padding: 1.2rem 0; border-bottom: 1px solid var(--line-color);
+  }
   
-  .brand { text-decoration: none; display: flex; flex-direction: column; min-width: 200px; flex-shrink: 0; }
-  .brand-top { font-size: 0.55rem; letter-spacing: 0.6em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px;}
-  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s;}
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
+  
+  .brand { text-decoration: none; flex-shrink: 0; }
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.7em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 3px; }
+  .brand-name { font-family: var(--font-heading); font-size: 1.7rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; flex-grow: 1; justify-content: flex-end; }
-  .nav-item { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); text-decoration: none; cursor: pointer; white-space: nowrap; transition: color 0.3s; }
-  .nav-item:hover { color: var(--gold-light); }
-  
+  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
+  .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: var(--gold-main); transform: scaleX(0); transform-origin: right; transition: transform 0.4s var(--ease); }
+  .nav-a:hover { color: var(--gold-light); }
+  .nav-a:hover::after { transform: scaleX(1); transform-origin: left; }
+
   /* Dropdown Premium */
-  .dropdown { position: relative; }
-  .dropdown-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.5rem 0; min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s; box-shadow: 0 20px 50px rgba(0,0,0,0.8); }
-  .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .dropdown-item { display: block; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
-  .dropdown-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
+  .drop { position: relative; display: flex; align-items: center; }
+  .drop-menu {
+    position: absolute; top: calc(100% + 15px); left: 50%; transform: translateX(-50%) translateY(10px);
+    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 300px;
+    opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+  }
+  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .drop-item { display: flex; align-items: center; gap: 1.2rem; padding: 0.9rem 2.5rem; font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
+  .drop-item:hover i { color: var(--gold-main); }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); white-space: nowrap; }
-  .btn-header:hover { background: transparent; color: var(--gold-main); }
+  .btn-nav {
+    display: inline-flex; align-items: center; gap: 12px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem;
+    text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; position: relative; overflow: hidden;
+  }
+  .btn-nav::before { content: ''; position: absolute; inset: 0; background: var(--gold-light); transform: translateX(-101%); transition: transform 0.4s var(--ease); }
+  .btn-nav:hover::before { transform: translateX(0); }
+  .btn-nav span, .btn-nav i { position: relative; z-index: 1; }
 
-  /* ════ HERO CON VIDEO ════ */
-  .hero { min-height: 100vh; display: flex; align-items: center; position: relative; overflow: hidden; }
-  .hero-video-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
-  .hero-video-wrapper video { width: 100%; height: 100%; object-fit: cover; opacity: 0.35; }
-  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: linear-gradient(150deg, rgba(12,15,8,0.95) 0%, rgba(12,15,8,0.6) 50%, rgba(12,15,8,0.95) 100%); }
+  /* ════════════════════════════════════════
+     3. HERO (EL GANCHO DEL PUBLICISTA)
+  ════════════════════════════════════════ */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
   
-  .hero-content { max-width: 950px; position: relative; z-index: 10; padding-top: 5rem; }
-  .hero-title { font-family: var(--font-heading); font-size: clamp(3.5rem, 7vw, 6.5rem); font-weight: 400; line-height: 1.05; margin-bottom: 2rem; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 15px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1.4rem 3.5rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); }
-  .btn-primary:hover { background: transparent; color: var(--gold-main); transform: translateY(-3px); }
-
-  /* ════ FILOSOFÍA ════ */
-  .grid-50-50 { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-  @media (max-width: 900px) { .grid-50-50 { grid-template-columns: 1fr; gap: 4rem; } }
-  .quote-text { font-family: var(--font-heading); font-size: 2.1rem; font-style: italic; color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); padding-left: 2rem; margin-top: 3rem; }
-
-  /* ════ GRILLA ÁREAS 3x2 ════ */
-  .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 5rem; }
-  @media (max-width: 1100px) { .practice-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .practice-grid { grid-template-columns: 1fr; } }
-  .practice-card { background: var(--bg-surface); border: 1px solid var(--line-color); padding: 4.5rem 3.5rem; display: flex; flex-direction: column; text-decoration: none; transition: 0.6s; position: relative; }
-  .practice-card:hover { transform: translateY(-12px); border-color: var(--gold-main); background: var(--bg-panel); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
-  .pc-icon { font-size: 2.5rem; color: var(--gold-main); margin-bottom: 2.5rem; transition: 0.4s; }
-  .practice-card:hover .pc-icon { transform: scale(1.1); color: var(--gold-light); }
-  .pc-title { font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 1.5rem; color: var(--text-main); font-weight: 400; line-height: 1.1; }
-  .pc-desc { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 2.5rem; flex-grow: 1; line-height: 1.8; }
-  .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); border-top: 1px solid var(--line-color); padding-top: 2rem; display: flex; align-items: center; gap: 10px; transition: 0.3s; }
-  .practice-card:hover .pc-link { gap: 15px; color: var(--gold-light); }
-
-  /* ════ CONTACTO & FORMULARIO ════ */
-  .contact-wrapper { display: grid; grid-template-columns: 40% 60%; background: var(--bg-surface); border: 1px solid var(--line-color); margin-top: 5rem; box-shadow: 0 30px 60px rgba(0,0,0,0.4); }
-  @media (max-width: 1000px) { .contact-wrapper { grid-template-columns: 1fr; } }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: linear-gradient(155deg, rgba(8,10,6,0.92) 0%, rgba(8,10,6,0.5) 50%, rgba(8,10,6,0.95) 100%),
+                url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat;
+  }
+  .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+  .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; filter: grayscale(20%); }
   
-  .contact-fast { padding: 5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
-  .contact-form-area { padding: 5rem; }
+  .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(8,10,6,0.8) 0%, transparent 40%, rgba(8,10,6,1) 100%); }
+  .hero-grain { position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); }
   
-  /* Tarjetas de Canales Rápidos */
-  .channel-card { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s; background: var(--bg-surface); }
-  .channel-card:hover { border-color: var(--gold-main); transform: translateX(8px); background: rgba(194,163,109,0.03); }
-  .channel-info { display: flex; align-items: center; gap: 1.5rem; }
-  .channel-info i { font-size: 2rem; color: var(--gold-main); }
-  .channel-text span { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 5px; }
-  .channel-text strong { font-size: 1.1rem; color: var(--text-main); font-weight: 400; }
+  .hero-content { position: relative; z-index: 10; max-width: 1050px; padding-top: 8rem; }
+  
+  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.8rem, 8vw, 7.5rem); font-weight: 400; line-height: 1; letter-spacing: -0.02em; margin-bottom: 2.5rem; }
+  .hero-h1 em { font-style: italic; color: var(--gold-light); }
+  
+  .hero-desc { font-size: 1.25rem; color: var(--text-muted); max-width: 750px; margin-bottom: 4rem; line-height: 1.9; }
 
-  /* Elementos Formulario */
-  .form-group { margin-bottom: 3.5rem; }
-  .form-label { display: block; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1.2rem; letter-spacing: 0.25em; }
-  .form-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-size: 1.15rem; padding: 1rem 0; outline: none; transition: 0.4s; font-family: var(--font-body); }
-  .form-input:focus { border-color: var(--gold-main); }
-  .form-input option { background: var(--bg-panel); color: var(--text-main); }
+  /* ════════════════════════════════════════
+     4. EL MANIFIESTO (EL ESCRITOR/JURISTA)
+  ════════════════════════════════════════ */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+  @media (max-width: 950px) { .grid-2 { grid-template-columns: 1fr; gap: 5rem; } }
+  
+  .qblock {
+    font-family: var(--font-heading); font-style: italic; font-size: clamp(1.8rem, 3vw, 2.5rem);
+    color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main);
+    padding: 1rem 0 1rem 2.5rem; margin: 3rem 0;
+  }
+  
+  .creds { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--line-color); display: flex; flex-direction: column; gap: 0.8rem; }
+  .creds-role { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); }
+  .creds-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); }
+  .creds-matriculas { display: flex; gap: 2rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .creds-mp { font-size: 0.7rem; color: var(--text-muted); letter-spacing: 0.15em; text-transform: uppercase; }
 
-  /* Preguntas Dinámicas */
-  #dynamic-questions { display: none; padding: 2rem 2.5rem; background: rgba(0,0,0,0.2); border-left: 2px solid var(--gold-main); margin-bottom: 3.5rem; animation: fadeIn 0.4s ease; }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  /* ════════════════════════════════════════
+     5. ÁREAS DE PRÁCTICA (GRILLA BOUTIQUE)
+  ════════════════════════════════════════ */
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 5rem; }
+  @media (max-width: 1100px) { .pgrid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 768px) { .pgrid { grid-template-columns: 1fr; } }
+  
+  .pc {
+    background: var(--bg-card); padding: 5rem 3.5rem; display: flex; flex-direction: column;
+    text-decoration: none; transition: 0.6s var(--ease); position: relative; overflow: hidden;
+  }
+  .pc::before {
+    content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 100%, var(--gold-glow) 0%, transparent 70%);
+    opacity: 0; transition: opacity 0.6s; pointer-events: none;
+  }
+  .pc::after {
+    content: ''; position: absolute; left: 0; bottom: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light)); transform: scaleX(0); transform-origin: left; transition: transform 0.6s var(--ease);
+  }
+  .pc:hover { background: var(--bg-panel); transform: translateY(-10px); z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+  .pc:hover::before { opacity: 1; }
+  .pc:hover::after { transform: scaleX(1); }
 
-  /* Botones Doble Envío */
+  .pc-num { font-family: var(--font-heading); font-size: 4rem; font-weight: 300; color: rgba(194,163,109,0.08); line-height: 1; margin-bottom: 1.5rem; transition: 0.4s; }
+  .pc:hover .pc-num { color: rgba(194,163,109,0.2); transform: translateX(10px); }
+  
+  .pc-icon { font-size: 2rem; color: var(--gold-main); margin-bottom: 2rem; }
+  .pc-title { font-family: var(--font-heading); font-size: 2.1rem; font-weight: 400; margin-bottom: 1.5rem; line-height: 1.1; }
+  .pc-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; flex: 1; }
+  
+  .pc-link { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; color: var(--gold-main); border-top: 1px solid var(--line-color); padding-top: 2rem; display: flex; align-items: center; gap: 12px; margin-top: 3rem; transition: gap 0.4s; }
+  .pc:hover .pc-link { gap: 20px; color: var(--gold-light); }
+
+  /* ════════════════════════════════════════
+     6. LA PROMESA (EL CLIENTE)
+  ════════════════════════════════════════ */
+  .band { padding: 10rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; }
+  .band-quote { font-family: var(--font-heading); font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 400; line-height: 1.2; text-align: center; max-width: 1000px; margin: 0 auto; }
+  .band-quote em { color: var(--gold-light); font-style: italic; }
+
+  /* ════════════════════════════════════════
+     7. CONTACTO (DOBLE VÍA DE CONVERSIÓN)
+  ════════════════════════════════════════ */
+  .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 6rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
+  @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
+  
+  .contact-left { padding: 6rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+  
+  .channel { display: flex; align-items: center; justify-content: space-between; padding: 2.2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
+  .channel::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-main); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s var(--ease); }
+  .channel:hover { border-color: var(--line-hover); transform: translateX(12px); background: var(--bg-base); }
+  .channel:hover::before { transform: scaleY(1); }
+  
+  .ch-l { display: flex; align-items: center; gap: 1.8rem; }
+  .ch-l i { font-size: 2rem; color: var(--gold-main); }
+  .ch-tag { display: block; font-size: 0.6rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.3em; margin-bottom: 6px; }
+  .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; }
+
+  .contact-right { padding: 6rem 5rem; }
+  .form-eyebrow { font-size: 0.7rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3.5rem; font-weight: 600; }
+  
+  .fg { margin-bottom: 3rem; position: relative; }
+  .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1.2rem; letter-spacing: 0.25em; }
+  .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; padding: 1rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
+  .fi:focus { border-color: var(--gold-main); }
+  .fi option { background: var(--bg-panel); color: var(--text-main); }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
+
+  .dyn-box { margin-bottom: 3rem; display: none; padding: 2.5rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
+  .dyn-box.show { display: block; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(-10px); } to { opacity:1; transform: translateY(0); } }
+
   .action-buttons { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
-  .btn-submit { flex: 1; padding: 1.6rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-weight: 600; font-family: var(--font-body); text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.4s; display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 250px; }
-  .btn-submit:hover { background: var(--gold-main); color: var(--bg-base); }
-  .btn-submit.wsp { border-color: #25D366; color: #25D366; }
-  .btn-submit.wsp:hover { background: #25D366; color: #fff; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2); }
+  .btn-sub { flex: 1; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 15px; position: relative; overflow: hidden; min-width: 250px; }
+  .btn-sub::before { content: ''; position: absolute; inset: 0; background: var(--gold-main); transform: translateY(101%); transition: transform 0.4s var(--ease); }
+  .btn-sub:hover::before { transform: translateY(0); }
+  .btn-sub:hover { color: var(--bg-base); }
+  .btn-sub.wsp { border-color: #25D366; color: #25D366; }
+  .btn-sub.wsp::before { background: #25D366; }
+  .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
-  /* Ética Disclaimer */
-  .ethics-disclaimer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line-color); font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; text-align: justify; }
+  .disclaimer { font-size: 0.75rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--line-color); padding-top: 2rem; margin-top: 3rem; text-align: justify; }
 
-  .footer { padding: 6rem 0; text-align: center; border-top: 1px solid var(--line-color); background: var(--bg-base); }
-  
-  /* Reveal Animations */
-  .reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.active { opacity: 1; transform: translateY(0); }
+  /* ════════════════════════════════════════
+     8. FOOTER
+  ════════════════════════════════════════ */
+  .footer { padding: 8rem 0 4rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; }
+  .foot-side { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.5; }
+  .foot-r { text-align: right; }
+  .foot-bottom { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); text-align: center; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
   </style>
 </head>
 <body>
 
-<!-- ══ HEADER (Alineación Estricta) ══ -->
-<header class="header" id="header">
-  <div class="container nav-wrapper">
+<!-- ══ CURSOR DE LUJO ══ -->
+<div class="cursor-dot" id="curDot"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<!-- ══ HEADER ══ -->
+<header class="header" id="hdr">
+  <div class="container nav-wrap">
     <a href="#hero" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
     <nav class="nav-links">
-      <a href="#filosofia" class="nav-item">Mi Enfoque</a>
-      <div class="dropdown">
-        <span class="nav-item">Especialidades <i class="fa-solid fa-angle-down" style="font-size: 0.6rem; margin-left: 6px;"></i></span>
-        <div class="dropdown-menu">
-          <a href="/civil-y-comercial.html" class="dropdown-item">Civil y Sucesiones</a>
-          <a href="/comercial-y-corporativo.html" class="dropdown-item">Comercial y Empresas</a>
-          <a href="/laboral-y-art.html" class="dropdown-item">Laboral y ART</a>
-          <a href="/amparos-de-salud.html" class="dropdown-item">Amparos de Salud</a>
-          <a href="/defensa-del-consumidor.html" class="dropdown-item">Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="dropdown-item">Derecho de Familias</a>
+      <a href="#filosofia" class="nav-a">Mi Enfoque</a>
+      <div class="drop">
+        <span class="nav-a" style="cursor:default;">
+          Especialidades
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px; vertical-align: middle;"></i>
+        </span>
+        <div class="drop-menu">
+          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
+          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
+          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
         </div>
       </div>
-      <a href="#contacto" class="btn-header">Contacto Directo <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="#contacto" class="btn-nav">
+        <span>Evaluación de Caso</span> <i class="fa-solid fa-arrow-right"></i>
+      </a>
     </nav>
   </div>
 </header>
 
-<!-- ══ HERO CON VIDEO ══ -->
+<!-- ══ HERO ══ -->
 <section class="hero" id="hero">
-  <div class="hero-video-wrapper">
+  <div class="hero-bg"></div>
+  <div class="hero-vid">
     <video autoplay muted loop playsinline poster="https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg">
       <source src="https://videos.pexels.com/video-files/3135810/3135810-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
     </video>
   </div>
   <div class="hero-overlay"></div>
+  <div class="hero-grain"></div>
   
-  <div class="container hero-content">
-    <h1 class="hero-title reveal">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-    <p class="paragraph reveal" style="max-width: 800px; font-size: 1.25rem; color: var(--text-main); margin-bottom: 3.5rem;">
-      Analizo su situación con la mayor exigencia dogmática y le hablo con absoluta franqueza. Asumo la dirección de su representación personalmente ante la Justicia de Córdoba.
-    </p>
-    <a href="#contacto" class="btn-primary reveal">Analizar mi caso <i class="fa-solid fa-arrow-down" style="margin-left: 10px;"></i></a>
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="hero-h1 reveal d1">
+        La precisión de la norma.<br><em>El arte de la estrategia.</em>
+      </h1>
+      <p class="hero-desc reveal d2">
+        El litigio de alta complejidad exige una mente analítica y un pulso inquebrantable. Traduzco la densidad del derecho en soluciones certeras para proteger su patrimonio, su empresa y su paz mental, con representación directa en el fuero provincial y federal.
+      </p>
+      <a href="#contacto" class="btn-primary reveal d2">
+        <span>Diseñar Estrategia</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- ══ FILOSOFÍA ══ -->
+<!-- ══ EL MANIFIESTO (FILOSOFÍA) ══ -->
 <section class="section" id="filosofia">
   <div class="container">
-    <div class="grid-50-50">
+    <div class="grid-2">
       <div class="reveal">
         <div class="label">Perspectiva Sistémica</div>
-        <h2 class="heading-2">Conocimiento del<br><em>Sistema.</em></h2>
-        <p class="quote-text">"Mi ventaja es anticipar los escenarios comprendiendo exactamente cómo opera la contraparte."</p>
+        <h2 class="heading-2">Arquitectura<br>de la <em>Prueba.</em></h2>
+        <div class="qblock">
+          "En la mesa de negociación o en los estrados, la verdad no basta; se requiere anticipar la mente adversaria y dominar el sistema."
+        </div>
       </div>
-      <div class="reveal">
-        <p class="paragraph">Ejerzo la profesión con una convicción técnica innegociable. El mismo estudio meticuloso que aplico para auditar la estructura de una compañía, lo utilizo para exigir la indemnización de un trabajador o resguardar el patrimonio familiar.</p>
-        <div style="margin-top: 3.5rem; border-top: 1px solid var(--line-color); padding-top: 2.5rem;">
-          <span style="display:block; color: var(--gold-main); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.25em;">Director Técnico</span>
-          <strong style="font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); display: block; margin: 0.5rem 0;">Dr. Lautaro N. Aristeo</strong>
-          <span style="display:block; color: var(--text-muted); font-size: 0.85rem; letter-spacing: 0.1em;">Matrícula Provincial 1-43722</span>
+      <div class="reveal d1">
+        <p class="paragraph">
+          El derecho no es un conjunto de reglas estáticas; es un ecosistema vivo donde cada movimiento altera el resultado final. Mi enfoque combina la erudición del jurista con la visión implacable del estratega.
+        </p>
+        <p class="paragraph">
+          Asumo cada expediente con una convicción innegociable: anular la incertidumbre. Ya sea blindando un contrato corporativo frente a la voracidad del mercado o exigiendo la reparación integral de un daño, mi dirección técnica es personal, directa y sin filtros.
+        </p>
+        <div class="creds">
+          <span class="creds-role">Director Técnico Exclusivo</span>
+          <strong class="creds-name">Dr. Lautaro N. Aristeo</strong>
+          <div class="creds-matriculas">
+            <span class="creds-mp">Matrícula Provincial 1 - 43722</span>
+            <span class="creds-mp" style="color: var(--gold-main);">Matrícula Federal T° 511 F° 222</span>
+          </div>
         </div>
       </div>
     </div>
@@ -211,134 +384,159 @@
 </section>
 
 <!-- ══ ÁREAS DE PRÁCTICA ══ -->
-<section class="section" id="areas" style="background-color: var(--bg-surface);">
+<section class="section" id="areas" style="background:var(--bg-surface);">
   <div class="container">
-    <div class="label">Áreas de Práctica</div>
-    <h2 class="heading-2">Especialidades <em>Jurídicas</em></h2>
-    <div class="practice-grid reveal">
-      <a href="/civil-y-comercial.html" class="practice-card">
+    <div class="reveal">
+      <div class="label">Dominios de Intervención</div>
+      <h2 class="heading-2">Especialidades <em>Jurídicas</em></h2>
+    </div>
+    
+    <div class="pgrid reveal d1">
+      <a href="/civil-y-comercial.html" class="pc">
+        <div class="pc-num">01</div>
         <i class="fa-solid fa-landmark pc-icon"></i>
         <h3 class="pc-title">Derecho Civil</h3>
-        <p class="pc-desc">Sucesiones y protección de inmuebles. Blindaje patrimonial absoluto ante contingencias.</p>
+        <p class="pc-desc">Sucesiones, saneamiento de títulos y protección de inmuebles. Blindaje patrimonial absoluto ante embates de terceros.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
-      <a href="/comercial-y-corporativo.html" class="practice-card">
+      <a href="/comercial-y-corporativo.html" class="pc">
+        <div class="pc-num">02</div>
         <i class="fa-solid fa-file-contract pc-icon"></i>
-        <h3 class="pc-title">Comercial</h3>
-        <p class="pc-desc">Ingeniería contractual y ejecución de cobros. Asesoría preventiva a empresas.</p>
+        <h3 class="pc-title">Comercial & Empresas</h3>
+        <p class="pc-desc">Ingeniería contractual para neutralizar contingencias. Ejecución contundente de cobros y saneamiento de cartera en mora.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
-      <a href="/laboral-y-art.html" class="practice-card">
+      <a href="/laboral-y-art.html" class="pc">
+        <div class="pc-num">03</div>
         <i class="fa-solid fa-briefcase pc-icon"></i>
         <h3 class="pc-title">Laboral y ART</h3>
-        <p class="pc-desc">Despidos e indemnizaciones. Reparación integral ante siniestros y enfermedades laborales.</p>
+        <p class="pc-desc">Equilibro la asimetría de poder. Exijo indemnizaciones exactas por despidos e impugno altas médicas apresuradas.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
-      <a href="/amparos-de-salud.html" class="practice-card">
+      <a href="/amparos-de-salud.html" class="pc">
+        <div class="pc-num">04</div>
         <i class="fa-solid fa-heart-pulse pc-icon"></i>
         <h3 class="pc-title">Amparos de Salud</h3>
-        <p class="pc-desc">Medidas judiciales inmediatas por medicación, cirugías y cobertura por discapacidad.</p>
+        <p class="pc-desc">La salud no admite demoras institucionales. Interpongo cautelares urgentes para forzar la cobertura médica vital.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
-      <a href="/defensa-del-consumidor.html" class="practice-card">
+      <a href="/defensa-del-consumidor.html" class="pc">
+        <div class="pc-num">05</div>
         <i class="fa-solid fa-shield-halved pc-icon"></i>
         <h3 class="pc-title">Consumidor</h3>
-        <p class="pc-desc">Litigios contra bancos por estafas virtuales y reclamos contra planes de ahorro.</p>
+        <p class="pc-desc">Las corporaciones no son intocables. Litigios de alta intensidad por fraudes bancarios y abusos en planes de ahorro.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
-      <a href="/derecho-de-familias.html" class="practice-card">
+      <a href="/derecho-de-familias.html" class="pc">
+        <div class="pc-num">06</div>
         <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
-        <h3 class="pc-title">Familias</h3>
-        <p class="pc-desc">Divorcios y división de bienes abordados con la mayor reserva y celeridad.</p>
+        <h3 class="pc-title">Derecho de Familias</h3>
+        <p class="pc-desc">Organizo las crisis familiares separando las emociones del capital. Divorcios y división de bienes con sigilo y cálculo.</p>
         <div class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACTO INTEGRAL ══ -->
+<!-- ══ LA PROMESA ══ -->
+<div class="band reveal">
+  <div class="container">
+    <h2 class="band-quote">
+      "La incertidumbre es el costo más alto de un conflicto.<br>
+      Mi deber es <em>anularla.</em>"
+    </h2>
+  </div>
+</div>
+
+<!-- ══ CONTACTO (CONVERSIÓN DUAL) ══ -->
 <section class="section" id="contacto">
   <div class="container">
-    <div class="label">Comunicación Directa</div>
-    <h2 class="heading-2">Contacto</h2>
+    <div class="label">Asistencia Técnica Exclusiva</div>
+    <h2 class="heading-2">Petición de <em>Análisis</em></h2>
     
-    <div class="contact-wrapper reveal">
+    <div class="contact-wrap reveal d1">
       
-      <!-- Panel Canales Rápidos -->
-      <div class="contact-fast">
+      <!-- Izquierda: Vías Rápidas -->
+      <div class="contact-left">
         <div>
-          <h3 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; color: var(--gold-light); margin-bottom: 1.5rem;">Vías Directas</h3>
-          <p class="paragraph" style="margin-bottom: 3rem; font-size: 1rem;">Para consultas de urgencia o coordinación de citas en el despacho profesional.</p>
+          <h3 style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 400; margin-bottom: 1.5rem;">Canales<br>Directos</h3>
+          <p class="paragraph" style="margin-bottom: 4rem; font-size: 1.05rem;">Para intervenciones urgentes o coordinación de agendas en el despacho institucional.</p>
           
-          <a href="https://wa.me/5493517736170" class="channel-card" target="_blank">
-            <div class="channel-info">
+          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+            <div class="ch-l">
               <i class="fa-brands fa-whatsapp"></i>
-              <div class="channel-text"><span>Respuesta Inmediata</span><strong>WhatsApp Business</strong></div>
+              <div>
+                <span class="ch-tag">Respuesta Inmediata</span>
+                <strong class="ch-name">WhatsApp Business</strong>
+              </div>
             </div>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
           
-          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel-card">
-            <div class="channel-info">
+          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel">
+            <div class="ch-l">
               <i class="fa-regular fa-envelope"></i>
-              <div class="channel-text"><span>Envío de Documentación</span><strong>E-Mail Institucional</strong></div>
+              <div>
+                <span class="ch-tag">Envío Documental</span>
+                <strong class="ch-name">Correo Electrónico</strong>
+              </div>
             </div>
-            <i class="fa-solid fa-chevron-right"></i>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
         </div>
       </div>
 
-      <!-- Panel Formulario Técnico -->
-      <div class="contact-form-area">
-        <p style="font-size: 0.8rem; letter-spacing: 0.3em; color: var(--gold-main); text-transform: uppercase; margin-bottom: 3rem; font-weight: 600;">Evaluación de Caso Completa (Opcional)</p>
+      <!-- Derecha: Formulario Técnico -->
+      <div class="contact-right">
+        <span class="form-eyebrow">Evaluación Previa del Expediente</span>
         
-        <form id="evaluationForm">
-          <div class="form-group">
-            <label class="form-label">Nombre o Razón Social *</label>
-            <input type="text" id="f_nombre" class="form-input" placeholder="Ingrese su nombre completo" required>
+        <form id="evalForm">
+          <div class="fg">
+            <label class="fl">Titular o Razón Social *</label>
+            <input type="text" id="fn" class="fi" required placeholder="Nombre completo o entidad">
           </div>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;">
-            <div class="form-group">
-              <label class="form-label">Teléfono / WhatsApp *</label>
-              <input type="tel" id="f_telefono" class="form-input" placeholder="Ej: 351 123 4567" required>
+          <div class="frow">
+            <div class="fg">
+              <label class="fl">WhatsApp *</label>
+              <input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000">
             </div>
-            <div class="form-group">
-              <label class="form-label">Área Jurídica *</label>
-              <select id="f_area" class="form-input" required onchange="cargarPreguntasBase()" style="cursor: pointer;">
-                <option value="" disabled selected>Seleccione la especialidad...</option>
-                <option value="Civil">Civil y Sucesiones</option>
-                <option value="Comercial">Comercial y Empresas</option>
-                <option value="Laboral">Laboral y ART</option>
-                <option value="Salud">Amparos de Salud</option>
-                <option value="Consumo">Defensa al Consumidor</option>
-                <option value="Familia">Derecho de Familias</option>
+            <div class="fg">
+              <label class="fl">Materia *</label>
+              <select id="fa" class="fi" required onchange="showDyn(this.value)">
+                <option value="" disabled selected>Seleccionar rama...</option>
+                <option value="civil">Civil y Comercial</option>
+                <option value="laboral">Laboral y Siniestros (ART)</option>
+                <option value="salud">Amparos Médicos</option>
+                <option value="consumo">Defensa del Consumidor</option>
+                <option value="familia">Derecho de Familias</option>
               </select>
             </div>
           </div>
 
-          <!-- Contenedor Preguntas Dinámicas -->
-          <div id="dynamic-questions">
-            <div id="dq-fields"></div>
+          <!-- Pregunta Dinámica -->
+          <div class="dyn-box" id="dynBox">
+            <label class="fl" id="dynLabel">Detalle adicional (Opcional)</label>
+            <input type="text" id="fdyn" class="fi" placeholder="Especifique contexto documental...">
           </div>
 
-          <div class="form-group">
-            <label class="form-label">Resumen de los hechos *</label>
-            <textarea id="f_sintesis" class="form-input" rows="1" placeholder="Relate brevemente la situación..." required style="resize: none;"></textarea>
+          <div class="fg">
+            <label class="fl">Síntesis de los hechos *</label>
+            <textarea id="fs" class="fi" rows="2" required placeholder="Describa el conflicto. Toda información remitida es confidencial." style="resize: none;"></textarea>
           </div>
           
           <div class="action-buttons">
-            <button type="button" class="btn-submit wsp" onclick="procesarEnvio('wsp')">
-              <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i> Vía WhatsApp
+            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
+              <span>Derivar vía WhatsApp</span> <i class="fa-brands fa-whatsapp"></i>
             </button>
-            <button type="button" class="btn-submit" onclick="procesarEnvio('email')">
-              <i class="fa-solid fa-lock" style="font-size: 1.1rem;"></i> Vía E-Mail Seguro
+            <button type="button" class="btn-sub" onclick="enviar('mail')">
+              <span>Derivar vía E-Mail Seguro</span> <i class="fa-solid fa-lock"></i>
             </button>
           </div>
 
-          <!-- Código de Ética Disclaimer -->
-          <div class="ethics-disclaimer">
-            Conforme a la <strong>Ley 5805 (Prov. de Córdoba)</strong>, la información proporcionada se encuentra estrictamente resguardada bajo secreto profesional. El envío de este formulario es a los fines de evaluar la viabilidad legal y no garantiza la asunción del caso ni constituye promesa de resultado.
+          <!-- Cumplimiento Ético -->
+          <div class="disclaimer">
+            La remisión de esta síntesis se encuentra estrictamente resguardada por el <strong>secreto profesional (Ley 5805, Córdoba)</strong>. La evaluación preliminar del caso no constituye vinculación contractual ni promesa de resultado, garantizando el decoro y la transparencia exigidos por el Colegio de Abogados.
           </div>
         </form>
       </div>
@@ -349,90 +547,102 @@
 <!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
-    <div style="font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; color: var(--text-main); margin-bottom: 1rem;">ESTUDIO JURÍDICO ARISTEO</div>
-    <div style="font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted);">Córdoba, República Argentina | © 2026 Todos los derechos reservados</div>
+    <div class="foot-grid">
+      <div class="foot-side">
+        Córdoba Capital<br>Fuero Provincial y Federal
+      </div>
+      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+      <div class="foot-side foot-r">
+        Dr. Lautaro N. Aristeo<br>
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | Mat. Fed. T° 511 F° 222</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      © 2026 Estudio Jurídico Aristeo · Excelencia y Estrategia Legal
+    </div>
   </div>
 </footer>
 
 <script>
-  /* Comportamiento del Menú al scrollear */
+  /* ── Efecto Scroll Header ── */
   window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  /* Animaciones Reveal */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  /* ── Cursor Personalizado ── */
+  const dot = document.getElementById('curDot'), ring = document.getElementById('curRing');
+  let mx=0, my=0, rx=0, ry=0;
+  window.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
+  function renderCursor() {
+    dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
+    rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+    ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
 
-  /* Lógica de Preguntas Dinámicas */
-  const DYN_QUESTIONS = {
-    'Civil': '<label class="form-label">Contexto (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Ej: Hay un inmueble usurpado, herencia sin dividir...">',
-    'Comercial': '<label class="form-label">Documentación (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Ej: Poseo cheques rechazados, contrato firmado...">',
-    'Laboral': '<label class="form-label">Estado de la relación (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Ej: Me despidieron, estoy en negro, accidente ART...">',
-    'Salud': '<label class="form-label">Prestadora (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Nombre de la Obra Social / Prepaga">',
-    'Consumo': '<label class="form-label">Entidad involucrada (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Nombre del banco, concesionaria o aseguradora">',
-    'Familia': '<label class="form-label">Situación (Opcional)</label><input type="text" id="dq_1" class="form-input" placeholder="Ej: Existen hijos menores de edad, bienes gananciales...">'
+  document.querySelectorAll('a, button, .pc, .channel, .drop-item, select, input, textarea').forEach(el => {
+    el.addEventListener('mouseenter', () => ring.classList.add('hov'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hov'));
+  });
+
+  /* ── Observador de Revelado ── */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── Lógica Dinámica Formulario ── */
+  const DYN_LABELS = {
+    'civil': 'Estado Documental', 'comercial': 'Instrumento de Cobro / Contrato',
+    'laboral': 'Intercambio Telegráfico', 'salud': 'Entidad Prestadora de Salud',
+    'consumo': 'Empresa / Entidad Financiera', 'familia': 'Existencia de Menores o Bienes'
   };
 
-  function cargarPreguntasBase() {
-    const area = document.getElementById('f_area').value;
-    const dq = document.getElementById('dynamic-questions');
-    const fields = document.getElementById('dq-fields');
-    if (DYN_QUESTIONS[area]) {
-      fields.innerHTML = DYN_QUESTIONS[area];
-      dq.style.display = 'block';
-    } else {
-      dq.style.display = 'none';
-    }
+  function showDyn(val) {
+    const box = document.getElementById('dynBox');
+    const label = document.getElementById('dynLabel');
+    if (DYN_LABELS[val]) { label.textContent = DYN_LABELS[val] + ' (Opcional)'; box.classList.add('show'); } 
+    else { box.classList.remove('show'); }
   }
 
-  /* Lógica de Doble Envío */
-  async function procesarEnvio(metodo) {
+  /* ── Lógica de Envío Dual ── */
+  async function enviar(metodo) {
     const btn = event.currentTarget;
-    const nom = document.getElementById('f_nombre').value.trim();
-    const tel = document.getElementById('f_telefono').value.trim();
-    const area = document.getElementById('f_area').value;
-    const extra = document.getElementById('dq_1') ? document.getElementById('dq_1').value.trim() : 'N/A';
-    const caso = document.getElementById('f_sintesis').value.trim();
+    const n = document.getElementById('fn').value.trim();
+    const t = document.getElementById('ft').value.trim();
+    const a = document.getElementById('fa');
+    const areaText = a.options[a.selectedIndex].text;
+    const d = document.getElementById('fdyn').value.trim() || 'No informado';
+    const s = document.getElementById('fs').value.trim();
 
-    if(!nom || !tel || !area || !caso) { alert("La excelencia técnica requiere precisión. Por favor, complete todos los campos obligatorios marcados con (*)."); return; }
+    if(!n || !t || !a.value || !s) { alert('El análisis requiere precisión. Complete los campos obligatorios (*).'); return; }
 
-    if(metodo === 'wsp') {
-      const msj = encodeURIComponent(`*Consulta Técnica | Estudio Aristeo*\n\n*Titular:* ${nom}\n*Área Jurídica:* ${area}\n*Dato Adicional:* ${extra}\n\n*Síntesis:* ${caso}`);
-      window.open(`https://wa.me/5493517736170?text=${msj}`);
-    } 
-    else if (metodo === 'email') {
+    if (metodo === 'wsp') {
+      const msg = encodeURIComponent(`*Petición de Análisis Técnico*\n\n*Titular:* ${n}\n*Materia:* ${areaText}\n*Dato Adicional:* ${d}\n\n*Síntesis de los hechos:*\n${s}`);
+      window.open(`https://wa.me/5493517736170?text=${msg}`);
+    } else {
       const originalText = btn.innerHTML;
-      btn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+      btn.innerHTML = '<span>Procesando...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
       btn.style.pointerEvents = 'none';
 
-      const formData = new FormData();
-      formData.append("access_key", "be72b330-7de9-4f56-99f6-491c951d11dd");
-      formData.append("subject", `Evaluación Técnica: ${area} - ${nom}`);
-      formData.append("Titular", nom); 
-      formData.append("WhatsApp", tel); 
-      formData.append("Área", area); 
-      formData.append("Dato Extra", extra);
-      formData.append("Caso", caso);
-      
+      const fd = new FormData();
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+      fd.append('subject', `Evaluación: ${areaText} - ${n}`);
+      fd.append('Titular', n); fd.append('WhatsApp', t); fd.append('Rama', areaText);
+      fd.append('Dato Contextual', d); fd.append('Hechos', s);
+
       try {
-        const response = await fetch("https://api.web3forms.com/submit", { method: "POST", body: formData });
-        if(response.ok) { 
-          btn.innerHTML = '¡Enviado con éxito! <i class="fa-solid fa-check"></i>';
-          document.getElementById('evaluationForm').reset();
-          document.getElementById('dynamic-questions').style.display = 'none';
+        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+        if (r.ok) {
+          btn.innerHTML = '<span>¡Recibido!</span> <i class="fa-solid fa-check"></i>';
+          document.getElementById('evalForm').reset();
+          document.getElementById('dynBox').classList.remove('show');
           setTimeout(() => { btn.innerHTML = originalText; btn.style.pointerEvents = 'auto'; }, 4000);
-        } else {
-          throw new Error('Network error');
-        }
-      } catch(e) { 
-        alert("Error de conexión al enviar el correo. Por favor, intente derivar su consulta mediante el botón de WhatsApp."); 
-        btn.innerHTML = originalText; 
-        btn.style.pointerEvents = 'auto'; 
+        } else throw new Error();
+      } catch(e) {
+        alert('Error de conexión. Intente remitir vía WhatsApp.');
+        btn.innerHTML = originalText; btn.style.pointerEvents = 'auto';
       }
     }
   }
