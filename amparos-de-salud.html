@@ -17,25 +17,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ SISTEMA DE DISEÑO DE ALTA GAMA ════ */
+  /* ════ SISTEMA DE DISEÑO (OLIVA) ════ */
   :root {
-    --bg-base:     #080a06; 
-    --bg-surface:  #0e120a; 
-    --bg-panel:    #13180e; 
+    --bg-base:     #161913; 
+    --bg-surface:  #1f241a; 
+    --bg-panel:    #292f22; 
     --line-color:  rgba(194, 163, 109, 0.15); 
+    --line-hover:  rgba(194, 163, 109, 0.35);
+    
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
     --gold-dark:   #8a7346; 
+    
     --text-main:   #F7F5F0; 
     --text-muted:  rgba(247, 245, 240, 0.75); 
+    
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
+    
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
-  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { 
+    background-color: var(--bg-base); color: var(--text-main); 
+    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; 
+  }
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg-base); }
@@ -54,32 +63,35 @@
 
   /* ════ HEADER ════ */
   .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
-  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
   
-  .brand { text-decoration: none; flex-shrink: 0; }
-  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
-  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
+  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
+  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; position: relative; padding: 5px 0; }
+  .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
+  .nav-a:hover::after { width: 100%; }
 
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
-  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
-  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
+  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
+  .drop-item:hover i { color: var(--gold-main); }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
   /* ════ HERO INTERNO ════ */
   .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
   .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(100%); }
-  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8,10,6,0.6) 0%, rgba(8,10,6,1) 100%); }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
   
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
@@ -106,15 +118,13 @@
   .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
   .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
 
-  /* ════ FOOTER EXACTO AL INDEX ════ */
+  /* ════ FOOTER ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; margin-bottom: 4rem; }
-  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; } .foot-r { text-align: center !important; } }
+  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
+  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
   
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
-  .foot-side { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.2; }
-  .foot-r { text-align: right; }
-  
+  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
   </style>
 </head>
@@ -136,7 +146,7 @@
         </span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
-          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/comercial-y-empresarial.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
           <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
@@ -156,7 +166,7 @@
     <i class="fa-solid fa-heart-pulse ph-icon reveal"></i>
     <h1 class="ph-title reveal">Amparos de Salud</h1>
     <p class="ph-desc reveal">
-      La salud de tu familia no admite demoras ni excusas administrativas. Interpongo medidas judiciales urgentes para obligar a Obras Sociales y Prepagas a garantizar la cobertura médica vital que te corresponde por ley.
+      La salud tuya y de tu familia no admite demoras ni excusas administrativas. Interpongo medidas judiciales urgentes para solicitar a Obras Sociales y Prepagas que brinden la cobertura médica vital que corresponde por ley.
     </p>
   </div>
 </section>
@@ -168,9 +178,9 @@
       
       <div class="service-card reveal">
         <i class="fa-solid fa-pills sc-icon"></i>
-        <h3 class="sc-title">Medicación de Alto Costo</h3>
+        <h3 class="sc-title">Medicación y Tratamientos</h3>
         <p class="sc-desc">
-          Frente a la negativa o demora en la entrega de drogas oncológicas o tratamientos crónicos, exijo judicialmente la provisión al 100% de los medicamentos que las prestadoras intentan eludir o cubrir parcialmente.
+          Frente a la negativa o demora en la entrega de medicación o tratamientos indicados, requiero judicialmente la provisión integral de los medicamentos que las prestadoras intentan eludir o cubrir parcialmente.
         </p>
       </div>
 
@@ -178,7 +188,7 @@
         <i class="fa-solid fa-bed-pulse sc-icon"></i>
         <h3 class="sc-title">Cirugías y Prótesis</h3>
         <p class="sc-desc">
-          Impulso órdenes judiciales urgentes (Medidas Cautelares) para garantizar internaciones, intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo exacto estipulado por tu médico tratante.
+          Impulso órdenes judiciales urgentes (Medidas Cautelares) para proteger internaciones, intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo estipulado por tu médico tratante.
         </p>
       </div>
 
@@ -186,7 +196,7 @@
         <i class="fa-solid fa-wheelchair sc-icon"></i>
         <h3 class="sc-title">Discapacidad (CUD)</h3>
         <p class="sc-desc">
-          Amparados en la Ley 24.901, obligo al cumplimiento estricto de la cobertura al 100% en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
+          Amparados en la Ley 24.901, demando el cumplimiento estricto de la cobertura integral en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
         </p>
       </div>
 
@@ -194,7 +204,7 @@
         <i class="fa-solid fa-ban sc-icon"></i>
         <h3 class="sc-title">Abusos y Aumentos</h3>
         <p class="sc-desc">
-          Presento acciones legales para detener incrementos abusivos en las cuotas de tu medicina prepaga. Además, revierto bajas arbitrarias y obligo a mantener tu cobertura frente a despidos, jubilación o "enfermedades preexistentes".
+          Presento acciones legales para detener incrementos abusivos en las cuotas de tu medicina prepaga. Además, acciono ante bajas arbitrarias y reclamo el mantenimiento de tu cobertura frente a despidos, jubilación o "enfermedades preexistentes".
         </p>
       </div>
 
@@ -219,7 +229,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en cuestión de días (a veces horas), mientras se resuelve el fondo del juicio.
+            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en poco tiempo, mientras se resuelve el fondo del juicio.
           </div>
         </div>
       </div>
@@ -238,12 +248,12 @@
 
       <div class="faq-item">
         <button class="faq-question">
-          <span>Mi hijo tiene Certificado Único de Discapacidad (CUD). ¿Me pueden cobrar copagos?</span>
+          <span>Tengo (o un familiar tiene) el Certificado Único de Discapacidad (CUD). ¿Me pueden cobrar copagos?</span>
           <i class="fa-solid fa-chevron-down"></i>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No. Si poseés el CUD, la Ley Nacional garantiza el <strong>100% de cobertura integral</strong> en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante, transporte y educación). Las obras sociales y prepagas tienen expresamente prohibido imponerte topes de sesiones o cobrarte copagos/coseguros por estas prestaciones.
+            No. Si poseés el CUD, la Ley Nacional ampara la cobertura integral en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante, transporte y educación). Las obras sociales y prepagas tienen expresamente prohibido imponerte topes de sesiones o cobrarte copagos/coseguros por estas prestaciones.
           </div>
         </div>
       </div>
@@ -255,7 +265,7 @@
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            No. Por ley, tenés el derecho irrenunciable a mantener la cobertura de tu obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si estás en medio de un tratamiento médico prolongado, podemos accionar para exigir la continuidad más allá de ese plazo.
+            No. Por ley, tenés el derecho irrenunciable a mantener la cobertura de tu obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si estás en medio de un tratamiento médico prolongado, podemos accionar para requerir la continuidad más allá de ese plazo.
           </div>
         </div>
       </div>
@@ -272,19 +282,21 @@
   </div>
 </section>
 
-<!-- ══ FOOTER IDÉNTICO AL INDEX ══ -->
+<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
-    <div class="foot-grid">
-      <div class="foot-side" style="text-align: left;">
-        CÓRDOBA CAPITAL<br>FUERO PROVINCIAL Y FEDERAL
-      </div>
+    <div class="foot-center">
       <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-side foot-r">
-        DR. LAUTARO N. ARISTEO<br>
-        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+      <div class="foot-info">
+        Córdoba Capital | Fuero Provincial y Federal<br>
+        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
       </div>
     </div>
+    
+    <div class="legal-warning">
+      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
+    </div>
+
     <div class="foot-bottom">
       © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
     </div>
