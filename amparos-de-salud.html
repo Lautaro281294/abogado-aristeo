@@ -7,13 +7,17 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Amparos de Salud | Estudio Jurídico Aristeo</title>
 
+  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
+  /* ════ SISTEMA DE DISEÑO (OLIVA) ════ */
   :root {
     --bg-base:     #161913; 
     --bg-surface:  #1f241a; 
@@ -21,6 +25,7 @@
     --line-color:  rgba(194, 163, 109, 0.15); 
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
+    --gold-dark:   #8a7346; 
     --text-main:   #F7F5F0; 
     --text-muted:  rgba(247, 245, 240, 0.75); 
     --font-heading: 'Cormorant Garamond', Georgia, serif;
@@ -29,38 +34,41 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); line-height: 1.85; overflow-x: hidden; }
-  .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { 
+    background-color: var(--bg-base); color: var(--text-main); 
+    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
+    -webkit-font-smoothing: antialiased; overflow-x: hidden; 
+  }
 
-  /* ════ HEADER & MENU FIX ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: 0.5s var(--ease); }
-  .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+  .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 6rem 0; border-top: 1px solid var(--line-color); position: relative; }
+
+  /* ════ HEADER & MOBILE NAV ════ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; transition: 0.5s var(--ease); }
+  .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 0.8rem 0; border-bottom: 1px solid var(--line-color); }
   .nav-wrap { display: flex; align-items: center; justify-content: space-between; }
   
   .brand { text-decoration: none; z-index: 1001; }
-  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; }
-  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; color: var(--text-main); text-transform: uppercase; }
+  .brand-top { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; }
+  .brand-name { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 500; color: var(--text-main); text-transform: uppercase; }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; }
+  .menu-toggle { display: none; font-size: 1.5rem; color: var(--gold-main); cursor: pointer; z-index: 1001; }
+
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
   .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; }
   
   /* Dropdown Desk */
   .drop { position: relative; cursor: pointer; }
   .drop-menu { 
     position: absolute; top: 100%; left: 0; background: var(--bg-surface); 
-    border: 1px solid var(--line-color); min-width: 250px; opacity: 0; visibility: hidden; 
+    border: 1px solid var(--line-color); min-width: 240px; opacity: 0; visibility: hidden; 
     transform: translateY(10px); transition: 0.3s; padding: 1rem 0;
   }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateY(0); }
-  
-  .drop-item { 
-    display: block; padding: 0.8rem 2rem; color: var(--text-muted); 
-    text-decoration: none; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s;
-  }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-main); }
+  .drop-item { display: block; padding: 0.6rem 2rem; color: var(--text-muted); text-decoration: none; font-size: 0.75rem; text-transform: uppercase; }
 
-  .menu-toggle { display: none; font-size: 1.5rem; color: var(--gold-main); cursor: pointer; z-index: 1001; }
-
+  /* Adaptación Móvil */
   @media (max-width: 950px) {
     .menu-toggle { display: block; }
     .nav-links {
@@ -72,20 +80,33 @@
     .nav-a { font-size: 1.2rem; }
     .drop-menu { position: static; opacity: 1; visibility: visible; transform: none; display: none; border: none; background: transparent; text-align: center; }
     .drop.active .drop-menu { display: block; }
-    .drop-item { font-size: 1rem; }
+    .btn-header { font-size: 1rem !important; width: 80%; justify-content: center; }
   }
 
-  /* ════ RESTO DE ESTILOS ════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); color: var(--text-main); }
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; }
-  
-  .privacy-wrap { margin: 2rem 0; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 10px; cursor: pointer; }
-  .footer { padding: 6rem 0 3rem; background: var(--bg-surface); text-align: center; border-top: 1px solid var(--line-color); }
-  .legal-warning { font-size: 0.65rem; color: var(--text-muted); max-width: 800px; margin: 2rem auto; text-transform: uppercase; }
+  /* ════ BOTÓN DE CONTACTO SIMPLIFICADO ════ */
+  .btn-header { 
+    display: inline-flex; align-items: center; gap: 10px; font-size: 0.75rem; 
+    font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; 
+    color: var(--bg-base); background: var(--gold-main); padding: 0.8rem 1.8rem; 
+    text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main);
+  }
+  .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* ════ HERO & CARDS ════ */
+  .page-hero { padding: 12rem 0 6rem; text-align: center; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(2.5rem, 8vw, 4rem); margin-bottom: 1rem; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+  .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 3rem 2rem; transition: 0.4s; }
+  .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); }
 
   .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* FAQ */
+  .faq-container { max-width: 800px; margin: 0 auto; }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.4rem; color: var(--text-main); border-bottom: 1px solid var(--line-color); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: 0.5s var(--ease); color: var(--text-muted); font-size: 1rem; }
+  .faq-answer-inner { padding: 1rem 0; }
   </style>
 </head>
 <body>
@@ -102,12 +123,11 @@
     <nav class="nav-links" id="navLinks">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop" onclick="toggleDrop(event)">
-        <span class="nav-a">Áreas <i class="fa-solid fa-angle-down"></i></span>
+        <span class="nav-a">Áreas <i class="fa-solid fa-angle-down" style="font-size: 0.6rem;"></i></span>
         <div class="drop-menu">
-          <a href="/civil-y-sucesiones.html" class="drop-item">Civil y Sucesiones</a>
           <a href="/laboral-y-art.html" class="drop-item">Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item">Amparos de Salud</a>
-          <a href="/defensa-del-consumidor.html" class="drop-item">Consumidor</a>
+          <a href="/derecho-de-familias.html" class="drop-item">Familias</a>
         </div>
       </div>
       <a href="/contacto.html" class="btn-header">Contactame</a>
@@ -116,75 +136,82 @@
 </header>
 
 <section class="page-hero">
-  <div class="container">
+  <div class="container ph-content">
     <h1 class="ph-title reveal">Amparos de Salud</h1>
-    <p class="reveal">Protección judicial inmediata para su bienestar en Córdoba.</p>
+    <p class="ph-desc reveal">Medidas judiciales urgentes en Córdoba para garantizar su cobertura médica.</p>
   </div>
 </section>
 
-<section class="container" style="padding: 5rem 0;">
-  <form id="evalForm">
-    <label class="privacy-wrap">
-      <input type="checkbox" id="privacyConsent" required>
-      <span>Acepto el tratamiento de datos (Ley 25.326).</span>
-    </label>
-    <button type="button" onclick="enviar('whatsapp')" class="btn-header">Enviar vía WhatsApp</button>
-    <p style="font-size: 0.7rem; margin-top: 1rem; color: var(--text-muted);">Secreto Profesional - Ley 5805.</p>
-  </form>
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <h3 class="sc-title">Medicación</h3>
+        <p class="sc-desc">Reclamos inmediatos por negativas en entrega de fármacos y tratamientos oncológicos o crónicos.</p>
+      </div>
+      <div class="service-card reveal">
+        <h3 class="sc-title">Discapacidad</h3>
+        <p class="sc-desc">Cobertura integral según Ley 24.901: terapias, transporte y maestros integradores.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
+<section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
-    <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-    <div class="legal-warning">
-      La información en este sitio no constituye asesoramiento legal vinculante.
+    <div class="faq-container reveal">
+      <div class="faq-item">
+        <button class="faq-question"><span>¿Qué es un amparo de salud?</span> <i class="fa-solid fa-plus"></i></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Es la vía judicial rápida para exigir coberturas médicas ante negativas de obras sociales o prepagas.</div></div>
+      </div>
     </div>
-    <div style="font-size: 0.6rem; color: var(--text-muted);">© 2026 ESTUDIO JURÍDICO ARISTEO</div>
+
+    <!-- BOTÓN FINAL SIMPLIFICADO -->
+    <div style="text-align: center; margin-top: 4rem;" class="reveal">
+      <a href="/contacto.html" class="btn-header">Iniciar Consulta <i class="fa-solid fa-chevron-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--line-color);">
+  <div class="container">
+    <p style="font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 0.1em;">ESTUDIO JURÍDICO ARISTEO</p>
+    <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem;">M.P. 1 - 43722 | Córdoba, Argentina</p>
   </div>
 </footer>
 
 <script>
-  // FIX: Función Toggle para Móvil
+  // Menú Móvil
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('active');
   }
 
-  // FIX: Dropdown en Móvil (Click para abrir)
   function toggleDrop(e) {
     if (window.innerWidth <= 950) {
       e.currentTarget.classList.toggle('active');
     }
   }
 
-  // Cerrar menú al clickear link
-  document.querySelectorAll('.nav-a, .drop-item').forEach(link => {
-    link.addEventListener('click', (e) => {
-      if(!link.parentElement.classList.contains('drop')) {
-        document.getElementById('navLinks').classList.remove('active');
-      }
-    });
-  });
-
-  // Validación de Consentimiento
-  async function enviar(metodo) {
-    const consent = document.getElementById('privacyConsent');
-    if (!consent.checked) {
-      alert("Por favor, acepte el consentimiento de datos personales.");
-      return;
-    }
-    alert("Iniciando envío por " + metodo);
-  }
-
-  // Scroll & Animaciones
+  // Scroll Header
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  // FAQ
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = answer.style.maxHeight;
+      document.querySelectorAll('.faq-answer').forEach(ans => ans.style.maxHeight = null);
+      answer.style.maxHeight = isOpen ? null : answer.scrollHeight + "px";
+    });
+  });
+
+  // Animaciones de entrada
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
-
 </body>
 </html>
