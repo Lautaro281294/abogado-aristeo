@@ -7,60 +7,58 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Amparos de Salud | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ SISTEMA DE DISEÑO (OLIVA) ════ */
   :root {
     --bg-base:     #161913; 
     --bg-surface:  #1f241a; 
     --bg-panel:    #292f22; 
     --line-color:  rgba(194, 163, 109, 0.15); 
-    --line-hover:  rgba(194, 163, 109, 0.35);
-    
     --gold-main:   #c2a36d; 
     --gold-light:  #e3c999; 
-    --gold-dark:   #8a7346; 
-    
     --text-main:   #F7F5F0; 
     --text-muted:  rgba(247, 245, 240, 0.75); 
-    
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'DM Sans', system-ui, sans-serif;
-    
     --ease:          cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; font-size: 16px; }
-  body { 
-    background-color: var(--bg-base); color: var(--text-main); 
-    font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
-    -webkit-font-smoothing: antialiased; overflow-x: hidden; 
-  }
-
+  body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); line-height: 1.85; overflow-x: hidden; }
   .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  /* ════ HEADER & MOBILE MENU ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
+  /* ════ HEADER & MENU FIX ════ */
+  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: 0.5s var(--ease); }
   .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; }
   
-  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; z-index: 1001; }
-  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; }
-  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; }
+  .brand { text-decoration: none; z-index: 1001; }
+  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; }
+  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; color: var(--text-main); text-transform: uppercase; }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; position: relative; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; }
   
+  /* Dropdown Desk */
+  .drop { position: relative; cursor: pointer; }
+  .drop-menu { 
+    position: absolute; top: 100%; left: 0; background: var(--bg-surface); 
+    border: 1px solid var(--line-color); min-width: 250px; opacity: 0; visibility: hidden; 
+    transform: translateY(10px); transition: 0.3s; padding: 1rem 0;
+  }
+  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+  
+  .drop-item { 
+    display: block; padding: 0.8rem 2rem; color: var(--text-muted); 
+    text-decoration: none; font-size: 0.75rem; text-transform: uppercase; transition: 0.3s;
+  }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-main); }
+
   .menu-toggle { display: none; font-size: 1.5rem; color: var(--gold-main); cursor: pointer; z-index: 1001; }
 
   @media (max-width: 950px) {
@@ -68,42 +66,25 @@
     .nav-links {
       position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
       background: var(--bg-base); flex-direction: column; justify-content: center;
-      transition: 0.5s var(--ease); z-index: 1000;
+      transition: 0.5s var(--ease); z-index: 1000; gap: 2rem;
     }
     .nav-links.active { right: 0; }
-    .drop-menu { position: static !important; opacity: 1 !important; visibility: visible !important; transform: none !important; background: transparent !important; box-shadow: none !important; display: none; text-align: center; }
+    .nav-a { font-size: 1.2rem; }
+    .drop-menu { position: static; opacity: 1; visibility: visible; transform: none; display: none; border: none; background: transparent; text-align: center; }
     .drop.active .drop-menu { display: block; }
+    .drop-item { font-size: 1rem; }
   }
 
-  /* ════ UI ELEMENTS ════ */
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
-  .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); }
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; margin-bottom: 2.5rem; }
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); }
+  /* ════ RESTO DE ESTILOS ════ */
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; }
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); color: var(--text-main); }
+  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; }
+  
+  .privacy-wrap { margin: 2rem 0; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 10px; cursor: pointer; }
+  .footer { padding: 6rem 0 3rem; background: var(--bg-surface); text-align: center; border-top: 1px solid var(--line-color); }
+  .legal-warning { font-size: 0.65rem; color: var(--text-muted); max-width: 800px; margin: 2rem auto; text-transform: uppercase; }
 
-  /* ════ LEGAL & FORMS ════ */
-  .privacy-wrap { margin: 2rem 0; font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
-  .disclaimer { font-size: 0.7rem; color: var(--text-muted); margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.5; }
-
-  /* ════ FOOTER ESTANDARIZADO ════ */
-  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
-  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
-  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
-
-  /* ════ COMPONENTES ESPECÍFICOS (HERO & CARDS) ════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
-  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(100%); }
-  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
-  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
-  .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
-  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
-  .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
-  .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); }
-
-  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
+  .reveal { opacity: 0; transform: translateY(20px); transition: 0.8s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
   </style>
 </head>
@@ -121,11 +102,12 @@
     <nav class="nav-links" id="navLinks">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop" onclick="toggleDrop(event)">
-        <span class="nav-a" style="cursor:default;">Áreas <i class="fa-solid fa-angle-down"></i></span>
+        <span class="nav-a">Áreas <i class="fa-solid fa-angle-down"></i></span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item">Civil y Sucesiones</a>
           <a href="/laboral-y-art.html" class="drop-item">Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item">Amparos de Salud</a>
+          <a href="/defensa-del-consumidor.html" class="drop-item">Consumidor</a>
         </div>
       </div>
       <a href="/contacto.html" class="btn-header">Contactame</a>
@@ -134,100 +116,72 @@
 </header>
 
 <section class="page-hero">
-  <div class="ph-bg"></div>
-  <div class="ph-overlay"></div>
-  <div class="container ph-content">
+  <div class="container">
     <h1 class="ph-title reveal">Amparos de Salud</h1>
-    <p class="ph-desc reveal">Medidas judiciales urgentes contra Obras Sociales y Prepagas en Córdoba.</p>
+    <p class="reveal">Protección judicial inmediata para su bienestar en Córdoba.</p>
   </div>
 </section>
 
-<section class="section">
-  <div class="container">
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <h3 class="sc-title">Medicación y Tratamientos</h3>
-        <p class="sc-desc">Acciones legales para la provisión inmediata de fármacos y terapias rechazadas.</p>
-      </div>
-      <div class="service-card reveal">
-        <h3 class="sc-title">Discapacidad (CUD)</h3>
-        <p class="sc-desc">Cumplimiento de la Ley 24.901 para cobertura integral sin límites ni copagos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMULARIO DE EJEMPLO ADAPTADO -->
-<section class="section" id="contacto">
-  <div class="container">
-    <form id="evalForm" style="max-width: 600px; margin: 0 auto;">
-      <!-- (Inputs de nombre, email, etc. irían aquí) -->
-      
-      <label class="privacy-wrap">
-        <input type="checkbox" id="privacyConsent" required>
-        <span>He leído y acepto el tratamiento de mis datos personales conforme a la Ley N° 25.326.</span>
-      </label>
-
-      <button type="button" onclick="enviar('whatsapp')" class="btn-header">Enviar Consulta</button>
-      
-      <div class="disclaimer">
-        Toda información compartida se encuentra protegida por el secreto profesional (Ley 5805 Prov. Córdoba).
-      </div>
-    </form>
-  </div>
+<section class="container" style="padding: 5rem 0;">
+  <form id="evalForm">
+    <label class="privacy-wrap">
+      <input type="checkbox" id="privacyConsent" required>
+      <span>Acepto el tratamiento de datos (Ley 25.326).</span>
+    </label>
+    <button type="button" onclick="enviar('whatsapp')" class="btn-header">Enviar vía WhatsApp</button>
+    <p style="font-size: 0.7rem; margin-top: 1rem; color: var(--text-muted);">Secreto Profesional - Ley 5805.</p>
+  </form>
 </section>
 
 <footer class="footer">
   <div class="container">
-    <div class="foot-center">
-      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-info">
-        Córdoba Capital | Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722</span>
-      </div>
-    </div>
+    <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
     <div class="legal-warning">
-      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante.
+      La información en este sitio no constituye asesoramiento legal vinculante.
     </div>
-    <div class="foot-bottom">© 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS</div>
+    <div style="font-size: 0.6rem; color: var(--text-muted);">© 2026 ESTUDIO JURÍDICO ARISTEO</div>
   </div>
 </footer>
 
 <script>
-  // 1. GESTIÓN DE MENÚ
+  // FIX: Función Toggle para Móvil
   function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('active');
   }
 
+  // FIX: Dropdown en Móvil (Click para abrir)
   function toggleDrop(e) {
     if (window.innerWidth <= 950) {
       e.currentTarget.classList.toggle('active');
     }
   }
 
+  // Cerrar menú al clickear link
   document.querySelectorAll('.nav-a, .drop-item').forEach(link => {
-    link.addEventListener('click', () => {
-      document.getElementById('navLinks').classList.remove('active');
+    link.addEventListener('click', (e) => {
+      if(!link.parentElement.classList.contains('drop')) {
+        document.getElementById('navLinks').classList.remove('active');
+      }
     });
   });
 
-  // 2. BLINDAJE LEGAL
+  // Validación de Consentimiento
   async function enviar(metodo) {
     const consent = document.getElementById('privacyConsent');
-    if (!consent || !consent.checked) {
-      alert("Debe aceptar los términos de protección de datos para continuar.");
+    if (!consent.checked) {
+      alert("Por favor, acepte el consentimiento de datos personales.");
       return;
     }
-    console.log("Procediendo con envío vía: " + metodo);
-    // Lógica de envío aquí
+    alert("Iniciando envío por " + metodo);
   }
 
-  // 3. EFECTOS VISUALES
+  // Scroll & Animaciones
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
   const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
