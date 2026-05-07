@@ -20,9 +20,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════════════════════════════════════════════════
-     1. SISTEMA DE DISEÑO Y VARIABLES GLOBALES (OLIVA)
-  ════════════════════════════════════════════════ */
+  /* ════ SISTEMA DE DISEÑO Y VARIABLES GLOBALES (OLIVA) ════ */
   :root {
     --bg-base:     #161913; 
     --bg-surface:  #1f241a; 
@@ -78,9 +76,7 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════════════════════════════════════════════════
-     2. HEADER Y RESPONSIVE (SOLUCIÓN MÓVIL)
-  ════════════════════════════════════════════════ */
+  /* ════ HEADER Y RESPONSIVE ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -97,8 +93,9 @@
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  /* Elemento Hamburguesa Oculto en PC */
-  .menu-toggle { display: none; font-size: 1.8rem; color: var(--gold-main); cursor: pointer; transition: 0.3s; }
+  /* Elemento Hamburguesa */
+  .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; z-index: 1100; position: relative; }
+  .mobile-toggle:hover { color: var(--gold-light); }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
   .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
@@ -125,33 +122,7 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ AJUSTES PARA CELULARES Y TABLETS ════ */
-  @media (max-width: 950px) {
-    .menu-toggle { display: block; z-index: 1100; position: relative; }
-    
-    .nav-links {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
-      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px);
-      flex-direction: column; justify-content: center; align-items: center;
-      opacity: 0; visibility: hidden; transition: 0.4s var(--ease); z-index: 1050;
-    }
-    .nav-links.active { opacity: 1; visibility: visible; }
-    
-    .drop { flex-direction: column; text-align: center; }
-    .drop-menu { 
-      position: relative; top: auto; left: auto; transform: none; 
-      background: transparent; border: none; box-shadow: none; 
-      min-width: auto; padding: 1rem 0 0; display: none; 
-    }
-    /* El JS ahora abrirá este menú al hacer clic */
-    .drop.open .drop-menu { display: flex; flex-direction: column; gap: 0.5rem; opacity: 1; visibility: visible; }
-    
-    .brand-name { font-size: 1.8rem; }
-  }
-
-  /* ════════════════════════════════════════════════
-     3. HERO
-  ════════════════════════════════════════════════ */
+  /* ════ HERO ════ */
   .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; }
   
@@ -177,19 +148,8 @@
   .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
   .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; font-weight: 500; }
 
-  /* AJUSTES HERO PARA MÓVIL (Acá arreglamos la línea verde) */
-  @media (max-width: 950px) {
-    .hero-content { padding-top: 11rem; text-align: center; }
-    .hero-h1 { font-size: clamp(2.8rem, 8vw, 4rem); }
-    .hero-desc { font-size: 1.15rem; margin-bottom: 2.5rem; }
-    .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; }
-  }
-
-  /* ════════════════════════════════════════════════
-     4. FILOSOFÍA Y PILARES
-  ════════════════════════════════════════════════ */
+  /* ════ FILOSOFÍA Y PILARES ════ */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-  @media (max-width: 950px) { .grid-2 { grid-template-columns: 1fr; gap: 5rem; } }
   
   .qblock { 
     font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); 
@@ -198,19 +158,14 @@
   }
 
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 6rem; }
-  @media (max-width: 800px) { .pillars { grid-template-columns: 1fr; } }
   .pillar { background: var(--bg-panel); padding: 4.5rem 3.5rem; transition: background 0.4s; }
   .pillar:hover { background: var(--bg-surface); }
   .pillar-icon { font-size: 1.8rem; color: var(--gold-main); margin-bottom: 2rem; display: block; }
   .pillar-h { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text-main); }
   .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
 
-  /* ════════════════════════════════════════════════
-     5. ÁREAS DE PRÁCTICA
-  ════════════════════════════════════════════════ */
+  /* ════ ÁREAS DE PRÁCTICA ════ */
   .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
-  @media (max-width: 1100px) { .pgrid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 768px) { .pgrid { grid-template-columns: 1fr; } }
   
   .pc-card { 
     position: relative; overflow: hidden; height: 380px; 
@@ -240,18 +195,13 @@
   .pc-card:hover .pc-hover { opacity: 1; transform: translateY(0); }
   .pc-card:hover .pc-link { border-color: var(--gold-main); gap: 15px; }
 
-  /* ════════════════════════════════════════════════
-     6. BANDA INTERMEDIA 
-  ════════════════════════════════════════════════ */
+  /* ════ BANDA INTERMEDIA ════ */
   .band { padding: 8rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; text-align: center; }
   .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.3; max-width: 900px; margin: 0 auto; color: var(--text-main); }
   .band-quote em { color: var(--gold-light); font-style: italic; }
 
-  /* ════════════════════════════════════════════════
-     7. CONTACTO Y CUESTIONARIO
-  ════════════════════════════════════════════════ */
+  /* ════ CONTACTO Y CUESTIONARIO ════ */
   .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
-  @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
   
   .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   
@@ -270,7 +220,6 @@
   .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
   .contact-right { padding: 5rem; }
-  @media (max-width: 600px) { .contact-right { padding: 3rem 2rem; } }
   .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3rem; font-weight: 600; }
   
   .fg { margin-bottom: 2.5rem; }
@@ -279,7 +228,6 @@
   .fi:focus { border-color: var(--gold-main); }
   .fi option { background: var(--bg-panel); color: var(--text-main); }
   .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
 
   .dyn-box { margin-bottom: 2.5rem; display: none; padding: 2.5rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
   .dyn-box.show { display: block; }
@@ -296,9 +244,7 @@
   .btn-sub.wsp::before { background: #25D366; }
   .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
-  /* ════════════════════════════════════════════════
-     8. FOOTER
-  ════════════════════════════════════════════════ */
+  /* ════ FOOTER ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
   .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
@@ -306,6 +252,62 @@
   
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
+
+  /* ════ MEDIA QUERIES (ADAPTACIÓN MÓVIL ESTANDARIZADA) ════ */
+  @media (max-width: 1100px) { 
+    .pgrid { grid-template-columns: repeat(2, 1fr); } 
+  }
+
+  @media (max-width: 900px) {
+    /* Header Móvil */
+    .mobile-toggle { display: block; }
+    .nav-links { 
+      position: absolute; top: 100%; left: 0; right: 0; 
+      background: rgba(31, 36, 26, 0.98); backdrop-filter: blur(15px); 
+      flex-direction: column; padding: 2rem; gap: 1.5rem; 
+      opacity: 0; visibility: hidden; transform: translateY(-10px); 
+      transition: 0.3s var(--ease); border-bottom: 1px solid var(--line-color); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
+
+    /* Dropdown Móvil */
+    .drop { flex-direction: column; width: 100%; }
+    .drop-menu { 
+      position: static; transform: none; opacity: 1; visibility: visible; 
+      display: none; background: transparent; border: none; box-shadow: none; 
+      padding: 1rem 0 0 0; min-width: 100%; 
+    }
+    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; }
+    .drop-item { justify-content: center; padding: 0.8rem; border: none; }
+    .drop-item:hover { padding-left: 0.8rem; }
+    
+    /* Hero Móvil */
+    .hero-content { padding-top: 8rem; text-align: center; }
+    .hero-h1 { font-size: clamp(2.8rem, 8vw, 4rem); }
+    .hero-desc { font-size: 1.15rem; margin-bottom: 2.5rem; margin-left: auto; margin-right: auto; }
+    .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; }
+
+    /* Filosofía & Áreas */
+    .grid-2 { grid-template-columns: 1fr; gap: 5rem; }
+    .pgrid { grid-template-columns: 1fr; }
+    .contact-wrap { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 800px) { 
+    .pillars { grid-template-columns: 1fr; } 
+  }
+
+  @media (max-width: 600px) { 
+    .contact-right { padding: 3rem 2rem; } 
+    .frow { grid-template-columns: 1fr; gap: 0; } 
+  }
+
+  @media (max-width: 480px) {
+    .container { padding: 0 6vw; }
+    .btn-header { padding: 1rem 1.5rem; font-size: 0.7rem; }
+  }
   </style>
 </head>
 <body>
@@ -317,14 +319,14 @@
       <span class="brand-name">Aristeo</span>
     </a>
     
-    <div class="menu-toggle" onclick="toggleMenu()">
+    <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú">
       <i class="fa-solid fa-bars"></i>
-    </div>
+    </button>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
       <a href="#filosofia" class="nav-a">Mi Enfoque</a>
-      <div class="drop">
-        <span class="nav-a" style="cursor:default;" onclick="toggleDrop(event)">
+      <div class="drop" id="nav-drop">
+        <span class="nav-a" style="cursor:pointer;">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
@@ -434,7 +436,7 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <a href="/comercial-y-empresarial.html" class="pc-card">
+      <a href="/comercial-y-corporativo.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-file-contract pc-icon"></i>
           <h3 class="pc-title">Comercial</h3>
@@ -620,28 +622,36 @@
 </footer>
 
 <script>
-  /* Menú Móvil */
-  function toggleMenu() {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
-    const icon = document.querySelector('.menu-toggle i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-  }
+  // 1. Control del Menú Móvil (Hamburguesa)
+  const btnMenu = document.getElementById('btn-menu');
+  const navLinks = document.getElementById('nav-links');
+  const navDrop = document.getElementById('nav-drop');
 
-  function toggleDrop(e) {
-    if (window.innerWidth <= 950) {
-      e.preventDefault();
-      e.currentTarget.parentElement.classList.toggle('open');
+  btnMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    const icon = btnMenu.querySelector('i');
+    if(navLinks.classList.contains('active')){
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+      navDrop.classList.remove('active');
     }
-  }
-  
+  });
+
+  navDrop.addEventListener('click', (e) => {
+    if(window.innerWidth <= 900) {
+      navDrop.classList.toggle('active');
+    }
+  });
+
   // Cerrar menú al hacer clic en un link en celular
   document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
     link.addEventListener('click', () => {
-      if(window.innerWidth <= 950) {
-        document.querySelector('.nav-links').classList.remove('active');
-        const icon = document.querySelector('.menu-toggle i');
+      if(window.innerWidth <= 900) {
+        navLinks.classList.remove('active');
+        const icon = btnMenu.querySelector('i');
         if(icon.classList.contains('fa-xmark')){
             icon.classList.replace('fa-xmark', 'fa-bars');
         }
@@ -649,18 +659,18 @@
     });
   });
 
-  /* Efecto Header */
+  // 2. Efecto Header Scroll
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
-  /* Observador de Revelado */
+  // 3. Observador de Revelado
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  /* Lógica Cuestionario Inteligente */
+  // 4. Lógica Cuestionario Inteligente
   const DYN_HTML = {
     'civil': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
@@ -702,7 +712,7 @@
     else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
-  /* Envío de Formulario */
+  // 5. Envío de Formulario Dual
   async function enviar(metodo) {
     const btn = event.currentTarget;
     const nom = document.getElementById('fn').value.trim();
@@ -736,7 +746,7 @@
       btn.style.pointerEvents = 'none';
 
       const fd = new FormData();
-      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd'); // Asegúrate de que esta API Key sea correcta
       fd.append('subject', `Consulta Web: ${area} - ${nom}`);
       fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
       if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
