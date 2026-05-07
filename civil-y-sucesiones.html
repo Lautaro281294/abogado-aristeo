@@ -7,10 +7,8 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Derecho Civil y Sucesiones | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -74,7 +72,7 @@
   .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ════════════════════════════════════════════════
-     2. HEADER 
+     2. HEADER Y RESPONSIVO
   ════════════════════════════════════════════════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
@@ -91,6 +89,9 @@
   .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
+
+  /* Elemento Hamburguesa Oculto en PC */
+  .menu-toggle { display: none; font-size: 1.8rem; color: var(--gold-main); cursor: pointer; transition: 0.3s; }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
   .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
@@ -117,22 +118,72 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
+  /* AJUSTES PARA CELULARES */
+  @media (max-width: 950px) {
+    .menu-toggle { display: block; z-index: 1100; position: relative; }
+    
+    .nav-links {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px);
+      flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; visibility: hidden; transition: 0.4s var(--ease); z-index: 1050;
+    }
+    .nav-links.active { opacity: 1; visibility: visible; }
+    
+    .drop { flex-direction: column; text-align: center; }
+    .drop-menu { 
+      position: relative; top: auto; left: auto; transform: none; 
+      background: transparent; border: none; box-shadow: none; 
+      min-width: auto; padding: 1rem 0 0; display: none; 
+    }
+    .drop.open .drop-menu { display: flex; flex-direction: column; gap: 0.5rem; opacity: 1; visibility: visible; }
+    
+    .brand-name { font-size: 1.8rem; }
+  }
+
   /* ════════════════════════════════════════════════
      3. HERO INTERNO
   ════════════════════════════════════════════════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .page-hero { position: relative; padding: 12rem 0 6rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  
   .ph-bg { 
     position: absolute; inset: 0; z-index: 0; 
-    background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000') center/cover no-repeat; 
-    opacity: 0.15; 
+    background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; 
+    opacity: 0.10; /* Opacidad reducida para el fondo general */
     filter: grayscale(80%) contrast(110%); 
   }
   .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
   
-  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+
+  /* ESTILOS PARA LA IMAGEN DESTACADA SUPERIOR NUEVA: Framed, Distinguished, Related */
+  .ph-featured-img {
+    max-width: 350px; /* Tamaño controlado para que se distinga sin tapar todo */
+    margin: 0 auto 3rem;
+    border: 1px solid var(--gold-main); /* Borde dorado para integrarla */
+    padding: 8px;
+    background: var(--bg-surface);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); /* Sombra profunda para "despegarla" del fondo */
+    line-height: 0; /* Evita espacios extraños abajo */
+    border-radius: 2px;
+  }
+  .ph-featured-img img {
+    width: 100%;
+    height: auto;
+    /* Filtro sutil sepia/contraste para integrarla a la estética oliva/oro del estudio */
+    filter: sepia(30%) contrast(110%); 
+  }
+
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1; }
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; max-width: 750px; }
+
+  /* Ajuste Hero para Celulares */
+  @media (max-width: 950px) {
+    .page-hero { padding-top: 10rem; }
+    .ph-content { padding-top: 2rem; }
+    .ph-featured-img { max-width: 250px; margin-bottom: 2rem; }
+  }
 
   /* ════════════════════════════════════════════════
      4. CONTENIDO TÉCNICO
@@ -172,27 +223,31 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="header" id="hdr">
   <div class="container nav-wrap">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
     <nav class="nav-links">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop">
-        <span class="nav-a" style="cursor:default;">
+        <span class="nav-a" style="cursor:default;" onclick="toggleDrop(event)">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
-          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/comercial-y-empresarial.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
           <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
         </div>
       </div>
       <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
@@ -200,12 +255,15 @@
   </div>
 </header>
 
-<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="ph-bg"></div>
   <div class="ph-overlay"></div>
   <div class="container ph-content">
-    <i class="fa-solid fa-landmark ph-icon reveal"></i>
+    
+    <div class="ph-featured-img reveal">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600" alt="Derecho Civil y Sucesiones">
+    </div>
+
     <h1 class="ph-title reveal">Derecho Civil y Sucesiones</h1>
     <p class="ph-desc reveal">
       Ordeno y protejo tu patrimonio familiar. Intervengo para gestionar la correcta transmisión de tus bienes, restituir tu propiedad o reclamar reparaciones ante daños injustos.
@@ -213,7 +271,6 @@
   </div>
 </section>
 
-<!-- ══ CONTENIDO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
     <div class="services-grid">
@@ -254,7 +311,6 @@
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -314,7 +370,6 @@
 
     </div>
 
-    <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
       <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
         Agendar Consulta <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
@@ -324,7 +379,6 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-center">
@@ -346,15 +400,47 @@
 </footer>
 
 <script>
+  /* Menú Móvil */
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+    const icon = document.querySelector('.menu-toggle i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
+  }
+
+  function toggleDrop(e) {
+    if (window.innerWidth <= 950) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle('open');
+    }
+  }
+  
+  // Cerrar menú al hacer clic en un link en celular
+  document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 950) {
+        document.querySelector('.nav-links').classList.remove('active');
+        const icon = document.querySelector('.menu-toggle i');
+        if(icon.classList.contains('fa-xmark')){
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+      }
+    });
+  });
+
+  /* Efecto Header */
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  /* Observador de Revelado */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  /* Lógica Acordeón FAQ */
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
