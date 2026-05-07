@@ -144,25 +144,45 @@
   /* ════════════════════════════════════════════════
      3. HERO INTERNO
   ════════════════════════════════════════════════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .page-hero { position: relative; padding: 12rem 0 6rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  
   .ph-bg { 
     position: absolute; inset: 0; z-index: 0; 
-    /* IMAGEN ACTUALIZADA: Interior solemne institucional, mejor relacionada a Civil */
-    background: url('https://images.unsplash.com/photo-1589218436045-ee0200db57e2?q=80&w=2000') center/cover no-repeat; 
-    /* Opacidad aumentada (0.15 -> 0.25) y filtros ajustados para que se distinga bien bajo el modo oscuro */
-    opacity: 0.25; 
-    filter: grayscale(90%) contrast(115%); 
+    background: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000') center/cover no-repeat; 
+    opacity: 0.10; /* Opacidad reducida para el fondo general */
+    filter: grayscale(80%) contrast(110%); 
   }
   .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
   
-  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+
+  /* ESTILOS NUEVOS PARA LA IMAGEN DESTACADA SUPERIOR */
+  .ph-featured-img {
+    max-width: 350px; /* Tamaño controlado para que se distinga sin tapar todo */
+    margin: 0 auto 3rem;
+    border: 1px solid var(--gold-main); /* Borde dorado para integrarla */
+    padding: 8px;
+    background: var(--bg-surface);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); /* Sombra profunda para "despegarla" del fondo */
+    line-height: 0; /* Evita espacios extraños abajo */
+    border-radius: 2px;
+  }
+  .ph-featured-img img {
+    width: 100%;
+    height: auto;
+    /* Filtro sutil para integrarla a la estética oliva/oro */
+    filter: sepia(30%) contrast(110%); 
+  }
+
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1; }
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; max-width: 750px; }
 
   /* Ajuste Hero para Celulares */
   @media (max-width: 950px) {
+    .page-hero { padding-top: 10rem; }
     .ph-content { padding-top: 2rem; }
+    .ph-featured-img { max-width: 250px; margin-bottom: 2rem; }
   }
 
   /* ════════════════════════════════════════════════
@@ -239,7 +259,11 @@
   <div class="ph-bg"></div>
   <div class="ph-overlay"></div>
   <div class="container ph-content">
-    <i class="fa-solid fa-landmark ph-icon reveal"></i>
+    
+    <div class="ph-featured-img reveal">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600" alt="Derecho Civil y Sucesiones">
+    </div>
+
     <h1 class="ph-title reveal">Derecho Civil y Sucesiones</h1>
     <p class="ph-desc reveal">
       Ordeno y protejo tu patrimonio familiar. Intervengo para gestionar la correcta transmisión de tus bienes, restituir tu propiedad o reclamar reparaciones ante daños injustos.
@@ -260,179 +284,4 @@
       </div>
 
       <div class="service-card reveal d1">
-        <i class="fa-solid fa-house-circle-check sc-icon"></i>
-        <h3 class="sc-title">Usucapión</h3>
-        <p class="sc-desc">
-          Gestiono procesos judiciales para que obtengas la titularidad registral (escritura) de los inmuebles que venís poseyendo de forma pública, pacífica y continua, saneando así la situación dominial.
-        </p>
-      </div>
-
-      <div class="service-card reveal">
-        <i class="fa-solid fa-house-lock sc-icon"></i>
-        <h3 class="sc-title">Desalojos y Recupero</h3>
-        <p class="sc-desc">
-          Inicio juicios de desalojo orientados a restituir tu inmueble frente a la falta de pago por parte de inquilinos, vencimiento de contratos o situaciones de usurpación y ocupación ilegal.
-        </p>
-      </div>
-
-      <div class="service-card reveal d1">
-        <i class="fa-solid fa-car-burst sc-icon"></i>
-        <h3 class="sc-title">Accidentes y Daños</h3>
-        <p class="sc-desc">
-          Promuevo acciones contra compañías aseguradoras por siniestros en la vía pública o incumplimientos contractuales, demandando una reparación integral que cubra daños materiales, lucro cesante y daño moral.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section" style="background-color: var(--bg-surface);">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <div class="label reveal">Claridad Legal</div>
-      <h2 class="heading-2 reveal">Preguntas <em>Frecuentes</em></h2>
-    </div>
-
-    <div class="faq-container reveal">
-      
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>¿Cuánto demora y cuánto cuesta un juicio sucesorio?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            El tiempo depende del nivel de acuerdo entre los herederos y del estado de la documentación. Si no hay conflictos, el trámite avanza con mayor celeridad hasta obtener la declaratoria. Respecto a los honorarios, se regulan por la ley arancelaria provincial (Ley 9459) sobre el valor de los bienes, fijando pautas claras y por escrito desde el inicio del proceso.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Tengo una casa hace más de 20 años pero no tengo escritura. ¿Qué hago?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            A través de un juicio de <strong>Usucapión</strong> (Prescripción Adquisitiva) podemos lograr que un juez te otorgue la titularidad definitiva del inmueble. Para ello, necesitamos recolectar y demostrar pruebas de que ejerciste la posesión como dueño (pago de impuestos, mejoras, planos, testigos).
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Me ocuparon una propiedad o mi inquilino dejó de pagar. ¿Cómo la recupero?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Debemos iniciar un juicio de desalojo. Según el caso, puede requerir una intimación previa por carta documento. Lo más importante es que, por tratarse de falta de pago o intrusión, la ley nos permite solicitar la restitución anticipada de tu propiedad. Ofreciendo una garantía ante el juzgado, podemos pedir que recuperes el inmueble mucho antes de que finalice el proceso judicial.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Sufrí un accidente de tránsito y no tuve la culpa. ¿Puedo reclamar?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Absolutamente. Se inicia un reclamo por Daños y Perjuicios contra el responsable y su compañía de seguros. El reclamo debe ser integral, reclamando no solo el arreglo material del vehículo, sino también los gastos médicos, el daño físico/moral y el dinero que dejaste de percibir por no poder ir a trabajar (lucro cesante).
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="reveal" style="text-align: center; margin-top: 4rem;">
-      <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
-        Agendar Consulta <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="foot-center">
-      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-info">
-        Córdoba Capital | Fuero Provincial y Federal<br>
-        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
-      </div>
-    </div>
-    
-    <div class="legal-warning">
-      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
-    </div>
-
-    <div class="foot-bottom">
-      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
-    </div>
-  </div>
-</footer>
-
-<script>
-  /* Menú Móvil */
-  function toggleMenu() {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('active');
-    const icon = document.querySelector('.menu-toggle i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-  }
-
-  function toggleDrop(e) {
-    if (window.innerWidth <= 950) {
-      e.preventDefault();
-      e.currentTarget.parentElement.classList.toggle('open');
-    }
-  }
-  
-  // Cerrar menú al hacer clic en un link en celular
-  document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
-    link.addEventListener('click', () => {
-      if(window.innerWidth <= 950) {
-        document.querySelector('.nav-links').classList.remove('active');
-        const icon = document.querySelector('.menu-toggle i');
-        if(icon.classList.contains('fa-xmark')){
-            icon.classList.replace('fa-xmark', 'fa-bars');
-        }
-      }
-    });
-  });
-
-  /* Efecto Header */
-  window.addEventListener('scroll', () => {
-    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  /* Observador de Revelado */
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  /* Lógica Acordeón FAQ */
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const answer = button.nextElementSibling;
-      const isOpen = button.classList.contains('active');
-      
-      document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.classList.remove('active');
-        btn.nextElementSibling.style.maxHeight = null;
-      });
-
-      if (!isOpen) {
-        button.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      }
-    });
-  });
-</script>
-</body>
-</html>
+        <i class
