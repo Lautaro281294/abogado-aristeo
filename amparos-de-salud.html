@@ -7,10 +7,8 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Amparos de Salud | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -50,55 +48,132 @@
   ::-webkit-scrollbar-track { background: var(--bg-base); }
   ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
-  .container { max-width: 1250px; margin: 0 auto; padding: 0 5vw; }
-  .section { padding: 8rem 0; border-top: 1px solid var(--line-color); position: relative; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 0 5vw; }
+  .section { padding: 10rem 0; border-top: 1px solid var(--line-color); position: relative; }
 
-  .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+  .label { 
+    display: inline-flex; align-items: center; gap: 1rem; 
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.35em; 
+    text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; 
+  }
   .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
-  .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
+
+  .heading-2 { 
+    font-family: var(--font-heading); font-size: clamp(2.8rem, 5vw, 4.5rem); 
+    font-weight: 400; line-height: 1.1; color: var(--text-main); 
+    letter-spacing: -0.01em; margin-bottom: 2.5rem; 
+  }
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
-  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
+  .paragraph { font-size: 1.15rem; line-height: 1.95; color: var(--text-muted); text-align: justify; margin-bottom: 1.8rem; }
+  .paragraph strong { color: var(--text-main); font-weight: 400; }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════ HEADER ════ */
-  .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
-  .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  /* ════ HEADER Y RESPONSIVO ════ */
+  .header { 
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
+    padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
+  }
+  .header.scrolled { 
+    background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
+    padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
+  }
+  
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
   
   .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
   .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; position: relative; padding: 5px 0; }
+  .menu-toggle { display: none; font-size: 1.8rem; color: var(--gold-main); cursor: pointer; transition: 0.3s; }
+
+  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
   .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
   .nav-a:hover::after { width: 100%; }
 
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
-  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
+  .drop-menu { 
+    position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
+    background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; 
+    min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
+  }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
   .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
   .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
   .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
   .drop-item:hover i { color: var(--gold-main); }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; }
+  .btn-header { 
+    display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; 
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
+    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; 
+  }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
+  @media (max-width: 950px) {
+    .menu-toggle { display: block; z-index: 1100; position: relative; }
+    .nav-links {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px);
+      flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; visibility: hidden; transition: 0.4s var(--ease); z-index: 1050;
+    }
+    .nav-links.active { opacity: 1; visibility: visible; }
+    .drop { flex-direction: column; text-align: center; }
+    .drop-menu { 
+      position: relative; top: auto; left: auto; transform: none; 
+      background: transparent; border: none; box-shadow: none; 
+      min-width: auto; padding: 1rem 0 0; display: none; 
+    }
+    .drop.open .drop-menu { display: flex; flex-direction: column; gap: 0.5rem; opacity: 1; visibility: visible; }
+  }
+
   /* ════ HERO INTERNO ════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
-  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(100%); }
+  .page-hero { position: relative; padding: 12rem 0 6rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  
+  .ph-bg { 
+    position: absolute; inset: 0; z-index: 0; 
+    background: url('https://images.unsplash.com/photo-1538108149393-cebb921d719f?q=80&w=2000') center/cover no-repeat; 
+    opacity: 0.10; 
+    filter: grayscale(80%) contrast(110%); 
+  }
   .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
   
-  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
-  .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
-  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
-  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
+  .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
 
-  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
+  /* IMAGEN DESTACADA SUPERIOR */
+  .ph-featured-img {
+    max-width: 320px; 
+    margin: 0 auto 2.5rem auto;
+    border: 1px solid var(--gold-main); 
+    padding: 6px;
+    background: var(--bg-surface);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
+    border-radius: 3px;
+    position: relative;
+    z-index: 20;
+  }
+  .ph-featured-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: sepia(20%) contrast(110%); 
+  }
+
+  .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+  .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8; margin: 0 auto; max-width: 750px;}
+
+  @media (max-width: 950px) {
+    .page-hero { padding-top: 10rem; }
+    .ph-featured-img { max-width: 250px; margin-bottom: 2rem; }
+  }
+
+  /* ════ CONTENIDO TÉCNICO ════ */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
   @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
   
@@ -108,227 +183,17 @@
   .sc-title { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 1.2rem; font-weight: 400; }
   .sc-desc { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; text-align: justify; }
 
-  /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
-  .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
-  .faq-item { border-bottom: 1px solid var(--line-color); }
-  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); transition: color 0.3s; }
-  .faq-question:hover { color: var(--gold-light); }
-  .faq-question i { color: var(--gold-main); transition: transform 0.4s var(--ease); font-size: 1.2rem; }
-  .faq-question.active i { transform: rotate(180deg); }
-  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
-  .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
-
-  /* ════ FOOTER ════ */
-  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
-  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
-  
-  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
-  </style>
-</head>
-<body>
-
-<!-- ══ HEADER ══ -->
-<header class="header" id="hdr">
-  <div class="container nav-wrap">
-    <a href="/index.html" class="brand">
-      <span class="brand-top">Estudio Jurídico</span>
-      <span class="brand-name">Aristeo</span>
-    </a>
-    <nav class="nav-links">
-      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
-      <div class="drop">
-        <span class="nav-a" style="cursor:default;">
-          Áreas
-          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
-        </span>
-        <div class="drop-menu">
-          <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
-          <a href="/comercial-y-empresarial.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
-          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
-          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
-          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
-        </div>
-      </div>
-      <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
-    </nav>
-  </div>
-</header>
-
-<!-- ══ HERO INTERNO ══ -->
-<section class="page-hero">
-  <div class="ph-bg"></div>
-  <div class="ph-overlay"></div>
-  <div class="container ph-content">
-    <i class="fa-solid fa-heart-pulse ph-icon reveal"></i>
-    <h1 class="ph-title reveal">Amparos de Salud</h1>
-    <p class="ph-desc reveal">
-      La salud tuya y de tu familia no admite demoras ni excusas administrativas. Interpongo medidas judiciales urgentes para solicitar a Obras Sociales y Prepagas que brinden la cobertura médica vital que corresponde por ley.
-    </p>
-  </div>
-</section>
-
-<!-- ══ CONTENIDO TÉCNICO ══ -->
-<section class="section">
-  <div class="container">
-    <div class="services-grid">
-      
-      <div class="service-card reveal">
-        <i class="fa-solid fa-pills sc-icon"></i>
-        <h3 class="sc-title">Medicación y Tratamientos</h3>
-        <p class="sc-desc">
-          Frente a la negativa o demora en la entrega de medicación o tratamientos indicados, requiero judicialmente la provisión integral de los medicamentos que las prestadoras intentan eludir o cubrir parcialmente.
-        </p>
-      </div>
-
-      <div class="service-card reveal d1">
-        <i class="fa-solid fa-bed-pulse sc-icon"></i>
-        <h3 class="sc-title">Cirugías y Prótesis</h3>
-        <p class="sc-desc">
-          Impulso órdenes judiciales urgentes (Medidas Cautelares) para proteger internaciones, intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo estipulado por tu médico tratante.
-        </p>
-      </div>
-
-      <div class="service-card reveal">
-        <i class="fa-solid fa-wheelchair sc-icon"></i>
-        <h3 class="sc-title">Discapacidad (CUD)</h3>
-        <p class="sc-desc">
-          Amparados en la Ley 24.901, demando el cumplimiento estricto de la cobertura integral en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
-        </p>
-      </div>
-
-      <div class="service-card reveal d1">
-        <i class="fa-solid fa-ban sc-icon"></i>
-        <h3 class="sc-title">Abusos y Aumentos</h3>
-        <p class="sc-desc">
-          Presento acciones legales para detener incrementos abusivos en las cuotas de tu medicina prepaga. Además, acciono ante bajas arbitrarias y reclamo el mantenimiento de tu cobertura frente a despidos, jubilación o "enfermedades preexistentes".
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ PREGUNTAS FRECUENTES ══ -->
-<section class="section" style="background-color: var(--bg-surface);">
-  <div class="container">
-    <div style="text-align: center; margin-bottom: 3rem;">
-      <div class="label reveal">Claridad Legal</div>
-      <h2 class="heading-2 reveal">Preguntas <em>Frecuentes</em></h2>
-    </div>
-
-    <div class="faq-container reveal">
-      
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>¿Qué es un amparo de salud y cuánto demora?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en poco tiempo, mientras se resuelve el fondo del juicio.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>La prepaga me rechazó por tener una "enfermedad preexistente". ¿Es legal?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            No, es completamente ilegal. La Ley 26.682 prohíbe rechazar a un afiliado por contar con una enfermedad preexistente. Lo único que la empresa puede hacer, previa autorización de la Superintendencia de Servicios de Salud, es cobrar una cuota diferencial razonable, pero jamás negarte el ingreso a la cobertura.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Tengo (o un familiar tiene) el Certificado Único de Discapacidad (CUD). ¿Me pueden cobrar copagos?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            No. Si poseés el CUD, la Ley Nacional ampara la cobertura integral en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante, transporte y educación). Las obras sociales y prepagas tienen expresamente prohibido imponerte topes de sesiones o cobrarte copagos/coseguros por estas prestaciones.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Me despidieron de mi trabajo. ¿Me quedo sin obra social de inmediato?</span>
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            No. Por ley, tenés el derecho irrenunciable a mantener la cobertura de tu obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si estás en medio de un tratamiento médico prolongado, podemos accionar para requerir la continuidad más allá de ese plazo.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- CTA Final -->
-    <div class="reveal" style="text-align: center; margin-top: 4rem;">
-      <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
-        Contactame por una urgencia médica <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer class="footer">
-  <div class="container">
-    <div class="foot-center">
-      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-info">
-        Córdoba Capital | Fuero Provincial y Federal<br>
-        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
-      </div>
-    </div>
-    
-    <div class="legal-warning">
-      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
-    </div>
-
-    <div class="foot-bottom">
-      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
-    </div>
-  </div>
-</footer>
-
-<script>
-  window.addEventListener('scroll', () => {
-    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const answer = button.nextElementSibling;
-      const isOpen = button.classList.contains('active');
-      
-      document.querySelectorAll('.faq-question').forEach(btn => {
-        btn.classList.remove('active');
-        btn.nextElementSibling.style.maxHeight = null;
-      });
-
-      if (!isOpen) {
-        button.classList.add('active');
-        answer.style.maxHeight = answer.scrollHeight + "px";
-      }
-    });
-  });
-</script>
-</body>
-</html>
+  /* ════ CONTACTO REDUCIDO / FORM ════ */
+  .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
+  @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
+  .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+  .channel { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
+  .channel::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-main); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s var(--ease); }
+  .channel:hover { border-color: var(--line-hover); transform: translateX(10px); background: var(--bg-base); }
+  .channel:hover::before { transform: scaleY(1); }
+  .ch-l { display: flex; align-items: center; gap: 1.5rem; }
+  .ch-l i { font-size: 2rem; color: var(--gold-main); }
+  .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
+  .ch-name { font-size: 1.1rem; color: var(--text-main); font-weight: 400; }
+  .urgency-alert { margin-top: 3rem; padding: 2rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
+  .urgency-alert
