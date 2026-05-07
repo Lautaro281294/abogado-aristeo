@@ -73,12 +73,10 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════════════════════════════════════════════════
-     2. HEADER 
-  ════════════════════════════════════════════════ */
+  /* ════ HEADER ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
-    padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
+    padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); background: transparent;
   }
   .header.scrolled { 
     background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
@@ -117,9 +115,11 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════════════════════════════════════════════════
-     3. HERO INTERNO
-  ════════════════════════════════════════════════ */
+  /* Menú Móvil Botón */
+  .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
+  .mobile-toggle:hover { color: var(--gold-light); }
+
+  /* ════ HERO INTERNO ════ */
   .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
   .ph-bg { 
     position: absolute; inset: 0; z-index: 0; 
@@ -134,33 +134,25 @@
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
   .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════════════════════════════════════════════════
-     4. CONTENIDO TÉCNICO
-  ════════════════════════════════════════════════ */
+  /* ════ CONTENIDO TÉCNICO ════ */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
-  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; gap: 2rem; } }
-  
   .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
   .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); background: var(--bg-surface); }
   .sc-icon { font-size: 2.2rem; color: var(--gold-light); margin-bottom: 1.5rem; }
   .sc-title { font-family: var(--font-heading); font-size: 2rem; color: var(--text-main); margin-bottom: 1.2rem; font-weight: 400; }
   .sc-desc { color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; text-align: justify; }
 
-  /* ════════════════════════════════════════════════
-     5. PREGUNTAS FRECUENTES (ACORDEÓN)
-  ════════════════════════════════════════════════ */
+  /* ════ PREGUNTAS FRECUENTES (ACORDEÓN) ════ */
   .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
   .faq-item { border-bottom: 1px solid var(--line-color); }
   .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); transition: color 0.3s; }
   .faq-question:hover { color: var(--gold-light); }
-  .faq-question i { color: var(--gold-main); transition: transform 0.4s var(--ease); font-size: 1.2rem; }
+  .faq-question i { color: var(--gold-main); transition: transform 0.4s var(--ease); font-size: 1.2rem; flex-shrink: 0; margin-left: 1rem; }
   .faq-question.active i { transform: rotate(180deg); }
   .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
   .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
 
-  /* ════════════════════════════════════════════════
-     6. FOOTER
-  ════════════════════════════════════════════════ */
+  /* ════ FOOTER ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
   .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
@@ -168,6 +160,51 @@
   
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
+
+  /* ════ MEDIA QUERIES (ADAPTACIÓN MÓVIL) ════ */
+  @media (max-width: 900px) { 
+    .services-grid { grid-template-columns: 1fr; gap: 2rem; } 
+    
+    /* Header Móvil */
+    .mobile-toggle { display: block; }
+    .nav-links { 
+      position: absolute; top: 100%; left: 0; right: 0; 
+      background: var(--bg-surface); flex-direction: column; 
+      padding: 2rem; gap: 1.5rem; opacity: 0; visibility: hidden; 
+      transform: translateY(-10px); transition: 0.3s var(--ease); 
+      border-bottom: 1px solid var(--line-color); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .header.scrolled .nav-links { background: rgba(31, 36, 26, 0.98); }
+    .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+    .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
+    
+    /* Dropdown Móvil */
+    .drop { flex-direction: column; width: 100%; }
+    .drop-menu { 
+      position: static; transform: none; opacity: 1; visibility: visible; 
+      display: none; background: transparent; border: none; box-shadow: none; 
+      padding: 1rem 0 0 0; min-width: 100%; 
+    }
+    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; }
+    .drop-item { justify-content: center; padding: 0.8rem; border: none; }
+    .drop-item:hover { padding-left: 0.8rem; }
+    
+    /* Ajustes Generales */
+    .section { padding: 5rem 0; }
+    .page-hero { padding: 10rem 0 5rem; }
+    .ph-title { font-size: 2.8rem; }
+    .service-card { padding: 2.5rem 2rem; }
+    .faq-question { font-size: 1.3rem; padding: 1.5rem 0; }
+    .faq-answer-inner { padding-right: 0; }
+    .footer { padding: 4rem 0 2rem; }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 0 6vw; }
+    .btn-header { padding: 1rem 1.5rem; font-size: 0.7rem; }
+    .sc-title { font-size: 1.6rem; }
+    .faq-question { font-size: 1.15rem; }
+  }
   </style>
 </head>
 <body>
@@ -179,10 +216,16 @@
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-    <nav class="nav-links">
+
+    <!-- Botón Móvil -->
+    <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <nav class="nav-links" id="nav-links">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
-      <div class="drop">
-        <span class="nav-a" style="cursor:default;">
+      <div class="drop" id="nav-drop">
+        <span class="nav-a" style="cursor:pointer;">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
@@ -346,15 +389,44 @@
 </footer>
 
 <script>
+  // 1. Control de scroll para el Header
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
 
+  // 2. Control del Menú Móvil (Hamburguesa)
+  const btnMenu = document.getElementById('btn-menu');
+  const navLinks = document.getElementById('nav-links');
+  const navDrop = document.getElementById('nav-drop');
+
+  btnMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    // Cambiar icono de barras a cruz
+    const icon = btnMenu.querySelector('i');
+    if(navLinks.classList.contains('active')){
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-xmark');
+    } else {
+      icon.classList.remove('fa-xmark');
+      icon.classList.add('fa-bars');
+      navDrop.classList.remove('active'); // Cerrar submenú al cerrar menú principal
+    }
+  });
+
+  // Control submenú en móvil
+  navDrop.addEventListener('click', (e) => {
+    if(window.innerWidth <= 900) {
+      navDrop.classList.toggle('active');
+    }
+  });
+
+  // 3. Intersección (Animaciones Reveal)
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
+  // 4. Lógica de Acordeón (FAQ)
   document.querySelectorAll('.faq-question').forEach(button => {
     button.addEventListener('click', () => {
       const answer = button.nextElementSibling;
