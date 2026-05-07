@@ -314,7 +314,7 @@
 
 <header class="header" id="hdr">
   <div class="container nav-wrap">
-    <a href="#hero" class="brand">
+    <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
@@ -339,7 +339,7 @@
           <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
         </div>
       </div>
-      <a href="#contacto" class="btn-header">
+      <a href="/contacto.html" class="btn-header">
         <span>Contactame</span> <i class="fa-solid fa-arrow-right"></i>
       </a>
     </nav>
@@ -522,15 +522,15 @@
             <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
           
-          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel">
+          <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email">
             <div class="ch-l">
               <i class="fa-regular fa-envelope"></i>
               <div>
-                <span class="ch-tag">Recepción de Documentos</span>
-                <strong class="ch-name">E-Mail del Estudio</strong>
+                <span class="ch-tag" id="email-tag">Recepción de Documentos</span>
+                <strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong>
               </div>
             </div>
-            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+            <i class="fa-regular fa-copy" id="email-icon" style="color:var(--gold-dark); font-size:1.2rem;"></i>
           </a>
         </div>
 
@@ -670,7 +670,36 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // 4. Lógica Cuestionario Inteligente
+  // 4. Copiar Email UX (NUEVA LÓGICA)
+  const copyBtn = document.getElementById('copy-email-btn');
+  if(copyBtn) {
+    copyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = 'dr.aristeolautaro@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        const tag = document.getElementById('email-tag');
+        const icon = document.getElementById('email-icon');
+        
+        // Feedback visual
+        tag.innerText = '¡Email Copiado!'; 
+        tag.style.color = '#25D366';
+        icon.classList.replace('fa-copy', 'fa-check');
+        icon.style.color = '#25D366';
+        
+        // Restaurar a los 3 segundos
+        setTimeout(() => { 
+          tag.innerText = 'Recepción de Documentos'; 
+          tag.style.color = 'var(--gold-main)'; 
+          icon.classList.replace('fa-check', 'fa-copy'); 
+          icon.style.color = 'var(--gold-dark)';
+        }, 3000);
+      }).catch(err => {
+        console.error('Error al copiar: ', err);
+      });
+    });
+  }
+
+  // 5. Lógica Cuestionario Inteligente
   const DYN_HTML = {
     'civil': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
@@ -712,7 +741,7 @@
     else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
-  // 5. Envío de Formulario Dual
+  // 6. Envío de Formulario Dual
   async function enviar(metodo) {
     const btn = event.currentTarget;
     const nom = document.getElementById('fn').value.trim();
