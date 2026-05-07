@@ -7,16 +7,13 @@
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   
-  <!-- Open Graph -->
   <meta property="og:title" content="Estudio Jurídico Aristeo | Abogacía en Córdoba"/>
   <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Claridad y honestidad desde la primera consulta."/>
   <meta property="og:type" content="website"/>
   <title>Estudio Jurídico Aristeo | Abogados en Córdoba</title>
 
-  <!-- Vercel Analytics -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- Fuentes Premium e Iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -82,7 +79,7 @@
   .reveal.in { opacity: 1; transform: translateY(0); }
 
   /* ════════════════════════════════════════════════
-     2. HEADER 
+     2. HEADER Y RESPONSIVE (SOLUCIÓN MÓVIL)
   ════════════════════════════════════════════════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
@@ -99,6 +96,9 @@
   .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
+
+  /* Elemento Hamburguesa Oculto en PC */
+  .menu-toggle { display: none; font-size: 1.8rem; color: var(--gold-main); cursor: pointer; transition: 0.3s; }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
   .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
@@ -124,6 +124,30 @@
     padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; 
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
+
+  /* ════ AJUSTES PARA CELULARES Y TABLETS ════ */
+  @media (max-width: 950px) {
+    .menu-toggle { display: block; z-index: 1100; position: relative; }
+    
+    .nav-links {
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
+      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px);
+      flex-direction: column; justify-content: center; align-items: center;
+      opacity: 0; visibility: hidden; transition: 0.4s var(--ease); z-index: 1050;
+    }
+    .nav-links.active { opacity: 1; visibility: visible; }
+    
+    .drop { flex-direction: column; text-align: center; }
+    .drop-menu { 
+      position: relative; top: auto; left: auto; transform: none; 
+      background: transparent; border: none; box-shadow: none; 
+      min-width: auto; padding: 1rem 0 0; display: none; 
+    }
+    /* El JS ahora abrirá este menú al hacer clic */
+    .drop.open .drop-menu { display: flex; flex-direction: column; gap: 0.5rem; opacity: 1; visibility: visible; }
+    
+    .brand-name { font-size: 1.8rem; }
+  }
 
   /* ════════════════════════════════════════════════
      3. HERO
@@ -152,6 +176,14 @@
   .stat-item { text-shadow: none; text-align: center; }
   .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
   .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; font-weight: 500; }
+
+  /* AJUSTES HERO PARA MÓVIL (Acá arreglamos la línea verde) */
+  @media (max-width: 950px) {
+    .hero-content { padding-top: 11rem; text-align: center; }
+    .hero-h1 { font-size: clamp(2.8rem, 8vw, 4rem); }
+    .hero-desc { font-size: 1.15rem; margin-bottom: 2.5rem; }
+    .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; }
+  }
 
   /* ════════════════════════════════════════════════
      4. FILOSOFÍA Y PILARES
@@ -238,6 +270,7 @@
   .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
   .contact-right { padding: 5rem; }
+  @media (max-width: 600px) { .contact-right { padding: 3rem 2rem; } }
   .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3rem; font-weight: 600; }
   
   .fg { margin-bottom: 2.5rem; }
@@ -277,27 +310,31 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="header" id="hdr">
   <div class="container nav-wrap">
     <a href="#hero" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
+    
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
     <nav class="nav-links">
       <a href="#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop">
-        <span class="nav-a" style="cursor:default;">
+        <span class="nav-a" style="cursor:default;" onclick="toggleDrop(event)">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
-          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/comercial-y-empresarial.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
           <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
         </div>
       </div>
       <a href="#contacto" class="btn-header">
@@ -307,7 +344,6 @@
   </div>
 </header>
 
-<!-- ══ HERO ══ -->
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-vid">
@@ -340,7 +376,6 @@
   </div>
 </section>
 
-<!-- ══ MI ENFOQUE ══ -->
 <section class="section" id="filosofia">
   <div class="container">
     <div class="grid-2">
@@ -381,7 +416,6 @@
   </div>
 </section>
 
-<!-- ══ ÁREAS DE PRÁCTICA ══ -->
 <section class="section" id="areas" style="background:var(--bg-surface);">
   <div class="container">
     <div class="reveal">
@@ -390,7 +424,6 @@
     </div>
     
     <div class="pgrid reveal">
-      <!-- Civil -->
       <a href="/civil-y-sucesiones.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-landmark pc-icon"></i>
@@ -401,8 +434,7 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <!-- Comercial -->
-      <a href="/comercial-y-corporativo.html" class="pc-card">
+      <a href="/comercial-y-empresarial.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-file-contract pc-icon"></i>
           <h3 class="pc-title">Comercial</h3>
@@ -412,7 +444,6 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <!-- Laboral -->
       <a href="/laboral-y-art.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-briefcase pc-icon"></i>
@@ -423,7 +454,6 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <!-- Salud -->
       <a href="/amparos-de-salud.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-heart-pulse pc-icon"></i>
@@ -434,7 +464,6 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <!-- Consumidor -->
       <a href="/defensa-del-consumidor.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-shield-halved pc-icon"></i>
@@ -445,11 +474,10 @@
           <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </a>
-      <!-- Familia -->
       <a href="/derecho-de-familias.html" class="pc-card">
         <div class="pc-main">
           <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
-          <h3 class="pc-title">Derecho de Familias</h3>
+          <h3 class="pc-title">Derecho de Familia</h3>
         </div>
         <div class="pc-hover">
           <p class="pc-desc">Divorcios y acuerdos familiares gestionados con empatía y resguardo patrimonial.</p>
@@ -460,7 +488,6 @@
   </div>
 </section>
 
-<!-- ══ BANDA INTERMEDIA ══ -->
 <div class="band reveal">
   <div class="container">
     <h2 class="band-quote">
@@ -470,7 +497,6 @@
   </div>
 </div>
 
-<!-- ══ CONTACTO Y PRE-CONSULTA ══ -->
 <section class="section" id="contacto">
   <div class="container">
     <div class="label">Comunicación Directa</div>
@@ -478,7 +504,6 @@
     
     <div class="contact-wrap reveal">
       
-      <!-- Panel Vías Rápidas -->
       <div class="contact-left">
         <div>
           <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main);">Vías de Contacto</h3>
@@ -515,7 +540,6 @@
         </div>
       </div>
 
-      <!-- Panel Formulario -->
       <div class="contact-right">
         <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
         
@@ -539,7 +563,7 @@
                 <option value="laboral">Laboral y ART</option>
                 <option value="salud">Amparos de Salud</option>
                 <option value="consumidor">Defensa del Consumidor</option>
-                <option value="familia">Derecho de Familias</option>
+                <option value="familia">Derecho de Familia</option>
               </select>
             </div>
           </div>
@@ -554,6 +578,13 @@
             <textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea>
           </div>
           
+          <div class="fg" style="margin-bottom: 1.5rem; display: flex; align-items: start; gap: 10px;">
+            <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
+            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
+              Entiendo y acepto que los datos ingresados serán tratados con estricta confidencialidad profesional a los únicos fines de evaluar la viabilidad legal de la consulta, conforme a la Ley N° 25.326.
+            </label>
+          </div>
+
           <div class="action-buttons">
             <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
               <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
@@ -568,7 +599,6 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-center">
@@ -590,6 +620,35 @@
 </footer>
 
 <script>
+  /* Menú Móvil */
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+    const icon = document.querySelector('.menu-toggle i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
+  }
+
+  function toggleDrop(e) {
+    if (window.innerWidth <= 950) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle('open');
+    }
+  }
+  
+  // Cerrar menú al hacer clic en un link en celular
+  document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 950) {
+        document.querySelector('.nav-links').classList.remove('active');
+        const icon = document.querySelector('.menu-toggle i');
+        if(icon.classList.contains('fa-xmark')){
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+      }
+    });
+  });
+
   /* Efecto Header */
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
@@ -651,9 +710,13 @@
     const selectArea = document.getElementById('fa');
     const area = selectArea.options[selectArea.selectedIndex].text;
     const res = document.getElementById('fs').value.trim();
+    const privacyChecked = document.getElementById('privacyConsent').checked;
 
     if(!nom || !tel || selectArea.value === "" || !res) { 
       alert('Para un correcto análisis, completá los campos obligatorios (*).'); return; 
+    }
+    if(!privacyChecked) {
+      alert('Debés aceptar la política de confidencialidad de datos (Ley 25.326) antes de enviar tu consulta.'); return;
     }
 
     let respuestasExtra = "";
