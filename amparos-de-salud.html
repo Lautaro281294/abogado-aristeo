@@ -196,4 +196,478 @@
   .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
   .ch-name { font-size: 1.1rem; color: var(--text-main); font-weight: 400; }
   .urgency-alert { margin-top: 3rem; padding: 2rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
-  .urgency-alert
+  .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
+  .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
+  .contact-right { padding: 5rem; }
+  @media (max-width: 600px) { .contact-right { padding: 3rem 2rem; } }
+  .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3rem; font-weight: 600; }
+  .fg { margin-bottom: 2.5rem; }
+  .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1rem; letter-spacing: 0.2em; }
+  .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.1rem; padding: 0.8rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
+  .fi:focus { border-color: var(--gold-main); }
+  .fi option { background: var(--bg-panel); color: var(--text-main); }
+  .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
+  .dyn-box { margin-bottom: 2.5rem; display: none; padding: 2.5rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
+  .dyn-box.show { display: block; }
+  .dyn-title { font-size: 0.8rem; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+  .dyn-title i { color: var(--gold-main); }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(-15px); } to { opacity:1; transform: translateY(0); } }
+  .action-buttons { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
+  .btn-sub { flex: 1; padding: 1.5rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 12px; position: relative; overflow: hidden; min-width: 220px; }
+  .btn-sub::before { content: ''; position: absolute; inset: 0; background: var(--gold-main); transform: translateY(101%); transition: transform 0.4s var(--ease); }
+  .btn-sub:hover::before { transform: translateY(0); }
+  .btn-sub:hover { color: var(--bg-base); }
+  .btn-sub.wsp { border-color: #25D366; color: #25D366; }
+  .btn-sub.wsp::before { background: #25D366; }
+  .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
+
+  /* ════ PREGUNTAS FRECUENTES ════ */
+  .faq-container { max-width: 900px; margin: 0 auto; padding: 4rem 0; }
+  .faq-item { border-bottom: 1px solid var(--line-color); }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 1.8rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: var(--font-heading); font-size: 1.6rem; color: var(--text-main); transition: color 0.3s; }
+  .faq-question:hover { color: var(--gold-light); }
+  .faq-question i { color: var(--gold-main); transition: transform 0.4s var(--ease); font-size: 1.2rem; }
+  .faq-question.active i { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease); }
+  .faq-answer-inner { padding-bottom: 2rem; color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; text-align: justify; padding-right: 2rem; }
+
+  /* ════ FOOTER ════ */
+  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
+  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
+  
+  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<header class="header" id="hdr">
+  <div class="container nav-wrap">
+    <a href="/index.html" class="brand">
+      <span class="brand-top">Estudio Jurídico</span>
+      <span class="brand-name">Aristeo</span>
+    </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <nav class="nav-links">
+      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
+      <div class="drop">
+        <span class="nav-a" style="cursor:default;" onclick="toggleDrop(event)">
+          Áreas
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
+        </span>
+        <div class="drop-menu">
+          <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+          <a href="/comercial-y-empresarial.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
+          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
+          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
+        </div>
+      </div>
+      <a href="#contacto" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-overlay"></div>
+  <div class="container ph-content">
+    
+    <div class="ph-featured-img">
+        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="Amparos de Salud">
+    </div>
+
+    <h1 class="ph-title reveal">Amparos de Salud</h1>
+    <p class="ph-desc reveal">
+      La salud tuya y de tu familia no admite demoras ni excusas administrativas. Interpongo medidas judiciales urgentes para solicitar a Obras Sociales y Prepagas que brinden la cobertura médica vital que corresponde por ley.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="services-grid">
+      
+      <div class="service-card reveal">
+        <i class="fa-solid fa-pills sc-icon"></i>
+        <h3 class="sc-title">Medicación y Tratamientos</h3>
+        <p class="sc-desc">
+          Frente a la negativa o demora en la entrega de medicación o tratamientos indicados, requiero judicialmente la provisión integral de los medicamentos que las prestadoras intentan eludir o cubrir parcialmente.
+        </p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-bed-pulse sc-icon"></i>
+        <h3 class="sc-title">Cirugías y Prótesis</h3>
+        <p class="sc-desc">
+          Impulso órdenes judiciales urgentes (Medidas Cautelares) para proteger internaciones, intervenciones quirúrgicas y la entrega de prótesis nacionales o importadas en el tiempo estipulado por tu médico tratante.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <i class="fa-solid fa-wheelchair sc-icon"></i>
+        <h3 class="sc-title">Discapacidad (CUD)</h3>
+        <p class="sc-desc">
+          Amparados en la Ley 24.901, demando el cumplimiento estricto de la cobertura integral en terapias, acompañamiento terapéutico, maestras integradoras y transporte para personas con Certificado Único de Discapacidad.
+        </p>
+      </div>
+
+      <div class="service-card reveal d1">
+        <i class="fa-solid fa-ban sc-icon"></i>
+        <h3 class="sc-title">Abusos y Aumentos</h3>
+        <p class="sc-desc">
+          Presento acciones legales para detener incrementos abusivos en las cuotas de tu medicina prepaga. Además, acciono ante bajas arbitrarias y reclamo el mantenimiento de tu cobertura frente a despidos, jubilación o "enfermedades preexistentes".
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: var(--bg-surface);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <div class="label reveal">Claridad Legal</div>
+      <h2 class="heading-2 reveal">Preguntas <em>Frecuentes</em></h2>
+    </div>
+
+    <div class="faq-container reveal">
+      
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>¿Qué es un amparo de salud y cuánto demora?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            El amparo es la herramienta judicial más rápida de nuestro sistema legal, diseñada específicamente para proteger derechos urgentes. Se acompaña de una <strong>Medida Cautelar</strong>, lo que permite que un juez ordene a la obra social entregar la medicación o autorizar la práctica en poco tiempo, mientras se resuelve el fondo del juicio.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>La prepaga me rechazó por tener una "enfermedad preexistente". ¿Es legal?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No, es completamente ilegal. La Ley 26.682 prohíbe rechazar a un afiliado por contar con una enfermedad preexistente. Lo único que la empresa puede hacer, previa autorización de la Superintendencia de Servicios de Salud, es cobrar una cuota diferencial razonable, pero jamás negarte el ingreso a la cobertura.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Tengo (o un familiar tiene) el Certificado Único de Discapacidad (CUD). ¿Me pueden cobrar copagos?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. Si poseés el CUD, la Ley Nacional ampara la cobertura integral en todo lo relacionado con la discapacidad (medicación, rehabilitaciones, acompañante, transporte y educación). Las obras sociales y prepagas tienen expresamente prohibido imponerte topes de sesiones o cobrarte copagos/coseguros por estas prestaciones.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Me despidieron de mi trabajo. ¿Me quedo sin obra social de inmediato?</span>
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            No. Por ley, tenés el derecho irrenunciable a mantener la cobertura de tu obra social (con los mismos beneficios) durante los <strong>tres (3) meses posteriores</strong> a la finalización de la relación laboral, sin pagar cuota extra. Si estás en medio de un tratamiento médico prolongado, podemos accionar para requerir la continuidad más allá de ese plazo.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contacto">
+  <div class="container">
+    <div class="label">Comunicación Directa</div>
+    <h2 class="heading-2">Contactame</h2>
+    
+    <div class="contact-wrap reveal">
+      
+      <div class="contact-left">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main);">Vías de Contacto</h3>
+          <p class="paragraph" style="margin-bottom: 3.5rem; font-size: 1.05rem;">Utilizá estas vías para respuestas inmediatas o para agendar una cita en el estudio.</p>
+          
+          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+            <div class="ch-l">
+              <i class="fa-brands fa-whatsapp"></i>
+              <div>
+                <span class="ch-tag">Mensajería Directa</span>
+                <strong class="ch-name">WhatsApp Business</strong>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+          </a>
+          
+          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel">
+            <div class="ch-l">
+              <i class="fa-regular fa-envelope"></i>
+              <div>
+                <span class="ch-tag">Recepción de Documentos</span>
+                <strong class="ch-name">E-Mail del Estudio</strong>
+              </div>
+            </div>
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+          </a>
+        </div>
+
+        <div class="urgency-alert">
+          <strong><i class="fa-regular fa-clock"></i> Horario de Atención</strong>
+          <p style="margin-bottom: 1rem;">Lunes a Viernes de 09:00 a 18:00 hs. (Atención con turno previo).</p>
+          <strong style="color: var(--gold-light);">Protocolo de Urgencia</strong>
+          <p>Ante detenciones o emergencias fuera de horario, iniciá tu mensaje con la palabra URGENCIA.</p>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
+        
+        <form id="evalForm">
+          <div class="fg">
+            <label class="fl">Nombre y Apellido *</label>
+            <input type="text" id="fn" class="fi" required placeholder="Ingresá tu nombre completo">
+          </div>
+          
+          <div class="frow">
+            <div class="fg">
+              <label class="fl">Celular (WhatsApp) *</label>
+              <input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000">
+            </div>
+            <div class="fg">
+              <label class="fl">Área de Consulta *</label>
+              <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
+                <option value="" disabled selected>Seleccioná un área...</option>
+                <option value="civil">Civil y Sucesiones</option>
+                <option value="comercial">Comercial y Empresas</option>
+                <option value="laboral">Laboral y ART</option>
+                <option value="salud">Amparos de Salud</option>
+                <option value="consumidor">Defensa del Consumidor</option>
+                <option value="familia">Derecho de Familia</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="dyn-box" id="dynBox">
+            <div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle de la Situación (Opcional)</div>
+            <div id="dyn-content"></div>
+          </div>
+
+          <div class="fg">
+            <label class="fl">Breve resumen de tu caso *</label>
+            <textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea>
+          </div>
+          
+          <div class="fg" style="margin-bottom: 1.5rem; display: flex; align-items: start; gap: 10px;">
+            <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
+            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
+              Entiendo y acepto que los datos ingresados serán tratados con estricta confidencialidad profesional a los únicos fines de evaluar la viabilidad legal de la consulta, conforme a la Ley N° 25.326.
+            </label>
+          </div>
+
+          <div class="action-buttons">
+            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
+              <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
+            </button>
+            <button type="button" class="btn-sub" onclick="enviar('mail')">
+              <span>Enviar por E-Mail</span> <i class="fa-solid fa-envelope" style="font-size: 1rem;"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="foot-center">
+      <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
+      <div class="foot-info">
+        Córdoba Capital | Fuero Provincial y Federal<br>
+        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+      </div>
+    </div>
+    
+    <div class="legal-warning">
+      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
+    </div>
+
+    <div class="foot-bottom">
+      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* Menú Móvil */
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('active');
+    const icon = document.querySelector('.menu-toggle i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
+  }
+
+  function toggleDrop(e) {
+    if (window.innerWidth <= 950) {
+      e.preventDefault();
+      e.currentTarget.parentElement.classList.toggle('open');
+    }
+  }
+  
+  document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 950) {
+        document.querySelector('.nav-links').classList.remove('active');
+        const icon = document.querySelector('.menu-toggle i');
+        if(icon.classList.contains('fa-xmark')){
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+      }
+    });
+  });
+
+  /* Efectos y Observador */
+  window.addEventListener('scroll', () => {
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Lógica Cuestionario Inteligente */
+  const DYN_HTML = {
+    'civil': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Poseés documentación a mano?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
+    'comercial': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Empresa / PyME">Empresa / PyME</option><option value="Particular">Particular</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">Motivo principal</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Cobro de deudas / Pagarés">Cobro de deudas / Pagarés</option><option value="Revisión de Contratos">Revisión de Contratos</option></select></div>`,
+    'laboral': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Situación actual</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Despido">Despido</option><option value="Trabajo no registrado (en negro)">Trabajo no registrado</option><option value="Accidente / ART">Accidente / ART</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Se enviaron telegramas?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option><option value="No estoy seguro">No estoy seguro</option></select></div>`,
+    'salud': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación te niegan?</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
+    'consumidor': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hiciste reclamo previo?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
+    'familia': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Existen bienes para dividir?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`
+  };
+
+  function cargarPreguntas() {
+    const val = document.getElementById('fa').value;
+    const box = document.getElementById('dynBox');
+    const content = document.getElementById('dyn-content');
+    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } 
+    else { box.classList.remove('show'); content.innerHTML = ''; }
+  }
+
+  /* Envío de Formulario Blindado */
+  async function enviar(metodo) {
+    const btn = event.currentTarget;
+    const nom = document.getElementById('fn').value.trim();
+    const tel = document.getElementById('ft').value.trim();
+    const selectArea = document.getElementById('fa');
+    const area = selectArea.options[selectArea.selectedIndex].text;
+    const res = document.getElementById('fs').value.trim();
+    const privacyChecked = document.getElementById('privacyConsent').checked;
+
+    if(!nom || !tel || selectArea.value === "" || !res) { 
+      alert('Para un correcto análisis, completá los campos obligatorios (*).'); return; 
+    }
+    if(!privacyChecked) {
+      alert('Debés aceptar la política de confidencialidad de datos (Ley 25.326) antes de enviar tu consulta.'); return;
+    }
+
+    let respuestasExtra = "";
+    const dynInputs = document.querySelectorAll('.dyn-input');
+    dynInputs.forEach(input => {
+      if(input.value) { respuestasExtra += `- ${input.previousElementSibling ? input.previousElementSibling.innerText : 'Dato'}: ${input.value}\n`; }
+    });
+
+    if (metodo === 'wsp') {
+      let msg = `*Consulta Estudio Aristeo*\n\n*Nombre:* ${nom}\n*Área:* ${area}\n`;
+      if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
+      msg += `\n*Resumen:*\n${res}`;
+      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
+    } else {
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      btn.style.pointerEvents = 'none';
+
+      const fd = new FormData();
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+      fd.append('subject', `Consulta Web: ${area} - ${nom}`);
+      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
+      if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
+      fd.append('Resumen', res);
+
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+        if (r.ok) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recibido!';
+          document.getElementById('evalForm').reset();
+          document.getElementById('dynBox').classList.remove('show');
+          setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
+        } else throw new Error();
+      } catch(e) {
+        alert('Error al enviar el correo. Por favor, intentá vía WhatsApp.');
+        btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
+      }
+    }
+  }
+
+  /* Acordeón FAQ */
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const isOpen = button.classList.contains('active');
+      
+      document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.classList.remove('active');
+        btn.nextElementSibling.style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        button.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + "px";
+      }
+    });
+  });
+</script>
+</body>
+</html>
