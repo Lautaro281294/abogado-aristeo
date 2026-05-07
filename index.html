@@ -80,6 +80,7 @@
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
+    background: transparent;
   }
   .header.scrolled { 
     background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
@@ -259,7 +260,11 @@
   }
 
   @media (max-width: 900px) {
-    /* Header Móvil */
+    /* Ajustes Header Móvil para evitar superposición */
+    .header { padding: 1rem 0; background: rgba(22, 25, 19, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-color); }
+    .brand-name { font-size: 1.5rem; }
+    .brand-top { font-size: 0.65rem; }
+
     .mobile-toggle { display: block; }
     .nav-links { 
       position: absolute; top: 100%; left: 0; right: 0; 
@@ -283,10 +288,11 @@
     .drop-item { justify-content: center; padding: 0.8rem; border: none; }
     .drop-item:hover { padding-left: 0.8rem; }
     
-    /* Hero Móvil */
-    .hero-content { padding-top: 8rem; text-align: center; }
-    .hero-h1 { font-size: clamp(2.8rem, 8vw, 4rem); }
-    .hero-desc { font-size: 1.15rem; margin-bottom: 2.5rem; margin-left: auto; margin-right: auto; }
+    /* Hero Móvil (SOLUCIÓN SUPERPOSICIÓN) */
+    .hero { align-items: flex-start; } /* Previene el centrado vertical que causaba el error */
+    .hero-content { padding-top: 10rem; text-align: center; width: 100%; }
+    .hero-h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1.5rem; }
+    .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; padding: 0 1rem; }
     .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; }
 
     /* Filosofía & Áreas */
@@ -326,9 +332,8 @@
     <nav class="nav-links" id="nav-links">
       <a href="#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop" id="nav-drop">
-        <span class="nav-a" style="cursor:pointer;">
-          Áreas
-          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
+        <span class="nav-a no-close" style="cursor:pointer;">
+          Áreas <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
           <a href="/civil-y-sucesiones.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
@@ -339,9 +344,7 @@
           <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
         </div>
       </div>
-      <a href="/contacto.html" class="btn-header">
-        <span>Contactame</span> <i class="fa-solid fa-arrow-right"></i>
-      </a>
+      <a href="#contacto" class="btn-header"><span>Contactame</span> <i class="fa-solid fa-arrow-right"></i></a>
     </nav>
   </div>
 </header>
@@ -354,26 +357,13 @@
     </video>
   </div>
   <div class="hero-overlay"></div>
-  
   <div class="container hero-content">
     <h1 class="hero-h1 reveal d1">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-    <p class="hero-desc reveal d2">
-      Defiendo tus intereses con la seriedad que tu caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.
-    </p>
-    <a href="#contacto" class="btn-primary reveal d2">
-      <span>Contactame</span>
-      <i class="fa-solid fa-arrow-down"></i>
-    </a>
-    
+    <p class="hero-desc reveal d2">Defiendo tus intereses con la seriedad que tu caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.</p>
+    <a href="#contacto" class="btn-primary reveal d2"><span>Contactame</span> <i class="fa-solid fa-arrow-down"></i></a>
     <div class="hero-stats reveal d2">
-      <div class="stat-item">
-        <span class="stat-n">M.P. 1 - 43722</span>
-        <span class="stat-l">Matrícula Provincial</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-n">Tº 511 Fº 222</span>
-        <span class="stat-l">Matrícula Federal</span>
-      </div>
+      <div class="stat-item"><span class="stat-n">M.P. 1 - 43722</span><span class="stat-l">Matrícula Provincial</span></div>
+      <div class="stat-item"><span class="stat-n">Tº 511 Fº 222</span><span class="stat-l">Matrícula Federal</span></div>
     </div>
   </div>
 </section>
@@ -384,36 +374,17 @@
       <div class="reveal">
         <div class="label">Compromiso y Realidad</div>
         <h2 class="heading-2">Resolución de<br><em>Conflictos.</em></h2>
-        <div class="qblock">
-          "Un asesoramiento a tiempo previene años de desgaste. Estudio tu caso a fondo para darte un diagnóstico claro desde el primer día."
-        </div>
+        <div class="qblock">"Un asesoramiento a tiempo previene años de desgaste. Estudio tu caso a fondo para darte un diagnóstico claro desde el primer día."</div>
       </div>
       <div class="reveal">
-        <p class="paragraph">
-          Te hablo con absoluta franqueza. Un conflicto legal requiere un estudio detallado y atención constante del expediente. Como abogado, me encargo personalmente de cada etapa de tu proceso para que siempre sepas dónde estamos parados.
-        </p>
-        <p class="paragraph">
-          Ya sea frente a un problema laboral, un conflicto familiar o la organización legal de tu empresa, mi objetivo es brindarte seguridad jurídica mediante un plan de acción transparente y realista.
-        </p>
+        <p class="paragraph">Te hablo con absoluta franqueza. Un conflicto legal requiere un estudio detallado y atención constante del expediente. Como abogado, me encargo personalmente de cada etapa de tu proceso para que siempre sepas dónde estamos parados.</p>
+        <p class="paragraph">Ya sea frente a un problema laboral, un conflicto familiar o la organización legal de tu empresa, mi objetivo es brindarte seguridad jurídica mediante un plan de acción transparente y realista.</p>
       </div>
     </div>
-    
     <div class="pillars reveal">
-      <div class="pillar">
-        <i class="fa-solid fa-magnifying-glass pillar-icon"></i>
-        <h3 class="pillar-h">Estudio Previo</h3>
-        <p class="pillar-p">Analizo cada expediente antes de trazar cualquier acción. Sin improvisaciones.</p>
-      </div>
-      <div class="pillar">
-        <i class="fa-solid fa-scale-balanced pillar-icon"></i>
-        <h3 class="pillar-h">Atención Directa</h3>
-        <p class="pillar-p">Asumo el control personal de tu caso. Me involucro en cada etapa del proceso para asegurar que la estrategia trazada se ejecute con precisión.</p>
-      </div>
-      <div class="pillar">
-        <i class="fa-solid fa-comments pillar-icon"></i>
-        <h3 class="pillar-h">Claridad Absoluta</h3>
-        <p class="pillar-p">Te informo el estado real de tu situación con precisión y sin eufemismos que distorsionen la realidad.</p>
-      </div>
+      <div class="pillar"><i class="fa-solid fa-magnifying-glass pillar-icon"></i><h3 class="pillar-h">Estudio Previo</h3><p class="pillar-p">Analizo cada expediente antes de trazar cualquier acción. Sin improvisaciones.</p></div>
+      <div class="pillar"><i class="fa-solid fa-scale-balanced pillar-icon"></i><h3 class="pillar-h">Atención Directa</h3><p class="pillar-p">Asumo el control personal de tu caso. Me involucro en cada etapa del proceso.</p></div>
+      <div class="pillar"><i class="fa-solid fa-comments pillar-icon"></i><h3 class="pillar-h">Claridad Absoluta</h3><p class="pillar-p">Te informo el estado real de tu situación con precisión y sin eufemismos.</p></div>
     </div>
   </div>
 </section>
@@ -424,116 +395,34 @@
       <div class="label">Campos de Acción</div>
       <h2 class="heading-2">Áreas de <em>Práctica</em></h2>
     </div>
-    
     <div class="pgrid reveal">
-      <a href="/civil-y-sucesiones.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-landmark pc-icon"></i>
-          <h3 class="pc-title">Derecho Civil</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar y resguardar tu patrimonio.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="/comercial-y-corporativo.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-file-contract pc-icon"></i>
-          <h3 class="pc-title">Comercial</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Asesoramiento a PyMEs, cobro de carteras en mora, redacción de contratos y regularización inmobiliaria.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="/laboral-y-art.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-briefcase pc-icon"></i>
-          <h3 class="pc-title">Laboral y ART</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Defensa integral ante despidos, accidentes (ART) y regularización de trabajo no registrado.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="/amparos-de-salud.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-heart-pulse pc-icon"></i>
-          <h3 class="pc-title">Amparos de Salud</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Medidas urgentes y efectivas para lograr tratamientos, medicación y coberturas por discapacidad.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="/defensa-del-consumidor.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-shield-halved pc-icon"></i>
-          <h3 class="pc-title">Consumidor</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Acciones contra bancos y empresas por estafas virtuales, planes de ahorro y abusos financieros.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
-      <a href="/derecho-de-familias.html" class="pc-card">
-        <div class="pc-main">
-          <i class="fa-solid fa-scale-unbalanced pc-icon"></i>
-          <h3 class="pc-title">Derecho de Familia</h3>
-        </div>
-        <div class="pc-hover">
-          <p class="pc-desc">Divorcios y acuerdos familiares gestionados con empatía y resguardo patrimonial.</p>
-          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
-        </div>
-      </a>
+      <a href="/civil-y-sucesiones.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div><div class="pc-hover"><p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar tu patrimonio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/comercial-y-corporativo.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento a PyMEs, contratos y regularización inmobiliaria.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Defensa integral ante despidos y accidentes (ART).</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/amparos-de-salud.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div><div class="pc-hover"><p class="pc-desc">Medidas urgentes para lograr tratamientos y coberturas.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/defensa-del-consumidor.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div><div class="pc-hover"><p class="pc-desc">Acciones contra bancos y abusos financieros.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/derecho-de-familias.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div><div class="pc-hover"><p class="pc-desc">Divorcios y acuerdos familiares con resguardo patrimonial.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
     </div>
   </div>
 </section>
-
-<div class="band reveal">
-  <div class="container">
-    <h2 class="band-quote">
-      "La defensa de tus derechos comienza con<br>
-      <em>información veraz</em> y trabajo honesto."
-    </h2>
-  </div>
-</div>
 
 <section class="section" id="contacto">
   <div class="container">
     <div class="label">Comunicación Directa</div>
     <h2 class="heading-2">Contactame</h2>
-    
     <div class="contact-wrap reveal">
-      
       <div class="contact-left">
         <div>
-          <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main);">Vías de Contacto</h3>
-          <p class="paragraph" style="margin-bottom: 3.5rem; font-size: 1.05rem;">Utilizá estas vías para respuestas inmediatas o para agendar una cita en el estudio.</p>
-          
+          <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem;">Vías de Contacto</h3>
           <a href="https://wa.me/5493517736170" class="channel" target="_blank">
-            <div class="ch-l">
-              <i class="fa-brands fa-whatsapp"></i>
-              <div>
-                <span class="ch-tag">Mensajería Directa</span>
-                <strong class="ch-name">WhatsApp Business</strong>
-              </div>
-            </div>
+            <div class="ch-l"><i class="fa-brands fa-whatsapp"></i><div><span class="ch-tag">Respuesta Inmediata</span><strong class="ch-name">WhatsApp Business</strong></div></div>
             <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
-          
           <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email">
-            <div class="ch-l">
-              <i class="fa-regular fa-envelope"></i>
-              <div>
-                <span class="ch-tag" id="email-tag">Recepción de Documentos</span>
-                <strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong>
-              </div>
-            </div>
-            <i class="fa-regular fa-copy" id="email-icon" style="color:var(--gold-dark); font-size:1.2rem;"></i>
+            <div class="ch-l"><i class="fa-regular fa-envelope"></i><div><span class="ch-tag" id="email-tag">Recepción de Documentos</span><strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong></div></div>
+            <i class="fa-solid fa-chevron-right" id="email-icon" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
         </div>
-
         <div class="urgency-alert">
           <strong><i class="fa-regular fa-clock"></i> Horario de Atención</strong>
           <p style="margin-bottom: 1rem;">Lunes a Viernes de 09:00 a 18:00 hs. (Atención con turno previo).</p>
@@ -541,59 +430,28 @@
           <p>Ante detenciones o emergencias fuera de horario, iniciá tu mensaje con la palabra URGENCIA.</p>
         </div>
       </div>
-
       <div class="contact-right">
         <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
-        
         <form id="evalForm">
-          <div class="fg">
-            <label class="fl">Nombre y Apellido *</label>
-            <input type="text" id="fn" class="fi" required placeholder="Ingresá tu nombre completo">
-          </div>
-          
+          <div class="fg"><label class="fl">Nombre y Apellido *</label><input type="text" id="fn" class="fi" required placeholder="Ingresá tu nombre"></div>
           <div class="frow">
-            <div class="fg">
-              <label class="fl">Celular (WhatsApp) *</label>
-              <input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000">
-            </div>
-            <div class="fg">
-              <label class="fl">Área de Consulta *</label>
-              <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
+            <div class="fg"><label class="fl">Celular *</label><input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000"></div>
+            <div class="fg"><label class="fl">Área *</label>
+              <select id="fa" class="fi" required onchange="cargarPreguntas()">
                 <option value="" disabled selected>Seleccioná un área...</option>
-                <option value="civil">Civil y Sucesiones</option>
-                <option value="comercial">Comercial y Empresas</option>
-                <option value="laboral">Laboral y ART</option>
-                <option value="salud">Amparos de Salud</option>
-                <option value="consumidor">Defensa del Consumidor</option>
-                <option value="familia">Derecho de Familia</option>
+                <option value="civil">Civil y Sucesiones</option><option value="comercial">Comercial y Empresas</option><option value="laboral">Laboral y ART</option><option value="salud">Amparos de Salud</option><option value="consumidor">Defensa del Consumidor</option><option value="familia">Derecho de Familia</option>
               </select>
             </div>
           </div>
-
-          <div class="dyn-box" id="dynBox">
-            <div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle de la Situación (Opcional)</div>
-            <div id="dyn-content"></div>
-          </div>
-
-          <div class="fg">
-            <label class="fl">Breve resumen de tu caso *</label>
-            <textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea>
-          </div>
-          
-          <div class="fg" style="margin-bottom: 1.5rem; display: flex; align-items: start; gap: 10px;">
+          <div class="dyn-box" id="dynBox"><div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle (Opcional)</div><div id="dyn-content"></div></div>
+          <div class="fg"><label class="fl">Breve resumen de tu caso *</label><textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación..." style="resize: none;"></textarea></div>
+          <div class="fg" style="display: flex; align-items: start; gap: 10px;">
             <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
-            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
-              Entiendo y acepto que los datos ingresados serán tratados con estricta confidencialidad profesional a los únicos fines de evaluar la viabilidad legal de la consulta, conforme a la Ley N° 25.326.
-            </label>
+            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">Acepto el tratamiento confidencial de mis datos (Ley 25.326).</label>
           </div>
-
           <div class="action-buttons">
-            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
-              <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
-            </button>
-            <button type="button" class="btn-sub" onclick="enviar('mail')">
-              <span>Enviar por E-Mail</span> <i class="fa-solid fa-envelope" style="font-size: 1rem;"></i>
-            </button>
+            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')"><span>WhatsApp</span> <i class="fa-brands fa-whatsapp"></i></button>
+            <button type="button" class="btn-sub" onclick="enviar('mail')"><span>E-Mail</span> <i class="fa-solid fa-envelope"></i></button>
           </div>
         </form>
       </div>
@@ -605,24 +463,15 @@
   <div class="container">
     <div class="foot-center">
       <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
-      <div class="foot-info">
-        Córdoba Capital | Fuero Provincial y Federal<br>
-        Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
-      </div>
+      <div class="foot-info">Córdoba Capital | Fuero Provincial y Federal<br>Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span></div>
     </div>
-    
-    <div class="legal-warning">
-      <strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter meramente informativo y no constituye asesoramiento legal, profesional ni vinculante. El envío de consultas a través de los formularios o canales de contacto no genera una relación abogado-cliente hasta tanto no sea confirmada expresamente por el Estudio.
-    </div>
-
-    <div class="foot-bottom">
-      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
-    </div>
+    <div class="legal-warning"><strong>Aviso Legal:</strong> La información en este sitio es informativa. El envío de consultas no genera una relación abogado-cliente hasta que sea confirmada expresamente.</div>
+    <div class="foot-bottom">© 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS</div>
   </div>
 </footer>
 
 <script>
-  // 1. Control del Menú Móvil (Hamburguesa)
+  // 1. Menú Móvil
   const btnMenu = document.getElementById('btn-menu');
   const navLinks = document.getElementById('nav-links');
   const navDrop = document.getElementById('nav-drop');
@@ -646,7 +495,7 @@
     }
   });
 
-  // Cerrar menú al hacer clic en un link en celular
+  // Cerrar menú al hacer clic en un link en celular (EXCLUYENDO EL BOTÓN "ÁREAS" CON LA CLASE no-close)
   document.querySelectorAll('.nav-a:not(.no-close), .drop-item, .btn-header').forEach(link => {
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
@@ -670,7 +519,7 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // 4. Copiar Email UX (NUEVA LÓGICA)
+  // 4. Copiar Email UX
   const copyBtn = document.getElementById('copy-email-btn');
   if(copyBtn) {
     copyBtn.addEventListener('click', (e) => {
@@ -680,18 +529,18 @@
         const tag = document.getElementById('email-tag');
         const icon = document.getElementById('email-icon');
         
-        // Feedback visual
         tag.innerText = '¡Email Copiado!'; 
         tag.style.color = '#25D366';
-        icon.classList.replace('fa-copy', 'fa-check');
+        icon.classList.replace('fa-chevron-right', 'fa-check');
         icon.style.color = '#25D366';
+        icon.style.fontSize = '1.2rem';
         
-        // Restaurar a los 3 segundos
         setTimeout(() => { 
           tag.innerText = 'Recepción de Documentos'; 
           tag.style.color = 'var(--gold-main)'; 
-          icon.classList.replace('fa-check', 'fa-copy'); 
+          icon.classList.replace('fa-check', 'fa-chevron-right'); 
           icon.style.color = 'var(--gold-dark)';
+          icon.style.fontSize = '0.8rem';
         }, 3000);
       }).catch(err => {
         console.error('Error al copiar: ', err);
