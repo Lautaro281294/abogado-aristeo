@@ -1,207 +1,841 @@
 <!DOCTYPE html>
+
 <html lang="es-AR">
+
 <head>
+
   <meta charset="UTF-8"/>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <meta name="description" content="Contacto directo con el Dr. Lautaro N. Aristeo. Evaluación técnica de casos legales en Córdoba. Vías de comunicación y cuestionario de pre-consulta."/>
+
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo">
+
   <title>Contacto | Estudio Jurídico Aristeo</title>
+
+
+
+  <!-- ══ VERCEL ANALYTICS ══ -->
 
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
+
+
+  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
+
+
   <style>
-  /* ════ SISTEMA DE DISEÑO (OLIVA) ════ */
+
+  /* ════ SISTEMA DE DISEÑO DE ALTA GAMA ════ */
+
   :root {
-    --bg-base:     #161913; 
-    --bg-surface:  #1f241a; 
-    --bg-panel:    #292f22; 
+
+    --bg-base:     #080a06; 
+
+    --bg-surface:  #0e120a; 
+
+    --bg-panel:    #13180e; 
+
     --line-color:  rgba(194, 163, 109, 0.15); 
+
     --line-hover:  rgba(194, 163, 109, 0.35);
+
     
+
     --gold-main:   #c2a36d; 
+
     --gold-light:  #e3c999; 
+
     --gold-dark:   #8a7346; 
+
     
+
     --text-main:   #F7F5F0; 
-    --text-muted:  rgba(247, 245, 240, 0.75); 
+
+    --text-muted:  rgba(247, 245, 240, 0.7); 
+
     
+
     --font-heading: 'Cormorant Garamond', Georgia, serif;
+
     --font-body:    'DM Sans', system-ui, sans-serif;
-    
+
     --ease:         cubic-bezier(0.16, 1, 0.3, 1);
+
   }
+
+
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   html { scroll-behavior: smooth; font-size: 16px; }
+
   body { background-color: var(--bg-base); color: var(--text-main); font-family: var(--font-body); font-weight: 300; line-height: 1.85; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
   ::selection { background-color: var(--gold-dark); color: var(--text-main); }
+
   ::-webkit-scrollbar { width: 6px; }
+
   ::-webkit-scrollbar-track { background: var(--bg-base); }
+
   ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
 
+
+
   .container { max-width: 1350px; margin: 0 auto; padding: 0 5vw; }
+
   .section { padding: 8rem 0; position: relative; }
 
+
+
   .label { display: inline-flex; align-items: center; gap: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); margin-bottom: 2rem; }
+
   .label::before { content: ''; width: 40px; height: 1px; background: var(--gold-main); flex-shrink: 0; }
+
   .heading-2 { font-family: var(--font-heading); font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 400; line-height: 1.1; color: var(--text-main); margin-bottom: 2.5rem; }
+
   .heading-2 em { font-style: italic; color: var(--gold-light); }
 
+
+
   .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s var(--ease); }
+
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════ HEADER Y RESPONSIVO ════ */
+
+
+  /* ════ HEADER ════ */
+
   .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 2.2rem 0; transition: all 0.5s var(--ease); }
-  .header.scrolled { background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+
+  .header.scrolled { background: rgba(8, 10, 6, 0.98); backdrop-filter: blur(10px); padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); }
+
   .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+
   
-  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; }
-  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
-  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
+
+  .brand { text-decoration: none; flex-shrink: 0; }
+
+  .brand-top { font-size: 0.5rem; letter-spacing: 0.5em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; display: block; margin-bottom: 2px; }
+
+  .brand-name { font-family: var(--font-heading); font-size: 1.6rem; letter-spacing: 0.1em; color: var(--text-main); text-transform: uppercase; transition: 0.3s; }
+
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  /* Elemento Hamburguesa Oculto en PC */
-  .menu-toggle { display: none; font-size: 1.8rem; color: var(--gold-main); cursor: pointer; transition: 0.3s; }
+
 
   .nav-links { display: flex; gap: 3rem; align-items: center; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; position: relative; padding: 5px 0; }
-  .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
+
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: 0.3s; padding: 5px 0; }
+
   .nav-a:hover { color: var(--gold-light); }
-  .nav-a:hover::after { width: 100%; }
+
+
 
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
-  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); }
-  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
-  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
-  .drop-item:hover i { color: var(--gold-main); }
 
-  .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; }
+  .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); }
+
+  .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+
+  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; }
+
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
+
+
+
+  .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); }
+
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* AJUSTES PARA CELULARES */
-  @media (max-width: 950px) {
-    .menu-toggle { display: block; z-index: 1100; position: relative; }
-    
-    .nav-links {
-      position: fixed; top: 0; left: 0; right: 0; bottom: 0; 
-      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px);
-      flex-direction: column; justify-content: center; align-items: center;
-      opacity: 0; visibility: hidden; transition: 0.4s var(--ease); z-index: 1050;
-    }
-    .nav-links.active { opacity: 1; visibility: visible; }
-    
-    .drop { flex-direction: column; text-align: center; }
-    .drop-menu { 
-      position: relative; top: auto; left: auto; transform: none; 
-      background: transparent; border: none; box-shadow: none; 
-      min-width: auto; padding: 1rem 0 0; display: none; 
-    }
-    .drop.open .drop-menu { display: flex; flex-direction: column; gap: 0.5rem; opacity: 1; visibility: visible; }
-    
-    .brand-name { font-size: 1.8rem; }
-  }
 
-  /* ════ HERO INTERNO DE CONTACTO ════ */
+
+  /* ════ HERO INTERNO ════ */
+
   .page-hero { padding: 12rem 0 6rem; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); text-align: center; border-bottom: 1px solid var(--line-color); }
+
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
+
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
+
   .ph-desc { font-size: 1.15rem; color: var(--text-muted); max-width: 800px; margin: 0 auto; line-height: 1.8;}
 
-  @media (max-width: 950px) {
-    .page-hero { padding-top: 10rem; }
-  }
+
 
   /* ════ ESTRUCTURA DE CONTACTO DUAL ════ */
+
   .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 2rem; box-shadow: 0 40px 80px rgba(0,0,0,0.4); }
+
   @media (max-width: 1000px) { .contact-wrap { grid-template-columns: 1fr; } }
+
   
+
   /* Panel Vías Rápidas */
+
   .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
+
   .contact-left h3 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem; color: var(--text-main); }
+
   .contact-left p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 3rem; line-height: 1.8; }
+
   
+
   .channel { display: flex; align-items: center; justify-content: space-between; padding: 2.2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
+
   .channel::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--gold-main); transform: scaleY(0); transform-origin: bottom; transition: transform 0.4s var(--ease); }
+
   .channel:hover { border-color: var(--line-hover); transform: translateX(12px); background: var(--bg-base); }
+
   .channel:hover::before { transform: scaleY(1); }
+
   
+
   .ch-l { display: flex; align-items: center; gap: 1.8rem; }
+
   .ch-l i { font-size: 2.2rem; color: var(--gold-main); }
+
   .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
+
   .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; }
 
+
+
   .urgency-alert { margin-top: 4rem; padding: 2.5rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
+
   .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
+
   .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
 
+
+
   /* Panel Formulario Inteligente */
+
   .contact-right { padding: 5rem; }
-  @media (max-width: 600px) { .contact-right { padding: 3rem 2rem; } }
+
   .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3.5rem; font-weight: 600; }
+
   
+
   .fg { margin-bottom: 3rem; }
+
   .fl { display: block; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; color: var(--gold-main); margin-bottom: 1.2rem; letter-spacing: 0.25em; }
+
   .fi { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--line-color); color: var(--text-main); font-family: var(--font-body); font-size: 1.15rem; padding: 1rem 0; outline: none; transition: 0.4s; appearance: none; border-radius: 0; }
+
   .fi:focus { border-color: var(--gold-main); }
+
   .fi option { background: var(--bg-panel); color: var(--text-main); }
+
   .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+
   @media (max-width: 600px) { .frow { grid-template-columns: 1fr; gap: 0; } }
 
+
+
   /* Caja Dinámica */
+
   .dyn-box { margin-bottom: 3rem; display: none; padding: 3rem; background: rgba(194,163,109,0.03); border-left: 2px solid var(--gold-main); animation: fadeIn 0.5s ease; }
+
   .dyn-box.show { display: block; }
+
   .dyn-title { font-size: 0.8rem; font-weight: 600; color: var(--text-main); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 2rem; display: flex; align-items: center; gap: 10px; }
+
   .dyn-title i { color: var(--gold-main); }
+
   @keyframes fadeIn { from { opacity:0; transform: translateY(-15px); } to { opacity:1; transform: translateY(0); } }
 
+
+
   /* Botones Dobles */
+
   .action-buttons { display: flex; gap: 1.5rem; margin-top: 3rem; flex-wrap: wrap; }
+
   .btn-sub { flex: 1; padding: 1.8rem; background: transparent; border: 1px solid var(--gold-main); color: var(--gold-main); font-family: var(--font-body); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.25em; cursor: pointer; transition: 0.4s var(--ease); display: flex; align-items: center; justify-content: center; gap: 15px; position: relative; overflow: hidden; min-width: 250px; }
+
   .btn-sub::before { content: ''; position: absolute; inset: 0; background: var(--gold-main); transform: translateY(101%); transition: transform 0.4s var(--ease); }
+
   .btn-sub:hover::before { transform: translateY(0); }
+
   .btn-sub:hover { color: var(--bg-base); }
+
   .btn-sub.wsp { border-color: #25D366; color: #25D366; }
+
   .btn-sub.wsp::before { background: #25D366; }
+
   .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
+
+
   /* Disclaimer Ético */
+
   .disclaimer { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--line-color); padding-top: 2rem; margin-top: 3.5rem; text-align: justify; }
 
-  /* ════ FOOTER ESTANDARIZADO ════ */
-  .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
-  .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
-  .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
-  .foot-info { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2; }
-  
-  .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
+
+
+  /* ════ FOOTER ════ */
+
+  .footer { padding: 8rem 0 4rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
+
+  .foot-grid { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 3rem; }
+
+  @media (max-width: 900px) { .foot-grid { grid-template-columns: 1fr; text-align: center; } .foot-r { text-align: center !important; } }
+
+  .foot-logo { font-family: var(--font-heading); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-align: center; color: var(--text-main); }
+
+  .foot-side { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 2.5; }
+
+  .foot-r { text-align: right; }
+
+  .foot-bottom { margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid var(--line-color); text-align: center; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+
   </style>
+
 </head>
+
 <body>
 
+
+
+<!-- ══ HEADER ══ -->
+
 <header class="header" id="hdr">
+
   <div class="container nav-wrap">
+
     <a href="/index.html" class="brand">
+
       <span class="brand-top">Estudio Jurídico</span>
+
       <span class="brand-name">Aristeo</span>
+
     </a>
 
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
+    <nav class="nav-links">
+
+      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
+
+      <div class="drop">
+
+        <span class="nav-a" style="cursor:default;">
+
+          Áreas
+
+          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
+
+        </span>
+
+        <div class="drop-menu">
+
+          <a href="/civil-y-comercial.html" class="drop-item"><i class="fa-solid fa-landmark"></i> Civil y Sucesiones</a>
+
+          <a href="/comercial-y-corporativo.html" class="drop-item"><i class="fa-solid fa-file-contract"></i> Comercial y Empresas</a>
+
+          <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
+
+          <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
+
+          <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
+
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+
+        </div>
+
+      </div>
+
+      <a href="/index.html#contacto" class="btn-header">Volver al Inicio <i class="fa-solid fa-arrow-left"></i></a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+
+<!-- ══ HERO INTERNO ══ -->
+
+<section class="page-hero">
+
+  <div class="container">
+
+    <i class="fa-regular fa-envelope ph-icon reveal"></i>
+
+    <h1 class="ph-title reveal">Comunicación Directa</h1>
+
+    <p class="ph-desc reveal">
+
+      Mi prioridad es brindarle respuestas precisas y un plan de acción concreto. Utilice el canal que le resulte más conveniente para iniciar la evaluación técnica de su caso.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ══ CONTACTO Y CUESTIONARIO INTELIGENTE ══ -->
+
+<section class="section" style="padding-top: 0;">
+
+  <div class="container">
+
+    
+
+    <div class="contact-wrap reveal">
+
+      
+
+      <!-- Panel Izquierdo: Vías Rápidas -->
+
+      <div class="contact-left">
+
+        <div>
+
+          <h3>Canales Rápidos</h3>
+
+          <p>Para consultas urgentes, seguimiento de expedientes o para coordinar una cita presencial en el estudio.</p>
+
+          
+
+          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+
+            <div class="ch-l">
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+              <div>
+
+                <span class="ch-tag">Respuesta Inmediata</span>
+
+                <strong class="ch-name">WhatsApp Business</strong>
+
+              </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+
+          </a>
+
+          
+
+          <a href="mailto:dr.aristeolautaro@gmail.com" class="channel">
+
+            <div class="ch-l">
+
+              <i class="fa-regular fa-envelope"></i>
+
+              <div>
+
+                <span class="ch-tag">Recepción de Documentos</span>
+
+                <strong class="ch-name">E-Mail del Estudio</strong>
+
+              </div>
+
+            </div>
+
+            <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
+
+          </a>
+
+        </div>
+
+
+
+        <div class="urgency-alert">
+
+          <strong>Protocolo de Urgencia</strong>
+
+          <p>Ante detenciones, accidentes laborales o medidas cautelares fuera de horario comercial, inicie su mensaje de WhatsApp con la palabra URGENCIA.</p>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Panel Derecho: Formulario y Pre-Consulta -->
+
+      <div class="contact-right">
+
+        <span class="form-eyebrow">Cuestionario de Pre-Consulta</span>
+
+        
+
+        <form id="evalForm">
+
+          <div class="fg">
+
+            <label class="fl">Nombre y Apellido *</label>
+
+            <input type="text" id="fn" class="fi" required placeholder="Ingrese su nombre completo">
+
+          </div>
+
+          
+
+          <div class="frow">
+
+            <div class="fg">
+
+              <label class="fl">Celular (WhatsApp) *</label>
+
+              <input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000">
+
+            </div>
+
+            <div class="fg">
+
+              <label class="fl">Área de Consulta *</label>
+
+              <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
+
+                <option value="" disabled selected>Seleccione un área...</option>
+
+                <option value="civil">Civil y Sucesiones</option>
+
+                <option value="comercial">Comercial y Empresas</option>
+
+                <option value="laboral">Laboral y ART</option>
+
+                <option value="salud">Amparos de Salud</option>
+
+                <option value="consumidor">Defensa del Consumidor</option>
+
+                <option value="familia">Derecho de Familias</option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- Preguntas Dinámicas Inteligentes -->
+
+          <div class="dyn-box" id="dynBox">
+
+            <div class="dyn-title"><i class="fa-solid fa-list-check"></i> Plan de Acción (Opcional)</div>
+
+            <div id="dyn-content"></div>
+
+          </div>
+
+
+
+          <div class="fg">
+
+            <label class="fl">Breve resumen de su caso *</label>
+
+            <textarea id="fs" class="fi" rows="3" required placeholder="Describa la situación para que podamos evaluar la viabilidad legal..." style="resize: none;"></textarea>
+
+          </div>
+
+          
+
+          <div class="action-buttons">
+
+            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
+
+              <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
+
+            </button>
+
+            <button type="button" class="btn-sub" onclick="enviar('mail')">
+
+              <span>Enviar por E-Mail</span> <i class="fa-solid fa-lock" style="font-size: 1rem;"></i>
+
+            </button>
+
+          </div>
+
+
+
+          <!-- Cumplimiento Ético Ley 5805 -->
+
+          <div class="disclaimer">
+
+            La información suministrada está protegida por el <strong>secreto profesional (Ley 5805 de la Prov. de Córdoba)</strong>. Completar este cuestionario ayuda a preparar un diagnóstico para su consulta, pero no garantiza resultados ni implica contratación automática de servicios.
+
+          </div>
+
+        </form>
+
+      </div>
+
     </div>
 
-    <nav class="nav-links">
-      <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
-      <div class="drop">
-        <span class="nav-a" style="cursor:default;" onclick="toggleDrop(event)">
-          Áreas
-          <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
-        </span>
-        <div class="drop-menu">
+  </div>
+
+</section>
+
+
+
+<!-- ══ FOOTER DE 3 COLUMNAS ══ -->
+
+<footer class="footer">
+
+  <div class="container">
+
+    <div class="foot-grid">
+
+      <div class="foot-side">
+
+        Córdoba Capital<br>Fuero Provincial y Federal
+
+      </div>
+
+      <div class="foot-logo">Estudio Jurídico Aristeo</div>
+
+      <div class="foot-side foot-r">
+
+        Dr. Lautaro N. Aristeo<br>
+
+        <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span>
+
+      </div>
+
+    </div>
+
+    <div class="foot-bottom">
+
+      © 2026 Estudio Jurídico Aristeo · Todos los derechos reservados
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  /* Efecto Header */
+
+  window.addEventListener('scroll', () => {
+
+    document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
+
+  });
+
+
+
+  /* Observador de Revelado */
+
+  const obs = new IntersectionObserver(entries => {
+
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+
+
+  /* Lógica Cuestionario Inteligente */
+
+  const DYN_HTML = {
+
+    'civil': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Posee documentación a mano?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
+
+    'comercial': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Empresa / PyME">Empresa / PyME</option><option value="Particular">Particular</option></select></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">Motivo principal</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Cobro de deudas / Pagarés">Cobro de deudas / Pagarés</option><option value="Revisión de Contratos">Revisión de Contratos</option></select></div>`,
+
+    'laboral': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Situación actual</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Despido">Despido</option><option value="Trabajo no registrado (en negro)">Trabajo no registrado</option><option value="Accidente / ART">Accidente / ART</option></select></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Se enviaron telegramas?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option><option value="No estoy seguro">No estoy seguro</option></select></div>`,
+
+    'salud': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
+
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación le niegan?</label>
+
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
+
+    'consumidor': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
+
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hizo reclamo previo?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
+
+    'familia': `
+
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>
+
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Existen bienes para dividir?</label>
+
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`
+
+  };
+
+
+
+  function cargarPreguntas() {
+
+    const val = document.getElementById('fa').value;
+
+    const box = document.getElementById('dynBox');
+
+    const content = document.getElementById('dyn-content');
+
+    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } 
+
+    else { box.classList.remove('show'); content.innerHTML = ''; }
+
+  }
+
+
+
+  /* Envío Dual: WSP o Email */
+
+  async function enviar(metodo) {
+
+    const btn = event.currentTarget;
+
+    const nom = document.getElementById('fn').value.trim();
+
+    const tel = document.getElementById('ft').value.trim();
+
+    const selectArea = document.getElementById('fa');
+
+    const area = selectArea.options[selectArea.selectedIndex].text;
+
+    const res = document.getElementById('fs').value.trim();
+
+
+
+    if(!nom || !tel || selectArea.value === "" || !res) { 
+
+      alert('Para un correcto análisis, complete los campos obligatorios (*).'); return; 
+
+    }
+
+
+
+    // Recolectar datos opcionales
+
+    let respuestasExtra = "";
+
+    const dynInputs = document.querySelectorAll('.dyn-input');
+
+    dynInputs.forEach(input => {
+
+      if(input.value) { respuestasExtra += `- ${input.previousElementSibling ? input.previousElementSibling.innerText : 'Dato'}: ${input.value}\n`; }
+
+    });
+
+
+
+    if (metodo === 'wsp') {
+
+      let msg = `*Pre-Consulta Estudio Aristeo*\n\n*Nombre:* ${nom}\n*Temática:* ${area}\n`;
+
+      if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
+
+      msg += `\n*Resumen:* ${res}`;
+
+      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
+
+    } else {
+
+      const originalHtml = btn.innerHTML;
+
+      btn.innerHTML = '<span>Enviando...</span> <i class="fa-solid fa-spinner fa-spin"></i>';
+
+      btn.style.pointerEvents = 'none';
+
+
+
+      const fd = new FormData();
+
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+
+      fd.append('subject', `Consulta Web: ${area} - ${nom}`);
+
+      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
+
+      if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
+
+      fd.append('Resumen', res);
+
+
+
+      try {
+
+        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+
+        if (r.ok) {
+
+          btn.innerHTML = '<span>¡Recibido!</span> <i class="fa-solid fa-check"></i>';
+
+          document.getElementById('evalForm').reset();
+
+          document.getElementById('dynBox').classList.remove('show');
+
+          setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
+
+        } else throw new Error();
+
+      } catch(e) {
+
+        alert('Error al enviar el correo. Por favor, intente vía WhatsApp.');
+
+        btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
+
+      }
+
+    }
+
+  }
+
+</script>
+
+</body>
+
+</html>
