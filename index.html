@@ -94,6 +94,7 @@
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
+  /* Elemento Hamburguesa */
   .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; z-index: 1100; position: relative; }
 
   .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
@@ -136,18 +137,24 @@
   .btn-primary { 
     display: inline-flex; align-items: center; gap: 15px; font-size: 0.85rem; font-weight: 600; 
     letter-spacing: 0.25em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
-    padding: 1.4rem 3.5rem; text-decoration: none; transition: 0.4s var(--ease); border: 1px solid var(--gold-main);
+    padding: 1.4rem 3.5rem; text-decoration: none; transition: 0.4s var(--ease); border: 1px solid var(--gold-main); text-shadow: none;
   }
   .btn-primary:hover { background: transparent; color: var(--gold-main); transform: translateY(-3px); }
 
   .hero-stats { display: flex; justify-content: center; gap: 5rem; flex-wrap: wrap; margin-top: 5rem; padding-top: 2.5rem; border-top: 1px solid rgba(194, 163, 109, 0.3); }
-  .stat-item { text-align: center; }
+  .stat-item { text-shadow: none; text-align: center; }
   .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
   .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; font-weight: 500; }
 
-  /* ════ PILARES ════ */
+  /* ════ FILOSOFÍA Y PILARES ════ */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-  .qblock { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); padding: 1rem 0 1rem 2.5rem; margin: 3rem 0; }
+  
+  .qblock { 
+    font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); 
+    color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); 
+    padding: 1rem 0 1rem 2.5rem; margin: 3rem 0; 
+  }
+
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 6rem; }
   .pillar { background: var(--bg-panel); padding: 4.5rem 3.5rem; transition: background 0.4s; }
   .pillar:hover { background: var(--bg-surface); }
@@ -160,10 +167,11 @@
   .pc-card { position: relative; overflow: hidden; height: 380px; background: var(--bg-panel); border: 1px solid var(--line-color); text-decoration: none; border-radius: 2px; }
   .pc-main { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; transition: 0.6s var(--ease); padding: 2rem; z-index: 2; }
   .pc-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 2rem; transition: 0.4s; }
-  .pc-title { font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-main); line-height: 1.2; }
+  .pc-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); line-height: 1.2; }
   .pc-hover { position: absolute; inset: 0; background: rgba(31,36,26,0.98); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3rem; text-align: center; opacity: 0; transform: translateY(20px); transition: 0.6s var(--ease); z-index: 3; }
   .pc-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.7; }
   .pc-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-main); display: inline-flex; align-items: center; gap: 10px; border-bottom: 1px solid transparent; padding-bottom: 3px; transition: 0.3s; }
+  .pc-card:hover { border-color: var(--gold-main); }
   .pc-card:hover .pc-main { opacity: 0; transform: scale(0.95); }
   .pc-card:hover .pc-hover { opacity: 1; transform: translateY(0); }
   .pc-card:hover .pc-link { border-color: var(--gold-main); gap: 15px; }
@@ -173,7 +181,7 @@
   .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.3; max-width: 900px; margin: 0 auto; color: var(--text-main); }
   .band-quote em { color: var(--gold-light); font-style: italic; }
 
-  /* ════ CONTACTO ════ */
+  /* ════ CONTACTO Y CUESTIONARIO ════ */
   .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
   .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   .channel { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
@@ -185,6 +193,8 @@
   .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
   .ch-name { font-size: 1.1rem; color: var(--text-main); font-weight: 400; }
   .urgency-alert { margin-top: 3rem; padding: 2rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
+  .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
+  .urgency-alert p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.7; margin: 0; }
   .contact-right { padding: 5rem; }
   .form-eyebrow { font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-main); display: block; margin-bottom: 3rem; font-weight: 600; }
   .fg { margin-bottom: 2.5rem; }
@@ -361,12 +371,53 @@
       <h2 class="heading-2">Áreas de <em>Práctica</em></h2>
     </div>
     <div class="pgrid reveal">
-      <a href="/civil-y-sucesiones.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div><div class="pc-hover"><p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar tu patrimonio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/comercial-y-corporativo.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento a PyMEs, contratos y regularización inmobiliaria.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores y PyMEs.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/amparos-de-salud.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div><div class="pc-hover"><p class="pc-desc">Medidas urgentes para lograr tratamientos y coberturas.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/defensa-del-consumidor.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div><div class="pc-hover"><p class="pc-desc">Acciones contra bancos y abusos financieros.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/derecho-de-familias.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div><div class="pc-hover"><p class="pc-desc">Divorcios y acuerdos familiares con resguardo patrimonial.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/civil-y-sucesiones.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar tu patrimonio.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <a href="/comercial-y-corporativo.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Asesoramiento a PyMEs, contratos y regularización inmobiliaria.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <a href="/laboral-y-art.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Defensa de derechos del trabajador, reclamos por accidentes y gestión preventiva para PyMEs.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <a href="/amparos-de-salud.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Medidas urgentes para lograr tratamientos y coberturas.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <a href="/defensa-del-consumidor.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Acciones contra bancos y abusos financieros.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
+      
+      <a href="/derecho-de-familias.html" class="pc-card">
+        <div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div>
+        <div class="pc-hover">
+          <p class="pc-desc">Divorcios y acuerdos familiares con resguardo patrimonial.</p>
+          <span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -456,17 +507,18 @@
     }
   });
 
-  // Desplegar submenú "Áreas" sin cerrar el menú principal
+  // SOLUCIÓN DEFINITIVA: Desplegar submenú "Áreas" sin que se cierre el menú general
   btnAreas.addEventListener('click', (e) => {
-    e.preventDefault(); e.stopPropagation();
+    e.preventDefault(); 
+    e.stopPropagation(); // Evita que el click se propague y dispare otros eventos
     if(window.innerWidth <= 900) {
       navDrop.classList.toggle('active');
     }
   });
 
-  // Cerrar menú SOLAMENTE al tocar enlaces reales (no el botón "Áreas")
-  const enlacesReales = document.querySelectorAll('.nav-links a:not(#btn-areas)');
-  enlacesReales.forEach(link => {
+  // Cerrar menú SOLAMENTE al tocar los enlaces reales con 'href' (ignora el botón Áreas)
+  const enlacesNavegacion = document.querySelectorAll('.nav-links a[href]');
+  enlacesNavegacion.forEach(link => {
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
         navLinks.classList.remove('active');
@@ -497,54 +549,120 @@
       navigator.clipboard.writeText(email).then(() => {
         const tag = document.getElementById('email-tag');
         const icon = document.getElementById('email-icon');
-        tag.innerText = '¡Email Copiado!'; tag.style.color = '#25D366';
+        
+        tag.innerText = '¡Email Copiado!'; 
+        tag.style.color = '#25D366';
         icon.classList.replace('fa-chevron-right', 'fa-check');
-        icon.style.color = '#25D366'; icon.style.fontSize = '1.2rem';
+        icon.style.color = '#25D366';
+        icon.style.fontSize = '1.2rem';
+        
         setTimeout(() => { 
-          tag.innerText = 'Recepción de Documentos'; tag.style.color = 'var(--gold-main)'; 
+          tag.innerText = 'Recepción de Documentos'; 
+          tag.style.color = 'var(--gold-main)'; 
           icon.classList.replace('fa-check', 'fa-chevron-right'); 
-          icon.style.color = 'var(--gold-dark)'; icon.style.fontSize = '0.8rem';
+          icon.style.color = 'var(--gold-dark)';
+          icon.style.fontSize = '0.8rem';
         }, 3000);
+      }).catch(err => {
+        console.error('Error al copiar: ', err);
       });
     });
   }
 
   // 5. Lógica Cuestionario Inteligente
   const DYN_HTML = {
-    'civil': '<select class="fi dyn-input"><option value="">¿Tipo de trámite?</option><option value="Sucesión">Sucesión</option><option value="Usucapión">Usucapión</option></select>',
-    'comercial': '<select class="fi dyn-input"><option value="">¿Motivo?</option><option value="Deudas">Cobro de deudas</option><option value="Contratos">Contratos</option></select>',
-    'laboral': '<select class="fi dyn-input"><option value="">¿Situación?</option><option value="Despido">Despido</option><option value="Accidente">Accidente / ART</option></select>',
-    'salud': '<input type="text" class="fi dyn-input" placeholder="Obra Social o Prepaga">',
-    'consumidor': '<input type="text" class="fi dyn-input" placeholder="Banco o Empresa">',
-    'familia': '<select class="fi dyn-input"><option value="">¿Hijos menores?</option><option value="Sí">Sí</option><option value="No">No</option></select>'
+    'civil': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Poseés documentación a mano?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
+    'comercial': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Empresa / PyME">Empresa / PyME</option><option value="Particular">Particular</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">Motivo principal</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Cobro de deudas / Pagarés">Cobro de deudas / Pagarés</option><option value="Revisión de Contratos">Revisión de Contratos</option></select></div>`,
+    'laboral': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Situación actual</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Despido">Despido</option><option value="Trabajo no registrado (en negro)">Trabajo no registrado</option><option value="Accidente / ART">Accidente / ART</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Se enviaron telegramas?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option><option value="No estoy seguro">No estoy seguro</option></select></div>`,
+    'salud': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación te niegan?</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
+    'consumidor': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hiciste reclamo previo?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
+    'familia': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Existen bienes para dividir?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`
   };
 
   function cargarPreguntas() {
     const val = document.getElementById('fa').value;
     const box = document.getElementById('dynBox');
     const content = document.getElementById('dyn-content');
-    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } else { box.classList.remove('show'); }
+    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } 
+    else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
   // 6. Envío de Formulario Dual
   async function enviar(metodo) {
+    const btn = event.currentTarget;
     const nom = document.getElementById('fn').value.trim();
     const tel = document.getElementById('ft').value.trim();
-    const area = document.getElementById('fa').options[document.getElementById('fa').selectedIndex].text;
+    const selectArea = document.getElementById('fa');
+    const area = selectArea.options[selectArea.selectedIndex].text;
     const res = document.getElementById('fs').value.trim();
-    if(!nom || !tel || !res) return alert('Por favor, completa los campos obligatorios.');
+    const privacyChecked = document.getElementById('privacyConsent').checked;
 
-    let extra = "";
-    document.querySelectorAll('.dyn-input').forEach(i => { if(i.value) extra += `Detalle: ${i.value}\n`; });
+    if(!nom || !tel || selectArea.value === "" || !res) { 
+      alert('Para un correcto análisis, completá los campos obligatorios (*).'); return; 
+    }
+    if(!privacyChecked) {
+      alert('Debés aceptar la política de confidencialidad de datos (Ley 25.326) antes de enviar tu consulta.'); return;
+    }
+
+    let respuestasExtra = "";
+    const dynInputs = document.querySelectorAll('.dyn-input');
+    dynInputs.forEach(input => {
+      if(input.value) { respuestasExtra += `- ${input.previousElementSibling ? input.previousElementSibling.innerText : 'Dato'}: ${input.value}\n`; }
+    });
 
     if (metodo === 'wsp') {
-      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(`*Consulta Estudio Aristeo*\nNombre: ${nom}\nÁrea: ${area}\n${extra}Resumen: ${res}`)}`);
+      let msg = `*Consulta Estudio Aristeo*\n\n*Nombre:* ${nom}\n*Área:* ${area}\n`;
+      if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
+      msg += `\n*Resumen:*\n${res}`;
+      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
     } else {
-      const btn = event.currentTarget; btn.innerHTML = 'Enviando...';
-      const fd = new FormData(); fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
-      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area); fd.append('Resumen', res); fd.append('Cuestionario', extra);
-      const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
-      if (r.ok) { btn.innerHTML = '¡Enviado!'; document.getElementById('evalForm').reset(); }
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
+      btn.style.pointerEvents = 'none';
+
+      const fd = new FormData();
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd'); // Asegúrate de que esta API Key sea correcta
+      fd.append('subject', `Consulta Web: ${area} - ${nom}`);
+      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
+      if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
+      fd.append('Resumen', res);
+
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
+        if (r.ok) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recibido!';
+          document.getElementById('evalForm').reset();
+          document.getElementById('dynBox').classList.remove('show');
+          setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
+        } else throw new Error();
+      } catch(e) {
+        alert('Error al enviar el correo. Por favor, intentá vía WhatsApp.');
+        btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
+      }
     }
   }
 </script>
