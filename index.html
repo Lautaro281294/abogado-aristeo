@@ -76,7 +76,7 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════ HEADER Y RESPONSIVE ════ */
+  /* ════ HEADER Y RESPONSIVE (PC Y MÓVIL) ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -87,32 +87,34 @@
     padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
   }
   
-  /* Flexbox corregido para que el botón hamburguesa no se escape de la pantalla */
   .nav-wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 1rem; }
   
-  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; z-index: 1100; position: relative; }
+  .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; z-index: 1100; }
   .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; white-space: nowrap; }
   .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; white-space: nowrap; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  /* Botón Hamburguesa Robusto */
-  .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 2rem; cursor: pointer; transition: 0.3s; z-index: 1100; position: relative; padding: 0.5rem; }
+  /* Botón Hamburguesa Oculto en PC */
+  .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; z-index: 1100; position: relative; }
   .mobile-toggle:hover { color: var(--gold-light); }
 
-  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
+  /* Enlaces de Navegación PC */
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; white-space: nowrap; }
   .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
   .nav-a:hover::after { width: 100%; }
 
+  /* Dropdown Menú Escritorio CORREGIDO */
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
   .drop-menu { 
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
     background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; 
     min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
+    display: flex; flex-direction: column; /* Evita que los textos se peguen horizontalmente */
   }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
+  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; width: 100%; }
   .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
   .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
   .drop-item:hover i { color: var(--gold-main); }
@@ -120,33 +122,19 @@
   .btn-header { 
     display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; 
     letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
-    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; 
+    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; white-space: nowrap;
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO ESTRUCTURADO PARA NO SUPERPONERSE ════ */
-  .hero { 
-    position: relative; 
-    min-height: 100vh; 
-    display: flex; 
-    align-items: center; /* Centrado vertical correcto */
-    justify-content: center; /* Centrado horizontal */
-    overflow: hidden; 
-    padding-top: 80px; /* Margen de seguridad para que el menú fijo nunca lo tape */
-  }
+  /* ════ HERO ════ */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 80px; }
   .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; }
   .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
   .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(10%); }
   .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(22,25,19,0.85) 0%, rgba(22,25,19,0.7) 50%, rgba(22,25,19,1) 100%); }
   
-  .hero-content { 
-    position: relative; 
-    z-index: 10; 
-    width: 100%; 
-    max-width: 1000px; 
-    text-shadow: 0 4px 15px rgba(0,0,0,0.8); 
-  }
-  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 2rem; color: #ffffff; }
+  .hero-content { position: relative; z-index: 10; width: 100%; max-width: 1000px; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
+  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 2rem; color: #ffffff; }
   .hero-h1 em { font-style: italic; color: var(--gold-light); }
   .hero-desc { font-size: 1.3rem; color: #eaeaea; max-width: 800px; margin-bottom: 3.5rem; line-height: 1.9; }
   
@@ -235,46 +223,49 @@
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
 
-  /* ════ MEDIA QUERIES (ADAPTACIÓN MÓVIL ESTANDARIZADA) ════ */
-  @media (max-width: 1100px) { 
+  /* ════ MEDIA QUERIES (NOTEBOOKS Y TABLETS) ════ */
+  @media (max-width: 1200px) {
+    .nav-links { gap: 1.5rem; }
+    .brand-name { font-size: 1.8rem; }
     .pgrid { grid-template-columns: repeat(2, 1fr); } 
   }
 
+  /* ════ MEDIA QUERIES (MÓVILES) ════ */
   @media (max-width: 900px) {
-    /* Ajustes Header Móvil: Fondo sólido y tamaños controlados */
+    /* Ajustes Header Móvil para evitar superposición */
     .header { padding: 1rem 0; background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-color); }
-    .brand { max-width: 70vw; overflow: hidden; }
-    .brand-name { font-size: 1.6rem; letter-spacing: 0.1em; } /* Más chico para que no empuje al ícono */
+    .brand { max-width: 70vw; overflow: hidden; z-index: 1100; }
+    .brand-name { font-size: 1.5rem; letter-spacing: 0.1em; }
     .brand-top { font-size: 0.65rem; letter-spacing: 0.2em; }
 
     .mobile-toggle { display: block; }
     .nav-links { 
       position: absolute; top: 100%; left: 0; right: 0; 
-      background: rgba(31, 36, 26, 0.98); backdrop-filter: blur(15px); 
+      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
       flex-direction: column; padding: 2rem; gap: 1.5rem; 
       opacity: 0; visibility: hidden; transform: translateY(-10px); 
-      transition: 0.3s var(--ease); border-bottom: 1px solid var(--line-color); 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: 0.4s var(--ease); border-bottom: 1px solid var(--line-color); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8); z-index: 1050;
     }
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
 
-    /* Dropdown Móvil */
+    /* Dropdown Móvil (CORRECCIÓN DE ALINEACIÓN Y CIERRE) */
     .drop { flex-direction: column; width: 100%; }
     .drop-menu { 
       position: static; transform: none; opacity: 1; visibility: visible; 
       display: none; background: transparent; border: none; box-shadow: none; 
       padding: 1rem 0 0 0; min-width: 100%; text-align: center; width: 100%;
     }
-    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; }
-    .drop-item { justify-content: center; text-align: center; padding: 0.8rem 0; border: none; width: 100%; }
-    .drop-item:hover { padding-left: 0; color: var(--gold-main); }
+    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .drop-item { justify-content: center; text-align: center; padding: 0.8rem 0; border: none; width: 100%; font-size: 0.75rem; }
+    .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
-    /* Hero Móvil: Centrado exacto, sin superposiciones */
-    .hero { align-items: center; padding-top: 80px; }
+    /* Hero Móvil */
+    .hero { align-items: flex-start; padding-top: 120px; }
     .hero-content { text-align: center; padding: 0 1rem; }
-    .hero-h1 { font-size: clamp(2.4rem, 8vw, 3.5rem); margin-bottom: 1.5rem; }
-    .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; }
+    .hero-h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.15; }
+    .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; padding: 0 1rem; }
     .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; text-align: center; }
     .stat-item { text-align: center; }
 
@@ -316,7 +307,7 @@
       <a href="#filosofia" class="nav-a">Mi Enfoque</a>
       
       <div class="drop" id="nav-drop">
-        <span class="nav-a" id="btn-areas" style="cursor:pointer;">
+        <span class="nav-a no-close" id="btn-areas" style="cursor:pointer;">
           Áreas <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 8px;"></i>
         </span>
         <div class="drop-menu">
@@ -383,7 +374,7 @@
     <div class="pgrid reveal">
       <a href="/civil-y-sucesiones.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div><div class="pc-hover"><p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar tu patrimonio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/comercial-y-corporativo.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento a PyMEs, contratos y regularización inmobiliaria.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Defensa integral ante despidos, accidentes (ART) y regularización de trabajo no registrado.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/amparos-de-salud.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div><div class="pc-hover"><p class="pc-desc">Medidas urgentes para lograr tratamientos y coberturas.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/defensa-del-consumidor.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div><div class="pc-hover"><p class="pc-desc">Acciones contra bancos y abusos financieros.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/derecho-de-familias.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div><div class="pc-hover"><p class="pc-desc">Divorcios y acuerdos familiares con resguardo patrimonial.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
@@ -420,16 +411,16 @@
         <form id="evalForm">
           <div class="fg"><label class="fl">Nombre y Apellido *</label><input type="text" id="fn" class="fi" required placeholder="Ingresá tu nombre"></div>
           <div class="frow">
-            <div class="fg"><label class="fl">Celular *</label><input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000"></div>
-            <div class="fg"><label class="fl">Área *</label>
+            <div class="fg"><label class="fl">Celular (WhatsApp) *</label><input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000"></div>
+            <div class="fg"><label class="fl">Área de Consulta *</label>
               <select id="fa" class="fi" required onchange="cargarPreguntas()">
                 <option value="" disabled selected>Seleccioná un área...</option>
                 <option value="civil">Civil y Sucesiones</option><option value="comercial">Comercial y Empresas</option><option value="laboral">Laboral y ART</option><option value="salud">Amparos de Salud</option><option value="consumidor">Defensa del Consumidor</option><option value="familia">Derecho de Familia</option>
               </select>
             </div>
           </div>
-          <div class="dyn-box" id="dynBox"><div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle (Opcional)</div><div id="dyn-content"></div></div>
-          <div class="fg"><label class="fl">Breve resumen de tu caso *</label><textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación..." style="resize: none;"></textarea></div>
+          <div class="dyn-box" id="dynBox"><div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle de la Situación (Opcional)</div><div id="dyn-content"></div></div>
+          <div class="fg"><label class="fl">Breve resumen de tu caso *</label><textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea></div>
           <div class="fg" style="display: flex; align-items: start; gap: 10px;">
             <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
             <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">Acepto el tratamiento confidencial de mis datos (Ley 25.326).</label>
@@ -450,7 +441,7 @@
       <div class="foot-logo">ESTUDIO JURÍDICO ARISTEO</div>
       <div class="foot-info">Córdoba Capital | Fuero Provincial y Federal<br>Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span></div>
     </div>
-    <div class="legal-warning"><strong>Aviso Legal:</strong> La información en este sitio es informativa. El envío de consultas no genera una relación abogado-cliente hasta que sea confirmada expresamente.</div>
+    <div class="legal-warning"><strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter informativo. El envío de consultas no genera una relación abogado-cliente hasta que sea confirmada expresamente por el Estudio.</div>
     <div class="foot-bottom">© 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS</div>
   </div>
 </footer>
@@ -485,7 +476,7 @@
   });
 
   // Cerrar menú SOLAMENTE al tocar enlaces reales (ignora el botón "Áreas")
-  const enlacesReales = document.querySelectorAll('.nav-links a:not(#btn-areas)');
+  const enlacesReales = document.querySelectorAll('.nav-links a:not(.no-close)');
   enlacesReales.forEach(link => {
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
@@ -541,57 +532,97 @@
 
   // 5. Lógica Cuestionario Inteligente
   const DYN_HTML = {
-    'civil': '<select class="fi dyn-input"><option value="">¿Tipo de trámite?</option><option value="Sucesión">Sucesión</option><option value="Usucapión">Usucapión</option></select>',
-    'comercial': '<select class="fi dyn-input"><option value="">¿Motivo?</option><option value="Deudas">Cobro de deudas</option><option value="Contratos">Contratos</option></select>',
-    'laboral': '<select class="fi dyn-input"><option value="">¿Situación?</option><option value="Despido">Despido</option><option value="Accidente">Accidente / ART</option></select>',
-    'salud': '<input type="text" class="fi dyn-input" placeholder="Obra Social o Prepaga">',
-    'consumidor': '<input type="text" class="fi dyn-input" placeholder="Banco o Empresa">',
-    'familia': '<select class="fi dyn-input"><option value="">¿Hijos menores?</option><option value="Sí">Sí</option><option value="No">No</option></select>'
+    'civil': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sucesión / Declaratoria">Sucesión / Declaratoria</option><option value="Contratos / Daños">Contratos / Daños</option><option value="Inmuebles / Usucapión">Inmuebles / Usucapión</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Poseés documentación a mano?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`,
+    'comercial': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Es una empresa o particular?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Empresa / PyME">Empresa / PyME</option><option value="Particular">Particular</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">Motivo principal</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Cobro de deudas / Pagarés">Cobro de deudas / Pagarés</option><option value="Revisión de Contratos">Revisión de Contratos</option></select></div>`,
+    'laboral': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Situación actual</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Despido">Despido</option><option value="Trabajo no registrado (en negro)">Trabajo no registrado</option><option value="Accidente / ART">Accidente / ART</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Se enviaron telegramas?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option><option value="No estoy seguro">No estoy seguro</option></select></div>`,
+    'salud': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Obra Social o Prepaga</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Nombre de la entidad"></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Qué prestación te niegan?</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Ej: Medicación, Cirugía, Discapacidad"></div>`,
+    'consumidor': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">Entidad reclamada</label>
+      <input type="text" class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;" placeholder="Banco, Concesionaria, etc."></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Hiciste reclamo previo?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí, tengo número de reclamo">Sí, tengo número de reclamo</option><option value="No">No</option></select></div>`,
+    'familia': `
+      <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Hay hijos menores de edad?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>
+      <div class="fg" style="margin-bottom:0;"><label class="fl" style="color:var(--text-main);">¿Existen bienes para dividir?</label>
+      <select class="fi dyn-input" style="padding:0.5rem 0; font-size:1rem;"><option value="">Seleccionar...</option><option value="Sí">Sí</option><option value="No">No</option></select></div>`
   };
 
   function cargarPreguntas() {
     const val = document.getElementById('fa').value;
     const box = document.getElementById('dynBox');
     const content = document.getElementById('dyn-content');
-    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } else { box.classList.remove('show'); }
+    if (DYN_HTML[val]) { content.innerHTML = DYN_HTML[val]; box.classList.add('show'); } 
+    else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
   // 6. Envío de Formulario Dual
   async function enviar(metodo) {
-    const nom = document.getElementById('fn').value;
-    const tel = document.getElementById('ft').value;
-    const faElem = document.getElementById('fa');
-    const area = faElem.options[faElem.selectedIndex]?.text || '';
-    const res = document.getElementById('fs').value;
+    const btn = event.currentTarget;
+    const nom = document.getElementById('fn').value.trim();
+    const tel = document.getElementById('ft').value.trim();
+    const selectArea = document.getElementById('fa');
+    const area = selectArea.options[selectArea.selectedIndex].text;
+    const res = document.getElementById('fs').value.trim();
     const privacyChecked = document.getElementById('privacyConsent').checked;
 
-    if(!nom || !tel || faElem.value === "" || !res) return alert('Por favor, completa los campos obligatorios.');
-    if(!privacyChecked) return alert('Debés aceptar la política de confidencialidad.');
+    if(!nom || !tel || selectArea.value === "" || !res) { 
+      alert('Para un correcto análisis, completá los campos obligatorios (*).'); return; 
+    }
+    if(!privacyChecked) {
+      alert('Debés aceptar la política de confidencialidad de datos (Ley 25.326) antes de enviar tu consulta.'); return;
+    }
 
-    let extra = "";
-    document.querySelectorAll('.dyn-input').forEach(i => { if(i.value) extra += `Detalle: ${i.value}\n`; });
+    let respuestasExtra = "";
+    const dynInputs = document.querySelectorAll('.dyn-input');
+    dynInputs.forEach(input => {
+      if(input.value) { respuestasExtra += `- ${input.previousElementSibling ? input.previousElementSibling.innerText : 'Dato'}: ${input.value}\n`; }
+    });
 
     if (metodo === 'wsp') {
-      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(`*Consulta Aristeo*\nNombre: ${nom}\nCelular: ${tel}\nÁrea: ${area}\n${extra}Resumen: ${res}`)}`);
+      let msg = `*Consulta Estudio Aristeo*\n\n*Nombre:* ${nom}\n*Área:* ${area}\n`;
+      if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
+      msg += `\n*Resumen:*\n${res}`;
+      window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
     } else {
-      const btn = event.currentTarget; 
-      const htmlOriginal = btn.innerHTML;
+      const originalHtml = btn.innerHTML;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
-      
-      const fd = new FormData(); 
+      btn.style.pointerEvents = 'none';
+
+      const fd = new FormData();
       fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
-      fd.append('Nombre', nom); fd.append('Celular', tel); fd.append('Área', area); fd.append('Resumen', res); fd.append('Cuestionario', extra);
-      
+      fd.append('subject', `Consulta Web: ${area} - ${nom}`);
+      fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
+      if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
+      fd.append('Resumen', res);
+
       try {
         const r = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd });
-        if (r.ok) { 
-          btn.innerHTML = '¡Enviado!'; 
-          document.getElementById('evalForm').reset(); 
-          setTimeout(() => { btn.innerHTML = htmlOriginal; }, 3000);
+        if (r.ok) {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recibido!';
+          document.getElementById('evalForm').reset();
+          document.getElementById('dynBox').classList.remove('show');
+          setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
         } else throw new Error();
-      } catch (e) {
-        alert('Error al enviar el email. Intente por WhatsApp.');
-        btn.innerHTML = htmlOriginal;
+      } catch(e) {
+        alert('Error al enviar el correo. Por favor, intentá vía WhatsApp.');
+        btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto';
       }
     }
   }
