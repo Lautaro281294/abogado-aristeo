@@ -38,7 +38,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   
-  /* Bloqueo estricto de desbordamiento horizontal para móviles */
+  /* Bloqueo estricto de desbordamiento horizontal */
   html, body { 
     background-color: var(--bg-base); color: var(--text-main); 
     font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
@@ -88,10 +88,9 @@
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
   .drop-menu { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(10px); background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1rem 0; min-width: 260px; opacity: 0; visibility: hidden; transition: 0.3s; box-shadow: 0 20px 40px rgba(0,0,0,0.8); display: flex; flex-direction: column; }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; width: 100%; }
-  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
-  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
-  .drop-item:hover i { color: var(--gold-main); }
+  .drop-item { display: block; padding: 0.8rem 2rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; width: 100%; }
+  .drop-item i { font-size: 0.8rem; color: var(--gold-dark); margin-right: 10px; transition: 0.3s; }
+  .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 2.5rem; }
 
   .btn-header { display: inline-flex; align-items: center; gap: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 0.9rem 2rem; text-decoration: none; transition: 0.3s; border: 1px solid var(--gold-main); white-space: nowrap; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
@@ -118,7 +117,7 @@
   .ch-l { display: flex; align-items: center; gap: 1.8rem; }
   .ch-l i { font-size: 2.2rem; color: var(--gold-main); }
   .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
-  .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; }
+  .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; white-space: nowrap; }
 
   .urgency-alert { margin-top: 4rem; padding: 2.5rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
   .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
@@ -155,7 +154,7 @@
   /* Disclaimer Ético */
   .disclaimer { font-size: 0.8rem; color: var(--text-muted); line-height: 1.8; border-top: 1px solid var(--line-color); padding-top: 2rem; margin-top: 3.5rem; text-align: justify; }
 
-  /* ════ FOOTER ESTANDARIZADO IGUAL AL INDEX ════ */
+  /* ════ FOOTER ESTANDARIZADO ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
   .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
@@ -196,19 +195,26 @@
     .drop-item { justify-content: center; text-align: center; padding: 0.8rem 0; border: none; width: 100%; font-size: 0.75rem; }
     .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
 
-    /* Estilos Contacto Móvil */
     .page-hero { padding-top: 10rem; }
   }
 
   @media (max-width: 600px) {
     .contact-left, .contact-right { padding: 3rem 1.5rem; }
     .frow { grid-template-columns: 1fr; gap: 0; }
+    
+    /* SOLUCIÓN AL TEXTO DEL EMAIL: Achicar padding y letra para que entre en una línea */
+    .channel { padding: 1.5rem 1rem; }
+    .ch-l { gap: 1rem; }
+    .ch-tag { font-size: 0.6rem; letter-spacing: 0.15em; }
+    .ch-name { font-size: 0.85rem; white-space: nowrap; }
   }
 
   @media (max-width: 480px) {
     .container { padding: 0 6vw; }
     .action-buttons { flex-direction: column; }
     .btn-sub { min-width: 100%; width: 100%; }
+    /* Ajuste extra para celulares muy angostos */
+    .ch-name { font-size: 0.75rem; }
   }
   </style>
 </head>
@@ -319,7 +325,7 @@
                 <option value="laboral">Laboral y ART</option>
                 <option value="salud">Amparos de Salud</option>
                 <option value="consumidor">Defensa del Consumidor</option>
-                <option value="familia">Derecho de Familia</option>
+                <option value="familia">Derecho de Familias</option>
               </select>
             </div>
           </div>
@@ -336,9 +342,7 @@
           
           <div class="fg" style="margin-bottom: 1.5rem; display: flex; align-items: start; gap: 10px;">
             <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
-            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">
-              Entiendo y acepto que los datos ingresados serán tratados con estricta confidencialidad profesional a los únicos fines de evaluar la viabilidad legal de la consulta, conforme a la Ley N° 25.326.
-            </label>
+            <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">Acepto el tratamiento confidencial de mis datos (Ley 25.326).</label>
           </div>
           
           <div class="action-buttons">
