@@ -114,10 +114,11 @@
   .channel:hover { border-color: var(--line-hover); transform: translateX(12px); background: var(--bg-base); }
   .channel:hover::before { transform: scaleY(1); }
   
-  .ch-l { display: flex; align-items: center; gap: 1.8rem; }
-  .ch-l i { font-size: 2.2rem; color: var(--gold-main); }
-  .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; }
+  .ch-l { display: flex; align-items: center; gap: 1.8rem; min-width: 0; }
+  .ch-l i { font-size: 2.2rem; color: var(--gold-main); flex-shrink: 0; }
+  .ch-tag { display: block; font-size: 0.65rem; text-transform: uppercase; color: var(--gold-main); letter-spacing: 0.25em; margin-bottom: 6px; white-space: nowrap;}
   .ch-name { font-size: 1.15rem; color: var(--text-main); font-weight: 400; white-space: nowrap; }
+  .channel > i { flex-shrink: 0; } /* Evita que el chevron desaparezca empujado por el texto */
 
   .urgency-alert { margin-top: 4rem; padding: 2.5rem; background: rgba(194, 163, 109, 0.05); border-left: 2px solid var(--gold-main); }
   .urgency-alert strong { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--gold-light); margin-bottom: 0.8rem; }
@@ -202,19 +203,18 @@
     .contact-left, .contact-right { padding: 3rem 1.5rem; }
     .frow { grid-template-columns: 1fr; gap: 0; }
     
-    /* SOLUCIÓN AL TEXTO DEL EMAIL: Achicar padding y letra para que entre en una línea */
-    .channel { padding: 1.5rem 1rem; }
-    .ch-l { gap: 1rem; }
-    .ch-tag { font-size: 0.6rem; letter-spacing: 0.15em; }
-    .ch-name { font-size: 0.85rem; white-space: nowrap; }
+    /* AJUSTE DINÁMICO DE CORREO: Letra "elástica" para que jamás se corte de la pantalla */
+    .channel { padding: 1.2rem 1rem; }
+    .ch-l { gap: 0.8rem; }
+    .ch-l i { font-size: 1.6rem; } 
+    .ch-tag { font-size: 0.55rem; letter-spacing: 0.1em; margin-bottom: 4px; }
+    .ch-name { font-size: clamp(0.55rem, 3.8vw, 0.9rem); white-space: nowrap; } 
   }
 
   @media (max-width: 480px) {
     .container { padding: 0 6vw; }
     .action-buttons { flex-direction: column; }
     .btn-sub { min-width: 100%; width: 100%; }
-    /* Ajuste extra para celulares muy angostos */
-    .ch-name { font-size: 0.75rem; }
   }
   </style>
 </head>
@@ -287,7 +287,7 @@
               <i class="fa-regular fa-envelope"></i>
               <div>
                 <span class="ch-tag" id="email-tag">Recepción de Documentos</span>
-            <div class="ch-l"><i class="fa-regular fa-envelope"></i><div><span class="ch-tag" id="email-tag">Recepción de Documentos</span><strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong></div></div>
+                <strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong>
               </div>
             </div>
             <i class="fa-solid fa-chevron-right" id="email-icon" style="color:var(--gold-dark); font-size:0.8rem;"></i>
@@ -325,7 +325,7 @@
                 <option value="laboral">Laboral y ART</option>
                 <option value="salud">Amparos de Salud</option>
                 <option value="consumidor">Defensa del Consumidor</option>
-                <option value="familia">Derecho de Familias</option>
+                <option value="familia">Derecho de Familia</option>
               </select>
             </div>
           </div>
@@ -413,7 +413,6 @@
     }
   });
 
-  // Mostrar submenú en celular sin que se cierre la pantalla general
   btnAreas.addEventListener('click', (e) => {
     e.preventDefault(); 
     e.stopPropagation();
@@ -422,9 +421,7 @@
     }
   });
 
-  // Cerrar menú SOLAMENTE al tocar enlaces reales (ignora el botón "Áreas")
-  const enlacesReales = document.querySelectorAll('.nav-links a:not(#btn-areas)');
-  enlacesReales.forEach(link => {
+  document.querySelectorAll('.nav-links a:not(#btn-areas)').forEach(link => {
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
         navLinks.classList.remove('active');
@@ -525,7 +522,6 @@
       alert('Debe aceptar el tratamiento confidencial de sus datos (Ley 25.326) para continuar.'); return;
     }
 
-    // Recolectar datos opcionales
     let respuestasExtra = "";
     const dynInputs = document.querySelectorAll('.dyn-input');
     dynInputs.forEach(input => {
