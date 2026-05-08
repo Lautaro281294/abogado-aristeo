@@ -76,7 +76,7 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════ HEADER Y RESPONSIVE (PC Y MÓVIL) ════ */
+  /* ════ HEADER Y RESPONSIVE ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -87,34 +87,29 @@
     padding: 1.2rem 0; border-bottom: 1px solid var(--line-color); 
   }
   
-  .nav-wrap { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 1rem; }
+  .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 2rem; white-space: nowrap; }
   
   .brand { text-decoration: none; flex-shrink: 0; display: flex; flex-direction: column; z-index: 1100; }
-  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; white-space: nowrap; }
-  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; white-space: nowrap; }
+  .brand-top { font-size: 0.75rem; letter-spacing: 0.4em; text-transform: uppercase; color: var(--gold-main); font-weight: 600; margin-bottom: 2px; }
+  .brand-name { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 500; letter-spacing: 0.15em; color: var(--text-main); text-transform: uppercase; transition: color 0.3s; }
   .brand:hover .brand-name { color: var(--gold-light); }
 
-  /* Botón Hamburguesa Oculto en PC */
   .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; z-index: 1100; position: relative; }
-  .mobile-toggle:hover { color: var(--gold-light); }
 
-  /* Enlaces de Navegación PC */
-  .nav-links { display: flex; gap: 2.5rem; align-items: center; flex: 1; justify-content: flex-end; }
-  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; white-space: nowrap; }
+  .nav-links { display: flex; gap: 3rem; align-items: center; flex: 1; justify-content: flex-end; }
+  .nav-a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-main); text-decoration: none; transition: color 0.3s; position: relative; padding: 5px 0; }
   .nav-a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold-main); transition: width 0.3s var(--ease); }
   .nav-a:hover { color: var(--gold-light); }
   .nav-a:hover::after { width: 100%; }
 
-  /* Dropdown Menú Escritorio CORREGIDO */
   .drop { position: relative; display: flex; align-items: center; padding: 10px 0; }
   .drop-menu { 
     position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(15px); 
     background: var(--bg-surface); border: 1px solid var(--line-color); padding: 1.2rem 0; 
     min-width: 280px; opacity: 0; visibility: hidden; transition: 0.4s var(--ease); box-shadow: 0 30px 60px rgba(0,0,0,0.8); 
-    display: flex; flex-direction: column; /* Evita que los textos se peguen horizontalmente */
   }
   .drop:hover .drop-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
-  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; width: 100%; }
+  .drop-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 2.5rem; font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; text-decoration: none; transition: 0.3s; border-left: 2px solid transparent; }
   .drop-item i { font-size: 0.8rem; color: var(--gold-dark); transition: 0.3s; }
   .drop-item:hover { background: var(--bg-panel); color: var(--gold-light); border-left-color: var(--gold-main); padding-left: 3rem; }
   .drop-item:hover i { color: var(--gold-main); }
@@ -122,19 +117,34 @@
   .btn-header { 
     display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; 
     letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); 
-    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; white-space: nowrap;
+    padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; 
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO ════ */
-  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding-top: 80px; }
+  /* ════ HERO (ESTRUCTURADO PARA SEPARACIÓN GARANTIZADA) ════ */
+  .hero { 
+    position: relative; 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: flex-start; /* Evita que el texto suba y choque con el menú */
+    overflow: hidden; 
+    padding-bottom: 5rem;
+  }
   .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; }
   .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
   .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(10%); }
   .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(22,25,19,0.85) 0%, rgba(22,25,19,0.7) 50%, rgba(22,25,19,1) 100%); }
   
-  .hero-content { position: relative; z-index: 10; width: 100%; max-width: 1000px; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
-  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 2rem; color: #ffffff; }
+  .hero-content { 
+    position: relative; 
+    z-index: 10; 
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto;
+    margin-top: 220px; /* ESPACIO FIJO Y CONSIDERABLE EN WEB */
+    text-shadow: 0 4px 15px rgba(0,0,0,0.8); 
+  }
+  .hero-h1 { font-family: var(--font-heading); font-size: clamp(3.5rem, 8vw, 6.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 2rem; color: #ffffff; }
   .hero-h1 em { font-style: italic; color: var(--gold-light); }
   .hero-desc { font-size: 1.3rem; color: #eaeaea; max-width: 800px; margin-bottom: 3.5rem; line-height: 1.9; }
   
@@ -223,49 +233,51 @@
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
 
-  /* ════ MEDIA QUERIES (NOTEBOOKS Y TABLETS) ════ */
-  @media (max-width: 1200px) {
-    .nav-links { gap: 1.5rem; }
-    .brand-name { font-size: 1.8rem; }
+  /* ════ MEDIA QUERIES (ADAPTACIÓN MÓVIL ESTANDARIZADA) ════ */
+  @media (max-width: 1100px) { 
     .pgrid { grid-template-columns: repeat(2, 1fr); } 
   }
 
-  /* ════ MEDIA QUERIES (MÓVILES) ════ */
   @media (max-width: 900px) {
     /* Ajustes Header Móvil para evitar superposición */
     .header { padding: 1rem 0; background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-color); }
-    .brand { max-width: 70vw; overflow: hidden; z-index: 1100; }
-    .brand-name { font-size: 1.5rem; letter-spacing: 0.1em; }
+    .brand { z-index: 1100; }
+    .brand-name { font-size: 1.6rem; letter-spacing: 0.1em; } 
     .brand-top { font-size: 0.65rem; letter-spacing: 0.2em; }
 
     .mobile-toggle { display: block; }
     .nav-links { 
       position: absolute; top: 100%; left: 0; right: 0; 
-      background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(15px); 
+      background: rgba(31, 36, 26, 0.98); backdrop-filter: blur(15px); 
       flex-direction: column; padding: 2rem; gap: 1.5rem; 
       opacity: 0; visibility: hidden; transform: translateY(-10px); 
-      transition: 0.4s var(--ease); border-bottom: 1px solid var(--line-color); 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8); z-index: 1050;
+      transition: 0.3s var(--ease); border-bottom: 1px solid var(--line-color); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5); z-index: 1050;
     }
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
 
-    /* Dropdown Móvil (CORRECCIÓN DE ALINEACIÓN Y CIERRE) */
+    /* Dropdown Móvil */
     .drop { flex-direction: column; width: 100%; }
     .drop-menu { 
       position: static; transform: none; opacity: 1; visibility: visible; 
       display: none; background: transparent; border: none; box-shadow: none; 
       padding: 1rem 0 0 0; min-width: 100%; text-align: center; width: 100%;
     }
-    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; }
     .drop-item { justify-content: center; text-align: center; padding: 0.8rem 0; border: none; width: 100%; font-size: 0.75rem; }
     .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
-    /* Hero Móvil */
-    .hero { align-items: flex-start; padding-top: 120px; }
-    .hero-content { text-align: center; padding: 0 1rem; }
+    /* Hero Móvil (SOLUCIÓN SUPERPOSICIÓN DEFINITIVA) */
+    .hero { align-items: flex-start; } /* Previene el centrado vertical automático */
+    .hero-content { 
+      margin-top: 150px; /* ESPACIO CONSIDERABLE Y FIJO EN MÓVIL */
+      text-align: center; 
+      padding: 0 1rem; 
+      width: 100%; 
+    }
     .hero-h1 { font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.15; }
-    .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; padding: 0 1rem; }
+    .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; }
     .hero-stats { justify-content: center; gap: 2rem; margin-top: 3rem; text-align: center; }
     .stat-item { text-align: center; }
 
@@ -374,7 +386,7 @@
     <div class="pgrid reveal">
       <a href="/civil-y-sucesiones.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div><div class="pc-hover"><p class="pc-desc">Sucesiones. Soluciones prácticas para ordenar tu patrimonio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/comercial-y-corporativo.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento a PyMEs, contratos y regularización inmobiliaria.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores y PyMEs.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/amparos-de-salud.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div><div class="pc-hover"><p class="pc-desc">Medidas urgentes para lograr tratamientos y coberturas.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/defensa-del-consumidor.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div><div class="pc-hover"><p class="pc-desc">Acciones contra bancos y abusos financieros.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
       <a href="/derecho-de-familias.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div><div class="pc-hover"><p class="pc-desc">Divorcios y acuerdos familiares con resguardo patrimonial.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
@@ -606,7 +618,7 @@
       btn.style.pointerEvents = 'none';
 
       const fd = new FormData();
-      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd');
+      fd.append('access_key', 'be72b330-7de9-4f56-99f6-491c951d11dd'); // Asegúrate de que esta API Key sea correcta
       fd.append('subject', `Consulta Web: ${area} - ${nom}`);
       fd.append('Nombre', nom); fd.append('WhatsApp', tel); fd.append('Área', area);
       if(respuestasExtra !== "") fd.append('Cuestionario', respuestasExtra);
