@@ -7,10 +7,8 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   <title>Laboral y ART | Estudio Jurídico Aristeo</title>
 
-  <!-- ══ VERCEL ANALYTICS ══ -->
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
-  <!-- ══ FUENTES PREMIUM E ICONOS ══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -107,7 +105,7 @@
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
   .ph-desc { font-size: 1.15rem; color: var(--text-muted); line-height: 1.8;}
 
-  /* ════ CONTENIDO TÉCNICO ════ */
+  /* ════ CONTENIDO TÉCNICO (GRILLA DE TARJETAS) ════ */
   .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; margin-top: 2rem; }
   .service-card { background: var(--bg-panel); border: 1px solid var(--line-color); padding: 4rem 3.5rem; transition: 0.4s var(--ease); }
   .service-card:hover { border-color: var(--gold-main); transform: translateY(-5px); background: var(--bg-surface); }
@@ -152,16 +150,20 @@
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
     
-    /* Dropdown Móvil */
-    .drop { flex-direction: column; width: 100%; }
+    /* ❗ CORRECCIÓN MENÚ MÓVIL (CENTRADO PERFECTO Y PROTEGIDO) ❗ */
+    .drop { flex-direction: column; width: 100%; align-items: center; justify-content: center; }
     .drop-menu { 
-      position: static; transform: none; opacity: 1; visibility: visible; 
-      display: none; background: transparent; border: none; box-shadow: none; 
-      padding: 1rem 0 0 0; min-width: 100%; 
+      position: relative !important; top: 0 !important; left: 0 !important; transform: none !important; 
+      opacity: 1; visibility: visible; display: none; background: transparent; border: none; box-shadow: none; 
+      padding: 1rem 0 0 0; width: 100%; text-align: center; margin: 0;
     }
-    .drop.active .drop-menu { display: flex; flex-direction: column; align-items: center; }
-    .drop-item { justify-content: center; padding: 0.8rem; border: none; }
-    .drop-item:hover { padding-left: 0.8rem; }
+    .drop:hover .drop-menu, .drop.active .drop-menu { 
+      transform: none !important; left: 0 !important; display: flex !important; 
+      flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; 
+    }
+    .drop-item { justify-content: center; text-align: center; padding: 0.6rem 0; border: none; width: 100%; font-size: 0.8rem; margin: 0; }
+    .drop-item i { display: none; } /* Ocultamos el icono en móvil para asegurar el centrado matemático de las palabras */
+    .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
     /* Ajustes Generales */
     .section { padding: 5rem 0; }
@@ -182,15 +184,13 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="header" id="hdr">
   <div class="container nav-wrap">
     <a href="/index.html" class="brand">
       <span class="brand-top">Estudio Jurídico</span>
       <span class="brand-name">Aristeo</span>
     </a>
-
-    <!-- Botón Móvil -->
+    
     <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú">
       <i class="fa-solid fa-bars"></i>
     </button>
@@ -198,7 +198,7 @@
     <nav class="nav-links" id="nav-links">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop" id="nav-drop">
-        <span class="nav-a" style="cursor:pointer;">
+        <span class="nav-a no-close" id="btn-areas" style="cursor:pointer;">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
         </span>
@@ -216,7 +216,6 @@
   </div>
 </header>
 
-<!-- ══ HERO INTERNO ══ -->
 <section class="page-hero">
   <div class="ph-bg"></div>
   <div class="ph-overlay"></div>
@@ -229,7 +228,6 @@
   </div>
 </section>
 
-<!-- ══ CONTENIDO TÉCNICO ══ -->
 <section class="section">
   <div class="container">
     <div class="services-grid">
@@ -270,7 +268,6 @@
   </div>
 </section>
 
-<!-- ══ PREGUNTAS FRECUENTES ══ -->
 <section class="section" style="background-color: var(--bg-surface);">
   <div class="container">
     <div style="text-align: center; margin-bottom: 3rem;">
@@ -330,7 +327,6 @@
 
     </div>
 
-    <!-- CTA Final -->
     <div class="reveal" style="text-align: center; margin-top: 4rem;">
       <a href="/contacto.html" class="btn-header" style="font-size: 0.85rem; padding: 1.4rem 3rem;">
         Evaluar mi caso <i class="fa-solid fa-arrow-right" style="margin-left: 10px;"></i>
@@ -340,7 +336,6 @@
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
 <footer class="footer">
   <div class="container">
     <div class="foot-center">
@@ -371,6 +366,7 @@
   const btnMenu = document.getElementById('btn-menu');
   const navLinks = document.getElementById('nav-links');
   const navDrop = document.getElementById('nav-drop');
+  const btnAreas = document.getElementById('btn-areas');
 
   btnMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
@@ -387,10 +383,27 @@
   });
 
   // Control submenú en móvil
-  navDrop.addEventListener('click', (e) => {
+  btnAreas.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    e.stopPropagation();
     if(window.innerWidth <= 900) {
       navDrop.classList.toggle('active');
     }
+  });
+
+  // Cerrar menú SOLAMENTE al tocar enlaces reales (ignora el botón "Áreas")
+  const enlacesReales = document.querySelectorAll('.nav-links a:not(.no-close)');
+  enlacesReales.forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 900) {
+        navLinks.classList.remove('active');
+        const icon = btnMenu.querySelector('i');
+        if(icon.classList.contains('fa-xmark')){
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+        navDrop.classList.remove('active');
+      }
+    });
   });
 
   // 3. Intersección (Animaciones Reveal)
