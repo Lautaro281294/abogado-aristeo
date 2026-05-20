@@ -6,6 +6,14 @@
   <meta name="description" content="Derecho Comercial y Empresarial en Córdoba. Abogado Lautaro N. Aristeo. Contratos, operaciones inmobiliarias, ejecución de títulos y estructuración de negocios."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   
+  <link rel="canonical" href="https://estudioaristeo.com.ar/comercial-y-corporativo.html" />
+  <meta property="og:title" content="Comercial y Empresarial | Estudio Jurídico Aristeo"/>
+  <meta property="og:description" content="Protejo tus operaciones comerciales e inmobiliarias en Córdoba. Diseño de contratos y ejecución de acciones legales."/>
+  <meta property="og:image" content="https://estudioaristeo.com.ar/img-comercial-corporativo.jpg"/>
+  <meta property="og:url" content="https://estudioaristeo.com.ar/comercial-y-corporativo.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_AR"/>
+  
   <title>Comercial y Empresarial | Estudio Jurídico Aristeo</title>
 
   <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
@@ -63,7 +71,6 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   
-  /* REGLA CRÍTICA PARA EVITAR DESBORDES LATERALES EN MÓVIL */
   html, body { 
     background-color: var(--bg-base); color: var(--text-main); 
     font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
@@ -116,19 +123,25 @@
   .btn-header { display: inline-flex; align-items: center; gap: 12px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bg-base); background: var(--gold-main); padding: 1rem 2.2rem; text-decoration: none; transition: 0.4s; border: 1px solid var(--gold-main); flex-shrink: 0; }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* Menú Móvil Botón */
   .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
   .mobile-toggle:hover { color: var(--gold-light); }
 
-  /* ════ HERO INTERNO Y FONDO DINÁMICO ════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
-  .ph-bg { 
-    position: absolute; inset: 0; z-index: 0; 
-    background: url('img-comercial-corporativo.jpg') center/cover no-repeat; 
+  /* ════ HERO OPTIMIZADO PARA IMÁGENES SEO ════ */
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; background-color: var(--bg-base); }
+  
+  /* Se elimina background-url y se pasa el estilo directo a la etiqueta <img> */
+  .ph-img-bg { 
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
     opacity: 0.15; 
     filter: grayscale(80%) contrast(110%); 
+    z-index: 0;
   }
-  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
+  
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); pointer-events: none; }
   
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
@@ -162,11 +175,10 @@
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
 
-  /* ════ MEDIA QUERIES (ADAPTACIÓN MÓVIL) ════ */
+  /* ════ MEDIA QUERIES ════ */
   @media (max-width: 900px) { 
     .services-grid { grid-template-columns: 1fr; gap: 2rem; } 
     
-    /* Header Móvil */
     .mobile-toggle { display: block; }
     .nav-links { 
       position: absolute; top: 100%; left: 0; right: 0; 
@@ -180,7 +192,6 @@
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
     
-    /* ❗ CORRECCIÓN MENÚ MÓVIL (CENTRADO PERFECTO Y PROTEGIDO) ❗ */
     .drop { flex-direction: column; width: 100%; align-items: center; justify-content: center; }
     .drop-menu { 
       position: relative !important; top: 0 !important; left: 0 !important; transform: none !important; 
@@ -192,10 +203,9 @@
       flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; 
     }
     .drop-item { justify-content: center; text-align: center; padding: 0.6rem 0; border: none; width: 100%; font-size: 0.8rem; margin: 0; }
-    .drop-item i { display: none; } /* Ocultamos el icono en móvil para asegurar el centrado matemático de las palabras */
+    .drop-item i { display: none; } 
     .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
-    /* Ajustes Generales */
     .section { padding: 5rem 0; }
     .page-hero { padding: 10rem 0 5rem; }
     .ph-title { font-size: 2.8rem; }
@@ -247,8 +257,9 @@
 </header>
 
 <section class="page-hero">
-  <div class="ph-bg"></div>
+  <img src="img-comercial-corporativo.jpg" alt="Asesoramiento Legal, Comercial y Corporativo para Empresas en Córdoba" class="ph-img-bg" loading="eager" decoding="async">
   <div class="ph-overlay"></div>
+  
   <div class="container ph-content">
     <i class="fa-solid fa-file-contract ph-icon reveal"></i>
     <h1 class="ph-title reveal">Derecho Comercial y Empresarial</h1>
