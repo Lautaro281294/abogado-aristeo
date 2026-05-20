@@ -8,9 +8,8 @@
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   
   <link rel="canonical" href="https://estudioaristeo.com.ar/" />
-  
-  <meta property="og:title" content="Estudio Jurídico Aristeo | Abogados en Córdoba"/>
-  <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Abogado Laboralista, Defensa del Consumidor, Derecho de la Salud y Familia en Córdoba."/>
+  <meta property="og:title" content="Estudio Jurídico Aristeo | Abogacía en Córdoba"/>
+  <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Claridad y honestidad desde la primera consulta."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://estudioaristeo.com.ar/"/>
   <meta property="og:image" content="https://estudioaristeo.com.ar/bg-inicio-estudio.jpg"/>
@@ -60,6 +59,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
+  /* ════ SISTEMA DE DISEÑO Y VARIABLES GLOBALES (OLIVA) ════ */
   :root {
     --bg-base:     #161913; 
     --bg-surface:  #1f241a; 
@@ -120,6 +120,7 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
+  /* ════ HEADER Y RESPONSIVE ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -166,6 +167,7 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
+  /* ════ HERO OPTIMIZADO (ESPACIADO Y FONDO SEMÁNTICO) ════ */
   .hero { 
     position: relative; 
     width: 100%;
@@ -177,11 +179,12 @@
     padding-top: 220px; 
     overflow: hidden; 
   }
+  
   .hero-bg { 
     position: absolute; inset: 0; z-index: 0; 
-    background: url('bg-inicio-estudio.jpg') center/cover no-repeat; 
-    width: 100%; height: 100%; 
+    width: 100%; height: 100%; object-fit: cover; 
   }
+  
   .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(22,25,19,0.85) 0%, rgba(22,25,19,0.7) 50%, rgba(22,25,19,1) 100%); width: 100%; height: 100%; }
   
   .hero-content { 
@@ -211,6 +214,7 @@
   .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
   .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; font-weight: 500; }
 
+  /* ════ FILOSOFÍA Y PILARES ════ */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
   .qblock { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); padding: 1rem 0 1rem 2.5rem; margin: 3rem 0; }
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 6rem; }
@@ -220,6 +224,7 @@
   .pillar-h { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text-main); }
   .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
 
+  /* ════ ÁREAS PRÁCTICA CON IMÁGENES ════ */
   .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
   .pc-card { position: relative; overflow: hidden; height: 380px; background: var(--bg-panel); border: 1px solid var(--line-color); text-decoration: none; border-radius: 2px; }
   
@@ -237,10 +242,12 @@
   .pc-card:hover .pc-hover { opacity: 1; transform: translateY(0); }
   .pc-card:hover .pc-link { border-color: var(--gold-main); gap: 15px; }
 
+  /* ════ BANDA INTERMEDIA ════ */
   .band { padding: 8rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; text-align: center; }
   .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.3; max-width: 900px; margin: 0 auto; color: var(--text-main); }
   .band-quote em { color: var(--gold-light); font-style: italic; }
 
+  /* ════ CONTACTO ════ */
   .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
   .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   .channel { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
@@ -276,6 +283,7 @@
   .btn-sub.wsp::before { background: #25D366; }
   .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
+  /* ════ FOOTER ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
   .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
@@ -283,12 +291,14 @@
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
 
+  /* ════ MEDIA QUERIES (NOTEBOOKS Y TABLETS) ════ */
   @media (max-width: 1200px) {
     .nav-links { gap: 1.5rem; }
     .brand-name { font-size: 1.8rem; }
     .pgrid { grid-template-columns: repeat(2, 1fr); } 
   }
 
+  /* ════ MEDIA QUERIES (MÓVILES) ════ */
   @media (max-width: 900px) {
     .header { padding: 1rem 0; background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-color); }
     .brand { max-width: 70vw; overflow: hidden; z-index: 1100; }
@@ -307,6 +317,7 @@
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
 
+    /* ❗ CORRECCIÓN MENÚ MÓVIL ❗ */
     .drop { flex-direction: column; width: 100%; align-items: center; justify-content: center; }
     .drop-menu { 
       position: relative !important; top: 0 !important; left: 0 !important; transform: none !important; 
@@ -392,12 +403,12 @@
 </header>
 
 <section class="hero" id="hero">
-  <div class="hero-bg"></div>
+  <img src="bg-inicio-estudio.jpg" alt="Estudio Jurídico Aristeo - Abogados en Córdoba" class="hero-bg" loading="eager">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <h1 class="hero-h1 reveal d1">Estudio Jurídico en Córdoba.<br><em>Dr. Lautaro N. Aristeo.</em></h1>
-    <p class="hero-desc reveal d2">Abogado. Defensa integral en Derecho Laboral, Consumidor, Salud y Familia ante la Justicia Provincial y Federal.</p>
-    <a href="#contacto" aria-label="Contactar por WhatsApp" class="btn-primary reveal d2"><span>Contactame</span> <i class="fa-solid fa-arrow-down"></i></a>
+    <h1 class="hero-h1 reveal d1">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
+    <p class="hero-desc reveal d2">Defiendo tus intereses con la seriedad que tu caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.</p>
+    <a href="#contacto" class="btn-primary reveal d2"><span>Contactame</span> <i class="fa-solid fa-arrow-down"></i></a>
     <div class="hero-stats reveal d2">
       <div class="stat-item"><span class="stat-n">M.P. 1 - 43722</span><span class="stat-l">Matrícula Provincial</span></div>
       <div class="stat-item"><span class="stat-n">Tº 511 Fº 222</span><span class="stat-l">Matrícula Federal</span></div>
@@ -503,7 +514,7 @@
           <div class="frow">
             <div class="fg"><label class="fl">Celular (WhatsApp) *</label><input type="tel" id="ft" class="fi" required placeholder="Ej: 351 000 0000"></div>
             <div class="fg"><label class="fl">Área de Consulta *</label>
-              <select id="fa" class="fi" required onchange="cargarPreguntas()">
+              <select id="fa" class="fi" required onchange="cargarPreguntas()" style="cursor: pointer;">
                 <option value="" disabled selected>Seleccioná un área...</option>
                 <option value="civil">Civil y Sucesiones</option><option value="comercial">Comercial y Empresas</option><option value="laboral">Laboral y ART</option><option value="salud">Amparos de Salud</option><option value="consumidor">Defensa del Consumidor</option><option value="familia">Derecho de Familia</option>
               </select>
@@ -685,18 +696,19 @@
     const num1 = Math.floor(Math.random() * 10) + 1;
     const num2 = Math.floor(Math.random() * 10) + 1;
     captchaCorrectAnswer = num1 + num2;
-    document.getElementById('captcha-label').innerText = `Verificación de Seguridad: ¿Cuánto es ${num1} + ${num2}? *`;
+    const label = document.getElementById('captcha-label');
+    if(label) label.innerText = `Verificación de Seguridad: ¿Cuánto es ${num1} + ${num2}? *`;
   }
   document.addEventListener('DOMContentLoaded', generarCaptcha);
 
   // 7. Envío de Formulario Dual
   async function enviar(e, metodo) {
-    if(e) e.preventDefault(); // Parche crítico para evitar refresco de página accidental
+    if(e) e.preventDefault(); 
     const btn = e.currentTarget;
     const nom = document.getElementById('fn').value.trim();
     const tel = document.getElementById('ft').value.trim();
     const selectArea = document.getElementById('fa');
-    const area = selectArea.options[selectArea.selectedIndex].text;
+    const area = selectArea.options[selectArea.selectedIndex]?.text || '';
     const res = document.getElementById('fs').value.trim();
     const privacyChecked = document.getElementById('privacyConsent').checked;
 
