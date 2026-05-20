@@ -269,7 +269,7 @@
       <span class="brand-name">Aristeo</span>
     </a>
 
-    <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú">
+    <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú de navegación" aria-expanded="false">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -313,7 +313,7 @@
           <h3>Canales Rápidos</h3>
           <p>Para consultas urgentes, seguimiento de expedientes o para coordinar una cita presencial en el estudio.</p>
           
-          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+          <a href="https://wa.me/5493517736170" class="channel" target="_blank" aria-label="Contactar por WhatsApp">
             <div class="ch-l">
               <i class="fa-brands fa-whatsapp"></i>
               <div>
@@ -324,7 +324,7 @@
             <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
           
-          <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email">
+          <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email" aria-label="Copiar correo electrónico">
             <div class="ch-l">
               <i class="fa-regular fa-envelope"></i>
               <div>
@@ -388,10 +388,10 @@
           </div>
           
           <div class="action-buttons">
-            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')">
+            <button type="button" aria-label="Enviar por WhatsApp" class="btn-sub wsp" onclick="enviar(event, 'wsp')">
               <span>Enviar por WhatsApp</span> <i class="fa-brands fa-whatsapp" style="font-size: 1.1rem;"></i>
             </button>
-            <button type="button" class="btn-sub" onclick="enviar('mail')">
+            <button type="button" aria-label="Enviar por E-Mail" class="btn-sub" onclick="enviar(event, 'mail')">
               <span>Enviar por E-Mail</span> <i class="fa-solid fa-envelope" style="font-size: 1rem;"></i>
             </button>
           </div>
@@ -420,13 +420,16 @@
     </div>
 
     <div class="foot-bottom">
-      © 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
+      © <span id="current-year"></span> ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS
     </div>
   </div>
 </footer>
 
 <script>
-  // 1. Efecto Header y Observador de Revelado
+  // 1. Automatización Año Footer
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
+  // 2. Efecto Header y Observador de Revelado
   window.addEventListener('scroll', () => {
     document.getElementById('hdr').classList.toggle('scrolled', window.scrollY > 50);
   });
@@ -436,7 +439,7 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // 2. Control del Menú Móvil (Hamburguesa y Submenú)
+  // 3. Control del Menú Móvil (Hamburguesa y Submenú)
   const btnMenu = document.getElementById('btn-menu');
   const navLinks = document.getElementById('nav-links');
   const navDrop = document.getElementById('nav-drop');
@@ -444,8 +447,11 @@
 
   btnMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    const isExpanded = navLinks.classList.contains('active');
+    btnMenu.setAttribute('aria-expanded', isExpanded);
+    
     const icon = btnMenu.querySelector('i');
-    if(navLinks.classList.contains('active')){
+    if(isExpanded){
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-xmark');
     } else {
@@ -470,6 +476,7 @@
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
         navLinks.classList.remove('active');
+        btnMenu.setAttribute('aria-expanded', 'false');
         const icon = btnMenu.querySelector('i');
         if(icon.classList.contains('fa-xmark')){
             icon.classList.replace('fa-xmark', 'fa-bars');
@@ -479,7 +486,7 @@
     });
   });
 
-  // 3. Copiar Email UX 
+  // 4. Copiar Email UX 
   const copyBtn = document.getElementById('copy-email-btn');
   if(copyBtn) {
     copyBtn.addEventListener('click', (e) => {
@@ -508,7 +515,7 @@
     });
   }
 
-  // 4. Lógica Cuestionario Inteligente
+  // 5. Lógica Cuestionario Inteligente
   const DYN_HTML = {
     'civil': `
       <div class="fg" style="margin-bottom:1.5rem;"><label class="fl" style="color:var(--text-main);">¿Qué tipo de trámite es?</label>
@@ -550,13 +557,14 @@
     else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
-  /* 5. Envío Dual: WSP o Email */
-  async function enviar(metodo) {
-    const btn = event.currentTarget;
+  // 6. Envío Dual: WSP o Email con paso seguro de 'event'
+  async function enviar(e, metodo) {
+    if(e) e.preventDefault();
+    const btn = e.currentTarget;
     const nom = document.getElementById('fn').value.trim();
     const tel = document.getElementById('ft').value.trim();
     const selectArea = document.getElementById('fa');
-    const area = selectArea.options[selectArea.selectedIndex].text;
+    const area = selectArea.options[selectArea.selectedIndex]?.text || '';
     const res = document.getElementById('fs').value.trim();
     const privacyChecked = document.getElementById('privacyConsent').checked;
 
