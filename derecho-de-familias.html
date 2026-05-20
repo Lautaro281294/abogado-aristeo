@@ -5,7 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Derecho de Familia en Córdoba. Abogado Lautaro N. Aristeo. Divorcios, cuota alimentaria, régimen de comunicación y división de bienes."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
+  
   <title>Derecho de Familia | Estudio Jurídico Aristeo</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Estudio Jurídico Aristeo - Derecho de Familia",
+    "image": "https://estudioaristeo.com.ar/apple-touch-icon.png",
+    "@id": "https://estudioaristeo.com.ar/derecho-de-familias.html",
+    "url": "https://estudioaristeo.com.ar/derecho-de-familias.html",
+    "telephone": "+5493517736170",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "addressCountry": "AR"
+    }
+  }
+  </script>
 
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
@@ -90,8 +114,16 @@
   .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
   .mobile-toggle:hover { color: var(--gold-light); }
 
-  /* ════ HERO INTERNO ════ */
-  .page-hero { position: relative; padding: 14rem 0 6rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; background: linear-gradient(180deg, var(--bg-surface) 0%, var(--bg-base) 100%); }
+  /* ════ HERO INTERNO Y FONDO DINÁMICO ════ */
+  .page-hero { position: relative; padding: 14rem 0 6rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
+  .ph-bg { 
+    position: absolute; inset: 0; z-index: 0; 
+    background: url('img-derecho-familias.jpg') center/cover no-repeat; 
+    opacity: 0.15; 
+    filter: grayscale(80%) contrast(110%); 
+  }
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
+
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
   .ph-title { font-family: var(--font-heading); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 400; color: var(--text-main); margin-bottom: 1.5rem; line-height: 1.1;}
@@ -209,6 +241,8 @@
 </header>
 
 <section class="page-hero">
+  <div class="ph-bg"></div>
+  <div class="ph-overlay"></div>
   <div class="container ph-content">
     <i class="fa-solid fa-people-roof ph-icon reveal"></i>
     <h1 class="ph-title reveal">Derecho de Familia</h1>
