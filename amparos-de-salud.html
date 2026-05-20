@@ -5,7 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="description" content="Amparos de Salud en Córdoba. Abogado Lautaro N. Aristeo. Medidas urgentes contra Obras Sociales y Prepagas por medicación, cirugías y discapacidad."/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
+  
+  <link rel="canonical" href="https://estudioaristeo.com.ar/amparos-de-salud.html" />
+  <meta property="og:title" content="Amparos de Salud | Estudio Jurídico Aristeo"/>
+  <meta property="og:description" content="Medidas judiciales urgentes en Córdoba para exigir coberturas médicas, cirugías, tratamientos y cumplimiento de la Ley de Discapacidad a Obras Sociales y Prepagas."/>
+  <meta property="og:image" content="https://estudioaristeo.com.ar/img-amparos-salud.jpg"/>
+  <meta property="og:url" content="https://estudioaristeo.com.ar/amparos-de-salud.html"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="es_AR"/>
+
   <title>Amparos de Salud | Estudio Jurídico Aristeo</title>
+
+  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Estudio Jurídico Aristeo - Amparos de Salud",
+    "image": "https://estudioaristeo.com.ar/apple-touch-icon.png",
+    "@id": "https://estudioaristeo.com.ar/amparos-de-salud.html",
+    "url": "https://estudioaristeo.com.ar/amparos-de-salud.html",
+    "telephone": "+5493517736170",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "addressCountry": "AR"
+    }
+  }
+  </script>
 
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
@@ -90,10 +122,21 @@
   .mobile-toggle { display: none; background: none; border: none; color: var(--gold-main); font-size: 1.8rem; cursor: pointer; transition: 0.3s; }
   .mobile-toggle:hover { color: var(--gold-light); }
 
-  /* ════ HERO INTERNO ════ */
-  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; }
-  .ph-bg { position: absolute; inset: 0; z-index: 0; background: url('https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg') center/cover no-repeat; opacity: 0.15; filter: grayscale(100%); }
-  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); }
+  /* ════ HERO INTERNO Y FONDO DINÁMICO ════ */
+  .page-hero { position: relative; padding: 14rem 0 8rem; text-align: center; border-bottom: 1px solid var(--line-color); overflow: hidden; background-color: var(--bg-base); }
+  
+  .ph-img-bg { 
+    position: absolute; 
+    inset: 0; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    opacity: 0.15; 
+    filter: grayscale(80%) contrast(110%); 
+    z-index: 0;
+  }
+  
+  .ph-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(22,25,19,0.6) 0%, rgba(22,25,19,1) 100%); pointer-events: none;}
   
   .ph-content { position: relative; z-index: 10; max-width: 900px; margin: 0 auto; }
   .ph-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 1.5rem; }
@@ -157,7 +200,7 @@
       flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; 
     }
     .drop-item { justify-content: center; text-align: center; padding: 0.6rem 0; border: none; width: 100%; font-size: 0.8rem; margin: 0; }
-    .drop-item i { display: none; } /* Ocultamos el icono en móvil para asegurar el centrado matemático de las palabras */
+    .drop-item i { display: none; }
     .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
     /* Ajustes Generales */
@@ -193,7 +236,7 @@
     <nav class="nav-links" id="nav-links">
       <a href="/index.html#filosofia" class="nav-a">Mi Enfoque</a>
       <div class="drop" id="nav-drop">
-        <span class="nav-a" style="cursor:pointer;">
+        <span class="nav-a no-close" id="btn-areas" style="cursor:pointer;">
           Áreas
           <i class="fa-solid fa-angle-down" style="font-size: 0.55rem; margin-left: 5px;"></i>
         </span>
@@ -203,7 +246,7 @@
           <a href="/laboral-y-art.html" class="drop-item"><i class="fa-solid fa-briefcase"></i> Laboral y ART</a>
           <a href="/amparos-de-salud.html" class="drop-item"><i class="fa-solid fa-heart-pulse"></i> Amparos de Salud</a>
           <a href="/defensa-del-consumidor.html" class="drop-item"><i class="fa-solid fa-shield-halved"></i> Defensa del Consumidor</a>
-          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familias</a>
+          <a href="/derecho-de-familias.html" class="drop-item"><i class="fa-solid fa-scale-unbalanced"></i> Derecho de Familia</a>
         </div>
       </div>
       <a href="/contacto.html" class="btn-header">Contactame <i class="fa-solid fa-arrow-right"></i></a>
@@ -212,8 +255,9 @@
 </header>
 
 <section class="page-hero">
-  <div class="ph-bg"></div>
+  <img src="img-amparos-salud.jpg" alt="Amparos de Salud y Medidas Urgentes contra Obras Sociales en Córdoba" class="ph-img-bg" loading="eager" decoding="async">
   <div class="ph-overlay"></div>
+
   <div class="container ph-content">
     <i class="fa-solid fa-heart-pulse ph-icon reveal"></i>
     <h1 class="ph-title reveal">Amparos de Salud</h1>
@@ -381,6 +425,21 @@
     if(window.innerWidth <= 900) {
       navDrop.classList.toggle('active');
     }
+  });
+
+  // Cerrar menú SOLAMENTE al tocar enlaces reales (ignora el botón "Áreas")
+  const enlacesReales = document.querySelectorAll('.nav-links a:not(.no-close)');
+  enlacesReales.forEach(link => {
+    link.addEventListener('click', () => {
+      if(window.innerWidth <= 900) {
+        navLinks.classList.remove('active');
+        const icon = btnMenu.querySelector('i');
+        if(icon.classList.contains('fa-xmark')){
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+        navDrop.classList.remove('active');
+      }
+    });
   });
 
   // 3. Intersección (Animaciones Reveal)
