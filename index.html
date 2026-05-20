@@ -12,6 +12,29 @@
   <meta property="og:type" content="website"/>
   <title>Estudio Jurídico Aristeo | Abogados en Córdoba</title>
 
+  <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#1A1A1A">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "Estudio Jurídico Aristeo",
+    "image": "https://estudioaristeo.com.ar/apple-touch-icon.png",
+    "@id": "https://estudioaristeo.com.ar",
+    "url": "https://estudioaristeo.com.ar",
+    "telephone": "+5493517736170",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Córdoba",
+      "addressRegion": "Córdoba",
+      "addressCountry": "AR"
+    }
+  }
+  </script>
+
   <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -129,7 +152,7 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO OPTIMIZADO (ESPACIADO CONSIDERABLE) ════ */
+  /* ════ HERO OPTIMIZADO (ESPACIADO CONSIDERABLE Y FONDO) ════ */
   .hero { 
     position: relative; 
     width: 100%;
@@ -141,7 +164,11 @@
     padding-top: 220px; /* ESPACIO CONSIDERABLE EN WEB */
     overflow: hidden; 
   }
-  .hero-bg { position: absolute; inset: 0; z-index: 0; background: url('https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg') center/cover no-repeat; width: 100%; height: 100%; }
+  .hero-bg { 
+    position: absolute; inset: 0; z-index: 0; 
+    background: url('bg-inicio-estudio.jpg') center/cover no-repeat; 
+    width: 100%; height: 100%; 
+  }
   .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; width: 100%; height: 100%; }
   .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(10%); }
   .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(22,25,19,0.85) 0%, rgba(22,25,19,0.7) 50%, rgba(22,25,19,1) 100%); width: 100%; height: 100%; }
@@ -183,9 +210,14 @@
   .pillar-h { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text-main); }
   .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
 
-  /* ════ ÁREAS PRÁCTICA ════ */
+  /* ════ ÁREAS PRÁCTICA CON IMÁGENES ════ */
   .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
   .pc-card { position: relative; overflow: hidden; height: 380px; background: var(--bg-panel); border: 1px solid var(--line-color); text-decoration: none; border-radius: 2px; }
+  
+  /* Se agrega la clase de fondo para las tarjetas */
+  .pc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; transition: 0.6s var(--ease); z-index: 1; }
+  .pc-card:hover .pc-img { opacity: 0.4; transform: scale(1.05); }
+
   .pc-main { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; transition: 0.6s var(--ease); padding: 2rem; z-index: 2; }
   .pc-icon { font-size: 3.5rem; color: var(--gold-main); margin-bottom: 2rem; transition: 0.4s; }
   .pc-title { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; color: var(--text-main); line-height: 1.2; }
@@ -362,7 +394,7 @@
 <section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-vid">
-    <video autoplay muted loop playsinline poster="https://visitcordoba.ar/wp-content/uploads/2023/10/Aerea-Ciudad-de-Cordoba-scaled.jpg">
+    <video autoplay muted loop playsinline poster="bg-inicio-estudio.jpg">
       <source src="https://videos.pexels.com/video-files/3135810/3135810-uhd_2560_1440_25fps.mp4" type="video/mp4"/>
     </video>
   </div>
@@ -406,12 +438,41 @@
       <h2 class="heading-2">Áreas de <em>Práctica</em></h2>
     </div>
     <div class="pgrid reveal">
-      <a href="/civil-y-sucesiones.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div><div class="pc-hover"><p class="pc-desc">Gestión y resguardo del patrimonio. Representación técnica en la transmisión de bienes familiares, regularización dominial, restitución de inmuebles y acciones por daños y perjuicios.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/comercial-y-corporativo.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento técnico y estructuración legal para negocios y PyMEs. Dirección en la constitución de sociedades, redacción de contratos, auditoría preventiva (compliance) y ejecución judicial para el recupero de activos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/laboral-y-art.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div><div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores y PyMEs.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/amparos-de-salud.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div><div class="pc-hover"><p class="pc-desc">Dirección técnica en acciones constitucionales y medidas cautelares. Intervención urgente ante incumplimientos de obras sociales y prepagas para exigir coberturas médicas, prestaciones por discapacidad y frenar bajas o aumentos abusivos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/defensa-del-consumidor.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div><div class="pc-hover"><p class="pc-desc">Gestión de conflictos en relaciones de consumo. Intervención legal ante fraudes bancarios y planes de ahorro, y defensa técnica de proveedores frente a requerimientos administrativos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
-      <a href="/derecho-de-familias.html" class="pc-card"><div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div><div class="pc-hover"><p class="pc-desc">Gestión técnica de conflictos familiares y patrimoniales. Dirección legal en procesos de divorcio, determinación de cuotas alimentarias y liquidación de bienes, priorizando la estructuración de convenios o la defensa técnica en escenarios de litigio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div></a>
+      <a href="/civil-y-sucesiones.html" class="pc-card">
+        <img src="img-civil-sucesiones.jpg" alt="Derecho Civil y Sucesiones en Córdoba" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-landmark pc-icon"></i><h3 class="pc-title">Derecho Civil</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Gestión y resguardo del patrimonio. Representación técnica en la transmisión de bienes familiares, regularización dominial, restitución de inmuebles y acciones por daños y perjuicios.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      
+      <a href="/comercial-y-corporativo.html" class="pc-card">
+        <img src="img-comercial-corporativo.jpg" alt="Derecho Comercial y Corporativo" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-file-contract pc-icon"></i><h3 class="pc-title">Comercial</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Asesoramiento técnico y estructuración legal para negocios y PyMEs. Dirección en la constitución de sociedades, redacción de contratos, auditoría preventiva (compliance) y ejecución judicial para el recupero de activos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      
+      <a href="/laboral-y-art.html" class="pc-card">
+        <img src="img-laboral-art.jpg" alt="Derecho Laboral y ART" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-briefcase pc-icon"></i><h3 class="pc-title">Laboral y ART</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Asesoramiento integral: defensa de derechos del trabajador y resguardo jurídico para empleadores y PyMEs.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      
+      <a href="/amparos-de-salud.html" class="pc-card">
+        <img src="img-amparos-salud.jpg" alt="Amparos de Salud en Córdoba" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-heart-pulse pc-icon"></i><h3 class="pc-title">Amparos de Salud</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Dirección técnica en acciones constitucionales y medidas cautelares. Intervención urgente ante incumplimientos de obras sociales y prepagas para exigir coberturas médicas, prestaciones por discapacidad y frenar bajas o aumentos abusivos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      
+      <a href="/defensa-del-consumidor.html" class="pc-card">
+        <img src="img-defensa-consumidor.jpg" alt="Defensa del Consumidor" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-shield-halved pc-icon"></i><h3 class="pc-title">Consumidor</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Gestión de conflictos en relaciones de consumo. Intervención legal ante fraudes bancarios y planes de ahorro, y defensa técnica de proveedores frente a requerimientos administrativos.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
+      
+      <a href="/derecho-de-familias.html" class="pc-card">
+        <img src="img-derecho-familias.jpg" alt="Derecho de Familia" class="pc-img" loading="lazy">
+        <div class="pc-main"><i class="fa-solid fa-scale-unbalanced pc-icon"></i><h3 class="pc-title">Derecho de Familia</h3></div>
+        <div class="pc-hover"><p class="pc-desc">Gestión técnica de conflictos familiares y patrimoniales. Dirección legal en procesos de divorcio, determinación de cuotas alimentarias y liquidación de bienes, priorizando la estructuración de convenios o la defensa técnica en escenarios de litigio.</p><span class="pc-link">Ver especialidad <i class="fa-solid fa-arrow-right"></i></span></div>
+      </a>
     </div>
   </div>
 </section>
