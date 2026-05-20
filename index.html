@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Estudio Jurídico Aristeo. Abogacía, compromiso y representación directa en Córdoba. Dr. Lautaro N. Aristeo."/>
+  <meta name="description" content="Estudio Jurídico Aristeo. Abogado Laboralista, Defensa del Consumidor, Derecho de la Salud y Familia en Córdoba. Dr. Lautaro N. Aristeo."/>
   <meta name="robots" content="index, follow"/>
   <meta name="author" content="Dr. Lautaro Nahuel Aristeo"/>
   
-  <meta property="og:title" content="Estudio Jurídico Aristeo | Abogacía en Córdoba"/>
-  <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Claridad y honestidad desde la primera consulta."/>
+  <link rel="canonical" href="https://estudioaristeo.com.ar/" />
+  
+  <meta property="og:title" content="Estudio Jurídico Aristeo | Abogados en Córdoba"/>
+  <meta property="og:description" content="Defensa integral y representación en el fuero provincial y federal. Abogado Laboralista, Defensa del Consumidor, Derecho de la Salud y Familia en Córdoba."/>
   <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://estudioaristeo.com.ar/"/>
+  <meta property="og:image" content="https://estudioaristeo.com.ar/bg-inicio-estudio.jpg"/>
+  
   <title>Estudio Jurídico Aristeo | Abogados en Córdoba</title>
 
   <link rel="icon" type="image/x-icon" href="favicon-32x32.png">
@@ -21,16 +26,28 @@
   {
     "@context": "https://schema.org",
     "@type": "LegalService",
-    "name": "Estudio Jurídico Aristeo",
+    "name": "Estudio Jurídico Aristeo | Dr. Lautaro N. Aristeo",
     "image": "https://estudioaristeo.com.ar/apple-touch-icon.png",
     "@id": "https://estudioaristeo.com.ar",
     "url": "https://estudioaristeo.com.ar",
     "telephone": "+5493517736170",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Córdoba",
       "addressRegion": "Córdoba",
       "addressCountry": "AR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -31.4201,
+      "longitude": -64.1888
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Dr. Lautaro Nahuel Aristeo",
+      "jobTitle": "Abogado",
+      "identifier": "MP 1-43722"
     }
   }
   </script>
@@ -43,7 +60,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
-  /* ════ SISTEMA DE DISEÑO Y VARIABLES GLOBALES (OLIVA) ════ */
   :root {
     --bg-base:     #161913; 
     --bg-surface:  #1f241a; 
@@ -67,7 +83,6 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; font-size: 16px; }
   
-  /* REGLA CRÍTICA PARA EVITAR DESBORDES LATERALES EN MÓVIL */
   html, body { 
     background-color: var(--bg-base); color: var(--text-main); 
     font-family: var(--font-body); font-weight: 300; line-height: 1.85; 
@@ -105,7 +120,6 @@
   .reveal { opacity: 0; transform: translateY(40px); transition: 1s var(--ease); }
   .reveal.in { opacity: 1; transform: translateY(0); }
 
-  /* ════ HEADER Y RESPONSIVE ════ */
   .header { 
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000; 
     padding: 2.2rem 0; transition: padding 0.5s var(--ease), background 0.5s var(--ease); 
@@ -152,7 +166,6 @@
   }
   .btn-header:hover { background: transparent; color: var(--gold-main); }
 
-  /* ════ HERO OPTIMIZADO (ESPACIADO CONSIDERABLE Y FONDO) ════ */
   .hero { 
     position: relative; 
     width: 100%;
@@ -160,8 +173,8 @@
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    justify-content: flex-start; /* Fuerza a empezar desde arriba */
-    padding-top: 220px; /* ESPACIO CONSIDERABLE EN WEB */
+    justify-content: flex-start; 
+    padding-top: 220px; 
     overflow: hidden; 
   }
   .hero-bg { 
@@ -169,8 +182,6 @@
     background: url('bg-inicio-estudio.jpg') center/cover no-repeat; 
     width: 100%; height: 100%; 
   }
-  .hero-vid { position: absolute; inset: 0; z-index: 1; pointer-events: none; width: 100%; height: 100%; }
-  .hero-vid video { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; filter: grayscale(10%); }
   .hero-overlay { position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(22,25,19,0.85) 0%, rgba(22,25,19,0.7) 50%, rgba(22,25,19,1) 100%); width: 100%; height: 100%; }
   
   .hero-content { 
@@ -200,7 +211,6 @@
   .stat-n { font-family: var(--font-heading); font-size: 2.5rem; color: var(--gold-main); line-height: 1; display: block; margin-bottom: 0.5rem; }
   .stat-l { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); display: block; font-weight: 500; }
 
-  /* ════ FILOSOFÍA Y PILARES ════ */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
   .qblock { font-family: var(--font-heading); font-style: italic; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--gold-light); line-height: 1.4; border-left: 2px solid var(--gold-main); padding: 1rem 0 1rem 2.5rem; margin: 3rem 0; }
   .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line-color); border: 1px solid var(--line-color); margin-top: 6rem; }
@@ -210,11 +220,9 @@
   .pillar-h { font-family: var(--font-heading); font-size: 1.8rem; font-weight: 400; margin-bottom: 1rem; color: var(--text-main); }
   .pillar-p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin: 0; }
 
-  /* ════ ÁREAS PRÁCTICA CON IMÁGENES ════ */
   .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
   .pc-card { position: relative; overflow: hidden; height: 380px; background: var(--bg-panel); border: 1px solid var(--line-color); text-decoration: none; border-radius: 2px; }
   
-  /* Se agrega la clase de fondo para las tarjetas */
   .pc-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15; transition: 0.6s var(--ease); z-index: 1; }
   .pc-card:hover .pc-img { opacity: 0.4; transform: scale(1.05); }
 
@@ -229,12 +237,10 @@
   .pc-card:hover .pc-hover { opacity: 1; transform: translateY(0); }
   .pc-card:hover .pc-link { border-color: var(--gold-main); gap: 15px; }
 
-  /* ════ BANDA INTERMEDIA ════ */
   .band { padding: 8rem 0; background: var(--bg-surface); border-top: 1px solid var(--line-color); border-bottom: 1px solid var(--line-color); position: relative; overflow: hidden; text-align: center; }
   .band-quote { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 400; line-height: 1.3; max-width: 900px; margin: 0 auto; color: var(--text-main); }
   .band-quote em { color: var(--gold-light); font-style: italic; }
 
-  /* ════ CONTACTO ════ */
   .contact-wrap { display: grid; grid-template-columns: 40% 60%; border: 1px solid var(--line-color); background: var(--bg-surface); margin-top: 5rem; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
   .contact-left { padding: 5rem 4.5rem; background: var(--bg-panel); border-right: 1px solid var(--line-color); display: flex; flex-direction: column; justify-content: space-between; }
   .channel { display: flex; align-items: center; justify-content: space-between; padding: 2rem; border: 1px solid var(--line-color); margin-bottom: 1.5rem; text-decoration: none; transition: 0.4s var(--ease); background: var(--bg-surface); position: relative; overflow: hidden; }
@@ -270,7 +276,6 @@
   .btn-sub.wsp::before { background: #25D366; }
   .btn-sub span, .btn-sub i { position: relative; z-index: 1; }
 
-  /* ════ FOOTER ════ */
   .footer { padding: 6rem 0 3rem; border-top: 1px solid var(--line-color); background: var(--bg-surface); }
   .foot-center { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; margin-bottom: 3rem; }
   .foot-logo { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-main); }
@@ -278,14 +283,12 @@
   .legal-warning { font-size: 0.65rem; color: var(--text-muted); text-align: center; max-width: 800px; margin: 0 auto 2rem; line-height: 1.6; border-top: 1px solid rgba(194, 163, 109, 0.1); padding-top: 2rem; text-transform: uppercase; letter-spacing: 0.05em; }
   .foot-bottom { padding-top: 2rem; border-top: 1px solid rgba(194, 163, 109, 0.1); text-align: center; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); line-height: 1.8; }
 
-  /* ════ MEDIA QUERIES (NOTEBOOKS Y TABLETS) ════ */
   @media (max-width: 1200px) {
     .nav-links { gap: 1.5rem; }
     .brand-name { font-size: 1.8rem; }
     .pgrid { grid-template-columns: repeat(2, 1fr); } 
   }
 
-  /* ════ MEDIA QUERIES (MÓVILES) ════ */
   @media (max-width: 900px) {
     .header { padding: 1rem 0; background: rgba(22, 25, 19, 0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line-color); }
     .brand { max-width: 70vw; overflow: hidden; z-index: 1100; }
@@ -304,7 +307,6 @@
     .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
     .nav-a, .btn-header { width: 100%; text-align: center; justify-content: center; }
 
-    /* ❗ CORRECCIÓN MENÚ MÓVIL (CENTRADO PERFECTO Y PROTEGIDO) ❗ */
     .drop { flex-direction: column; width: 100%; align-items: center; justify-content: center; }
     .drop-menu { 
       position: relative !important; top: 0 !important; left: 0 !important; transform: none !important; 
@@ -319,8 +321,7 @@
     .drop-item i { display: none; }
     .drop-item:hover { padding-left: 0; color: var(--gold-main); background: transparent; }
     
-    /* Hero Móvil: Espacio considerable garantizado */
-    .hero { padding-top: 160px; } /* ⬅️ ESPACIO CONSIDERABLE MÓVIL */
+    .hero { padding-top: 160px; } 
     .hero-content { padding: 0 1.5rem; }
     .hero-h1 { font-size: clamp(2.4rem, 8vw, 3.5rem); margin-bottom: 1.5rem; line-height: 1.15; }
     .hero-desc { font-size: 1.1rem; margin-bottom: 2.5rem; }
@@ -340,7 +341,6 @@
     .contact-left { padding: 3rem 1.5rem; }
     .frow { grid-template-columns: 1fr; gap: 0; } 
     
-    /* CORRECCIÓN E-MAIL MÓVIL: Evita que el mail rompa la pantalla */
     .channel { padding: 1.2rem 1rem; }
     .ch-l { gap: 0.8rem; min-width: 0; }
     .ch-l i { font-size: 1.6rem; flex-shrink: 0; }
@@ -352,7 +352,7 @@
   @media (max-width: 480px) {
     .container { padding: 0 6vw; }
     .btn-header { padding: 1rem 1.5rem; font-size: 0.7rem; }
-    .btn-sub { min-width: 100%; width: 100%; } /* Evita desborde de botones */
+    .btn-sub { min-width: 100%; width: 100%; } 
   }
   </style>
 </head>
@@ -365,7 +365,7 @@
       <span class="brand-name">Aristeo</span>
     </a>
     
-    <button class="mobile-toggle" id="btn-menu" aria-label="Abrir menú">
+    <button class="mobile-toggle" id="btn-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
       <i class="fa-solid fa-bars"></i>
     </button>
 
@@ -395,9 +395,9 @@
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <h1 class="hero-h1 reveal d1">Rigor en Tribunales.<br><em>Claridad en el trato.</em></h1>
-    <p class="hero-desc reveal d2">Defiendo tus intereses con la seriedad que tu caso exige. Representación legal directa, estudio minucioso de la norma y honestidad profesional ante la Justicia de Córdoba.</p>
-    <a href="#contacto" class="btn-primary reveal d2"><span>Contactame</span> <i class="fa-solid fa-arrow-down"></i></a>
+    <h1 class="hero-h1 reveal d1">Estudio Jurídico en Córdoba.<br><em>Dr. Lautaro N. Aristeo.</em></h1>
+    <p class="hero-desc reveal d2">Abogado. Defensa integral en Derecho Laboral, Consumidor, Salud y Familia ante la Justicia Provincial y Federal.</p>
+    <a href="#contacto" aria-label="Contactar por WhatsApp" class="btn-primary reveal d2"><span>Contactame</span> <i class="fa-solid fa-arrow-down"></i></a>
     <div class="hero-stats reveal d2">
       <div class="stat-item"><span class="stat-n">M.P. 1 - 43722</span><span class="stat-l">Matrícula Provincial</span></div>
       <div class="stat-item"><span class="stat-n">Tº 511 Fº 222</span><span class="stat-l">Matrícula Federal</span></div>
@@ -480,11 +480,11 @@
       <div class="contact-left">
         <div>
           <h3 style="font-family: var(--font-heading); font-size: 2.2rem; font-weight: 400; margin-bottom: 1.5rem;">Vías de Contacto</h3>
-          <a href="https://wa.me/5493517736170" class="channel" target="_blank">
+          <a href="https://wa.me/5493517736170" aria-label="Contactar por WhatsApp" class="channel" target="_blank">
             <div class="ch-l"><i class="fa-brands fa-whatsapp"></i><div><span class="ch-tag">Respuesta Inmediata</span><strong class="ch-name">WhatsApp Business</strong></div></div>
             <i class="fa-solid fa-chevron-right" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
-          <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email">
+          <a href="#" class="channel" id="copy-email-btn" title="Clic para copiar el email" aria-label="Copiar correo electrónico">
             <div class="ch-l"><i class="fa-regular fa-envelope"></i><div><span class="ch-tag" id="email-tag">Recepción de Documentos</span><strong class="ch-name" style="text-transform: lowercase;">dr.aristeolautaro@gmail.com</strong></div></div>
             <i class="fa-solid fa-chevron-right" id="email-icon" style="color:var(--gold-dark); font-size:0.8rem;"></i>
           </a>
@@ -511,13 +511,19 @@
           </div>
           <div class="dyn-box" id="dynBox"><div class="dyn-title"><i class="fa-solid fa-list-check"></i> Detalle de la Situación (Opcional)</div><div id="dyn-content"></div></div>
           <div class="fg"><label class="fl">Breve resumen de tu caso *</label><textarea id="fs" class="fi" rows="2" required placeholder="Describí tu situación en pocas palabras..." style="resize: none;"></textarea></div>
-          <div class="fg" style="display: flex; align-items: start; gap: 10px;">
+          
+          <div class="fg" style="margin-bottom: 2rem;">
+            <label class="fl" id="captcha-label" style="color: var(--gold-light);">Verificación de Seguridad: ¿Cuánto es X + Y? *</label>
+            <input type="number" id="captcha-input" class="fi" required placeholder="Ingresá el resultado">
+          </div>
+
+          <div class="fg" style="margin-bottom: 1.5rem; display: flex; align-items: start; gap: 10px;">
             <input type="checkbox" id="privacyConsent" required style="margin-top: 4px; accent-color: var(--gold-main);">
             <label for="privacyConsent" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; cursor: pointer;">Acepto el tratamiento confidencial de mis datos (Ley 25.326).</label>
           </div>
           <div class="action-buttons">
-            <button type="button" class="btn-sub wsp" onclick="enviar('wsp')"><span>WhatsApp</span> <i class="fa-brands fa-whatsapp"></i></button>
-            <button type="button" class="btn-sub" onclick="enviar('mail')"><span>E-Mail</span> <i class="fa-solid fa-envelope"></i></button>
+            <button type="button" aria-label="Enviar por WhatsApp" class="btn-sub wsp" onclick="enviar(event, 'wsp')"><span>WhatsApp</span> <i class="fa-brands fa-whatsapp"></i></button>
+            <button type="button" aria-label="Enviar por E-mail" class="btn-sub" onclick="enviar(event, 'mail')"><span>E-Mail</span> <i class="fa-solid fa-envelope"></i></button>
           </div>
           <div class="disclaimer" style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.5; margin-top: 1rem;">
             La información suministrada está protegida por el <strong>secreto profesional (Ley 5805 de la Prov. de Córdoba)
@@ -536,11 +542,14 @@
       <div class="foot-info">Córdoba Capital | Fuero Provincial y Federal<br>Dr. Lautaro N. Aristeo | <span style="color:var(--gold-main);">M.P. 1 - 43722 | T° 511 F° 222</span></div>
     </div>
     <div class="legal-warning"><strong>Aviso Legal:</strong> La información contenida en este sitio web tiene carácter informativo. El envío de consultas no genera una relación abogado-cliente hasta que sea confirmada expresamente por el Estudio.</div>
-    <div class="foot-bottom">© 2026 ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS</div>
+    <div class="foot-bottom">© <span id="current-year"></span> ESTUDIO JURÍDICO ARISTEO · TODOS LOS DERECHOS RESERVADOS</div>
   </div>
 </footer>
 
 <script>
+  // 0. Setear el año actual
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+
   // 1. Control del Menú Móvil (Hamburguesa y Submenú)
   const btnMenu = document.getElementById('btn-menu');
   const navLinks = document.getElementById('nav-links');
@@ -549,8 +558,11 @@
 
   btnMenu.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    const isExpanded = navLinks.classList.contains('active');
+    btnMenu.setAttribute('aria-expanded', isExpanded);
+
     const icon = btnMenu.querySelector('i');
-    if(navLinks.classList.contains('active')){
+    if(isExpanded){
       icon.classList.remove('fa-bars');
       icon.classList.add('fa-xmark');
     } else {
@@ -575,6 +587,7 @@
     link.addEventListener('click', () => {
       if(window.innerWidth <= 900) {
         navLinks.classList.remove('active');
+        btnMenu.setAttribute('aria-expanded', 'false');
         const icon = btnMenu.querySelector('i');
         if(icon.classList.contains('fa-xmark')){
             icon.classList.replace('fa-xmark', 'fa-bars');
@@ -666,9 +679,20 @@
     else { box.classList.remove('show'); content.innerHTML = ''; }
   }
 
-  // 6. Envío de Formulario Dual
-  async function enviar(metodo) {
-    const btn = event.currentTarget;
+  // 6. Generador de Captcha Matemático Nivel DOM
+  let captchaCorrectAnswer = 0;
+  function generarCaptcha() {
+    const num1 = Math.floor(Math.random() * 10) + 1;
+    const num2 = Math.floor(Math.random() * 10) + 1;
+    captchaCorrectAnswer = num1 + num2;
+    document.getElementById('captcha-label').innerText = `Verificación de Seguridad: ¿Cuánto es ${num1} + ${num2}? *`;
+  }
+  document.addEventListener('DOMContentLoaded', generarCaptcha);
+
+  // 7. Envío de Formulario Dual
+  async function enviar(e, metodo) {
+    if(e) e.preventDefault(); // Parche crítico para evitar refresco de página accidental
+    const btn = e.currentTarget;
     const nom = document.getElementById('fn').value.trim();
     const tel = document.getElementById('ft').value.trim();
     const selectArea = document.getElementById('fa');
@@ -683,6 +707,15 @@
       alert('Debés aceptar la política de confidencialidad de datos (Ley 25.326) antes de enviar tu consulta.'); return;
     }
 
+    // Verificación Anti-Bot (Captcha Matemático)
+    const userCaptchaVal = document.getElementById('captcha-input').value.trim();
+    if(parseInt(userCaptchaVal) !== captchaCorrectAnswer) {
+      alert('La verificación de seguridad es incorrecta. Por favor, intentalo de nuevo.');
+      document.getElementById('captcha-input').value = '';
+      generarCaptcha();
+      return;
+    }
+
     let respuestasExtra = "";
     const dynInputs = document.querySelectorAll('.dyn-input');
     dynInputs.forEach(input => {
@@ -694,6 +727,8 @@
       if(respuestasExtra !== "") msg += `\n*Datos Previos:*\n${respuestasExtra}`;
       msg += `\n*Resumen:*\n${res}`;
       window.open(`https://wa.me/5493517736170?text=${encodeURIComponent(msg)}`);
+      document.getElementById('evalForm').reset();
+      generarCaptcha();
     } else {
       const originalHtml = btn.innerHTML;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';
@@ -712,6 +747,7 @@
           btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Recibido!';
           document.getElementById('evalForm').reset();
           document.getElementById('dynBox').classList.remove('show');
+          generarCaptcha();
           setTimeout(() => { btn.innerHTML = originalHtml; btn.style.pointerEvents = 'auto'; }, 4000);
         } else throw new Error();
       } catch(e) {
